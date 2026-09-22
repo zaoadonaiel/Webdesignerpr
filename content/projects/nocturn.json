@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "Medios &middot; Streaming",
+    "description": "La sala de escucha de un sello independiente. Navegación guiada por formas de onda, un reproductor que sobrevive al cambio de página, y páginas de artista hechas para compartirse más que para rastrearse.",
+    "disciplines": [
+      {
+        "text": "Diseño de Interacción"
+      },
+      {
+        "text": "Front-end"
+      },
+      {
+        "text": "Movimiento"
+      }
+    ],
+    "order": 8,
+    "slug": "nocturn",
+    "name": "Nocturn",
+    "year": "2023",
+    "categories": [
+      "ui-ux",
+      "web-design"
+    ],
+    "image_light": "/images/portfolio/nocturn.svg",
+    "image_dark": "/images/portfolio/nocturn-dark.svg",
+    "featured": false
+  },
+  "en": {
+    "kind": "Media &middot; Streaming",
+    "description": "An independent label's listening room. Waveform-driven navigation, a player that survives a page change, and artist pages built to be shared rather than crawled.",
+    "disciplines": [
+      {
+        "text": "Interaction Design"
+      },
+      {
+        "text": "Front-end"
+      },
+      {
+        "text": "Motion"
+      }
+    ]
+  }
+}

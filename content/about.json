@@ -1,0 +1,256 @@
+{
+  "es": {
+    "crumb": "Estudio",
+    "title": "Un estudio pequeño con <em class=\"italic accent-text\">estándares poco razonables</em>.",
+    "lead": "Comenzamos WebDesignerPR porque a demasiados buenos negocios les vendían la misma plantilla con otra fotografía encima. Nueve años después, la postura no se ha suavizado.",
+    "est": "Fundado en 2016 &middot; San Juan, PR",
+    "est_note": "Trabajamos con clientes del Caribe, Estados Unidos continental y Europa &mdash; en remoto, y en persona cuando hace falta.",
+    "who": "Quiénes somos",
+    "image_light": "/images/hero/studio.svg",
+    "image_dark": "/images/hero/studio-dark.svg",
+    "paragraphs": [
+      {
+        "text": "<strong>WebDesignerPR es un estudio independiente de diseño y desarrollo web con base en San Juan, Puerto Rico.</strong> Construimos sitios a la medida para empresas que ya se quedaron cortas con el sitio con el que empezaron."
+      },
+      {
+        "text": "Nuestros clientes suelen estar en la misma posición: el negocio cambió, el sitio no, y cada mes esa brecha les cuesta algo &mdash; un prospecto que se fue a la competencia, una página de producto que nadie encuentra, una llamada que no habría hecho falta si el sitio simplemente hubiera contestado la pregunta."
+      },
+      {
+        "text": "Lo resolvemos empezando por el negocio, no por la maqueta. Qué vendes, quién decide, qué necesita creer antes de actuar. El diseño se desprende de esas respuestas, y por eso nuestro trabajo se ve distinto de proyecto a proyecto aunque los estándares nunca se muevan."
+      },
+      {
+        "text": "Somos pequeños a propósito. Corremos de dos a cuatro proyectos a la vez, y las personas que conoces en la primera llamada son las que hacen el trabajo."
+      }
+    ],
+    "mission": {
+      "index": "03",
+      "eyebrow": "Misión y visión",
+      "title": "Por qué <em class=\"italic\">existe</em> el estudio.",
+      "system_text": "<strong>Construimos sistemas, no páginas.</strong> La escala tipográfica, los tokens de color, el ritmo del espaciado y una biblioteca de componentes documentada van primero. Por eso la página número doce cuesta una fracción de la primera, y por eso los sitios que publicamos siguen pareciéndose a sí mismos años después.",
+      "system_alt": "Composición de cuadrícula modular que representa el enfoque de sistemas de diseño del estudio.",
+      "system_image_light": "/images/services/design-system.svg",
+      "system_image_dark": "/images/services/design-system-dark.svg",
+      "cards": [
+        {
+          "kicker": "Misión",
+          "title": "Hacer que la web trabaje más para los negocios que están en ella",
+          "text": "Cada sitio que publicamos debe ser medible­mente mejor en su trabajo que aquel al que reemplaza &mdash; más rápido, más claro, más fácil de accionar. Si no podemos articular cómo una decisión de diseño sirve a eso, no se publica."
+        },
+        {
+          "kicker": "Visión",
+          "title": "Demostrar que un estudio pequeño puede superar a uno grande",
+          "text": "Sin capas de gestión de cuentas, el trabajo mejora y abarata al mismo tiempo. Queremos un portafolio que haga ese argumento por nosotros, y clientes que se queden lo suficiente para ver el efecto compuesto."
+        },
+        {
+          "kicker": "Promesa",
+          "title": "Sin ataduras, nunca",
+          "text": "Tu código, archivos de diseño, dominio, hosting y analítica viven en cuentas que te pertenecen. Si algún día quieres trabajar con alguien más, el traspaso toma una tarde y no cuesta nada."
+        }
+      ]
+    },
+    "philosophy": {
+      "index": "04",
+      "eyebrow": "Filosofía de diseño",
+      "title": "Cinco reglas que <em class=\"italic\">vamos a defender</em>.",
+      "aside": "Esto no son preferencias. Son la razón por la que nuestros proyectos terminan a tiempo y la razón por la que los resultados aguantan bajo tráfico.",
+      "craft_alt": "Lámina tipográfica que muestra la jerarquía de tipos del estudio.",
+      "stamp": "HECHO A LA MEDIDA &#183; SAN JUAN PR &#183; DESDE 2016 &#183; ",
+      "craft_image_light": "/images/hero/craft.svg",
+      "craft_image_dark": "/images/hero/craft-dark.svg",
+      "items": [
+        {
+          "index": "01",
+          "title": "Estructura antes que superficie",
+          "text": "Las decisiones más difíciles de un sitio no son visuales. Qué va en qué página, en qué orden, y qué se elimina &mdash; ese trabajo ocurre en cajas grises antes de que nadie elija una tipografía. Los sitios que se lo saltan siempre se ven diseñados y se comportan confundidos."
+        },
+        {
+          "index": "02",
+          "title": "La tipografía carga la marca",
+          "text": "La mayor parte de un sitio son palabras. Tratamos el tipo como el material de diseño principal: una escala pensada, jerarquía real, medida que respeta al lector. Acierta en eso y el sitio se siente caro antes de añadir una sola imagen."
+        },
+        {
+          "index": "03",
+          "title": "El movimiento tiene que significar algo",
+          "text": "Una animación debe revelar estructura, dirigir la atención o confirmar una acción. El movimiento por sí mismo es ruido, cuesta cuadros y marea a la gente. Todo lo que construimos respeta el ajuste de movimiento reducido del sistema operativo."
+        },
+        {
+          "index": "04",
+          "title": "Accesible no es una versión aparte",
+          "text": "Contraste, estados de foco, rutas de teclado y marcado semántico son parte del diseño, decididos durante el diseño. Añadir accesibilidad después es como se termina con un sitio que técnicamente aprueba y prácticamente no."
+        },
+        {
+          "index": "05",
+          "title": "La contención es una función",
+          "text": "Rutinariamente quitamos cosas que los clientes piden. Menos secciones, menos fuentes, menos plugins, menos decisiones para tu visitante. Las páginas más persuasivas que hemos construido fueron las que recortamos a la mitad."
+        }
+      ]
+    },
+    "capabilities": {
+      "index": "05",
+      "eyebrow": "Capacidades",
+      "title": "Lo que de verdad <em class=\"italic\">podemos hacer</em>.",
+      "aside": "Una lista corta y honesta. Cualquier cosa fuera de ella la declinamos o traemos a un especialista de confianza &mdash; y te decimos cuál de las dos.",
+      "stats": [
+        {
+          "value": "9",
+          "suffix": "",
+          "label": "Años que el estudio lleva construyendo para clientes, desde 2016."
+        },
+        {
+          "value": "4",
+          "suffix": "",
+          "label": "Máximo de proyectos simultáneos, para que nada espere en una fila."
+        },
+        {
+          "value": "8",
+          "suffix": "",
+          "label": "Semanas típicas desde el arranque hasta el lanzamiento de un proyecto completo."
+        },
+        {
+          "value": "",
+          "suffix": "",
+          "label": "Día hábil es nuestro tiempo estándar de respuesta a cualquier pregunta durante el proyecto."
+        }
+      ],
+      "stat_static": "1&times;"
+    },
+    "process": {
+      "index": "06",
+      "eyebrow": "Proceso de trabajo",
+      "title": "Seis etapas, <em class=\"italic\">sin sorpresas</em>.",
+      "aside": "Siempre sabrás en qué etapa estamos, qué sigue, y qué necesitamos de ti para seguir avanzando."
+    },
+    "cta": {
+      "title": "Si así es como te gustaría <em>trabajar</em>, hablemos.",
+      "body": "Envíanos el problema, no una especificación. La primera conversación es sobre si somos el estudio correcto para resolverlo &mdash; y te lo diremos si no lo somos.",
+      "secondary": "Ver nuestros servicios"
+    }
+  },
+  "en": {
+    "crumb": "About",
+    "title": "A small studio with <em class=\"italic accent-text\">unreasonable standards</em>.",
+    "lead": "We started WebDesignerPR because too many good businesses were being sold the same template with a different photograph on it. Nine years later, the position has not softened.",
+    "est": "Est. 2016 &middot; San Juan, PR",
+    "est_note": "Working with clients across the Caribbean, the United States mainland and Europe &mdash; remotely, and in person when it matters.",
+    "who": "Who we are",
+    "image_light": "/images/hero/studio.svg",
+    "image_dark": "/images/hero/studio-dark.svg",
+    "paragraphs": [
+      {
+        "text": "<strong>WebDesignerPR is an independent web design and development studio based in San Juan, Puerto Rico.</strong> We build custom websites for companies that have outgrown the site they started with."
+      },
+      {
+        "text": "Our clients are usually in the same position: the business has changed, the website has not, and every month the gap costs them something &mdash; a lead that went to a competitor, a product page nobody can find, a phone call that would not have been necessary if the site had simply answered the question."
+      },
+      {
+        "text": "We fix that by starting with the business, not the layout. What you sell, who decides, what they need to believe before they act. The design follows from those answers, which is why our work looks different from project to project even though the standards never move."
+      },
+      {
+        "text": "We stay small on purpose. Two to four projects run at a time, and the people you meet in the first call are the people doing the work."
+      }
+    ],
+    "mission": {
+      "index": "03",
+      "eyebrow": "Mission &amp; vision",
+      "title": "Why the studio <em class=\"italic\">exists</em>.",
+      "system_text": "<strong>We build systems, not pages.</strong> Type scale, colour tokens, spacing rhythm and a documented component library come first. It is why the twelfth page of a project costs a fraction of the first, and why the sites we ship still look like themselves years later.",
+      "system_alt": "Modular grid composition representing the studio's design-system approach.",
+      "system_image_light": "/images/services/design-system.svg",
+      "system_image_dark": "/images/services/design-system-dark.svg",
+      "cards": [
+        {
+          "kicker": "Mission",
+          "title": "Make the web work harder for the businesses on it",
+          "text": "Every site we ship should be measurably better at its job than what it replaced &mdash; faster, clearer, easier to act on. If we cannot articulate how a design decision serves that, it does not ship."
+        },
+        {
+          "kicker": "Vision",
+          "title": "Prove that small studios can out-build big ones",
+          "text": "Without layers of account management, work gets better and cheaper at the same time. We want a portfolio that makes that argument for us, and clients who stay long enough to see the compounding."
+        },
+        {
+          "kicker": "Promise",
+          "title": "No lock-in, ever",
+          "text": "Your code, design files, domain, hosting and analytics live in accounts you own. If you ever want to work with someone else, the handover takes an afternoon and costs nothing."
+        }
+      ]
+    },
+    "philosophy": {
+      "index": "04",
+      "eyebrow": "Design philosophy",
+      "title": "Five rules we will <em class=\"italic\">argue for</em>.",
+      "aside": "These are not preferences. They are the reasons our projects finish on time and the reason the results hold up under traffic.",
+      "craft_alt": "Typographic specimen plate showing the studio's type hierarchy.",
+      "stamp": "CUSTOM BUILT &#183; SAN JUAN PR &#183; SINCE 2016 &#183; ",
+      "craft_image_light": "/images/hero/craft.svg",
+      "craft_image_dark": "/images/hero/craft-dark.svg",
+      "items": [
+        {
+          "index": "01",
+          "title": "Structure before surface",
+          "text": "The hardest decisions in a website are not visual. What goes on which page, in which order, and what gets cut &mdash; that work happens in grey boxes before anyone picks a typeface. Sites that skip it always look designed and behave confused."
+        },
+        {
+          "index": "02",
+          "title": "Typography carries the brand",
+          "text": "Most of a website is words. We treat type as the primary design material: a considered scale, real hierarchy, measure that respects the reader. Get that right and the site feels expensive before you have added a single image."
+        },
+        {
+          "index": "03",
+          "title": "Motion must mean something",
+          "text": "An animation should reveal structure, direct attention or confirm an action. Movement for its own sake is noise, it costs frames, and it makes people motion-sick. Everything we build honours the operating system&rsquo;s reduced-motion setting."
+        },
+        {
+          "index": "04",
+          "title": "Accessible is not a separate version",
+          "text": "Contrast, focus states, keyboard paths and semantic markup are part of the design, decided during design. Retrofitting accessibility is how you end up with a site that technically passes and practically does not."
+        },
+        {
+          "index": "05",
+          "title": "Restraint is a feature",
+          "text": "We routinely remove things clients ask for. Fewer sections, fewer fonts, fewer plugins, fewer choices for your visitor to make. The most persuasive pages we have ever built were the ones we cut in half."
+        }
+      ]
+    },
+    "capabilities": {
+      "index": "05",
+      "eyebrow": "Capabilities",
+      "title": "What we can <em class=\"italic\">actually do</em>.",
+      "aside": "A short, honest list. Anything outside it we will either decline or bring in a trusted specialist for &mdash; and tell you which.",
+      "stats": [
+        {
+          "value": "9",
+          "suffix": "",
+          "label": "Years the studio has been building for clients, since 2016."
+        },
+        {
+          "value": "4",
+          "suffix": "",
+          "label": "Maximum projects running concurrently, so nothing waits in a queue."
+        },
+        {
+          "value": "8",
+          "suffix": "",
+          "label": "Typical weeks from kickoff to launch for a full custom build."
+        },
+        {
+          "value": "",
+          "suffix": "",
+          "label": "Business day is our standard reply time on any question, mid-project."
+        }
+      ],
+      "stat_static": "1&times;"
+    },
+    "process": {
+      "index": "06",
+      "eyebrow": "Work process",
+      "title": "Six stages, <em class=\"italic\">no surprises</em>.",
+      "aside": "You will always know which stage we are in, what is due next, and what we need from you to keep moving."
+    },
+    "cta": {
+      "title": "If this sounds like how you would like to <em>work</em>, let us talk.",
+      "body": "Send us the problem, not a specification. The first conversation is about whether we are the right studio for it &mdash; and we will say so if we are not.",
+      "secondary": "See our services"
+    }
+  }
+}

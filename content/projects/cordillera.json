@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "Arquitectura &middot; Editorial",
+    "description": "La monografía de un despacho disfrazada de sitio web. Láminas de proyecto a sangre completa, un sistema tipográfico tomado del dibujo técnico, y un scroll que se comporta como pasar páginas.",
+    "disciplines": [
+      {
+        "text": "Dirección de Arte"
+      },
+      {
+        "text": "Diseño Editorial"
+      },
+      {
+        "text": "Front-end"
+      }
+    ],
+    "order": 2,
+    "slug": "cordillera",
+    "name": "Cordillera",
+    "year": "2025",
+    "categories": [
+      "web-design",
+      "branding"
+    ],
+    "image_light": "/images/portfolio/cordillera.svg",
+    "image_dark": "/images/portfolio/cordillera-dark.svg",
+    "featured": true
+  },
+  "en": {
+    "kind": "Architecture &middot; Editorial",
+    "description": "A practice monograph disguised as a website. Full-bleed project plates, a type system borrowed from technical drawings, and a scroll that behaves like turning pages.",
+    "disciplines": [
+      {
+        "text": "Art Direction"
+      },
+      {
+        "text": "Editorial Design"
+      },
+      {
+        "text": "Front-end"
+      }
+    ]
+  }
+}

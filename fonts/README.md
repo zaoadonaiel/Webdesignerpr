@@ -37,8 +37,8 @@ fonts/
 
 **2. Remove the Google Fonts request**
 
-Delete these three lines from the `<head>` of all **ten** HTML files
-(five Spanish at the root, five English in `/en/`):
+The `<head>` is generated once, so there is a single place to change. In
+`generator/partials.py`, inside `head()`, delete these three lines:
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,18 +77,15 @@ Place these *above* the `:root` block:
 
 **4. Preload the two fonts used above the fold**
 
-Add to `<head>`, after the favicon links. Note the path differs by language —
-English pages sit one level down:
+In `head()`, after the favicon links. Use `c.asset()` so the path resolves
+correctly from both the root (Spanish) and `/en/`:
 
-```html
-<!-- Spanish pages at the root -->
-<link rel="preload" href="fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/inter-tight-400.woff2" as="font" type="font/woff2" crossorigin>
-
-<!-- English pages in /en/ -->
-<link rel="preload" href="../fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/inter-tight-400.woff2" as="font" type="font/woff2" crossorigin>
+```python
+<link rel="preload" href="{c.asset('fonts/instrument-serif-400.woff2')}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{c.asset('fonts/inter-tight-400.woff2')}" as="font" type="font/woff2" crossorigin>
 ```
+
+Then run `python3 build.py`.
 
 Nothing else changes — `--font-display`, `--font-sans` and `--font-mono` in
 `css/style.css` already reference these family names.

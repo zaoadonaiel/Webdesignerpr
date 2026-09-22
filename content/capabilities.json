@@ -1,0 +1,138 @@
+{
+  "es": {
+    "items": [
+      {
+        "name": "HTML5",
+        "category": "Marcado"
+      },
+      {
+        "name": "CSS3",
+        "category": "Estilos"
+      },
+      {
+        "name": "JavaScript ES6+",
+        "category": "Scripting"
+      },
+      {
+        "name": "GSAP",
+        "category": "Movimiento"
+      },
+      {
+        "name": "WordPress",
+        "category": "CMS"
+      },
+      {
+        "name": "Shopify",
+        "category": "Comercio"
+      },
+      {
+        "name": "WooCommerce",
+        "category": "Comercio"
+      },
+      {
+        "name": "PHP",
+        "category": "Back end"
+      },
+      {
+        "name": "Figma",
+        "category": "Diseño"
+      },
+      {
+        "name": "Design Tokens",
+        "category": "Sistemas"
+      },
+      {
+        "name": "WCAG 2.2",
+        "category": "Accesibilidad"
+      },
+      {
+        "name": "Core Web Vitals",
+        "category": "Rendimiento"
+      },
+      {
+        "name": "Technical SEO",
+        "category": "Búsqueda"
+      },
+      {
+        "name": "GA4",
+        "category": "Analítica"
+      },
+      {
+        "name": "Cloudflare",
+        "category": "Entrega"
+      },
+      {
+        "name": "Git",
+        "category": "Flujo"
+      }
+    ]
+  },
+  "en": {
+    "items": [
+      {
+        "name": "HTML5",
+        "category": "Markup"
+      },
+      {
+        "name": "CSS3",
+        "category": "Styling"
+      },
+      {
+        "name": "JavaScript ES6+",
+        "category": "Scripting"
+      },
+      {
+        "name": "GSAP",
+        "category": "Motion"
+      },
+      {
+        "name": "WordPress",
+        "category": "CMS"
+      },
+      {
+        "name": "Shopify",
+        "category": "Commerce"
+      },
+      {
+        "name": "WooCommerce",
+        "category": "Commerce"
+      },
+      {
+        "name": "PHP",
+        "category": "Back end"
+      },
+      {
+        "name": "Figma",
+        "category": "Design"
+      },
+      {
+        "name": "Design Tokens",
+        "category": "Systems"
+      },
+      {
+        "name": "WCAG 2.2",
+        "category": "Accessibility"
+      },
+      {
+        "name": "Core Web Vitals",
+        "category": "Performance"
+      },
+      {
+        "name": "Technical SEO",
+        "category": "Search"
+      },
+      {
+        "name": "GA4",
+        "category": "Analytics"
+      },
+      {
+        "name": "Cloudflare",
+        "category": "Delivery"
+      },
+      {
+        "name": "Git",
+        "category": "Workflow"
+      }
+    ]
+  }
+}

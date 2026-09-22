@@ -1,0 +1,308 @@
+{
+  "es": {
+    "crumb": "Contacto",
+    "title": "Cuéntanos qué estás <em class=\"italic accent-text\">tratando de construir</em>.",
+    "lead": "Mientras más contexto nos des, más útil será nuestra primera respuesta. Cada consulta la lee la persona que dirigiría tu proyecto.",
+    "booking": "Reservando para el próximo trimestre",
+    "booking_note": "Respondemos en un día hábil, de lunes a viernes. Si es urgente, llama &mdash; el número está más abajo.",
+    "form_h2": "Consulta de proyecto",
+    "submit": "Enviar consulta",
+    "privacy": "Nunca compartiremos tus datos. Sin boletín, sin secuencias automáticas.",
+    "labels": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "company": "Empresa",
+      "type": "Tipo de proyecto",
+      "budget": "Rango de presupuesto",
+      "details": "Detalles del proyecto"
+    },
+    "placeholders": {
+      "name": "Ana Rivera",
+      "email": "ana@empresa.com",
+      "company": "Empresa o nombre del proyecto",
+      "select": "Selecciona una&hellip;",
+      "details": "¿Qué estás construyendo, qué falla en el sitio actual y para cuándo necesita estar en línea? Los enlaces son bienvenidos."
+    },
+    "project_types": [
+      {
+        "text": "Diseño web a la medida"
+      },
+      {
+        "text": "Desarrollo web"
+      },
+      {
+        "text": "Proyecto WordPress"
+      },
+      {
+        "text": "Tienda en línea"
+      },
+      {
+        "text": "Diseño UI/UX"
+      },
+      {
+        "text": "Rediseño de sitio"
+      },
+      {
+        "text": "Optimización de rendimiento"
+      },
+      {
+        "text": "Otra cosa"
+      }
+    ],
+    "budgets": [
+      {
+        "value": "under-10",
+        "label": "Menos de $10k"
+      },
+      {
+        "value": "10-25",
+        "label": "$10k &ndash; $25k"
+      },
+      {
+        "value": "25-50",
+        "label": "$25k &ndash; $50k"
+      },
+      {
+        "value": "50-plus",
+        "label": "$50k +"
+      },
+      {
+        "value": "unsure",
+        "label": "Aún no sé"
+      }
+    ],
+    "messages": {
+      "required": "Este campo es obligatorio.",
+      "email_required": "Necesitamos un correo para responderte.",
+      "name": "Por favor escribe tu nombre completo.",
+      "email": "Esa dirección no parece correcta.",
+      "details": "Un poco más de detalle nos ayuda a responder bien &mdash; mínimo 20 caracteres.",
+      "budget": "Selecciona un rango &mdash; un estimado está bien.",
+      "error_strong": "Casi listo.",
+      "error": " Corrige los campos marcados y envía de nuevo.",
+      "sending": "Enviando&hellip;",
+      "ok_strong": "Validado, {name}.",
+      "ok": " Tu brief pasó todas las validaciones &mdash; pero este formulario aún no está conectado a un backend, así que no se envió nada. Conecta un endpoint (Formspree, Netlify Forms o tu propio manejador) como se describe en el README, y mientras tanto escríbenos a "
+    },
+    "notice_strong": "Nota para el desarrollador &mdash; este formulario aún no está conectado.",
+    "notice": " La validación corre por completo en el navegador, así que los envíos se verifican pero no se entregan a ningún lado. Para activarlo, apunta el formulario a un endpoint como Formspree, Netlify Forms o tu propio manejador. Las instrucciones paso a paso están en <code>README.md</code> bajo &ldquo;Connecting the contact form&rdquo;.",
+    "aside": [
+      {
+        "label": "Correo",
+        "value": "hola@webdesignerpr.com",
+        "href": "mailto:hola@webdesignerpr.com",
+        "note": "Lo mejor para consultas de proyecto. Adjunta lo que sirva &mdash; mapas del sitio, guías de marca, un enlace al sitio actual."
+      },
+      {
+        "label": "Teléfono",
+        "value": "+1 (787) 555&#8209;0142",
+        "href": "tel:+17875550142",
+        "note": "De lunes a viernes, 9:00&ndash;18:00 hora estándar del Atlántico. Número de muestra &mdash; sustituir antes de lanzar."
+      },
+      {
+        "label": "Estudio",
+        "value": "Calle Loíza<br>San Juan, Puerto Rico",
+        "href": "",
+        "note": "Visitas con cita previa. La mayor parte de nuestro trabajo corre en remoto, en el Caribe, Estados Unidos continental y Europa."
+      }
+    ],
+    "next_label": "Qué pasa después",
+    "next_steps": [
+      {
+        "text": "Leemos tu brief y respondemos en un día hábil."
+      },
+      {
+        "text": "Una llamada de 30&nbsp;minutos para definir alcance y tiempos."
+      },
+      {
+        "text": "Una propuesta escrita con precio fijo y calendario."
+      }
+    ],
+    "tips": {
+      "index": "03",
+      "eyebrow": "Antes de escribir",
+      "title": "Cuatro cosas que hacen tu consulta <em class=\"italic\">mucho</em> más fácil de responder.",
+      "items": [
+        {
+          "index": "01",
+          "title": "El problema, no la especificación",
+          "text": "&ldquo;Nuestra página de reservas pierde gente en el selector de fechas&rdquo; nos dice muchísimo más que &ldquo;necesitamos un sitio nuevo con diseño moderno&rdquo;. Nosotros podemos deducir la solución; solo tú conoces el síntoma."
+        },
+        {
+          "index": "02",
+          "title": "Una fecha real, si la tienes",
+          "text": "Una feria, una ronda de inversión, el lanzamiento de un producto, un contrato que vence. Las fechas moldean el alcance más que el presupuesto, y conocer la tuya desde el inicio evita una propuesta que no puede aterrizar a tiempo."
+        },
+        {
+          "index": "03",
+          "title": "Un rango de presupuesto honesto",
+          "text": "No una posición de negociación &mdash; un rango. Nos permite proponer algo que de verdad se puede construir, o decirte de inmediato que no somos la opción correcta y orientarte hacia algo mejor."
+        },
+        {
+          "index": "04",
+          "title": "Quién aprueba",
+          "text": "Una sola persona que decide mantiene el proyecto a tiempo; un comité de seis, no. Decirnos la cadena de aprobación desde temprano nos deja incluir el número correcto de rondas de revisión en el plan."
+        }
+      ]
+    },
+    "cta": {
+      "title": "¿Prefieres simplemente <em>enviar un correo</em>?",
+      "body": "También funciona. Escríbenos directamente e incluye el contexto que tengas &mdash; te responderemos con ideas reales, no con un folleto.",
+      "primary": "Escribir al estudio",
+      "secondary": "Ver el trabajo primero"
+    }
+  },
+  "en": {
+    "crumb": "Contact",
+    "title": "Tell us what you are <em class=\"italic accent-text\">trying to build</em>.",
+    "lead": "The more context you give us, the more useful our first reply will be. Every enquiry is read by the person who would actually run your project.",
+    "booking": "Currently booking for next quarter",
+    "booking_note": "Replies within one business day, Monday to Friday. If it is urgent, call &mdash; the number is below.",
+    "form_h2": "Project enquiry",
+    "submit": "Send enquiry",
+    "privacy": "We will never share your details. No newsletter, no drip sequence.",
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "type": "Project type",
+      "budget": "Budget range",
+      "details": "Project details"
+    },
+    "placeholders": {
+      "name": "Ana Rivera",
+      "email": "ana@company.com",
+      "company": "Company or project name",
+      "select": "Select one&hellip;",
+      "details": "What are you building, what is wrong with the current site, and when does it need to be live? Links are welcome."
+    },
+    "project_types": [
+      {
+        "text": "Custom website design"
+      },
+      {
+        "text": "Website development"
+      },
+      {
+        "text": "WordPress build"
+      },
+      {
+        "text": "E-commerce store"
+      },
+      {
+        "text": "UI/UX design"
+      },
+      {
+        "text": "Website redesign"
+      },
+      {
+        "text": "Performance optimisation"
+      },
+      {
+        "text": "Something else"
+      }
+    ],
+    "budgets": [
+      {
+        "value": "under-10",
+        "label": "Under $10k"
+      },
+      {
+        "value": "10-25",
+        "label": "$10k &ndash; $25k"
+      },
+      {
+        "value": "25-50",
+        "label": "$25k &ndash; $50k"
+      },
+      {
+        "value": "50-plus",
+        "label": "$50k +"
+      },
+      {
+        "value": "unsure",
+        "label": "Not sure yet"
+      }
+    ],
+    "messages": {
+      "required": "This field is required.",
+      "email_required": "We need an email to reply to.",
+      "name": "Please enter your full name.",
+      "email": "That address doesn't look right.",
+      "details": "A little more detail helps us reply properly — 20 characters minimum.",
+      "budget": "Select a range — an estimate is fine.",
+      "error_strong": "Almost there.",
+      "error": " Please correct the highlighted fields and send again.",
+      "sending": "Sending&hellip;",
+      "ok_strong": "Validated, {name}.",
+      "ok": " Your brief passed every check &mdash; but this form is not yet connected to a backend, so nothing was actually sent. Connect an endpoint (Formspree, Netlify Forms, or your own handler) as described in the README, then email "
+    },
+    "notice_strong": "Developer note &mdash; this form is not connected yet.",
+    "notice": " Validation runs entirely in the browser, so submissions are checked but not delivered anywhere. To make it live, point the form at an endpoint such as Formspree, Netlify Forms, or your own handler. Step-by-step instructions are in <code>README.md</code> under &ldquo;Connecting the contact form&rdquo;.",
+    "aside": [
+      {
+        "label": "Email",
+        "value": "hola@webdesignerpr.com",
+        "href": "mailto:hola@webdesignerpr.com",
+        "note": "Best for project enquiries. Attach anything useful &mdash; sitemaps, brand guidelines, a link to the current site."
+      },
+      {
+        "label": "Phone",
+        "value": "+1 (787) 555&#8209;0142",
+        "href": "tel:+17875550142",
+        "note": "Monday to Friday, 9:00&ndash;18:00 Atlantic Standard Time. Placeholder number &mdash; replace before launch."
+      },
+      {
+        "label": "Studio",
+        "value": "Calle Loíza<br>San Juan, Puerto Rico",
+        "href": "",
+        "note": "Visits by appointment. Most of our work runs remotely, across the Caribbean, the mainland US and Europe."
+      }
+    ],
+    "next_label": "What happens next",
+    "next_steps": [
+      {
+        "text": "We read your brief and reply within one business day."
+      },
+      {
+        "text": "A 30&#8209;minute call to pin down scope and timing."
+      },
+      {
+        "text": "A written proposal with fixed price and schedule."
+      }
+    ],
+    "tips": {
+      "index": "03",
+      "eyebrow": "Before you write",
+      "title": "Four things that make your enquiry <em class=\"italic\">much</em> easier to answer.",
+      "items": [
+        {
+          "index": "01",
+          "title": "The problem, not the specification",
+          "text": "&ldquo;Our booking page loses people at the date picker&rdquo; tells us far more than &ldquo;we need a new website with a modern design&rdquo;. We can work out the solution; only you know the symptom."
+        },
+        {
+          "index": "02",
+          "title": "A real deadline, if you have one",
+          "text": "A trade show, a funding round, a product launch, a contract ending. Deadlines shape scope more than budget does, and knowing yours up front prevents a proposal that cannot land in time."
+        },
+        {
+          "index": "03",
+          "title": "An honest budget range",
+          "text": "Not a negotiating position &mdash; a range. It lets us propose something that can actually be built, or tell you straight away that we are not the right fit and point you somewhere better."
+        },
+        {
+          "index": "04",
+          "title": "Who signs off",
+          "text": "One decision-maker keeps a project on schedule; a committee of six does not. Telling us the approval chain early lets us build the right number of review rounds into the plan."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prefer to just <em>send an email</em>?",
+      "body": "That works too. Write to us directly and include whatever context you have &mdash; we will reply with real thoughts, not a brochure.",
+      "primary": "Email the studio",
+      "secondary": "See the work first"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "es": {
+    "crumb": "Portafolio",
+    "title": "Ocho proyectos. <em class=\"italic accent-text\">Ocho problemas distintos.</em>",
+    "lead": "El portafolio de un estudio debe mostrar rango y criterio, no solo píxeles terminados. Cada pieza declara el problema que resolvía, para que juzgues el pensamiento y no solo la superficie.",
+    "notice_strong": "Sobre este trabajo.",
+    "notice": "Cada proyecto aquí es un concepto de autoría propia creado para demostrar rango, usando marcas ficticias. Nada se presenta como trabajo comisionado por clientes. Los casos de estudio reales están disponibles bajo acuerdo de confidencialidad.",
+    "filter_label": "Filtrar proyectos por categoría",
+    "projects_h2": "Proyectos",
+    "view": "Ver proyecto",
+    "empty": "No hay proyectos en esa categoría todavía.",
+    "empty_link": "Mostrar todo",
+    "counter_one": "proyecto visible",
+    "counter_many": "proyectos visibles",
+    "tag_concept": "Concepto",
+    "filters": [
+      {
+        "key": "all",
+        "label": "Todo"
+      },
+      {
+        "key": "web-design",
+        "label": "Diseño Web"
+      },
+      {
+        "key": "ui-ux",
+        "label": "UI / UX"
+      },
+      {
+        "key": "ecommerce",
+        "label": "E-commerce"
+      },
+      {
+        "key": "wordpress",
+        "label": "WordPress"
+      },
+      {
+        "key": "branding",
+        "label": "Marca"
+      }
+    ],
+    "ships": {
+      "index": "03",
+      "eyebrow": "Detrás de cada proyecto",
+      "title": "Lo que de verdad <em class=\"italic\">se entrega</em>.",
+      "aside": "Sea cual sea la industria, los entregables son consistentes. Esto es lo que llega a tus cuentas al final de un proyecto.",
+      "items": [
+        {
+          "index": "01",
+          "title": "Un sistema de diseño, no un conjunto de páginas",
+          "text": "Escala tipográfica, tokens de color, ritmo de espaciado y una biblioteca de componentes documentada &mdash; para que la página doce cueste una fracción de la primera, y el sitio siga pareciéndose a sí mismo dos años después de entregarlo."
+        },
+        {
+          "index": "02",
+          "title": "Código front-end escrito a mano",
+          "text": "HTML semántico, CSS por componentes y JavaScript nativo, comentado y organizado para quien trabaje en él después. Sin arqueología de herramientas de construcción para cambiar un encabezado."
+        },
+        {
+          "index": "03",
+          "title": "Una experiencia de edición que tu equipo puede manejar",
+          "text": "Bloques de CMS hechos a propósito con límites sensatos, más un manual escrito y una grabación del recorrido. Tu equipo puede publicar con confianza sin abrir un ticket."
+        },
+        {
+          "index": "04",
+          "title": "Medición desde el primer día",
+          "text": "Analítica, seguimiento de eventos en las acciones que importan, traspaso de Search Console y un informe base de rendimiento &mdash; para que la mejora se pueda demostrar en vez de afirmar."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Tu proyecto podría ser el <em>número nueve</em>.",
+      "body": "Tomamos un número pequeño de proyectos cada trimestre. Si tienes algo en mente para el próximo, mientras antes hablemos, mejor funciona el calendario para ambos.",
+      "secondary": "Ver nuestros servicios"
+    }
+  },
+  "en": {
+    "crumb": "Portfolio",
+    "title": "Eight projects. <em class=\"italic accent-text\">Eight different problems.</em>",
+    "lead": "A studio portfolio should show range and judgement, not just finished pixels. Each piece below states the problem it was solving, so you can judge the thinking and not only the surface.",
+    "notice_strong": "About this work.",
+    "notice": "Every project shown here is a self-initiated concept created to demonstrate range, using fictional brands. None of it is presented as commissioned client work. Real client case studies are available on request under NDA.",
+    "filter_label": "Filter projects by category",
+    "projects_h2": "Projects",
+    "view": "View project",
+    "empty": "No projects in that category yet.",
+    "empty_link": "Show everything",
+    "counter_one": "project shown",
+    "counter_many": "projects shown",
+    "tag_concept": "Concept",
+    "filters": [
+      {
+        "key": "all",
+        "label": "All work"
+      },
+      {
+        "key": "web-design",
+        "label": "Web Design"
+      },
+      {
+        "key": "ui-ux",
+        "label": "UI / UX"
+      },
+      {
+        "key": "ecommerce",
+        "label": "E-commerce"
+      },
+      {
+        "key": "wordpress",
+        "label": "WordPress"
+      },
+      {
+        "key": "branding",
+        "label": "Branding"
+      }
+    ],
+    "ships": {
+      "index": "03",
+      "eyebrow": "Behind each build",
+      "title": "What actually <em class=\"italic\">ships</em>.",
+      "aside": "Whatever the industry, the deliverables are consistent. This is what lands in your accounts at the end of an engagement.",
+      "items": [
+        {
+          "index": "01",
+          "title": "A design system, not a set of pages",
+          "text": "Type scale, colour tokens, spacing rhythm and a documented component library &mdash; so page twelve costs a fraction of page one, and the site still looks like itself two years after we hand it over."
+        },
+        {
+          "index": "02",
+          "title": "Hand-written front-end code",
+          "text": "Semantic HTML, component-driven CSS and vanilla JavaScript, commented and organised for whoever works on it next. No build-tool archaeology required to change a heading."
+        },
+        {
+          "index": "03",
+          "title": "An editor experience your team can handle",
+          "text": "Purpose-made CMS blocks with sensible constraints, plus a written handbook and a recorded walkthrough. Your team can publish confidently without a support ticket."
+        },
+        {
+          "index": "04",
+          "title": "Measurement from day one",
+          "text": "Analytics, event tracking on the actions that matter, a search-console handover and a baseline performance report &mdash; so improvement can be proven rather than claimed."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Your project could be <em>number nine</em>.",
+      "body": "We take on a small number of builds each quarter. If you have something in mind for the next one, the earlier we talk, the better the scheduling works for both of us.",
+      "secondary": "See our services"
+    }
+  }
+}

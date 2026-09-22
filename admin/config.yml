@@ -1,0 +1,869 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+#
+# WebDesignerPR — Sveltia CMS configuration
+#
+# Editing anything here changes what the /admin/ interface can edit. The site
+# is rebuilt by Cloudflare Pages on every commit the CMS makes.
+#
+# A note on HTML in text fields: much of this copy contains inline markup such
+# as <em class="italic accent-text">…</em> for the coral italic accents, plus
+# HTML entities like &mdash; and &middot;. Those are intentional and are passed
+# through to the page verbatim. Keep them when editing.
+
+backend:
+  name: github
+  repo: zaoadonaiel/Webdesignerpr
+  branch: main
+  # OAuth client. Deploy sveltia-cms-auth to Cloudflare Workers and put its
+  # URL here — see "Setting up the CMS" in README.md.
+  base_url: https://REPLACE-ME.workers.dev
+
+site_url: https://webdesignerpr.com
+display_url: https://webdesignerpr.com
+logo_url: /images/logo/mark.svg
+
+# New uploads land here and are referenced from the site as /images/uploads/…
+media_folder: images/uploads
+public_folder: /images/uploads
+
+# Spanish is the source language; English mirrors it. Both locales live in one
+# JSON file per entry, under top-level "es" and "en" keys.
+i18n:
+  structure: single_file
+  locales: [es, en]
+  default_locale: es
+
+collections:
+  # =======================================================================
+  # PAGES
+  # =======================================================================
+  - name: pages
+    label: Pages
+    label_singular: Page
+    icon: article
+    i18n: true
+    files:
+      # ---------------------------------------------------------------- home
+      - name: home
+        label: Home
+        file: content/home.json
+        icon: home
+        i18n: true
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string, i18n: true,
+              hint: Small label above the headline }
+          - name: hero_lines
+            label: Headline lines
+            widget: list
+            i18n: true
+            hint: One line each. The second line is indented automatically.
+            fields:
+              - { name: text, label: Line, widget: string, i18n: true }
+          - { name: hero_lead, label: Intro paragraph, widget: text, i18n: true }
+          - { name: scroll, label: Scroll prompt, widget: string, i18n: true }
+          - name: marquee
+            label: Scrolling strip
+            widget: list
+            i18n: true
+            fields:
+              - { name: text, label: Item, widget: string, i18n: true }
+
+          - name: studio
+            label: "01 — Studio section"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true, default: "01" }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: image_light, label: Image (light theme), widget: image, i18n: duplicate }
+              - { name: image_dark, label: Image (dark theme), widget: image, i18n: duplicate }
+              - { name: image_alt, label: Image alt text, widget: string, i18n: true }
+              - name: paragraphs
+                label: Body paragraphs
+                widget: list
+                i18n: true
+                fields:
+                  - { name: text, label: Paragraph, widget: text, i18n: true }
+              - { name: link, label: Link text, widget: string, i18n: true }
+              - { name: standards_label, label: Standards label, widget: string, i18n: true }
+              - name: stats
+                label: Standards figures
+                widget: list
+                i18n: true
+                hint: Leave Value empty to show the static figure below instead.
+                fields:
+                  - { name: value, label: Value, widget: string, required: false, i18n: true }
+                  - { name: suffix, label: Suffix, widget: string, required: false, i18n: true }
+                  - { name: label, label: Description, widget: text, i18n: true }
+              - { name: stat_static, label: Static figure, widget: string, i18n: true }
+
+          - name: work
+            label: "02 — Selected work"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+              - { name: button, label: Button text, widget: string, i18n: true }
+
+          - name: services
+            label: "03 — Services"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+              - { name: card_title, label: Last card — title, widget: string, i18n: true }
+              - { name: card_text, label: Last card — text, widget: text, i18n: true }
+              - { name: card_cta, label: Last card — button, widget: string, i18n: true }
+              - { name: detail_link, label: "Per-card link text", widget: string, i18n: true }
+
+          - name: why
+            label: "04 — Why choose us"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - name: items
+                label: Reasons
+                widget: list
+                i18n: true
+                fields:
+                  - { name: index, label: Number, widget: string, i18n: true }
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+
+          - name: process
+            label: "05 — Process heading"
+            widget: object
+            i18n: true
+            collapsed: true
+            hint: The steps themselves live under Shared content → Process.
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+
+          - name: testimonials
+            label: "06 — Testimonials heading"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: sample_note, label: Placeholder badge, widget: string, required: false, i18n: true,
+                  hint: "Clear this field once the quotes are real — the badge disappears." }
+
+          - name: capabilities
+            label: "07 — Capabilities heading"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+
+          - name: cta
+            label: Closing call to action
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: body, label: Text, widget: text, i18n: true }
+
+      # --------------------------------------------------------------- about
+      - name: about
+        label: About / Studio
+        file: content/about.json
+        icon: groups
+        i18n: true
+        fields:
+          - { name: crumb, label: Breadcrumb, widget: string, i18n: true }
+          - { name: title, label: Page heading, widget: text, i18n: true }
+          - { name: lead, label: Intro paragraph, widget: text, i18n: true }
+          - { name: est, label: Established line, widget: string, i18n: true }
+          - { name: est_note, label: Established note, widget: text, i18n: true }
+          - { name: who, label: "Section label — who we are", widget: string, i18n: true }
+          - { name: image_light, label: Studio image (light), widget: image, i18n: duplicate }
+          - { name: image_dark, label: Studio image (dark), widget: image, i18n: duplicate }
+          - name: paragraphs
+            label: Introduction paragraphs
+            widget: list
+            i18n: true
+            fields:
+              - { name: text, label: Paragraph, widget: text, i18n: true }
+
+          - name: mission
+            label: "03 — Mission & vision"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: system_text, label: Design-system paragraph, widget: text, i18n: true }
+              - { name: system_alt, label: Image alt text, widget: string, i18n: true }
+              - { name: system_image_light, label: Image (light), widget: image, i18n: duplicate }
+              - { name: system_image_dark, label: Image (dark), widget: image, i18n: duplicate }
+              - name: cards
+                label: Cards
+                widget: list
+                i18n: true
+                fields:
+                  - { name: kicker, label: Kicker, widget: string, i18n: true }
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+
+          - name: philosophy
+            label: "04 — Design philosophy"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+              - { name: craft_alt, label: Image alt text, widget: string, i18n: true }
+              - { name: stamp, label: Rotating stamp text, widget: string, i18n: true }
+              - { name: craft_image_light, label: Image (light), widget: image, i18n: duplicate }
+              - { name: craft_image_dark, label: Image (dark), widget: image, i18n: duplicate }
+              - name: items
+                label: Principles
+                widget: list
+                i18n: true
+                fields:
+                  - { name: index, label: Number, widget: string, i18n: true }
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+
+          - name: capabilities
+            label: "05 — Capabilities"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+              - name: stats
+                label: Figures
+                widget: list
+                i18n: true
+                fields:
+                  - { name: value, label: Value, widget: string, required: false, i18n: true }
+                  - { name: suffix, label: Suffix, widget: string, required: false, i18n: true }
+                  - { name: label, label: Description, widget: text, i18n: true }
+              - { name: stat_static, label: Static figure, widget: string, i18n: true }
+
+          - name: process
+            label: "06 — Process heading"
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+
+          - name: cta
+            label: Closing call to action
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: body, label: Text, widget: text, i18n: true }
+              - { name: secondary, label: Secondary button, widget: string, i18n: true }
+
+      # ------------------------------------------------------------ services
+      - name: services
+        label: Services page
+        file: content/services.json
+        icon: design_services
+        i18n: true
+        fields:
+          - { name: crumb, label: Breadcrumb, widget: string, i18n: true }
+          - { name: title, label: Page heading, widget: text, i18n: true }
+          - { name: lead, label: Intro paragraph, widget: text, i18n: true }
+          - { name: meta_a, label: Side note — line 1, widget: string, i18n: true }
+          - { name: meta_b, label: Side note — line 2, widget: text, i18n: true }
+          - { name: expand, label: "Hint above the list", widget: string, i18n: true }
+          - { name: detail, label: "Panel label — detail", widget: string, i18n: true }
+          - { name: included, label: "Panel label — included", widget: string, i18n: true }
+          - { name: enquire, label: "Panel link text", widget: string, i18n: true }
+
+          - name: items
+            label: The services
+            widget: list
+            i18n: true
+            summary: "{{fields.index}} — {{fields.title}}"
+            hint: >-
+              The ID becomes the anchor link (services.html#website-design) and
+              picks the icon. Keep existing IDs unless you also update the
+              footer links on Settings.
+            fields:
+              - { name: id, label: ID / anchor, widget: string, i18n: duplicate,
+                  pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'] }
+              - { name: index, label: Number, widget: string, i18n: true }
+              - { name: title, label: Title, widget: string, i18n: true }
+              - { name: summary, label: Summary, widget: text, i18n: true }
+              - { name: body, label: Full description, widget: text, i18n: true }
+              - name: deliverables
+                label: What's included
+                widget: list
+                i18n: true
+                fields:
+                  - { name: text, label: Item, widget: string, i18n: true }
+
+          - name: engagements
+            label: Engagement models
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+              - name: items
+                label: Models
+                widget: list
+                i18n: true
+                fields:
+                  - { name: kicker, label: Kicker, widget: string, i18n: true }
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+                  - { name: link, label: Link text, widget: string, i18n: true }
+
+          - name: performance
+            label: Performance block
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: label, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: alt, label: Image alt text, widget: string, i18n: true }
+              - { name: link, label: Button text, widget: string, i18n: true }
+              - { name: image_light, label: Image (light), widget: image, i18n: duplicate }
+              - { name: image_dark, label: Image (dark), widget: image, i18n: duplicate }
+              - name: paragraphs
+                label: Paragraphs
+                widget: list
+                i18n: true
+                fields:
+                  - { name: text, label: Paragraph, widget: text, i18n: true }
+
+          - name: commerce
+            label: Commerce block
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: label, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: alt, label: Image alt text, widget: string, i18n: true }
+              - { name: link, label: Button text, widget: string, i18n: true }
+              - { name: image_light, label: Image (light), widget: image, i18n: duplicate }
+              - { name: image_dark, label: Image (dark), widget: image, i18n: duplicate }
+              - name: paragraphs
+                label: Paragraphs
+                widget: list
+                i18n: true
+                fields:
+                  - { name: text, label: Paragraph, widget: text, i18n: true }
+
+          - name: faq
+            label: FAQ
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - name: items
+                label: Questions
+                widget: list
+                i18n: true
+                summary: "{{fields.question}}"
+                fields:
+                  - { name: question, label: Question, widget: string, i18n: true }
+                  - { name: answer, label: Answer, widget: text, i18n: true }
+
+          - name: cta
+            label: Closing call to action
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: body, label: Text, widget: text, i18n: true }
+              - { name: secondary, label: Secondary button, widget: string, i18n: true }
+
+      # ----------------------------------------------------------- portfolio
+      - name: portfolio
+        label: Portfolio page
+        file: content/portfolio.json
+        icon: grid_view
+        i18n: true
+        fields:
+          - { name: crumb, label: Breadcrumb, widget: string, i18n: true,
+              hint: The projects themselves live in the Projects collection. }
+          - { name: title, label: Page heading, widget: text, i18n: true }
+          - { name: lead, label: Intro paragraph, widget: text, i18n: true }
+          - { name: notice_strong, label: "Notice — bold lead", widget: string, required: false, i18n: true }
+          - { name: notice, label: "Notice — body", widget: text, required: false, i18n: true,
+              hint: "States that the projects are concepts. Clear both notice fields to remove the box entirely once the work is real." }
+          - { name: tag_concept, label: "Concept tag text", widget: string, i18n: true }
+          - { name: view, label: "Hover link text", widget: string, i18n: true }
+          - { name: projects_h2, label: Hidden section heading, widget: string, i18n: true }
+          - { name: filter_label, label: Filter group label, widget: string, i18n: true }
+          - name: filters
+            label: Category filters
+            widget: list
+            i18n: true
+            summary: "{{fields.label}} ({{fields.key}})"
+            hint: The Key must match the categories set on each project. Keep "all" first.
+            fields:
+              - { name: key, label: Key, widget: string, i18n: duplicate,
+                  pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'] }
+              - { name: label, label: Label, widget: string, i18n: true }
+          - { name: empty, label: Empty-state text, widget: string, i18n: true }
+          - { name: empty_link, label: Empty-state link, widget: string, i18n: true }
+          - { name: counter_one, label: "Screen-reader count (one)", widget: string, i18n: true }
+          - { name: counter_many, label: "Screen-reader count (many)", widget: string, i18n: true }
+
+          - name: ships
+            label: What ships section
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: aside, label: Supporting note, widget: text, i18n: true }
+              - name: items
+                label: Items
+                widget: list
+                i18n: true
+                fields:
+                  - { name: index, label: Number, widget: string, i18n: true }
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+
+          - name: cta
+            label: Closing call to action
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: body, label: Text, widget: text, i18n: true }
+              - { name: secondary, label: Secondary button, widget: string, i18n: true }
+
+      # ------------------------------------------------------------- contact
+      - name: contact
+        label: Contact page
+        file: content/contact.json
+        icon: mail
+        i18n: true
+        fields:
+          - { name: crumb, label: Breadcrumb, widget: string, i18n: true }
+          - { name: title, label: Page heading, widget: text, i18n: true }
+          - { name: lead, label: Intro paragraph, widget: text, i18n: true }
+          - { name: booking, label: Availability line, widget: string, i18n: true }
+          - { name: booking_note, label: Availability note, widget: text, i18n: true }
+          - { name: form_h2, label: Form heading, widget: string, i18n: true }
+          - { name: submit, label: Submit button, widget: string, i18n: true }
+          - { name: privacy, label: Privacy line, widget: text, i18n: true }
+
+          - name: labels
+            label: Field labels
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: name, label: Name, widget: string, i18n: true }
+              - { name: email, label: Email, widget: string, i18n: true }
+              - { name: company, label: Company, widget: string, i18n: true }
+              - { name: type, label: Project type, widget: string, i18n: true }
+              - { name: budget, label: Budget, widget: string, i18n: true }
+              - { name: details, label: Details, widget: string, i18n: true }
+
+          - name: placeholders
+            label: Field placeholders
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: name, label: Name, widget: string, i18n: true }
+              - { name: email, label: Email, widget: string, i18n: true }
+              - { name: company, label: Company, widget: string, i18n: true }
+              - { name: select, label: Select prompt, widget: string, i18n: true }
+              - { name: details, label: Details, widget: text, i18n: true }
+
+          - name: project_types
+            label: Project type options
+            widget: list
+            i18n: true
+            fields:
+              - { name: text, label: Option, widget: string, i18n: true }
+
+          - name: budgets
+            label: Budget options
+            widget: list
+            i18n: true
+            summary: "{{fields.label}}"
+            fields:
+              - { name: value, label: Stored value, widget: string, i18n: duplicate }
+              - { name: label, label: Label, widget: string, i18n: true }
+
+          - name: messages
+            label: Validation messages
+            widget: object
+            i18n: true
+            collapsed: true
+            hint: Shown by the form's own validation. Keep {name} in the success heading.
+            fields:
+              - { name: required, label: Required field, widget: string, i18n: true }
+              - { name: email_required, label: Email missing, widget: string, i18n: true }
+              - { name: name, label: Name too short, widget: string, i18n: true }
+              - { name: email, label: Email invalid, widget: string, i18n: true }
+              - { name: details, label: Details too short, widget: string, i18n: true }
+              - { name: budget, label: Budget not chosen, widget: string, i18n: true }
+              - { name: error_strong, label: "Error banner — bold", widget: string, i18n: true }
+              - { name: error, label: "Error banner — rest", widget: string, i18n: true }
+              - { name: sending, label: Sending, widget: string, i18n: true }
+              - { name: ok_strong, label: "Success — bold", widget: string, i18n: true }
+              - { name: ok, label: "Success — rest", widget: text, i18n: true }
+
+          - { name: notice_strong, label: "Developer notice — bold", widget: string, required: false, i18n: true }
+          - { name: notice, label: "Developer notice — body", widget: text, required: false, i18n: true,
+              hint: "Says the form has no backend yet. Clear both notice fields to remove the box once it is connected." }
+
+          - name: aside
+            label: Contact details
+            widget: list
+            i18n: true
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: Label, widget: string, i18n: true }
+              - { name: value, label: Value, widget: string, i18n: true }
+              - { name: href, label: Link, widget: string, required: false, i18n: duplicate,
+                  hint: "mailto:… or tel:… — leave empty for plain text" }
+              - { name: note, label: Note, widget: text, i18n: true }
+
+          - { name: next_label, label: "What happens next — label", widget: string, i18n: true }
+          - name: next_steps
+            label: What happens next
+            widget: list
+            i18n: true
+            fields:
+              - { name: text, label: Step, widget: string, i18n: true }
+
+          - name: tips
+            label: Before you write
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: index, label: Index number, widget: string, i18n: true }
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - name: items
+                label: Tips
+                widget: list
+                i18n: true
+                fields:
+                  - { name: index, label: Number, widget: string, i18n: true }
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+
+          - name: cta
+            label: Closing call to action
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: title, label: Heading, widget: text, i18n: true }
+              - { name: body, label: Text, widget: text, i18n: true }
+              - { name: primary, label: Primary button, widget: string, i18n: true }
+              - { name: secondary, label: Secondary button, widget: string, i18n: true }
+
+  # =======================================================================
+  # PROJECTS — one file each, add / remove / reorder freely
+  # =======================================================================
+  - name: projects
+    label: Projects
+    label_singular: Project
+    icon: workspaces
+    folder: content/projects
+    create: true
+    delete: true
+    format: json
+    extension: json
+    slug: "{{fields.slug}}"
+    identifier_field: name
+    summary: "{{fields.order}} — {{fields.name}} ({{fields.year}})"
+    sortable_fields: [order, name, year]
+    i18n: true
+    fields:
+      - { name: order, label: Order, widget: number, value_type: int, min: 1, i18n: false,
+          hint: Controls the position on the Portfolio page and the home list. }
+      - { name: name, label: Project name, widget: string, i18n: false }
+      - { name: slug, label: "Slug (URL anchor)", widget: string, i18n: false,
+          pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'],
+          hint: "Also the filename. Changing it on an existing project renames the file." }
+      - { name: year, label: Year, widget: string, i18n: false }
+      - { name: featured, label: Show on the home page, widget: boolean, default: false, i18n: false,
+          hint: "The home page lists the featured projects, in Order sequence." }
+      - name: categories
+        label: Categories
+        widget: select
+        multiple: true
+        i18n: false
+        hint: Must match the filter keys on the Portfolio page.
+        options: [web-design, ui-ux, ecommerce, wordpress, branding]
+      - { name: image_light, label: Artwork (light theme), widget: image, i18n: false }
+      - { name: image_dark, label: Artwork (dark theme), widget: image, i18n: false }
+      - { name: kind, label: Discipline line, widget: string, i18n: true,
+          hint: "Shown under the name, e.g. Fintech &middot; Producto" }
+      - { name: description, label: Description, widget: text, i18n: true }
+      - name: disciplines
+        label: Tags
+        widget: list
+        i18n: true
+        fields:
+          - { name: text, label: Tag, widget: string, i18n: true }
+
+  # =======================================================================
+  # SHARED CONTENT — reused across several pages
+  # =======================================================================
+  - name: shared
+    label: Shared content
+    icon: dataset
+    i18n: true
+    files:
+      - name: process
+        label: Process steps
+        file: content/process.json
+        icon: timeline
+        i18n: true
+        fields:
+          - name: steps
+            label: Steps
+            hint: Used on both the Home and About pages.
+            widget: list
+            i18n: true
+            summary: "{{fields.index}} — {{fields.title}}"
+            fields:
+              - { name: index, label: Number, widget: string, i18n: true }
+              - { name: title, label: Title, widget: string, i18n: true }
+              - { name: meta, label: Timing, widget: string, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
+
+      - name: capabilities
+        label: Capabilities
+        file: content/capabilities.json
+        icon: build
+        i18n: true
+        fields:
+          - name: items
+            label: Tools
+            hint: The tool grid on the Home and About pages.
+            widget: list
+            i18n: true
+            summary: "{{fields.name}} — {{fields.category}}"
+            fields:
+              - { name: name, label: Name, widget: string, i18n: duplicate }
+              - { name: category, label: Category, widget: string, i18n: true }
+
+      - name: testimonials
+        label: Testimonials
+        file: content/testimonials.json
+        icon: format_quote
+        i18n: true
+        fields:
+          - name: items
+            label: Quotes
+            hint: >-
+              These ship as clearly-marked placeholders. Replace them with
+              real, approved quotes — then clear the "Placeholder badge"
+              field on the Home page so the sample warning disappears.
+            widget: list
+            i18n: true
+            summary: "{{fields.name}}"
+            fields:
+              - { name: quote, label: Quote, widget: text, i18n: true }
+              - { name: name, label: Attribution, widget: string, i18n: true }
+              - { name: role, label: Role / company, widget: string, i18n: true }
+
+  # =======================================================================
+  # SETTINGS — navigation, footer, contact details, SEO
+  # =======================================================================
+  - name: settings
+    label: Settings
+    icon: settings
+    i18n: true
+    files:
+      - name: site
+        label: Navigation, footer & SEO
+        file: content/settings.json
+        icon: tune
+        i18n: true
+        fields:
+          - name: nav
+            label: Main navigation
+            widget: list
+            i18n: true
+            summary: "{{fields.index}} — {{fields.label}}"
+            hint: The page files are fixed; only the labels and order change here.
+            fields:
+              - name: href
+                label: Page
+                widget: select
+                i18n: duplicate
+                options:
+                  - { label: Home, value: index.html }
+                  - { label: About, value: about.html }
+                  - { label: Services, value: services.html }
+                  - { label: Portfolio, value: portfolio.html }
+                  - { label: Contact, value: contact.html }
+              - { name: label, label: Label, widget: string, i18n: true }
+              - { name: index, label: Number, widget: string, i18n: true }
+
+          - name: contact
+            label: Contact details
+            widget: object
+            i18n: duplicate
+            hint: Used in the footer, the drawer and the contact page buttons.
+            fields:
+              - { name: email, label: Email address, widget: string, i18n: duplicate }
+              - { name: phone_display, label: Phone (as shown), widget: string, i18n: duplicate }
+              - { name: phone_href, label: "Phone (tel: link)", widget: string, i18n: duplicate }
+
+          - name: social
+            label: Social links
+            widget: list
+            i18n: duplicate
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: Label, widget: string, i18n: duplicate }
+              - { name: url, label: URL, widget: string, i18n: duplicate }
+
+          - name: footer
+            label: Footer
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: tagline, label: Tagline, widget: text, i18n: true }
+              - { name: available, label: Availability line, widget: string, i18n: true }
+              - { name: pages_title, label: "Column title — pages", widget: string, i18n: true }
+              - { name: services_title, label: "Column title — services", widget: string, i18n: true }
+              - { name: contact_title, label: "Column title — contact", widget: string, i18n: true }
+              - { name: rights, label: Copyright line, widget: string, i18n: true }
+              - { name: hours, label: Opening hours, widget: string, i18n: true }
+              - { name: location, label: Location, widget: string, i18n: true }
+              - name: service_links
+                label: Service links
+                widget: list
+                i18n: true
+                summary: "{{fields.label}}"
+                hint: The Anchor must match a service ID on the Services page.
+                fields:
+                  - { name: anchor, label: Anchor, widget: string, i18n: duplicate }
+                  - { name: label, label: Label, widget: string, i18n: true }
+
+          - name: meta
+            label: Page titles & descriptions
+            widget: object
+            i18n: true
+            collapsed: true
+            hint: >-
+              What search engines and social previews show. Titles work best
+              under about 60 characters, descriptions under about 160.
+            fields:
+              - name: home
+                label: Home
+                widget: object
+                i18n: true
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: description, label: Description, widget: text, i18n: true }
+              - name: about
+                label: About
+                widget: object
+                i18n: true
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: description, label: Description, widget: text, i18n: true }
+              - name: services
+                label: Services
+                widget: object
+                i18n: true
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: description, label: Description, widget: text, i18n: true }
+              - name: portfolio
+                label: Portfolio
+                widget: object
+                i18n: true
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: description, label: Description, widget: text, i18n: true }
+              - name: contact
+                label: Contact
+                widget: object
+                i18n: true
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: description, label: Description, widget: text, i18n: true }
+
+          - name: interface
+            label: Interface strings
+            widget: object
+            i18n: true
+            collapsed: true
+            hint: Buttons, labels and accessibility text used site-wide.
+            fields:
+              - { name: skip, label: Skip link, widget: string, i18n: true }
+              - { name: cta_primary, label: Primary button, widget: string, i18n: true }
+              - { name: cta_secondary, label: Secondary button, widget: string, i18n: true }
+              - { name: menu_open, label: Open menu label, widget: string, i18n: true }
+              - { name: menu_close, label: Close menu label, widget: string, i18n: true }
+              - { name: to_dark, label: Switch to dark, widget: string, i18n: true }
+              - { name: to_light, label: Switch to light, widget: string, i18n: true }
+              - { name: theme_label, label: Theme label, widget: string, i18n: true }
+              - { name: lang_label, label: Language label, widget: string, i18n: true }
+              - { name: loading, label: Loading, widget: string, i18n: true }
+              - { name: breadcrumb_home, label: Breadcrumb home, widget: string, i18n: true }
+              - { name: back_to_top, label: Back to top, widget: string, i18n: true }
+              - { name: next_step, label: "CTA eyebrow", widget: string, i18n: true }
+              - { name: cta_availability, label: "CTA availability", widget: string, i18n: true }
+              - { name: cta_reply, label: "CTA reply time", widget: string, i18n: true }
+              - { name: drawer_cta, label: "Drawer heading", widget: string, i18n: true }
+              - { name: drawer_note, label: "Drawer note", widget: string, i18n: true }

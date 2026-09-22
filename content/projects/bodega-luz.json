@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "E&#8209;commerce &middot; Shopify",
+    "description": "Un tostador de café de especialidad que pasa del puesto de mercado a la tienda. Arquitectura centrada en suscripciones, un checkout reducido a cuatro campos, y páginas de producto que venden el origen tanto como el tueste.",
+    "disciplines": [
+      {
+        "text": "Shopify"
+      },
+      {
+        "text": "UX de E-commerce"
+      },
+      {
+        "text": "Dirección de Fotografía"
+      }
+    ],
+    "order": 5,
+    "slug": "bodega-luz",
+    "name": "Bodega Luz",
+    "year": "2024",
+    "categories": [
+      "ecommerce",
+      "web-design"
+    ],
+    "image_light": "/images/portfolio/bodega-luz.svg",
+    "image_dark": "/images/portfolio/bodega-luz-dark.svg",
+    "featured": true
+  },
+  "en": {
+    "kind": "E&#8209;commerce &middot; Shopify",
+    "description": "A specialty coffee roaster moving from market stall to storefront. Subscription-first architecture, a checkout stripped to four fields, and product pages that sell origin as much as roast.",
+    "disciplines": [
+      {
+        "text": "Shopify"
+      },
+      {
+        "text": "E-commerce UX"
+      },
+      {
+        "text": "Photography Art Direction"
+      }
+    ]
+  }
+}

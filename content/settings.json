@@ -1,0 +1,252 @@
+{
+  "es": {
+    "nav": [
+      {
+        "href": "index.html",
+        "label": "Inicio",
+        "index": "01"
+      },
+      {
+        "href": "about.html",
+        "label": "Estudio",
+        "index": "02"
+      },
+      {
+        "href": "services.html",
+        "label": "Servicios",
+        "index": "03"
+      },
+      {
+        "href": "portfolio.html",
+        "label": "Portafolio",
+        "index": "04"
+      },
+      {
+        "href": "contact.html",
+        "label": "Contacto",
+        "index": "05"
+      }
+    ],
+    "contact": {
+      "email": "hola@webdesignerpr.com",
+      "phone_display": "+1 (787) 555&#8209;0142",
+      "phone_href": "tel:+17875550142"
+    },
+    "social": [
+      {
+        "label": "Instagram",
+        "url": "#"
+      },
+      {
+        "label": "Dribbble",
+        "url": "#"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "#"
+      }
+    ],
+    "footer": {
+      "tagline": "Un estudio independiente de diseño y desarrollo en San Juan, Puerto Rico, que construye sitios web a la medida para marcas que necesitan que las tomen en serio.",
+      "available": "Disponibles para nuevos proyectos",
+      "pages_title": "Páginas",
+      "services_title": "Servicios",
+      "contact_title": "Contacto",
+      "rights": "Todos los derechos reservados.",
+      "hours": "Lun&ndash;Vie, 9:00&ndash;18:00 AST",
+      "location": "San Juan, Puerto Rico",
+      "service_links": [
+        {
+          "anchor": "website-design",
+          "label": "Diseño Web"
+        },
+        {
+          "anchor": "website-development",
+          "label": "Desarrollo"
+        },
+        {
+          "anchor": "wordpress",
+          "label": "WordPress"
+        },
+        {
+          "anchor": "ecommerce",
+          "label": "E-commerce"
+        },
+        {
+          "anchor": "ui-ux",
+          "label": "Diseño UI/UX"
+        },
+        {
+          "anchor": "performance",
+          "label": "Rendimiento"
+        }
+      ]
+    },
+    "meta": {
+      "home": {
+        "title": "WebDesignerPR — Diseño y Desarrollo Web a la Medida",
+        "description": "Estudio independiente de diseño y desarrollo web en San Juan, Puerto Rico. Sitios a la medida, WordPress, e-commerce y UI/UX para marcas que se niegan a ser una más."
+      },
+      "about": {
+        "title": "El Estudio — WebDesignerPR | Diseño Web Independiente, San Juan",
+        "description": "Conoce WebDesignerPR: un estudio independiente de diseño y desarrollo en San Juan, Puerto Rico. Nuestra misión, filosofía de diseño, capacidades y forma de trabajar."
+      },
+      "services": {
+        "title": "Servicios — Diseño Web, Desarrollo, WordPress y E-commerce | WebDesignerPR",
+        "description": "Diseño web a la medida, desarrollo, WordPress, e-commerce, UI/UX, rediseños y optimización de rendimiento desde un estudio independiente en San Juan, Puerto Rico."
+      },
+      "portfolio": {
+        "title": "Portafolio — Proyectos Conceptuales | WebDesignerPR",
+        "description": "Ocho proyectos conceptuales propios que abarcan fintech, hospitalidad, e-commerce, SaaS y organizaciones sin fines de lucro. Diseño y desarrollo web por WebDesignerPR."
+      },
+      "contact": {
+        "title": "Contacto — Iniciar un Proyecto | WebDesignerPR",
+        "description": "Cuéntanos sobre tu proyecto. Diseño y desarrollo web a la medida desde un estudio independiente en San Juan, Puerto Rico. Respondemos en un día hábil."
+      }
+    },
+    "interface": {
+      "skip": "Saltar al contenido",
+      "cta_primary": "Iniciar un proyecto",
+      "cta_secondary": "Ver nuestro trabajo",
+      "menu_open": "Abrir menú",
+      "menu_close": "Cerrar menú",
+      "to_dark": "Cambiar a modo oscuro",
+      "to_light": "Cambiar a modo claro",
+      "theme_label": "Tema",
+      "lang_label": "Idioma",
+      "loading": "Cargando",
+      "breadcrumb_home": "Inicio",
+      "back_to_top": "Volver arriba",
+      "next_step": "Siguiente paso",
+      "cta_availability": "Aceptando proyectos para el próximo trimestre",
+      "cta_reply": "Respondemos en un día hábil",
+      "drawer_cta": "Conversemos",
+      "drawer_note": "San Juan, Puerto Rico &middot; Trabajamos en remoto con todo el mundo"
+    }
+  },
+  "en": {
+    "nav": [
+      {
+        "href": "index.html",
+        "label": "Home",
+        "index": "01"
+      },
+      {
+        "href": "about.html",
+        "label": "About",
+        "index": "02"
+      },
+      {
+        "href": "services.html",
+        "label": "Services",
+        "index": "03"
+      },
+      {
+        "href": "portfolio.html",
+        "label": "Portfolio",
+        "index": "04"
+      },
+      {
+        "href": "contact.html",
+        "label": "Contact",
+        "index": "05"
+      }
+    ],
+    "contact": {
+      "email": "hola@webdesignerpr.com",
+      "phone_display": "+1 (787) 555&#8209;0142",
+      "phone_href": "tel:+17875550142"
+    },
+    "social": [
+      {
+        "label": "Instagram",
+        "url": "#"
+      },
+      {
+        "label": "Dribbble",
+        "url": "#"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "#"
+      }
+    ],
+    "footer": {
+      "tagline": "An independent design and development studio in San Juan, Puerto Rico, building custom websites for brands that need to be taken seriously.",
+      "available": "Available for new work",
+      "pages_title": "Pages",
+      "services_title": "Services",
+      "contact_title": "Contact",
+      "rights": "All rights reserved.",
+      "hours": "Mon&ndash;Fri, 9:00&ndash;18:00 AST",
+      "location": "San Juan, Puerto Rico",
+      "service_links": [
+        {
+          "anchor": "website-design",
+          "label": "Website Design"
+        },
+        {
+          "anchor": "website-development",
+          "label": "Development"
+        },
+        {
+          "anchor": "wordpress",
+          "label": "WordPress"
+        },
+        {
+          "anchor": "ecommerce",
+          "label": "E-commerce"
+        },
+        {
+          "anchor": "ui-ux",
+          "label": "UI/UX Design"
+        },
+        {
+          "anchor": "performance",
+          "label": "Performance"
+        }
+      ]
+    },
+    "meta": {
+      "home": {
+        "title": "WebDesignerPR — Custom Website Design &amp; Development Studio",
+        "description": "An independent web design and development studio in San Juan, Puerto Rico. Custom websites, WordPress, e-commerce and UI/UX for brands that refuse to blend in."
+      },
+      "about": {
+        "title": "About — WebDesignerPR | Independent Web Design Studio, San Juan",
+        "description": "Meet WebDesignerPR: an independent design and development studio in San Juan, Puerto Rico. Our mission, design philosophy, capabilities and how we work."
+      },
+      "services": {
+        "title": "Services — Web Design, Development, WordPress &amp; E-commerce | WebDesignerPR",
+        "description": "Custom website design, development, WordPress, e-commerce, UI/UX, redesigns and performance optimisation from an independent studio in San Juan, Puerto Rico."
+      },
+      "portfolio": {
+        "title": "Portfolio — Concept Projects | WebDesignerPR",
+        "description": "Eight self-initiated concept projects spanning fintech, hospitality, e-commerce, SaaS and nonprofit work. Custom web design and development by WebDesignerPR."
+      },
+      "contact": {
+        "title": "Contact — Start a Project | WebDesignerPR",
+        "description": "Tell us about your project. Custom web design and development from an independent studio in San Juan, Puerto Rico. Replies within one business day."
+      }
+    },
+    "interface": {
+      "skip": "Skip to content",
+      "cta_primary": "Start a project",
+      "cta_secondary": "Explore our work",
+      "menu_open": "Open menu",
+      "menu_close": "Close menu",
+      "to_dark": "Switch to dark theme",
+      "to_light": "Switch to light theme",
+      "theme_label": "Theme",
+      "lang_label": "Language",
+      "loading": "Loading",
+      "breadcrumb_home": "Home",
+      "back_to_top": "Back to top",
+      "next_step": "Next step",
+      "cta_availability": "Taking on projects for the next quarter",
+      "cta_reply": "Replies within one business day",
+      "drawer_cta": "Start a conversation",
+      "drawer_note": "San Juan, Puerto Rico &middot; Working remotely worldwide"
+    }
+  }
+}

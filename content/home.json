@@ -1,0 +1,294 @@
+{
+  "es": {
+    "eyebrow": "Estudio de diseño digital &mdash; San Juan, Puerto Rico",
+    "hero_lines": [
+      {
+        "text": "Diseño y código"
+      },
+      {
+        "text": "para marcas que se niegan"
+      },
+      {
+        "text": "a <em class=\"italic accent-text\">ser una más</em>."
+      }
+    ],
+    "hero_lead": "Somos un estudio pequeño que construye sitios web a la medida para empresas que tratan su sitio como su vitrina más importante &mdash; estrategia, diseño e ingeniería bajo un mismo techo, sin traspasos y sin plantillas.",
+    "scroll": "Desplázate para comenzar",
+    "marquee": [
+      {
+        "text": "Diseño Web"
+      },
+      {
+        "text": "<em>Desarrollo</em>"
+      },
+      {
+        "text": "E&#8209;commerce"
+      },
+      {
+        "text": "<em>UI / UX</em>"
+      },
+      {
+        "text": "WordPress"
+      },
+      {
+        "text": "<em>Rendimiento</em>"
+      }
+    ],
+    "studio": {
+      "index": "01",
+      "eyebrow": "El estudio",
+      "title": "Un sitio web es el único empleado que trabaja todas las horas del año. <em class=\"italic accent-text\">Los nuestros están bien entrenados.</em>",
+      "image_light": "/images/hero/studio.svg",
+      "image_dark": "/images/hero/studio-dark.svg",
+      "image_alt": "Ilustración abstracta de ventanas de navegador superpuestas que representa el método de trabajo del estudio.",
+      "paragraphs": [
+        {
+          "text": "<strong>WebDesignerPR es un estudio independiente en San Juan.</strong> Trabajamos con fundadores, líderes de mercadeo y operadores que ya se quedaron cortos con el sitio con el que empezaron &mdash; y que saben que el próximo tiene que trabajar de verdad."
+        },
+        {
+          "text": "Todo se construye desde un archivo en blanco. Sin temas comprados, sin constructores de páginas, sin quince plugins sosteniendo el diseño. Eso toma más tiempo al principio y es la razón por la que nuestros sitios siguen siendo rápidos tres años después."
+        },
+        {
+          "text": "Somos pequeños a propósito. La persona que diseña tu sitio es la que lo construye y la que contesta tu correo en el segundo año."
+        }
+      ],
+      "link": "Más sobre el estudio",
+      "standards_label": "Lo que nos exigimos",
+      "stats": [
+        {
+          "value": "95",
+          "suffix": "+",
+          "label": "Puntuación mínima de rendimiento en Lighthouse con la que publicamos, medida en móvil."
+        },
+        {
+          "value": "1.5",
+          "suffix": "s",
+          "label": "Largest Contentful Paint objetivo en un teléfono de gama media sobre 4G."
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Código front-end a la medida. Cero temas, cero constructores de páginas, nunca."
+        },
+        {
+          "value": "",
+          "suffix": "",
+          "label": "Conformidad WCAG 2.2 nivel AA como base en cada proyecto, no como extra."
+        }
+      ],
+      "stat_static": "AA"
+    },
+    "work": {
+      "index": "02",
+      "eyebrow": "Trabajo seleccionado",
+      "title": "Proyectos <em class=\"italic\">conceptuales</em> recientes.",
+      "aside": "Cada pieza es un concepto de autoría propia creado para demostrar rango entre industrias y plataformas. Están etiquetadas como tal en todo el sitio &mdash; no presentamos trabajo exploratorio como trabajo de clientes.",
+      "button": "Ver los ocho proyectos"
+    },
+    "services": {
+      "index": "03",
+      "eyebrow": "Lo que hacemos",
+      "title": "Siete cosas, <em class=\"italic\">bien hechas</em>.",
+      "aside": "Preferimos ser genuinamente excelentes en una lista corta que aceptables en todo. Si tu proyecto necesita algo fuera de esta lista, te lo diremos y te referiremos a alguien bueno.",
+      "card_title": "¿No sabes cuál necesitas?",
+      "card_text": "La mayoría de los proyectos son una mezcla. Cuéntanos el problema y definimos la ruta más corta para resolverlo.",
+      "card_cta": "Conversemos",
+      "detail_link": "Detalles"
+    },
+    "why": {
+      "index": "04",
+      "eyebrow": "Por qué elegirnos",
+      "title": "La parte que la mayoría de los estudios <em class=\"italic\">omite</em>.",
+      "items": [
+        {
+          "index": "01",
+          "title": "Un solo equipo, de la primera llamada al tercer año",
+          "text": "Sin ejecutivo de cuentas transmitiendo mensajes a un diseñador que se los transmite a un programador. Hablas con quien hace el trabajo, y por eso los briefs sobreviven el contacto con la producción."
+        },
+        {
+          "index": "02",
+          "title": "El rendimiento es una restricción de diseño",
+          "text": "Fijamos un presupuesto de peso de página en la primera semana y diseñamos dentro de él. Animación, imágenes y tipografía se miden contra ese límite. Un sitio hermoso que tarda seis segundos en cargar es un sitio roto."
+        },
+        {
+          "index": "03",
+          "title": "Todos los archivos son tuyos",
+          "text": "Código, archivos de diseño, dominio, hosting, analítica &mdash; todo en tus cuentas, a tu nombre. No hay plataforma propietaria reteniendo tu sitio ni cargo de salida."
+        },
+        {
+          "index": "04",
+          "title": "Hecho para que lo editen personas",
+          "text": "Tu equipo necesitará cambiar cosas sin llamarnos. Cada proyecto con CMS incluye un manual escrito y una grabación del recorrido, para que el sitio se mantenga vigente después de entregar las llaves."
+        }
+      ]
+    },
+    "process": {
+      "index": "05",
+      "eyebrow": "Cómo trabajamos",
+      "title": "Seis etapas. <em class=\"italic\">Ocho semanas, típicamente.</em>",
+      "aside": "Cada etapa termina con algo que puedes ver y aprobar, así que nunca hay un mes en el que te preguntes qué está pasando."
+    },
+    "testimonials": {
+      "index": "06",
+      "eyebrow": "En sus palabras",
+      "title": "Lo que dicen los clientes <em class=\"italic\">después</em>.",
+      "sample_note": "Diseño de muestra &mdash; sustituir por testimonios verificados"
+    },
+    "capabilities": {
+      "index": "07",
+      "eyebrow": "Capacidades",
+      "title": "Las herramientas, <em class=\"italic\">y por qué son pocas</em>.",
+      "aside": "Mantenemos el stack deliberadamente estrecho. Pocas herramientas, entendidas a fondo, superan a una lista larga que tendríamos que reaprender con tu presupuesto."
+    },
+    "cta": {
+      "title": "Construyamos el sitio que tu negocio <em>de verdad merece</em>.",
+      "body": "Cuéntanos en qué estás trabajando. Recibirás una respuesta pensada de la persona que dirigiría el proyecto &mdash; no una cotización de plantilla ni un enlace a un calendario."
+    }
+  },
+  "en": {
+    "eyebrow": "Digital design studio &mdash; San Juan, Puerto Rico",
+    "hero_lines": [
+      {
+        "text": "Design and code"
+      },
+      {
+        "text": "for brands that"
+      },
+      {
+        "text": "refuse to <em class=\"italic accent-text\">blend in</em>."
+      }
+    ],
+    "hero_lead": "We are a small studio building custom websites for companies that treat their site as their most important storefront &mdash; strategy, design and engineering under one roof, with no handoffs and no templates.",
+    "scroll": "Scroll to begin",
+    "marquee": [
+      {
+        "text": "Website Design"
+      },
+      {
+        "text": "<em>Development</em>"
+      },
+      {
+        "text": "E&#8209;commerce"
+      },
+      {
+        "text": "<em>UI / UX</em>"
+      },
+      {
+        "text": "WordPress"
+      },
+      {
+        "text": "<em>Performance</em>"
+      }
+    ],
+    "studio": {
+      "index": "01",
+      "eyebrow": "The studio",
+      "title": "A website is the only employee that works every hour of the year. <em class=\"italic accent-text\">Ours are trained properly.</em>",
+      "image_light": "/images/hero/studio.svg",
+      "image_dark": "/images/hero/studio-dark.svg",
+      "image_alt": "Abstract illustration of layered browser windows representing the studio's build process.",
+      "paragraphs": [
+        {
+          "text": "<strong>WebDesignerPR is an independent studio in San Juan.</strong> We work with founders, marketing leads and operators who have outgrown the site they started with &mdash; and who know that the next one has to do real work."
+        },
+        {
+          "text": "Everything is built from a blank file. No purchased themes, no page builders, no fifteen plugins holding the layout together. That takes longer up front and it is the reason our sites are still fast three years later."
+        },
+        {
+          "text": "We are deliberately small. The person who designs your site is the person who builds it and the person who answers your email in year two."
+        }
+      ],
+      "link": "More about the studio",
+      "standards_label": "What we hold ourselves to",
+      "stats": [
+        {
+          "value": "95",
+          "suffix": "+",
+          "label": "Minimum Lighthouse performance score we ship against, tested on mobile."
+        },
+        {
+          "value": "1.5",
+          "suffix": "s",
+          "label": "Target Largest Contentful Paint on a mid-tier phone over 4G."
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Custom front-end code. Zero themes, zero page builders, ever."
+        },
+        {
+          "value": "",
+          "suffix": "",
+          "label": "WCAG 2.2 conformance is the baseline on every build, not an upgrade."
+        }
+      ],
+      "stat_static": "AA"
+    },
+    "work": {
+      "index": "02",
+      "eyebrow": "Selected work",
+      "title": "Recent <em class=\"italic\">concept</em> projects.",
+      "aside": "Each piece below is a self-initiated concept built to demonstrate range across industries and platforms. They are labelled as such throughout &mdash; we do not present exploratory work as client work.",
+      "button": "See all eight projects"
+    },
+    "services": {
+      "index": "03",
+      "eyebrow": "What we do",
+      "title": "Seven things, <em class=\"italic\">done properly</em>.",
+      "aside": "We would rather be genuinely excellent at a short list than adequate at everything. If a project needs something outside this list, we will tell you and point you somewhere good.",
+      "card_title": "Not sure which you need?",
+      "card_text": "Most projects are a blend. Tell us the problem and we will scope the shortest route to solving it.",
+      "card_cta": "Talk it through",
+      "detail_link": "Details"
+    },
+    "why": {
+      "index": "04",
+      "eyebrow": "Why choose us",
+      "title": "The part most studios <em class=\"italic\">leave out</em>.",
+      "items": [
+        {
+          "index": "01",
+          "title": "One team, from first call to year three",
+          "text": "No account manager relaying messages to a designer who relays them to a developer. You talk to the people doing the work, which is why briefs survive contact with production."
+        },
+        {
+          "index": "02",
+          "title": "Performance is a design constraint",
+          "text": "We set a page-weight budget in week one and design inside it. Animation, imagery and type all get measured against it. A beautiful site that takes six seconds to load is a broken site."
+        },
+        {
+          "index": "03",
+          "title": "You own every file",
+          "text": "Code, design source, domain, hosting, analytics &mdash; all in your accounts, in your name. There is no proprietary platform holding your site hostage and no exit fee."
+        },
+        {
+          "index": "04",
+          "title": "Built to be edited by humans",
+          "text": "Your team will need to change things without calling us. Every CMS build ships with a written handbook and a walkthrough recording, so the site stays current after we hand over the keys."
+        }
+      ]
+    },
+    "process": {
+      "index": "05",
+      "eyebrow": "How we work",
+      "title": "Six stages. <em class=\"italic\">Eight weeks, typically.</em>",
+      "aside": "Every stage ends with something you can see and approve, so there is never a month where you wonder what is happening."
+    },
+    "testimonials": {
+      "index": "06",
+      "eyebrow": "In their words",
+      "title": "What clients <em class=\"italic\">say afterwards</em>.",
+      "sample_note": "Sample layout &mdash; replace with verified client quotes"
+    },
+    "capabilities": {
+      "index": "07",
+      "eyebrow": "Capabilities",
+      "title": "The toolkit, <em class=\"italic\">and why it is short</em>.",
+      "aside": "We keep the stack deliberately narrow. Fewer tools, understood deeply, beats a long list we would have to relearn on your budget."
+    },
+    "cta": {
+      "title": "Let us build the site your business <em>actually deserves</em>.",
+      "body": "Tell us what you are working on. You will get a considered reply from the person who would run the project &mdash; not a templated quote and not a calendar link."
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "Sin Fines de Lucro &middot; Plataforma",
+    "description": "Una organización de defensa de vivienda que atiende a tres grupos lingüísticos. Una biblioteca de recursos que funciona en un Android de cinco años con señal débil, porque esa es justamente la gente que más la necesita.",
+    "disciplines": [
+      {
+        "text": "Accesibilidad"
+      },
+      {
+        "text": "WordPress"
+      },
+      {
+        "text": "Estrategia de Contenido"
+      }
+    ],
+    "order": 7,
+    "slug": "puerta",
+    "name": "Puerta",
+    "year": "2025",
+    "categories": [
+      "wordpress",
+      "web-design"
+    ],
+    "image_light": "/images/portfolio/puerta.svg",
+    "image_dark": "/images/portfolio/puerta-dark.svg",
+    "featured": false
+  },
+  "en": {
+    "kind": "Nonprofit &middot; Platform",
+    "description": "A housing advocacy nonprofit serving three language groups. A resource library that works on a five-year-old Android over a weak signal, because that is who needs it most.",
+    "disciplines": [
+      {
+        "text": "Accessibility"
+      },
+      {
+        "text": "WordPress"
+      },
+      {
+        "text": "Content Strategy"
+      }
+    ]
+  }
+}

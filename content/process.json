@@ -1,0 +1,82 @@
+{
+  "es": {
+    "steps": [
+      {
+        "index": "01",
+        "title": "Descubrimiento",
+        "meta": "Semana 1",
+        "text": "Aprendemos tu negocio antes de abrir una herramienta de diseño. Metas, márgenes, competencia, las objeciones que tu equipo de ventas escucha cada semana. Sales de esta etapa con un brief escrito que podrías entregarle a cualquier estudio."
+      },
+      {
+        "index": "02",
+        "title": "Arquitectura",
+        "meta": "Semana 1&ndash;2",
+        "text": "Mapa del sitio, mapa de contenido página por página, y la única decisión que cada página existe para apoyar. La estructura se resuelve aquí, en cajas grises baratas, en vez de tres semanas después en diseño terminado y caro."
+      },
+      {
+        "index": "03",
+        "title": "Diseño",
+        "meta": "Semana 2&ndash;4",
+        "text": "Primero la dirección, luego páginas completas con tu texto real. Dos rondas de revisión están incluidas en el calendario, y apruebas un prototipo que puedes navegar en tu propio teléfono."
+      },
+      {
+        "index": "04",
+        "title": "Construcción",
+        "meta": "Semana 4&ndash;7",
+        "text": "Front-end escrito a mano, integración del CMS, y la capa de animación ajustada contra un presupuesto de rendimiento. Recibes un enlace de staging desde la primera semana y ves cómo se arma."
+      },
+      {
+        "index": "05",
+        "title": "Lanzamiento",
+        "meta": "Semana 7&ndash;8",
+        "text": "QA entre navegadores, revisión de accesibilidad, mapa de redirecciones, analítica, sitemap y un cambio ensayado. Lanzamos a media semana, por la mañana, con todos disponibles &mdash; nunca un viernes por la tarde."
+      },
+      {
+        "index": "06",
+        "title": "Iteración",
+        "meta": "Continuo",
+        "text": "Treinta días de monitoreo incluidos. Después de eso revisamos los números juntos cada trimestre y decidimos qué cambiar &mdash; un sitio web es un activo que se mantiene, no un proyecto que se termina."
+      }
+    ]
+  },
+  "en": {
+    "steps": [
+      {
+        "index": "01",
+        "title": "Discovery",
+        "meta": "Week 1",
+        "text": "We learn your business before we open a design tool. Goals, margins, competitors, the objections your sales team hears every week. You leave this stage with a written brief you could hand to any studio."
+      },
+      {
+        "index": "02",
+        "title": "Architecture",
+        "meta": "Week 1&ndash;2",
+        "text": "Sitemap, page-by-page content map, and the single decision each page exists to support. Structure is settled here, in cheap grey boxes, rather than three weeks later in expensive finished design."
+      },
+      {
+        "index": "03",
+        "title": "Design",
+        "meta": "Week 2&ndash;4",
+        "text": "Direction first, then full pages with your real copy. Two rounds of revision are built into the schedule, and you sign off on a prototype you can click through on your own phone."
+      },
+      {
+        "index": "04",
+        "title": "Build",
+        "meta": "Week 4&ndash;7",
+        "text": "Hand-written front-end, CMS integration, and the animation layer tuned against a performance budget. You get a staging link from the first week of build and watch it come together."
+      },
+      {
+        "index": "05",
+        "title": "Launch",
+        "meta": "Week 7&ndash;8",
+        "text": "Cross-browser QA, accessibility pass, redirect map, analytics, sitemap and a rehearsed cutover. We launch mid-week, in the morning, with everyone available &mdash; never on a Friday afternoon."
+      },
+      {
+        "index": "06",
+        "title": "Iterate",
+        "meta": "Ongoing",
+        "text": "Thirty days of monitoring included. After that we look at the numbers together each quarter and decide what to change &mdash; a website is an asset to maintain, not a project to finish."
+      }
+    ]
+  }
+}

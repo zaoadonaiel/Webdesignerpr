@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "Marca &middot; Sistema de Identidad",
+    "description": "Una firma de estudios ambientales con datos hermosos y ninguna forma de mostrarlos. Identidad, lenguaje visual de curvas de nivel, y un sitio que hace que los informes de suelo valgan la pena leer.",
+    "disciplines": [
+      {
+        "text": "Identidad"
+      },
+      {
+        "text": "Visualización de Datos"
+      },
+      {
+        "text": "Diseño Web"
+      }
+    ],
+    "order": 6,
+    "slug": "atlas-field",
+    "name": "Atlas Field",
+    "year": "2024",
+    "categories": [
+      "branding",
+      "ui-ux"
+    ],
+    "image_light": "/images/portfolio/atlas-field.svg",
+    "image_dark": "/images/portfolio/atlas-field-dark.svg",
+    "featured": false
+  },
+  "en": {
+    "kind": "Brand &middot; Identity System",
+    "description": "An environmental survey firm with beautiful data and no way to show it. Identity, contour-map visual language, and a site that makes soil reports genuinely worth reading.",
+    "disciplines": [
+      {
+        "text": "Identity"
+      },
+      {
+        "text": "Data Visualisation"
+      },
+      {
+        "text": "Web Design"
+      }
+    ]
+  }
+}

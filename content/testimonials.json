@@ -1,0 +1,40 @@
+{
+  "es": {
+    "items": [
+      {
+        "quote": "Rechazaron la mitad de lo que pedimos, y tenían razón todas las veces.",
+        "name": "Nombre del cliente",
+        "role": "Contenido de muestra &mdash; sustituir"
+      },
+      {
+        "quote": "Fue la primera entrega en la que nuestro equipo no tuvo que llamar a nadie después.",
+        "name": "Nombre del cliente",
+        "role": "Contenido de muestra &mdash; sustituir"
+      },
+      {
+        "quote": "Nuestra página más lenta ahora carga más rápido que nuestra antigua portada.",
+        "name": "Nombre del cliente",
+        "role": "Contenido de muestra &mdash; sustituir"
+      }
+    ]
+  },
+  "en": {
+    "items": [
+      {
+        "quote": "They pushed back on half of what we asked for, and they were right every time.",
+        "name": "Client name",
+        "role": "Sample content &mdash; replace"
+      },
+      {
+        "quote": "The handover was the first one where our team didn&rsquo;t need to call anybody afterwards.",
+        "name": "Client name",
+        "role": "Sample content &mdash; replace"
+      },
+      {
+        "quote": "Our slowest page now loads faster than our old homepage did.",
+        "name": "Client name",
+        "role": "Sample content &mdash; replace"
+      }
+    ]
+  }
+}

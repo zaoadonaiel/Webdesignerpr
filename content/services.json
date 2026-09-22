@@ -1,0 +1,552 @@
+{
+  "es": {
+    "crumb": "Servicios",
+    "title": "Siete servicios. <em class=\"italic accent-text\">Un solo estándar.</em>",
+    "lead": "Ya sea un sitio de cinco páginas o una tienda con volumen serio, aplican las mismas reglas: construido desde cero, presupuestado para la velocidad, accesible por defecto, y tuyo para quedártelo.",
+    "meta_a": "Los proyectos arrancan en ocho semanas",
+    "meta_b": "Alcance fijo, precio fijo, pagos por etapas. Tendrás el número completo antes de empezar &mdash; no trabajamos por hora.",
+    "expand": "Despliega cualquier servicio para ver el detalle",
+    "detail": "Detalle",
+    "included": "Incluye",
+    "enquire": "Consultar sobre esto",
+    "items": [
+      {
+        "id": "website-design",
+        "index": "01",
+        "title": "Diseño Web a la Medida",
+        "summary": "Un sitio diseñado alrededor de tu negocio, dibujado desde un archivo en blanco &mdash; nunca un tema con tu logo encima.",
+        "body": "Empezamos con tu posicionamiento, tu competencia y la decisión que tu visitante realmente está tratando de tomar. Luego diseñamos el camino honesto más corto hacia ella. Ves maquetas reales con contenido real, no lorem ipsum en una caja gris, y apruebas la dirección antes de que se escriba una sola línea de código de producción.",
+        "deliverables": [
+          {
+            "text": "Taller de descubrimiento y auditoría competitiva"
+          },
+          {
+            "text": "Arquitectura del sitio y mapa de contenido"
+          },
+          {
+            "text": "Diseños completos para escritorio, tableta y móvil"
+          },
+          {
+            "text": "Sistema de tipografía, color y componentes"
+          },
+          {
+            "text": "Prototipo interactivo para aprobación"
+          }
+        ]
+      },
+      {
+        "id": "website-development",
+        "index": "02",
+        "title": "Desarrollo Web",
+        "summary": "HTML, CSS y JavaScript escritos a mano. Rápido por construcción, no por plugin.",
+        "body": "Marcado semántico, una hoja de estilos guiada por componentes y justo el JavaScript necesario para hacer el trabajo. Presupuestamos el rendimiento igual que el diseño: cada kilobyte tiene que ganarse su lugar. El resultado carga rápido en un teléfono de gama media con datos móviles, que es donde realmente vive la mayoría de tu tráfico.",
+        "deliverables": [
+          {
+            "text": "HTML5 semántico y accesible"
+          },
+          {
+            "text": "CSS por componentes con design tokens"
+          },
+          {
+            "text": "JavaScript nativo &mdash; sin impuesto de framework"
+          },
+          {
+            "text": "QA entre navegadores y dispositivos"
+          },
+          {
+            "text": "Despliegue, DNS y SSL resueltos"
+          }
+        ]
+      },
+      {
+        "id": "wordpress",
+        "index": "03",
+        "title": "Desarrollo WordPress",
+        "summary": "Temas a la medida y patrones de bloques que tu equipo puede editar sin romper el diseño.",
+        "body": "Construimos WordPress como fue pensado: un tema a la medida, bloques hechos a propósito y una experiencia de edición que guía a tu equipo en vez de entregarle mil ajustes. Sin el peso de los constructores de páginas, sin cadenas de treinta plugins, sin pavor cuando llega una actualización del núcleo.",
+        "deliverables": [
+          {
+            "text": "Tema a la medida &mdash; sin constructores de páginas"
+          },
+          {
+            "text": "Bloques y patrones Gutenberg propios"
+          },
+          {
+            "text": "Capacitación del editor y manual escrito"
+          },
+          {
+            "text": "Endurecimiento de seguridad y respaldos"
+          },
+          {
+            "text": "Plan de mantenimiento opcional"
+          }
+        ]
+      },
+      {
+        "id": "ecommerce",
+        "index": "04",
+        "title": "Desarrollo E-commerce",
+        "summary": "Tiendas Shopify y WooCommerce diseñadas alrededor del checkout, no de la portada.",
+        "body": "La mayoría de las tiendas pierde dinero entre la página de producto y la pantalla de pago. Diseñamos ese tramo primero &mdash; selección de variantes, claridad de envío, señales de confianza, checkout como invitado &mdash; y luego construimos el resto de la tienda para alimentarlo. La analítica y el seguimiento de eventos se conectan desde el día uno para que veas exactamente dónde están las fugas.",
+        "deliverables": [
+          {
+            "text": "Proyecto en Shopify o WooCommerce"
+          },
+          {
+            "text": "UX de producto y carrito enfocado en conversión"
+          },
+          {
+            "text": "Suscripciones e integraciones de pago"
+          },
+          {
+            "text": "Inventario, envíos e impuestos configurados"
+          },
+          {
+            "text": "Analítica y seguimiento del embudo"
+          }
+        ]
+      },
+      {
+        "id": "ui-ux",
+        "index": "05",
+        "title": "Diseño UI / UX",
+        "summary": "Investigación, flujos, wireframes y sistemas de interfaz para productos que deben usarse, no solo visitarse.",
+        "body": "Para apps, dashboards y cualquier cosa con inicio de sesión. Mapeamos las tareas para las que tus usuarios contratan el producto, prototipamos temprano las partes riesgosas y probamos antes de que llegue la factura de ingeniería. Recibes una biblioteca de componentes documentada contra la cual tus desarrolladores pueden construir sin adivinar.",
+        "deliverables": [
+          {
+            "text": "Investigación de usuarios y mapa de recorrido"
+          },
+          {
+            "text": "Arquitectura de información y flujos"
+          },
+          {
+            "text": "Wireframes y prototipos navegables"
+          },
+          {
+            "text": "Sistema de diseño con documentación de uso"
+          },
+          {
+            "text": "Pruebas de usabilidad e iteración"
+          }
+        ]
+      },
+      {
+        "id": "redesign",
+        "index": "06",
+        "title": "Rediseño Web",
+        "summary": "Una reconstrucción que conserva el posicionamiento, el valor del contenido y lo que ya estaba funcionando.",
+        "body": "Los rediseños fallan cuando se descarta lo que ya rendía. Auditamos analítica, desempeño de búsqueda y mapas de calor antes de tocar el diseño, así sabemos qué páginas proteger. El mapa de redirecciones, la migración de metadatos y un lanzamiento por etapas hacen que el tráfico se venga contigo.",
+        "deliverables": [
+          {
+            "text": "Auditoría de analítica, SEO y contenido"
+          },
+          {
+            "text": "Mapa completo de redirecciones y migración de metadatos"
+          },
+          {
+            "text": "Plan de lanzamiento por fases o de corte único"
+          },
+          {
+            "text": "Informe de rendimiento antes y después"
+          },
+          {
+            "text": "Monitoreo posterior al lanzamiento por 30 días"
+          }
+        ]
+      },
+      {
+        "id": "performance",
+        "index": "07",
+        "title": "Optimización de Rendimiento",
+        "summary": "Trabajo de Core Web Vitals sobre sitios que ya tienes &mdash; medido antes, medido después.",
+        "body": "Perfilamos el sitio real en hardware real, no una puntuación de laboratorio con fibra óptica. Recursos que bloquean el render, imágenes sobredimensionadas, desplazamiento de diseño, scripts de terceros que nadie recuerda haber añadido. Recibes una lista priorizada con el costo y la ganancia esperada de cada arreglo, y luego hacemos el trabajo.",
+        "deliverables": [
+          {
+            "text": "Auditoría de rendimiento de campo y laboratorio"
+          },
+          {
+            "text": "Optimización de imágenes, fuentes y recursos"
+          },
+          {
+            "text": "Limpieza de la ruta de render y de scripts"
+          },
+          {
+            "text": "Configuración de caché y CDN"
+          },
+          {
+            "text": "Informe de Core Web Vitals antes/después"
+          }
+        ]
+      }
+    ],
+    "engagements": {
+      "index": "03",
+      "eyebrow": "Modalidades",
+      "title": "Tres formas de <em class=\"italic\">trabajar con nosotros</em>.",
+      "aside": "La mayoría empieza con un proyecto y pasa a un plan de mantenimiento después. Los sprints son para equipos que necesitan resolver un problema específico rápido.",
+      "items": [
+        {
+          "kicker": "01 &middot; Lo más común",
+          "title": "Proyecto completo",
+          "text": "De descubrimiento a lanzamiento, alcance y precio fijos. Ocho semanas típicas, doce para comercio y proyectos multiidioma. Pago en tres etapas atadas a aprobaciones, nunca al tiempo invertido.",
+          "link": "Cotizar un proyecto"
+        },
+        {
+          "kicker": "02",
+          "title": "Sprint enfocado",
+          "text": "Dos semanas sobre un solo problema: un checkout que gotea, una landing que tiene que salir, una falla de Core Web Vitals, un sistema de diseño para que tus desarrolladores construyan encima. Precio plano, alcance definido en una llamada.",
+          "link": "Reservar un sprint"
+        },
+        {
+          "kicker": "03",
+          "title": "Plan de mantenimiento",
+          "text": "Retainer mensual para sitios que construimos: actualizaciones, respaldos, monitoreo de disponibilidad y seguridad, un bloque fijo de cambios, y una revisión trimestral de rendimiento con recomendaciones reales.",
+          "link": "Preguntar por el plan"
+        }
+      ]
+    },
+    "performance": {
+      "label": "Velocidad, específicamente",
+      "title": "Rápido no es un toque final. <em class=\"italic accent-text\">Es el método de construcción.</em>",
+      "alt": "Gráfico de línea que ilustra la mejora de Core Web Vitals tras el trabajo de optimización.",
+      "link": "Servicio de rendimiento",
+      "paragraphs": [
+        {
+          "text": "Fijamos un presupuesto de peso de página durante el diseño y medimos cada decisión contra él. Las fuentes se subdividen, las imágenes se dimensionan y cargan de forma diferida, el JavaScript se escribe en vez de instalarse, y la capa de animación se perfila en hardware real."
+        },
+        {
+          "text": "Cuando tomamos un proyecto de optimización sobre un sitio que no construimos, recibes una lista priorizada con el costo estimado y la ganancia esperada de cada arreglo, para que decidas qué vale la pena antes de empezar."
+        }
+      ],
+      "image_light": "/images/services/performance.svg",
+      "image_dark": "/images/services/performance-dark.svg"
+    },
+    "commerce": {
+      "label": "Comercio, específicamente",
+      "title": "Diseñamos el checkout primero, <em class=\"italic accent-text\">y luego el resto de la tienda</em>.",
+      "alt": "Tarjetas de producto abstractas que representan la maqueta de una tienda en línea.",
+      "link": "Servicio de e-commerce",
+      "paragraphs": [
+        {
+          "text": "El tramo entre una página de producto y un pago completado es donde las tiendas pierden más dinero y reciben menos atención de diseño. Empezamos ahí &mdash; selección de variantes, claridad de entrega, checkout como invitado, el momento exacto en que aparece el costo de envío &mdash; y luego construimos el catálogo para alimentarlo."
+        },
+        {
+          "text": "El seguimiento de eventos entra desde el primer commit, así que a las dos semanas del lanzamiento puedes ver exactamente en qué paso abandona la gente."
+        }
+      ],
+      "image_light": "/images/services/commerce.svg",
+      "image_dark": "/images/services/commerce-dark.svg"
+    },
+    "faq": {
+      "index": "06",
+      "eyebrow": "Preguntas",
+      "title": "Lo que la gente <em class=\"italic\">pregunta primero</em>.",
+      "items": [
+        {
+          "question": "¿Cuánto cuesta un proyecto?",
+          "answer": "Un sitio de marketing a la medida de ocho a doce páginas normalmente cae en cinco cifras medias; los proyectos de comercio y multiidioma van más arriba. Cotizamos precio fijo después de una llamada de alcance y un brief escrito, así que el número que apruebas es el que pagas. Si tu presupuesto está por debajo del rango, dilo en tu consulta &mdash; te diremos con honestidad si podemos ayudarte o te recomendaremos a alguien que pueda."
+        },
+        {
+          "question": "¿Cuánto tiempo toma?",
+          "answer": "Ocho semanas es lo típico para un proyecto completo a la medida, del arranque al lanzamiento. Los proyectos de comercio y los sitios que necesitan varios idiomas toman de diez a doce. La variable más grande es qué tan rápido regresan el contenido y los comentarios de tu lado, y por eso el calendario nombra tus fechas con la misma claridad que las nuestras."
+        },
+        {
+          "question": "¿Tengo que proveer el contenido?",
+          "answer": "Tú provees la materia prima y el conocimiento del tema. Nosotros lo estructuramos, lo editamos para la web y escribimos el texto de enlace donde falte. Si necesitas redacción completa, traemos a una escritora con quien llevamos años trabajando e incluimos el costo en la cotización desde el inicio."
+        },
+        {
+          "question": "¿Mi equipo podrá actualizar el sitio después?",
+          "answer": "Sí, y diseñamos para eso. Los proyectos con CMS incluyen bloques hechos a propósito que no se pueden acomodar en algo roto, más un manual escrito y una grabación del recorrido para tu equipo. La mayoría de los clientes edita con confianza en un día."
+        },
+        {
+          "question": "¿Trabajan con clientes fuera de Puerto Rico?",
+          "answer": "La mayor parte de nuestro trabajo es remoto, a través de Estados Unidos continental, el Caribe y Europa. Mantenemos dos horas de solapamiento con tu jornada y corremos reuniones programadas en vez de llamadas improvisadas, lo cual suele convenir mejor a equipos distribuidos de todos modos."
+        },
+        {
+          "question": "¿Qué pasa después del lanzamiento?",
+          "answer": "Treinta días de monitoreo y arreglos vienen incluidos con cada proyecto. Después de eso puedes llevar el sitio completamente en casa &mdash; todo es tuyo &mdash; o pasar a un plan de mantenimiento con actualizaciones, seguridad y una revisión trimestral de cómo está rindiendo el sitio de verdad."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Dinos qué <em>no está funcionando</em> y definimos el arreglo.",
+      "body": "Una llamada, sin costo, sin presentación de ventas. Saldrás sabiendo aproximadamente qué implica el trabajo, cuánto cuesta y cuánto toma &mdash; nos contrates o no.",
+      "secondary": "Ver el trabajo"
+    }
+  },
+  "en": {
+    "crumb": "Services",
+    "title": "Seven services. <em class=\"italic accent-text\">One standard.</em>",
+    "lead": "Whether it is a five-page brochure site or a storefront doing serious volume, the same rules apply: built from scratch, budgeted for speed, accessible by default, and yours to keep.",
+    "meta_a": "Engagements start at eight weeks",
+    "meta_b": "Fixed scope, fixed price, staged payments. You will have the full number before we begin &mdash; we do not work by the hour.",
+    "expand": "Expand any service for detail",
+    "detail": "Detail",
+    "included": "Included",
+    "enquire": "Enquire about this",
+    "items": [
+      {
+        "id": "website-design",
+        "index": "01",
+        "title": "Custom Website Design",
+        "summary": "A website designed around your business, drawn from a blank file &mdash; never a theme with your logo dropped into it.",
+        "body": "We start with your positioning, your competitors and the decision your visitor is actually trying to make. Then we design the shortest honest path to it. You see real layouts with real content, not lorem ipsum in a grey box, and you approve direction before a single line of production code is written.",
+        "deliverables": [
+          {
+            "text": "Discovery workshop &amp; competitive audit"
+          },
+          {
+            "text": "Site architecture and content map"
+          },
+          {
+            "text": "Full desktop, tablet and mobile designs"
+          },
+          {
+            "text": "Typography, colour and component system"
+          },
+          {
+            "text": "Interactive prototype for sign-off"
+          }
+        ]
+      },
+      {
+        "id": "website-development",
+        "index": "02",
+        "title": "Website Development",
+        "summary": "Hand-written HTML, CSS and JavaScript. Fast by construction, not by plugin.",
+        "body": "Semantic markup, a component-driven stylesheet and just enough JavaScript to do the job. We budget for performance the same way we budget for design: every kilobyte has to earn its place. The result loads quickly on a mid-tier phone over mobile data, which is where most of your traffic actually lives.",
+        "deliverables": [
+          {
+            "text": "Semantic, accessible HTML5"
+          },
+          {
+            "text": "Component-based CSS with design tokens"
+          },
+          {
+            "text": "Vanilla JavaScript &mdash; no framework tax"
+          },
+          {
+            "text": "Cross-browser and device QA"
+          },
+          {
+            "text": "Deployment, DNS and SSL handled"
+          }
+        ]
+      },
+      {
+        "id": "wordpress",
+        "index": "03",
+        "title": "WordPress Development",
+        "summary": "Custom themes and block patterns your team can edit without breaking the design.",
+        "body": "We build WordPress the way it was meant to be built: a bespoke theme, purpose-made blocks, and an editor experience that guides your team instead of handing them a thousand settings. No page builder bloat, no thirty-plugin dependency chain, no dread when a core update lands.",
+        "deliverables": [
+          {
+            "text": "Bespoke theme &mdash; no page builders"
+          },
+          {
+            "text": "Custom Gutenberg blocks and patterns"
+          },
+          {
+            "text": "Editor training and written handbook"
+          },
+          {
+            "text": "Security hardening and backups"
+          },
+          {
+            "text": "Optional care plan and updates"
+          }
+        ]
+      },
+      {
+        "id": "ecommerce",
+        "index": "04",
+        "title": "E-commerce Development",
+        "summary": "Shopify and WooCommerce storefronts engineered around the checkout, not the homepage.",
+        "body": "Most stores lose money between the product page and the payment screen. We design that stretch first &mdash; variant selection, shipping clarity, trust signals, guest checkout &mdash; then build the rest of the store to feed it. Analytics and event tracking are wired in from day one so you can see exactly where the leaks are.",
+        "deliverables": [
+          {
+            "text": "Shopify or WooCommerce build"
+          },
+          {
+            "text": "Conversion-focused product and cart UX"
+          },
+          {
+            "text": "Subscriptions and payment integrations"
+          },
+          {
+            "text": "Inventory, shipping and tax setup"
+          },
+          {
+            "text": "Analytics and funnel tracking"
+          }
+        ]
+      },
+      {
+        "id": "ui-ux",
+        "index": "05",
+        "title": "UI / UX Design",
+        "summary": "Research, flows, wireframes and interface systems for products that have to be used, not just visited.",
+        "body": "For apps, dashboards and anything with a login. We map the jobs your users are hiring the product to do, prototype the risky parts early, and test before the engineering bill arrives. What you get back is a documented component library your developers can build against without guessing.",
+        "deliverables": [
+          {
+            "text": "User research and journey mapping"
+          },
+          {
+            "text": "Information architecture and flows"
+          },
+          {
+            "text": "Wireframes and clickable prototypes"
+          },
+          {
+            "text": "Design system with usage documentation"
+          },
+          {
+            "text": "Usability testing and iteration"
+          }
+        ]
+      },
+      {
+        "id": "redesign",
+        "index": "06",
+        "title": "Website Redesign",
+        "summary": "A rebuild that keeps the rankings, the content equity and the things that were already working.",
+        "body": "Redesigns fail when they throw away what was earning. We audit analytics, search performance and heatmaps before touching the design, so we know which pages to protect. Redirect mapping, metadata migration and a staged launch mean traffic comes across with you.",
+        "deliverables": [
+          {
+            "text": "Analytics, SEO and content audit"
+          },
+          {
+            "text": "Full redirect map and metadata migration"
+          },
+          {
+            "text": "Phased or single-cutover launch plan"
+          },
+          {
+            "text": "Before-and-after performance report"
+          },
+          {
+            "text": "Post-launch monitoring for 30 days"
+          }
+        ]
+      },
+      {
+        "id": "performance",
+        "index": "07",
+        "title": "Performance Optimization",
+        "summary": "Core Web Vitals work on sites you already own &mdash; measured before, measured after.",
+        "body": "We profile the real thing on real hardware, not a lab score on fibre. Render-blocking resources, oversized images, layout shift, third-party scripts nobody remembers adding. You get a prioritised list with the cost and the expected gain of each fix, then we do the work.",
+        "deliverables": [
+          {
+            "text": "Field and lab performance audit"
+          },
+          {
+            "text": "Image, font and asset optimisation"
+          },
+          {
+            "text": "Render-path and script cleanup"
+          },
+          {
+            "text": "Caching and CDN configuration"
+          },
+          {
+            "text": "Before/after Core Web Vitals report"
+          }
+        ]
+      }
+    ],
+    "engagements": {
+      "index": "03",
+      "eyebrow": "Engagements",
+      "title": "Three ways to <em class=\"italic\">work with us</em>.",
+      "aside": "Most clients start with a project and move to a care plan afterwards. Sprints are for teams who need a specific problem solved quickly.",
+      "items": [
+        {
+          "kicker": "01 &middot; Most common",
+          "title": "Full project",
+          "text": "Discovery through launch, fixed scope and fixed price. Eight weeks typical, twelve for commerce and multi-language builds. Payment in three stages tied to sign-offs, never to time spent.",
+          "link": "Scope a project"
+        },
+        {
+          "kicker": "02",
+          "title": "Focused sprint",
+          "text": "Two weeks on one problem: a checkout that leaks, a landing page that has to launch, a Core Web Vitals failure, a design system your developers can build against. Priced flat, scoped in a single call.",
+          "link": "Book a sprint"
+        },
+        {
+          "kicker": "03",
+          "title": "Care plan",
+          "text": "Monthly retainer for sites we built: updates, backups, uptime and security monitoring, a set block of change requests, and a quarterly performance review with actual recommendations.",
+          "link": "Ask about care"
+        }
+      ]
+    },
+    "performance": {
+      "label": "Speed, specifically",
+      "title": "Fast is not a finishing touch. <em class=\"italic accent-text\">It is the build method.</em>",
+      "alt": "Line chart illustrating Core Web Vitals improving after optimisation work.",
+      "link": "Performance service",
+      "paragraphs": [
+        {
+          "text": "We set a page-weight budget during design and hold every decision against it. Fonts are subset, images are sized and lazy-loaded, JavaScript is written rather than installed, and the animation layer is profiled on real hardware."
+        },
+        {
+          "text": "When we take on an optimisation engagement for a site we did not build, you get a prioritised list with the estimated cost and expected gain of each fix, so you can decide what is worth doing before we start."
+        }
+      ],
+      "image_light": "/images/services/performance.svg",
+      "image_dark": "/images/services/performance-dark.svg"
+    },
+    "commerce": {
+      "label": "Commerce, specifically",
+      "title": "We design the checkout first, <em class=\"italic accent-text\">then the rest of the store</em>.",
+      "alt": "Abstract product cards representing an e-commerce storefront layout.",
+      "link": "E-commerce service",
+      "paragraphs": [
+        {
+          "text": "The stretch between a product page and a completed payment is where stores lose the most money and get the least design attention. We start there &mdash; variant selection, delivery clarity, guest checkout, the exact moment a shipping cost appears &mdash; then build the catalogue to feed it."
+        },
+        {
+          "text": "Event tracking goes in from the first commit, so within a fortnight of launch you can see precisely which step people abandon."
+        }
+      ],
+      "image_light": "/images/services/commerce.svg",
+      "image_dark": "/images/services/commerce-dark.svg"
+    },
+    "faq": {
+      "index": "06",
+      "eyebrow": "Questions",
+      "title": "The things people <em class=\"italic\">ask first</em>.",
+      "items": [
+        {
+          "question": "What does a project cost?",
+          "answer": "A custom marketing site of eight to twelve pages generally lands in the mid five figures; commerce and multi-language builds run higher. We quote a fixed price after a scoping call and a written brief, so the number you approve is the number you pay. If your budget is below the range, say so in your enquiry &mdash; we will tell you honestly whether we can help or recommend someone who can."
+        },
+        {
+          "question": "How long does it take?",
+          "answer": "Eight weeks is typical for a full custom build, from kickoff to launch. Commerce projects and sites needing several languages run ten to twelve. The single biggest variable is how quickly content and feedback come back from your side, which is why the schedule names your deadlines as clearly as ours."
+        },
+        {
+          "question": "Do I have to provide the content?",
+          "answer": "You provide the raw material and the subject-matter expertise. We structure it, edit it for the web, and write connective copy where it is missing. If you need full copywriting, we bring in a writer we have worked with for years and fold the cost into the quote up front."
+        },
+        {
+          "question": "Can my team update the site afterwards?",
+          "answer": "Yes, and we design for it. CMS builds ship with purpose-made blocks that cannot be arranged into something broken, plus a written handbook and a recorded walkthrough for your team. Most clients are editing confidently within a day."
+        },
+        {
+          "question": "Do you work with clients outside Puerto Rico?",
+          "answer": "Most of our work is remote, across the mainland United States, the wider Caribbean and Europe. We keep a two-hour overlap with your working day and run scheduled check-ins rather than ad-hoc calls, which tends to suit distributed teams better anyway."
+        },
+        {
+          "question": "What happens after launch?",
+          "answer": "Thirty days of monitoring and fixes are included with every build. After that you can take the site entirely in-house &mdash; you own everything &mdash; or move onto a care plan for updates, security and a quarterly review of how the site is actually performing."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Tell us what is <em>not working</em> and we will scope the fix.",
+      "body": "One call, no charge, no pitch deck. You will leave it knowing roughly what the work involves, what it costs and how long it takes &mdash; whether or not you hire us.",
+      "secondary": "See the work"
+    }
+  }
+}

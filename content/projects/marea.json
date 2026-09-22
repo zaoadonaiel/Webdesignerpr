@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "Fintech &middot; Producto",
+    "description": "Una app de ahorro para la diáspora caribeña. Visualización de datos serena, bilingüe desde el primer wireframe, y un onboarding que explica el interés compuesto sin una sola hoja de cálculo.",
+    "disciplines": [
+      {
+        "text": "Diseño de Producto"
+      },
+      {
+        "text": "Front-end"
+      },
+      {
+        "text": "Movimiento"
+      }
+    ],
+    "order": 1,
+    "slug": "marea",
+    "name": "Marea",
+    "year": "2025",
+    "categories": [
+      "web-design",
+      "ui-ux"
+    ],
+    "image_light": "/images/portfolio/marea.svg",
+    "image_dark": "/images/portfolio/marea-dark.svg",
+    "featured": true
+  },
+  "en": {
+    "kind": "Fintech &middot; Product Site",
+    "description": "A savings app for the Caribbean diaspora. Calm data visualisation, bilingual from the first wireframe, and an onboarding flow that explains compound interest without a single spreadsheet.",
+    "disciplines": [
+      {
+        "text": "Product Design"
+      },
+      {
+        "text": "Front-end"
+      },
+      {
+        "text": "Motion"
+      }
+    ]
+  }
+}

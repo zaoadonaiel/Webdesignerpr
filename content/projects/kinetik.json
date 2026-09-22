@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "SaaS &middot; Marketing + App",
+    "description": "Software de logística para gente que detesta el software de logística. Un sitio de marketing y un dashboard que comparten una biblioteca de componentes, para que la promesa y el producto por fin se parezcan.",
+    "disciplines": [
+      {
+        "text": "Sistema de Diseño"
+      },
+      {
+        "text": "Diseño UI"
+      },
+      {
+        "text": "Front-end"
+      }
+    ],
+    "order": 4,
+    "slug": "kinetik",
+    "name": "Kinetik",
+    "year": "2025",
+    "categories": [
+      "ui-ux",
+      "web-design"
+    ],
+    "image_light": "/images/portfolio/kinetik.svg",
+    "image_dark": "/images/portfolio/kinetik-dark.svg",
+    "featured": true
+  },
+  "en": {
+    "kind": "SaaS &middot; Marketing + App",
+    "description": "Logistics software for people who hate logistics software. A marketing site and dashboard sharing one component library, so the promise and the product finally look related.",
+    "disciplines": [
+      {
+        "text": "Design System"
+      },
+      {
+        "text": "UI Design"
+      },
+      {
+        "text": "Front-end"
+      }
+    ]
+  }
+}

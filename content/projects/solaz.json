@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "Hospitalidad &middot; Reservas",
+    "description": "Un grupo hotelero boutique con seis propiedades y una sola voz. Reserva directa construida para superar a los agregadores, sobre un WordPress que los equipos en propiedad de verdad disfrutan usar.",
+    "disciplines": [
+      {
+        "text": "Estrategia UX"
+      },
+      {
+        "text": "WordPress"
+      },
+      {
+        "text": "CRO"
+      }
+    ],
+    "order": 3,
+    "slug": "solaz",
+    "name": "Solaz",
+    "year": "2024",
+    "categories": [
+      "web-design",
+      "wordpress"
+    ],
+    "image_light": "/images/portfolio/solaz.svg",
+    "image_dark": "/images/portfolio/solaz-dark.svg",
+    "featured": true
+  },
+  "en": {
+    "kind": "Hospitality &middot; Booking",
+    "description": "A boutique hotel group with six properties and one voice. Direct booking built to out-convert the aggregators, on a WordPress back end the on-property teams actually enjoy using.",
+    "disciplines": [
+      {
+        "text": "UX Strategy"
+      },
+      {
+        "text": "WordPress"
+      },
+      {
+        "text": "CRO"
+      }
+    ]
+  }
+}

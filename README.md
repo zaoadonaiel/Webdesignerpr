@@ -2,35 +2,68 @@
 
 A custom website for **webdesignerpr.com** — an independent web design and
 development studio. Hand-written HTML5, CSS3 and vanilla JavaScript with GSAP
-for motion. No framework, no build step, no dependencies to install.
+for motion. No framework, no npm, no lockfile.
 
 **Bilingual** — Spanish at the root, English in `/en/`.
 **Two themes** — light by default, dark on a toggle that remembers the choice.
+**Editable** — all copy, images and links are managed in Sveltia CMS at `/admin/`.
 
-Open `index.html` in a browser and it runs.
+```bash
+python3 build.py --serve     # build into dist/ and preview at localhost:4173
+```
+
+The entire toolchain is one standard-library Python script. That same command
+is the Cloudflare Pages build command.
 
 ---
 
 ## Contents
 
-1. [Creative direction](#creative-direction)
-2. [Pages and languages](#pages-and-languages)
-3. [Folder structure](#folder-structure)
-4. [Running it locally](#running-it-locally)
-5. [Deployment](#deployment)
-6. [Themes — how light and dark work](#themes--how-light-and-dark-work)
-7. [Changing the colours](#changing-the-colours)
-8. [Changing the typography](#changing-the-typography)
-9. [Editing the copy](#editing-the-copy)
-10. [Adding or removing a language](#adding-or-removing-a-language)
-11. [Replacing the images](#replacing-the-images)
-12. [Connecting the contact form](#connecting-the-contact-form)
-13. [Content you must replace before launch](#content-you-must-replace-before-launch)
-14. [How the animation layer works](#how-the-animation-layer-works)
-15. [Accessibility](#accessibility)
-16. [Performance notes](#performance-notes)
-17. [Browser support](#browser-support)
-18. [Credits and licensing](#credits-and-licensing)
+1. [How it fits together](#how-it-fits-together)
+2. [Creative direction](#creative-direction)
+3. [Pages and languages](#pages-and-languages)
+4. [Folder structure](#folder-structure)
+5. [Running it locally](#running-it-locally)
+6. [Editing content in the CMS](#editing-content-in-the-cms)
+7. [Setting up the CMS — one-time](#setting-up-the-cms--one-time)
+8. [Deployment](#deployment)
+9. [Themes — how light and dark work](#themes--how-light-and-dark-work)
+10. [Changing the colours](#changing-the-colours)
+11. [Changing the typography](#changing-the-typography)
+12. [Adding or removing a language](#adding-or-removing-a-language)
+13. [Replacing the images](#replacing-the-images)
+14. [Connecting the contact form](#connecting-the-contact-form)
+15. [Content you must replace before launch](#content-you-must-replace-before-launch)
+16. [How the animation layer works](#how-the-animation-layer-works)
+17. [Accessibility](#accessibility)
+18. [Performance notes](#performance-notes)
+19. [Browser support](#browser-support)
+20. [Credits and licensing](#credits-and-licensing)
+
+---
+
+## How it fits together
+
+```
+  content/*.json  ──►  build.py  ──►  dist/  ──►  Cloudflare Pages
+       ▲                                              │
+       │                                              ▼
+  Sveltia CMS  ◄──────── commits to GitHub ────  webdesignerpr.com/admin/
+```
+
+1. Every word, image path and link on the site lives in `content/`, as JSON.
+2. `build.py` renders those into the ten HTML pages and copies the static
+   assets, producing `dist/`.
+3. Cloudflare Pages runs that build on every push and publishes `dist/`.
+4. The CMS at `/admin/` edits the files in `content/` and commits them to
+   GitHub, which triggers step 3.
+
+So **editing content never touches HTML**. And because the CMS commits to Git,
+every change is an ordinary commit you can review, revert or blame.
+
+If a build fails — a malformed edit, a missing field — Cloudflare keeps serving
+the previous successful deployment. The site does not go down; the deploy just
+shows as failed in the dashboard.
 
 ---
 
@@ -90,96 +123,224 @@ Section content is the same across languages — only the words change.
 ```
 webdesignerpr/
 │
-├── index.html            ← Spanish (site default)
-├── about.html
-├── services.html
-├── portfolio.html
-├── contact.html
+├── content/              ← EVERYTHING EDITABLE. The CMS writes here.
+│   ├── settings.json         Nav, footer, contact details, social, SEO titles
+│   ├── home.json             Home page copy
+│   ├── about.json            About page copy
+│   ├── services.json         Services page copy + the seven services + FAQ
+│   ├── portfolio.json        Portfolio page copy + filters
+│   ├── contact.json          Contact page copy + form labels + messages
+│   ├── process.json          The six process steps (used on two pages)
+│   ├── capabilities.json     The tool grid
+│   ├── testimonials.json     Quotes
+│   └── projects/             One file per project — add, remove, reorder
+│       ├── marea.json
+│       └── …
 │
-├── en/                   ← English mirror
-│   ├── index.html
-│   ├── about.html
-│   ├── services.html
-│   ├── portfolio.html
-│   └── contact.html
+├── admin/                ← The CMS itself
+│   ├── index.html            Loads Sveltia CMS
+│   └── config.yml            Which fields are editable, in both languages
 │
-├── css/
-│   ├── style.css         Design tokens (both themes), layout, every component
-│   ├── animations.css    Keyframes, pre-animation states, reduced-motion rules
-│   └── responsive.css    Breakpoints — load order matters, this goes last
+├── generator/            ← The build. Standard library only.
+│   ├── content.py            Loads and normalises content/
+│   ├── partials.py           Head, header, drawer, CTA, footer
+│   └── pages.py              The five page templates
+├── build.py              ← Entry point. `python3 build.py`
 │
+├── css/                  Design tokens (both themes), layout, components
+│   ├── style.css
+│   ├── animations.css
+│   └── responsive.css
 ├── js/
-│   ├── theme.js          Light/dark toggle, artwork swapping, preference storage
-│   ├── navigation.js     Header states, mobile drawer, scroll progress, anchors
-│   ├── main.js           Cursor, hero canvas, marquee, accordions, filters, form
-│   └── animations.js     GSAP + ScrollTrigger choreography
-│
+│   ├── theme.js              Light/dark toggle, artwork swapping
+│   ├── navigation.js         Header, mobile drawer, scroll progress
+│   ├── main.js               Cursor, hero canvas, accordions, filters, form
+│   └── animations.js         GSAP + ScrollTrigger
 ├── images/
-│   ├── logo/             Mark, wordmark, favicon, social share image
-│   ├── hero/             Hero decoration and tall editorial plates
-│   ├── portfolio/        Eight project posters
-│   ├── services/         Service illustrations
-│   └── backgrounds/      Film grain tile
-│
+│   ├── logo/ hero/ portfolio/ services/ backgrounds/
+│   └── uploads/              ← Where CMS image uploads land
 ├── fonts/                Empty — see fonts/README.md for self-hosting
+├── _headers              Cloudflare headers (keeps /admin/ out of search)
 │
-└── README.md
+└── dist/                 ← BUILD OUTPUT. Git-ignored. Never edit by hand.
 ```
 
-Every file in `images/` exists twice: `name.svg` (light) and `name-dark.svg`.
+Every file in `images/` (except uploads) exists twice: `name.svg` for the light
+theme and `name-dark.svg` for dark.
 
-> There is also a `.claude/` folder containing a small local preview server. It
-> is a development convenience only — delete it before handing the site over if
-> you would rather not ship it.
+**Do not edit anything in `dist/`.** It is deleted and regenerated on every
+build. Edit `content/` for words and images, `css/` and `js/` for design and
+behaviour, `generator/` for structure.
 
-**Load order matters.** `responsive.css` must come after `style.css`, and among
-the scripts `theme.js` must come first (it applies the saved theme and swaps
-artwork before the rest runs). All ten pages already do this.
-
-**Relative paths differ by language.** Spanish pages reference `css/style.css`;
-English pages reference `../css/style.css`. Keep that in mind when hand-editing.
-
----
+> There is also a `.claude/` folder with an editor launch config. Delete it if
+> you do not want it in the repo; nothing depends on it.
 
 ## Running it locally
 
-**Option A — just open the file.** Double-click `index.html`. Everything works,
-including GSAP from CDN, as long as you have an internet connection.
-
-**Option B — a local server** (recommended; matches production path handling):
-
 ```bash
-python3 -m http.server 4173
+python3 build.py --serve
 ```
 
-Then visit `http://localhost:4173`. Any static server works — `npx serve`,
-`php -S localhost:4173`, VS Code's Live Server extension.
+Builds into `dist/` and serves it at `http://localhost:4173`. Nothing to
+install — Python 3.8+ and the standard library is the whole requirement.
+
+`python3 build.py` on its own just builds. The build is deterministic: the same
+content always produces byte-identical HTML.
+
+**Editing content locally.** Open `http://localhost:4173/admin/` and choose
+**"Work with Local Repository"**. Sveltia reads and writes the files in
+`content/` directly through the browser's File System Access API — no GitHub
+round-trip, no auth. Rebuild to see the result. (Chrome, Edge or another
+Chromium browser; Firefox and Safari do not support that API yet, so use the
+GitHub sign-in there.)
+
+---
+
+## Editing content in the CMS
+
+Go to **https://webdesignerpr.com/admin/** and sign in with GitHub. Saving
+commits to `main`, and Cloudflare republishes in about a minute.
+
+The sidebar has four sections:
+
+| Section | What's in it |
+| --- | --- |
+| **Pages** | All copy for Home, About, Services, Portfolio and Contact — headings, paragraphs, buttons, page images, SEO titles |
+| **Projects** | One entry per portfolio project. Add, delete and reorder freely |
+| **Shared content** | Process steps, the capabilities grid, testimonials — each used on more than one page |
+| **Settings** | Navigation labels, footer, contact details, social links, page titles and descriptions, and every interface string |
+
+### Both languages, side by side
+
+Spanish and English live in the same entry. Use the locale switcher at the top
+of the editor to move between them. Fields that are not language-specific —
+image choices, slugs, years, categories — are shared automatically; change them
+once and both languages follow.
+
+### Some fields contain HTML, on purpose
+
+Headings use inline markup for the coral italic accents:
+
+```html
+Diseño y código para marcas que se niegan a <em class="italic accent-text">ser una más</em>.
+```
+
+and entities like `&mdash;` (—) and `&middot;` (·). Keep those when editing. If
+you delete the `<em>` tags the text still works, it just loses the accent.
+
+### Adding a project
+
+**Projects → New Project.** Fill in the name, slug, year, categories and both
+artwork images, then the Spanish and English descriptions. `Order` sets the
+position; `Show on the home page` decides whether it appears in the home list.
+
+The slug becomes the filename and the anchor link (`portfolio.html#marea`), so
+keep it lowercase with hyphens.
+
+### Images
+
+Upload through any image field; files land in `images/uploads/` and are
+committed alongside the content. Every image has a **light** and a **dark**
+variant — if you only have one, point both fields at the same file.
+
+The existing artwork is SVG. Photographs work equally well; see
+[Replacing the images](#replacing-the-images) for the sizes each slot expects.
+
+### Removing the placeholder warnings
+
+Two notices ship visible on purpose and each disappears when you clear its
+fields:
+
+- **Portfolio** → clear *Notice — bold lead* and *Notice — body* once the
+  projects are real client work.
+- **Home** → clear *06 — Testimonials heading → Placeholder badge* once the
+  quotes are real. Also **Contact** → clear both *Developer notice* fields once
+  the form has a backend.
+
+---
+
+## Setting up the CMS — one-time
+
+Three things, in this order. You need to do these yourself — they involve your
+GitHub and Cloudflare accounts.
+
+### 1. Point Cloudflare Pages at the build
+
+In the Cloudflare dashboard → **Workers & Pages** → your project → **Settings**
+→ **Build**:
+
+| Setting | Value |
+| --- | --- |
+| Build command | `python3 build.py` |
+| Build output directory | `dist` |
+| Root directory | *(leave empty)* |
+
+**Do this before or immediately after pushing these changes.** The generated
+HTML no longer sits at the repo root, so with the old settings (no build
+command, output `/`) the site would serve an empty directory.
+
+Cloudflare's build image ships Python 3.11+ already; there is nothing to
+install. If you ever want to pin it, set a `PYTHON_VERSION` environment
+variable.
+
+### 2. Deploy the OAuth worker
+
+The CMS signs editors in with GitHub. Netlify-hosted sites get this for free;
+on Cloudflare you run a tiny worker that holds the OAuth secret.
+
+1. Go to [github.com/sveltia/sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth)
+   and follow its deploy instructions — it is a one-click Cloudflare Workers
+   deploy.
+2. Note the worker's URL, e.g. `https://webdesignerpr-auth.you.workers.dev`.
+
+### 3. Create the GitHub OAuth app
+
+1. GitHub → **Settings** → **Developer settings** → **OAuth Apps** →
+   **New OAuth App**.
+2. **Homepage URL**: `https://webdesignerpr.com`
+3. **Authorization callback URL**: your worker URL + `/callback`, e.g.
+   `https://webdesignerpr-auth.you.workers.dev/callback`
+4. Generate a client secret, then add `GITHUB_CLIENT_ID` and
+   `GITHUB_CLIENT_SECRET` to the worker as encrypted environment variables.
+5. Finally, put the worker URL into `admin/config.yml`:
+
+   ```yaml
+   backend:
+     name: github
+     repo: zaoadonaiel/Webdesignerpr
+     branch: main
+     base_url: https://webdesignerpr-auth.you.workers.dev   # ← yours here
+   ```
+
+   It currently reads `https://REPLACE-ME.workers.dev`, so sign-in will fail
+   until you change it.
+
+Anyone with write access to the repository can then sign in and edit.
 
 ---
 
 ## Deployment
 
-The site is static. Upload the whole folder, `en/` included, to any host.
+Cloudflare Pages is already connected to this repository. Every push to `main`
+— including the commits the CMS makes — triggers `python3 build.py` and
+publishes `dist/`. See
+[Setting up the CMS](#setting-up-the-cms--one-time) for the exact build
+settings.
 
-**Shared hosting / cPanel.** Drag everything into `public_html`. Done.
+**Other hosts.** Anything that can run a command and serve a folder works:
 
-**Netlify.** Drag the folder onto the dashboard, or connect the Git repo with
-build command blank and publish directory `/`.
+| Host | Build command | Output directory |
+| --- | --- | --- |
+| Cloudflare Pages | `python3 build.py` | `dist` |
+| Netlify | `python3 build.py` | `dist` |
+| Vercel | `python3 build.py` | `dist` |
+| Plain static hosting | run `python3 build.py` locally, upload `dist/` | — |
 
-**Vercel.** `vercel --prod` from this folder, or import the repo and choose
-"Other" as the framework preset.
+GitHub Pages needs an Actions workflow, since it will not run Python for you.
 
-**GitHub Pages.** Push, then Settings → Pages → deploy from `main`, root folder.
-
-**After deploying, update the absolute URLs.** The canonical, `hreflang` and
-Open Graph tags in every `<head>` are hard-coded to `https://webdesignerpr.com`.
-If you deploy anywhere else, find and replace that string across all ten HTML
-files.
-
-**Optional — send visitors to their language.** The site never auto-redirects,
-by design: a Spanish speaker landing on `/en/` from a shared link should stay
-there. If you do want server-side language detection, do it with a `302` (never
-`301`) on the root path only, and always leave the switch visible.
+**If you change domain**, update `SITE_URL` in `generator/content.py`. It feeds
+the canonical tags, `hreflang` alternates, Open Graph URLs and the sitemap in
+one place — there are no hard-coded domains in the templates.
 
 ---
 
@@ -199,7 +360,7 @@ there. If you do want server-side language detection, do it with a `302` (never
 
 ### Making the theme follow the operating system instead
 
-Replace the inline script in each `<head>` with:
+Replace the inline script in `head()` in `generator/partials.py` with:
 
 ```html
 <script>(function(){try{var s=localStorage.getItem("wdpr:theme");
@@ -258,8 +419,8 @@ Two things still need a manual edit after a big colour change:
 
 1. **The SVG artwork** has colours baked in — see
    [Replacing the images](#replacing-the-images).
-2. **`<meta name="theme-color">`** in each `<head>` — there are two, one per
-   colour scheme.
+2. **`<meta name="theme-color">`** in `head()` in `generator/partials.py` —
+   there are two, one per colour scheme.
 
 > **Check contrast after any colour change.** As shipped, every page in both
 > languages and both themes clears WCAG AA: body text at 17.5:1, muted text at
@@ -279,8 +440,8 @@ Also at the top of `css/style.css`, in the shared token block:
 --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 ```
 
-Update the Google Fonts `<link>` in each `<head>` to match, or self-host — full
-instructions in **`fonts/README.md`**.
+Update the Google Fonts `<link>` in `head()` in `generator/partials.py` to
+match, or self-host — full instructions in **`fonts/README.md`**.
 
 All type sizes are fluid `clamp()` values in the same block (`--fs-mono` through
 `--fs-mega`), scaling between a 360px and a 1600px viewport, so there are no
@@ -290,96 +451,82 @@ font-size overrides scattered through the breakpoints.
 
 ## Editing the copy
 
-The pages are plain static HTML — edit them directly. **There is no build step
-and you do not need one.** Just remember that a text change usually belongs in
-two files:
+Use the CMS — see [Editing content in the CMS](#editing-content-in-the-cms).
 
-```
-about.html        ← Spanish
-en/about.html     ← English
-```
+If you would rather edit the files directly, they are plain JSON in `content/`,
+with Spanish under `"es"` and English under `"en"`. Run `python3 build.py`
+afterwards. The HTML in `dist/` is generated; editing it does nothing lasting.
 
-Both files have identical structure and identical HTML comments marking each
-section (`<!-- ============ 04 — DESIGN PHILOSOPHY ============ -->`), so the
-paragraph you are looking for sits in the same place in both.
+Three strings are not in `content/` because they are structural rather than
+editorial:
 
-A handful of user-facing strings live in `data-` attributes rather than visible
-text, because JavaScript writes them at runtime. They are already translated in
-each file — edit them in place:
-
-| Attribute | On | Purpose |
-| --- | --- | --- |
-| `data-msg-*` | the `<form>` on Contact | Every validation and status message |
-| `data-count-one` / `data-count-many` | the filter bar on Portfolio | Screen-reader result count |
-| `data-label-to-dark` / `data-label-to-light` | the theme button | Accessible label for each state |
-| `data-cursor-label` | work links | Text inside the custom cursor |
-
-Changing a heading also means checking its `<title>` and
-`<meta name="description">` at the top of the file.
+| What | Where |
+| --- | --- |
+| The `WebDesignerPR` wordmark and logo mark | `generator/partials.py`, `brand()` |
+| The oversized footer wordmark | `generator/partials.py`, `footer()` |
+| Service icons | `generator/pages.py`, `SVC_ICONS` — keyed by service ID |
 
 ---
 
 ## Adding or removing a language
 
-**To remove English:** delete the `/en/` folder, then delete the `.lang-switch`
-block (header and drawer) and the two `<link rel="alternate" hreflang>` tags
-from each of the five remaining pages.
+**To remove English:** delete `"en"` from `LANGS` in `generator/content.py`,
+drop the `en` locale from `admin/config.yml`, and remove the `.lang-switch`
+block from `header()` and the drawer in `generator/partials.py`. Rebuild.
 
-**To add a third language,** say Portuguese at `/pt/`:
+**To add a third language,** say Portuguese:
 
-1. Copy `en/` to `pt/` and translate the copy.
-2. Set `<html lang="pt">` in all five new files.
-3. Update `<link rel="canonical">` to the `/pt/` URL on each page.
-4. Add `<link rel="alternate" hreflang="pt" href="…">` to **all fifteen** pages
-   — every language must list every other one, or search engines ignore the
-   cluster.
-5. Add a third `.lang-switch__opt` link to the header and drawer on every page.
+1. Add `"pt"` to `LANGS` in `generator/content.py`.
+2. Add `pt` to `locales` in `admin/config.yml`.
+3. In each `content/*.json`, add a `"pt"` key alongside `"es"` and `"en"` —
+   easiest by copying the `"en"` block and translating it.
+4. Add a third link to `lang_switch()` in `generator/partials.py`.
 
-The relative asset prefix for any subfolder language is `../`, exactly as `/en/`
-already uses.
+The build writes any non-default language into its own folder (`/pt/`) and
+resolves asset paths with `../` automatically, so nothing else changes. The
+`hreflang` alternates and the sitemap pick the new locale up on their own.
 
 ---
 
 ## Replacing the images
 
-Every image is **custom-drawn SVG**, made for this project — no stock
-photography, nothing watermarked, no external URLs, so nothing can 404. They are
-a few kilobytes each and render crisply at any size.
+Every image is set in the CMS. Upload through any image field and the file is
+committed to `images/uploads/` alongside the content change.
 
-**Each one exists in two variants**, and `js/theme.js` swaps them:
+Each slot has a **light** and a **dark** variant. If you only have one version,
+point both fields at the same file — nothing breaks, the artwork simply does
+not change with the theme.
 
-```html
-<img src="images/portfolio/marea.svg"
-     data-src-light="images/portfolio/marea.svg"
-     data-src-dark="images/portfolio/marea-dark.svg"
-     width="1200" height="900" loading="lazy" decoding="async"
-     alt="Concept artwork for Marea, a Fintech — Product Site project.">
-```
-
-To swap in photography, replace all three paths. If you only have one version of
-an image and it works on both themes, point `data-src-light` and `data-src-dark`
-at the same file — do not delete the attributes, or the swap will skip it.
-
-| Asset | Size | Used on |
+| Slot | Size | Where in the CMS |
 | --- | --- | --- |
-| `images/portfolio/*.svg` | 1200 × 900 (4:3) | Portfolio grid + home work list |
-| `images/hero/studio.svg`, `craft.svg` | 900 × 1125 (4:5) | Home and About |
-| `images/services/design-system.svg` | 900 × 1125 (4:5) | About |
-| `images/services/performance.svg`, `commerce.svg` | 1200 × 675 (16:9) | Services |
-| `images/hero/orbit.svg` | 720 × 720 | Decorative, behind every CTA |
-| `images/logo/og-image.jpg` | 1200 × 630 | Social sharing (source: `og-image.svg`) |
+| Project artwork | 1200 × 900 (4:3) | Projects → *each project* |
+| Studio plate | 900 × 1125 (4:5) | Pages → Home → 01 Studio, and Pages → About |
+| Design-system plate | 900 × 1125 (4:5) | Pages → About → 03 Mission & vision |
+| Typographic plate | 900 × 1125 (4:5) | Pages → About → 04 Design philosophy |
+| Performance / Commerce | 1200 × 675 (16:9) | Pages → Services |
 
-The portfolio posters also appear in the cursor-follow preview on the home page
-— update both places, or the hover plate will show the old art.
+Three images are **not** in the CMS because they are brand assets rather than
+content — replace the files directly:
 
-**Logo and favicon** (`images/logo/`) — `mark.svg` is inlined directly into the
-header and footer markup of all ten pages, so editing the file alone is not
-enough. Search for `class="brand__mark"` and replace the `<path>` inside it. It
-uses `currentColor`, so it follows the theme automatically.
+- `images/logo/favicon.svg`
+- `images/logo/og-image.jpg` — the social share card, 1200 × 630. Its editable
+  source is `og-image.svg` beside it; `og-image-dark.svg` is the dark variant.
+- `images/hero/orbit.svg` / `orbit-dark.svg` — the rings behind every CTA.
 
-**Alt text is not optional,** and it needs translating too. Decorative images
-use `alt=""` plus `aria-hidden="true"` — the grain, the glows, the orbit and the
-cursor preview plates are all marked this way already.
+The logo mark itself is inlined into the markup so it can follow the theme
+colour. To change it, edit the `<path>` in `MARK_PATH` in
+`generator/partials.py`.
+
+**Alt text is a separate field next to each image, and it is translatable.**
+Write it. Decorative images (grain, glows, the orbit) are already `aria-hidden`
+and correctly have none.
+
+### Why the artwork is SVG
+
+The eight project posters and the editorial plates were drawn for this project
+as SVG: a few kilobytes each, sharp at any size, no stock licensing, nothing
+that can 404. Photographs work fine in the same slots — they will be cropped to
+the ratios above and lazy-loaded the same way.
 
 ---
 
@@ -388,23 +535,24 @@ cursor preview plates are all marked this way already.
 **The form is frontend-only.** Validation runs fully in the browser — required
 fields, email format, minimum message length, budget selection — but **nothing
 is delivered anywhere**. A visible notice under the form says exactly that, in
-both languages, and the success message repeats it. Remove both once a backend
-is wired up.
+both languages, and the success message repeats it.
 
-Remember to apply the change to **both** `contact.html` and `en/contact.html`.
+Two halves to connecting it: a small template change, and the wording, which
+lives in the CMS under **Pages → Contact → Validation messages**. Clear the
+*Developer notice* fields there once it is live.
 
 ### Option 1 — Formspree (no server needed)
 
 1. Create a form at [formspree.io](https://formspree.io) and copy your form ID.
-2. In each `contact.html`, change the opening tag:
+2. In `generator/pages.py`, find `build_contact` and add the action to the
+   `<form>` tag:
 
-   ```html
+   ```python
    <form class="form" data-contact-form novalidate
-         action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-         data-msg-required="…" …>
+         action="https://formspree.io/f/YOUR_FORM_ID" method="POST" {msgs}>
    ```
 
-   Keep the `data-msg-*` attributes — they hold the translated messages.
+   Keep `{msgs}` — it carries the translated validation messages from the CMS.
 
 3. In `js/main.js`, find the `contactForm` block and replace the simulated
    submission (the `window.setTimeout` near the end) with a real request:
@@ -444,8 +592,9 @@ If you host on Netlify, add two attributes and Netlify handles the rest:
   <p hidden><label>Leave blank: <input name="bot-field"></label></p>
 ```
 
-Give the Spanish and English forms **different `name` values** (`enquiry-es`,
-`enquiry-en`) so submissions arrive separated by language. Then remove the
+Give the Spanish and English forms **different `name` values** — in
+`generator/pages.py` use `f'name="enquiry-{c.lang}"'` — so submissions arrive
+separated by language. Then remove the
 `e.preventDefault()` in `js/main.js` so the browser posts natively once
 validation passes.
 
@@ -464,19 +613,18 @@ anything posted to your endpoint can be forged.
 
 ## Content you must replace before launch
 
-The site ships with clearly-labelled placeholder content. Each item below
-appears in **both** languages.
+All of this is editable in the CMS, in both languages.
 
-| What | Where | Why |
+| What | Where in the CMS | Why |
 | --- | --- | --- |
-| **Testimonials** | `index.html` + `en/index.html`, section `06` | Three sample quotes attributed to "Nombre del cliente / Contenido de muestra" (and the English equivalent), under a visible dashed **"Sample layout"** badge. Replace the quotes *and* delete the badge (`<p class="sample-note">`). Never publish invented testimonials as real ones. |
-| **Portfolio projects** | `portfolio.html`, `index.html` (+ `en/`) | All eight are self-initiated **concept** pieces using fictional brands (Marea, Cordillera, Solaz, Kinetik, Bodega Luz, Atlas Field, Puerta, Nocturn). Each carries a `CONCEPTO` / `CONCEPT` tag and the page opens with a notice saying so. If you replace them with real client work, remove the `tag--concept` spans and the `.notice` block. |
-| **Phone number** | Contact + footer, all pages | `+1 (787) 555-0142` is a reserved fictional number. The contact page labels it as a placeholder — remove that note when you replace it. |
-| **Email address** | All pages | `hola@webdesignerpr.com` — change if yours differs. |
-| **Street address** | Contact pages | "Calle Loíza, San Juan" is indicative, not a real studio address. |
-| **Social links** | Footer, all pages | Three `href="#"` placeholders for Instagram, Dribbble and LinkedIn. |
-| **Studio claims** | About pages | "Est. 2016", "nine years", and the counters (9 years / 4 concurrent projects / 8 weeks / 1 business day) are illustrative. Make them true or change them. |
-| **Standards figures** | Home, section `01` | 95+ Lighthouse, 1.5s LCP, 100% custom, WCAG AA. These are stated as *commitments you build against*, not past results — keep them that way, or replace with measured numbers you can evidence. |
+| **Testimonials** | Shared content → Testimonials | Three placeholders attributed to "Nombre del cliente / Contenido de muestra". Replace them, then clear Pages → Home → *06 Testimonials → Placeholder badge* to remove the visible sample warning. Never publish invented testimonials as real ones. |
+| **Portfolio projects** | Projects | All eight are self-initiated concepts using fictional brands. Each shows a `CONCEPTO` / `CONCEPT` tag. Replace with real work, then clear both *Notice* fields on Pages → Portfolio. |
+| **Phone number** | Settings → Contact details | `+1 (787) 555-0142` is a reserved fictional number. Also clear the "placeholder" wording in Pages → Contact → Contact details. |
+| **Email address** | Settings → Contact details | `hola@webdesignerpr.com` |
+| **Street address** | Pages → Contact → Contact details | "Calle Loíza, San Juan" is indicative. |
+| **Social links** | Settings → Social links | Three `#` placeholders. |
+| **Studio claims** | Pages → About | "Est. 2016", "nine years", and the counters are illustrative. Make them true or change them. |
+| **Standards figures** | Pages → Home → 01 Studio → Standards figures | 95+ Lighthouse, 1.5s LCP, 100% custom, WCAG AA. Written as commitments you build against, not past results — keep them that way, or replace with numbers you can evidence. |
 
 ---
 
