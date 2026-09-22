@@ -25,20 +25,21 @@ is the Cloudflare Pages build command.
 4. [Folder structure](#folder-structure)
 5. [Running it locally](#running-it-locally)
 6. [Editing content in the CMS](#editing-content-in-the-cms)
-7. [Setting up the CMS — one-time](#setting-up-the-cms--one-time)
-8. [Deployment](#deployment)
-9. [Themes — how light and dark work](#themes--how-light-and-dark-work)
-10. [Changing the colours](#changing-the-colours)
-11. [Changing the typography](#changing-the-typography)
-12. [Adding or removing a language](#adding-or-removing-a-language)
-13. [Replacing the images](#replacing-the-images)
-14. [Connecting the contact form](#connecting-the-contact-form)
-15. [Content you must replace before launch](#content-you-must-replace-before-launch)
-16. [How the animation layer works](#how-the-animation-layer-works)
-17. [Accessibility](#accessibility)
-18. [Performance notes](#performance-notes)
-19. [Browser support](#browser-support)
-20. [Credits and licensing](#credits-and-licensing)
+7. [Getting into the CMS](#getting-into-the-cms)
+8. [Setting up Cloudflare — already done](#setting-up-cloudflare--already-done)
+9. [Deployment](#deployment)
+10. [Themes — how light and dark work](#themes--how-light-and-dark-work)
+11. [Changing the colours](#changing-the-colours)
+12. [Changing the typography](#changing-the-typography)
+13. [Adding or removing a language](#adding-or-removing-a-language)
+14. [Replacing the images](#replacing-the-images)
+15. [Connecting the contact form](#connecting-the-contact-form)
+16. [Content you must replace before launch](#content-you-must-replace-before-launch)
+17. [How the animation layer works](#how-the-animation-layer-works)
+18. [Accessibility](#accessibility)
+19. [Performance notes](#performance-notes)
+20. [Browser support](#browser-support)
+21. [Credits and licensing](#credits-and-licensing)
 
 ---
 
@@ -200,7 +201,8 @@ GitHub sign-in there.)
 
 ## Editing content in the CMS
 
-Go to **https://webdesignerpr.com/admin/** and sign in with GitHub. Saving
+Go to **https://webdesignerpr.com/admin/** and sign in — see
+[Getting into the CMS](#getting-into-the-cms) for the ways to do that. Saving
 commits to `main`, and Cloudflare republishes in about a minute.
 
 The sidebar has four sections:
@@ -261,76 +263,94 @@ fields:
 
 ---
 
-## Setting up the CMS — one-time
+## Getting into the CMS
 
-Three things, in this order. You need to do these yourself — they involve your
-GitHub and Cloudflare accounts.
+Three ways in. Pick by how much setup you want.
 
-### 1. Point Cloudflare at the build
+### A. Locally — works right now, no setup
+
+```bash
+python3 build.py --serve
+```
+
+Open **http://localhost:4173/admin/** and click **"Work with Local
+Repository"**. Pick this repo's folder when prompted. Sveltia reads and writes
+`content/` straight off your disk — no GitHub, no sign-in, no tokens.
+
+Rebuild (`python3 build.py`) to see your edits on the local site, then commit
+the changed files yourself when you're happy.
+
+Chromium browsers only (Chrome, Edge, Brave, Arc) — it uses the File System
+Access API, which Firefox and Safari don't support yet.
+
+### B. Live site with an access token — about five minutes
+
+Open **https://webdesignerpr.com/admin/** and choose **"Sign In Using Access
+Token"**. This skips the OAuth client completely.
+
+1. GitHub → **Settings** → **Developer settings** → **Personal access tokens**
+   → **Fine-grained tokens** → **Generate new token**.
+2. **Repository access**: Only select repositories → `zaoadonaiel/Webdesignerpr`.
+3. **Repository permissions**: set **Contents** to **Read and write**. That is
+   the only one required.
+4. Set an expiry you're comfortable with, generate, and copy the token.
+5. Paste it into the CMS when prompted.
+
+The token is stored in your browser only. Treat it like a password — it grants
+write access to the repository. Never paste it into a chat, an issue, or a
+commit. When it expires, generate a new one and sign in again.
+
+Good for a single editor. Saving commits straight to `main`, and the site
+redeploys in about a minute.
+
+### C. Live site with GitHub sign-in — best for a team
+
+Proper OAuth: editors click "Sign In with GitHub" and never handle a token.
+Worth doing once you have more than one person editing.
+
+1. Deploy [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) to
+   Cloudflare Workers (one-click from its README). Note the worker URL.
+2. GitHub → **Settings** → **Developer settings** → **OAuth Apps** → **New
+   OAuth App**.
+   - **Homepage URL**: `https://webdesignerpr.com`
+   - **Authorization callback URL**: your worker URL + `/callback`
+3. Add `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` to the worker as encrypted
+   environment variables.
+4. Replace `base_url` in `admin/config.yml` with your worker URL — it currently
+   reads `https://REPLACE-ME.workers.dev`, so GitHub sign-in fails until you
+   change it.
+
+Anyone with write access to the repository can then sign in.
+
+---
+
+## Setting up Cloudflare — already done
+
+Recorded here in case it ever needs rebuilding.
 
 The site deploys as a **Cloudflare Worker with static assets**, built by
-Workers Builds. Two things control it:
-
-**`wrangler.jsonc` (in this repo)** pins what gets published:
+Workers Builds. `wrangler.jsonc` pins the important parts:
 
 ```jsonc
 "build":  { "command": "python3 build.py" },
 "assets": { "directory": "dist", "not_found_handling": "404-page" }
 ```
 
-**Workers Builds settings** (dashboard → Workers & Pages → `webdesignerpr` →
-Settings → Build):
+Dashboard → Workers & Pages → `webdesignerpr` → Settings → Build:
 
 | Setting | Value |
 | --- | --- |
 | Build command | `python3 build.py` |
 | Deploy command | `npx wrangler deploy` |
-| Root directory | *(leave empty)* |
-
-The build command is set in both places on purpose. `wrangler.jsonc` covers it
-if Wrangler runs the build itself; the dashboard setting guarantees it. Running
-twice is harmless — the build is deterministic and takes about 30ms.
+| Root directory | *(empty)* |
 
 The Workers build image ships Python 3.13; there is nothing to install.
 
-> **Why `wrangler.jsonc` matters.** Without it, `wrangler deploy` guesses the
+> **Never delete `wrangler.jsonc`.** Without it, `wrangler deploy` guesses the
 > output directory. Since the built HTML lives in git-ignored `dist/`, the only
-> `index.html` in the repo is `admin/index.html` — so Wrangler published the
-> CMS as the entire website. Pinning `assets.directory` removes the guess.
-
-### 2. Deploy the OAuth worker
-
-The CMS signs editors in with GitHub. Netlify-hosted sites get this for free;
-on Cloudflare you run a tiny worker that holds the OAuth secret.
-
-1. Go to [github.com/sveltia/sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth)
-   and follow its deploy instructions — it is a one-click Cloudflare Workers
-   deploy.
-2. Note the worker's URL, e.g. `https://webdesignerpr-auth.you.workers.dev`.
-
-### 3. Create the GitHub OAuth app
-
-1. GitHub → **Settings** → **Developer settings** → **OAuth Apps** →
-   **New OAuth App**.
-2. **Homepage URL**: `https://webdesignerpr.com`
-3. **Authorization callback URL**: your worker URL + `/callback`, e.g.
-   `https://webdesignerpr-auth.you.workers.dev/callback`
-4. Generate a client secret, then add `GITHUB_CLIENT_ID` and
-   `GITHUB_CLIENT_SECRET` to the worker as encrypted environment variables.
-5. Finally, put the worker URL into `admin/config.yml`:
-
-   ```yaml
-   backend:
-     name: github
-     repo: zaoadonaiel/Webdesignerpr
-     branch: main
-     base_url: https://webdesignerpr-auth.you.workers.dev   # ← yours here
-   ```
-
-   It currently reads `https://REPLACE-ME.workers.dev`, so sign-in will fail
-   until you change it.
-
-Anyone with write access to the repository can then sign in and edit.
+> `index.html` in the repo is `admin/index.html` — so Wrangler publishes the
+> CMS as the entire website. This actually happened once. Pinning
+> `assets.directory` removes the guess.
 
 ---
 
@@ -339,7 +359,7 @@ Anyone with write access to the repository can then sign in and edit.
 Every push to `main` — including commits the CMS makes — triggers Workers
 Builds, which runs `python3 build.py` and deploys `dist/` as the Worker's
 static assets. Settings are in
-[Setting up the CMS](#setting-up-the-cms--one-time).
+[Setting up Cloudflare](#setting-up-cloudflare--already-done).
 
 **Never commit `dist/`.** It is git-ignored and rebuilt on every deploy.
 Committing it would let stale HTML shadow real content changes.

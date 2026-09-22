@@ -3,7 +3,7 @@
 # WebDesignerPR — Sveltia CMS configuration
 #
 # Editing anything here changes what the /admin/ interface can edit. The site
-# is rebuilt by Cloudflare Pages on every commit the CMS makes.
+# is rebuilt and redeployed on every commit the CMS makes.
 #
 # A note on HTML in text fields: much of this copy contains inline markup such
 # as <em class="italic accent-text">…</em> for the coral italic accents, plus
@@ -14,8 +14,10 @@ backend:
   name: github
   repo: zaoadonaiel/Webdesignerpr
   branch: main
-  # OAuth client. Deploy sveltia-cms-auth to Cloudflare Workers and put its
-  # URL here — see "Setting up the CMS" in README.md.
+  # Only needed for "Sign In with GitHub". Deploy sveltia-cms-auth to
+  # Cloudflare Workers and put its URL here — see "Getting into the CMS" in
+  # README.md. Until then, use "Sign In Using Access Token", which needs no
+  # OAuth client at all.
   base_url: https://REPLACE-ME.workers.dev
 
 site_url: https://webdesignerpr.com
