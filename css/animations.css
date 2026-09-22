@@ -1,0 +1,222 @@
+/* ==========================================================================
+   WebDesignerPR — Animations
+   Keyframes, pre-animation states, and the reduced-motion contract.
+   --------------------------------------------------------------------------
+   HOW THIS WORKS
+   1. Elements with [data-reveal] / [data-split] start hidden (below).
+   2. js/animations.js drives them with GSAP + ScrollTrigger.
+   3. If GSAP fails to load (offline, blocked CDN), <html> gets `.no-gsap`
+      and a pure-CSS fallback reveals everything. The site is never blank.
+   4. If the visitor prefers reduced motion, every element is shown at once
+      and all decorative loops stop.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PRE-ANIMATION STATES
+   -------------------------------------------------------------------------- */
+
+/* Applied by JS the moment it runs, so no flash of hidden content if JS
+   is disabled entirely. */
+.js-ready [data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.js-ready [data-reveal="up"]    { transform: translateY(42px); }
+.js-ready [data-reveal="down"]  { transform: translateY(-32px); }
+.js-ready [data-reveal="left"]  { transform: translateX(48px); }
+.js-ready [data-reveal="right"] { transform: translateX(-48px); }
+.js-ready [data-reveal="scale"] { transform: scale(0.94); }
+.js-ready [data-reveal="fade"]  { transform: none; }
+
+/* Masked image reveal: a panel wipes away to expose the picture */
+.js-ready [data-reveal-media] { position: relative; overflow: hidden; }
+.js-ready [data-reveal-media]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-background);
+  transform-origin: top;
+  z-index: 2;
+}
+.js-ready [data-reveal-media] > img,
+.js-ready [data-reveal-media] > picture > img {
+  transform: scale(1.18);
+}
+
+/* Split text: each line is clipped by its own overflow-hidden wrapper */
+.split-line { display: block; overflow: hidden; }
+.split-line__inner { display: block; will-change: transform; }
+.split-char { display: inline-block; will-change: transform, opacity; }
+.split-word { display: inline-block; white-space: nowrap; }
+
+/* --------------------------------------------------------------------------
+   2. KEYFRAMES
+   -------------------------------------------------------------------------- */
+
+@keyframes grain-shift {
+  0%,100% { transform: translate(0, 0); }
+  10%  { transform: translate(-4%, -4%); }
+  20%  { transform: translate(-8%,  3%); }
+  30%  { transform: translate( 6%, -6%); }
+  40%  { transform: translate(-3%, 10%); }
+  50%  { transform: translate(-6%,  5%); }
+  60%  { transform: translate( 8%,  0%); }
+  70%  { transform: translate( 0%,  7%); }
+  80%  { transform: translate( 4%, -6%); }
+  90%  { transform: translate(-6%, -3%); }
+}
+
+@keyframes scroll-sweep {
+  0%   { transform: translateX(-100%); }
+  55%  { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.8); opacity: 0.85; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+
+@keyframes float-soft {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%     { transform: translateY(-16px) rotate(2deg); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-up-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* --------------------------------------------------------------------------
+   3. DECORATIVE LOOPS
+   -------------------------------------------------------------------------- */
+
+.float-slow { animation: float-soft 9s ease-in-out infinite; }
+.float-slower { animation: float-soft 13s ease-in-out infinite reverse; }
+
+/* Rotating badge stamp used on the About page */
+.stamp { position: relative; width: 132px; height: 132px; }
+.stamp__ring { animation: spin-slow 22s linear infinite; }
+.stamp__core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+}
+.stamp__core svg { width: 26px; height: 26px; }
+
+/* Availability dot */
+.pulse-dot { position: relative; width: 8px; height: 8px; flex: none; }
+.pulse-dot i,
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--color-secondary);
+}
+.pulse-dot::after { animation: pulse-ring 2.2s var(--ease-out) infinite; }
+
+/* --------------------------------------------------------------------------
+   4. MAGNETIC BUTTON
+   -------------------------------------------------------------------------- */
+
+[data-magnetic] { will-change: transform; }
+[data-magnetic] > * { display: inline-flex; pointer-events: none; }
+
+/* --------------------------------------------------------------------------
+   5. NO-GSAP FALLBACK
+   Everything still animates — just with CSS, on load rather than on scroll.
+   -------------------------------------------------------------------------- */
+
+.no-gsap [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: fade-up-in 0.8s var(--ease-out) both;
+}
+.no-gsap [data-reveal-media]::after { display: none; }
+.no-gsap [data-reveal-media] > img { transform: none !important; }
+.no-gsap .split-line__inner,
+.no-gsap .split-char { transform: none !important; opacity: 1 !important; }
+.no-gsap .loader { display: none; }
+.no-gsap .process__track { transform: none !important; }
+
+/* Without ScrollTrigger the horizontal process track becomes a swipe strip */
+.no-gsap .process__viewport {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+}
+.no-gsap .process__step { scroll-snap-align: start; }
+
+/* --------------------------------------------------------------------------
+   6. REDUCED MOTION
+   A hard stop on decorative motion. Content is fully revealed, never hidden.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-ready [data-reveal],
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .js-ready [data-reveal-media]::after { display: none !important; }
+  .js-ready [data-reveal-media] > img { transform: none !important; }
+
+  .split-line__inner, .split-char { transform: none !important; opacity: 1 !important; }
+
+  .grain { animation: none; opacity: 0.03; }
+  .cursor { display: none !important; }
+  .work-preview { display: none !important; }
+  .hero__scroll-line::after { animation: none; transform: none; }
+  .pulse-dot::after { animation: none; opacity: 0; }
+  .stamp__ring { animation: none; }
+  .float-slow, .float-slower { animation: none; }
+  .marquee__track { transform: none !important; }
+
+  /* Horizontal scroll sections become natural swipe strips */
+  .process__viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .process__track { transform: none !important; }
+  .process__step { scroll-snap-align: start; }
+}
+
+/* --------------------------------------------------------------------------
+   7. GSAP HANDOFF
+   Once GSAP takes ownership of a media reveal, the CSS curtain retires.
+   -------------------------------------------------------------------------- */
+
+.js-ready [data-reveal-media].is-gsap-masked::after { display: none; }
+.js-ready [data-reveal-media].is-gsap-masked > img { transform: none; }
+
+/* --------------------------------------------------------------------------
+   8. THEME SWAP
+   Components transition colour at different speeds (0.25s, 0.5s, 0.9s), so a
+   live theme change would cross-fade unevenly. js/theme.js adds this class
+   for one frame to make the swap instant and clean.
+   -------------------------------------------------------------------------- */
+
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}

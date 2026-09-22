@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img">
+  <defs>
+    <linearGradient id="bg25" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c0e12"/><stop offset="100%" stop-color="#06070a"/>
+    </linearGradient>
+    <radialGradient id="glow25" cx="50%" cy="30%" r="52%">
+      <stop offset="0%" stop-color="#ff4d2e" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff4d2e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="acc25" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff4d2e"/><stop offset="100%" stop-color="#e8c89a"/>
+    </linearGradient>
+    <filter id="grain25" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg25)"/>
+<rect x="120" y="140" width="190" height="240" rx="6" fill="url(#acc25)" opacity="0.26" stroke="#f2efe9" stroke-opacity="0.3"/>
+<rect x="140" y="400" width="150" height="9" rx="4" fill="#f2efe9" opacity="0.45"/>
+<rect x="140" y="422" width="80" height="9" rx="4" fill="#f2efe9" opacity="0.2"/>
+<circle cx="285" cy="168" r="11" fill="url(#acc25)" opacity="0.55"/>
+<rect x="370" y="140" width="190" height="240" rx="6" fill="url(#acc25)" opacity="0.39" stroke="#f2efe9" stroke-opacity="0.3"/>
+<rect x="390" y="400" width="132" height="9" rx="4" fill="#f2efe9" opacity="0.45"/>
+<rect x="390" y="422" width="70" height="9" rx="4" fill="#f2efe9" opacity="0.2"/>
+<circle cx="535" cy="168" r="11" fill="url(#acc25)" opacity="0.69"/>
+<rect x="620" y="140" width="190" height="240" rx="6" fill="url(#acc25)" opacity="0.52" stroke="#f2efe9" stroke-opacity="0.3"/>
+<rect x="640" y="400" width="114" height="9" rx="4" fill="#f2efe9" opacity="0.45"/>
+<rect x="640" y="422" width="60" height="9" rx="4" fill="#f2efe9" opacity="0.2"/>
+<circle cx="785" cy="168" r="11" fill="url(#acc25)" opacity="0.83"/>
+<rect x="870" y="140" width="190" height="240" rx="6" fill="url(#acc25)" opacity="0.65" stroke="#f2efe9" stroke-opacity="0.3"/>
+<rect x="890" y="400" width="96" height="9" rx="4" fill="#f2efe9" opacity="0.45"/>
+<rect x="890" y="422" width="50" height="9" rx="4" fill="#f2efe9" opacity="0.2"/>
+<circle cx="1035" cy="168" r="11" fill="url(#acc25)" opacity="0.97"/>
+<rect width="1200" height="675" filter="url(#grain25)" opacity="0.055"/>
+<text x="60" y="560" fill="#f2efe9" font-family="Instrument Serif, Georgia, serif" font-size="48" letter-spacing="-1.5">Commerce</text>
+<text x="62" y="604" fill="#8e8d88" font-family="JetBrains Mono, Menlo, monospace" font-size="17" letter-spacing="3">STOREFRONT BUILDS</text>
+</svg>

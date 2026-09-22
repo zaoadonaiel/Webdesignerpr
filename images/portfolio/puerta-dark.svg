@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c0e12"/><stop offset="100%" stop-color="#06070a"/>
+    </linearGradient>
+    <radialGradient id="glow7" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8c89a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#e8c89a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="acc7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8c89a"/><stop offset="100%" stop-color="#ff4d2e"/>
+    </linearGradient>
+    <filter id="grain7" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg7)"/>
+  <circle cx="600" cy="520" r="400" fill="url(#glow7)"/>
+  <path d="M 220 620 L 220 335 A 85 85 0 0 1 390 335 L 390 620 Z" fill="none" stroke="url(#acc7)" stroke-width="2.4" opacity="0.62"/>
+  <path d="M 246 620 L 246 361 A 59 59 0 0 1 364 361 L 364 620 Z" fill="url(#acc7)" opacity="0.12"/>
+  <path d="M 430 620 L 430 381 A 85 85 0 0 1 600 381 L 600 620 Z" fill="none" stroke="url(#acc7)" stroke-width="2.4" opacity="0.74"/>
+  <path d="M 456 620 L 456 407 A 59 59 0 0 1 574 407 L 574 620 Z" fill="url(#acc7)" opacity="0.19"/>
+  <path d="M 640 620 L 640 335 A 85 85 0 0 1 810 335 L 810 620 Z" fill="none" stroke="url(#acc7)" stroke-width="2.4" opacity="0.86"/>
+  <path d="M 666 620 L 666 361 A 59 59 0 0 1 784 361 L 784 620 Z" fill="url(#acc7)" opacity="0.26"/>
+  <path d="M 850 620 L 850 381 A 85 85 0 0 1 1020 381 L 1020 620 Z" fill="none" stroke="url(#acc7)" stroke-width="2.4" opacity="0.98"/>
+  <path d="M 876 620 L 876 407 A 59 59 0 0 1 994 407 L 994 620 Z" fill="url(#acc7)" opacity="0.33"/>
+  <rect x="72" y="620" width="1056" height="2" fill="#f2efe9" opacity="0.4"/>
+  <rect width="1200" height="900" filter="url(#grain7)" opacity="0.055"/>
+  <text x="72" y="804" fill="#f2efe9" font-family="Instrument Serif, Iowan Old Style, Georgia, serif" font-size="70" letter-spacing="-2">Puerta</text>
+  <text x="74" y="844" fill="#8e8d88" font-family="JetBrains Mono, ui-monospace, Menlo, monospace" font-size="19" letter-spacing="3.4">NONPROFIT &#183; PLATFORM</text>
+  <text x="1128" y="108" fill="#7c7b77" text-anchor="end" font-family="JetBrains Mono, ui-monospace, Menlo, monospace" font-size="18" letter-spacing="3.4">CONCEPT</text>
+</svg>

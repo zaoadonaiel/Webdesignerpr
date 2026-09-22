@@ -1,0 +1,241 @@
+/* ==========================================================================
+   WebDesignerPR — Responsive Layer
+   Mobile-considered, not mobile-shrunk. Load AFTER style.css.
+
+   Breakpoints
+     1800px+  Large desktop  — wider gutters, more air
+     1280px   Laptop
+     1024px   Tablet landscape — grids collapse to 2 / 1 column
+      768px   Tablet portrait  — mobile nav takes over
+      560px   Phone            — single column everywhere
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   INPUT CAPABILITY — custom cursor only on precise pointers
+   -------------------------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor { display: block; }
+  .work-preview { display: block; }
+  /* Hide the native cursor only once ours is actually rendering */
+  html.has-custom-cursor,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [data-cursor] { cursor: none; }
+  /* Never hide it on things people type into */
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor select { cursor: auto; }
+}
+
+/* --------------------------------------------------------------------------
+   1800px+ — LARGE SCREENS
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 1800px) {
+  :root {
+    --max-width: 1720px;
+    --gutter: 5.5rem;
+    --space-section: 12rem;
+  }
+  .column-rules { grid-template-columns: repeat(6, 1fr); }
+}
+
+/* --------------------------------------------------------------------------
+   1280px — LAPTOP
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1280px) {
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quote-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quote:last-child { grid-column: span 2; }
+  .footer-grid { grid-template-columns: minmax(0, 5fr) repeat(3, minmax(0, 2fr)); }
+  .column-rules { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* --------------------------------------------------------------------------
+   1024px — TABLET LANDSCAPE
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  :root { --header-height: 68px; }
+
+  .section-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-sm);
+    padding-bottom: var(--space-lg);
+  }
+  .section-head__meta { flex-direction: row; align-items: center; gap: var(--space-sm); padding-top: 0; }
+  .section-head__title { max-width: 22ch; }
+
+  .hero__meta { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
+  .hero__title .indent { padding-left: clamp(0rem, 8vw, 4rem); }
+
+  .page-header__grid { grid-template-columns: minmax(0, 1fr); }
+
+  /* Collapse to a single track. Keeping 12 tracks here left 11 column gaps
+     in the layout, which overflowed the viewport on small phones. */
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
+  .split__media, .split__body { grid-column: 1 / -1 !important; }
+  .split--reverse .split__media { order: 0; }
+
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* Stacked: the form is the primary action, so it leads. Contact details
+     follow, and the "email us instead" CTA closes the page. */
+  .form-layout { grid-template-columns: minmax(0, 1fr); }
+
+  .service-row__content { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
+  .service-row__head { grid-template-columns: 3.5rem minmax(0, 1fr) auto; }
+
+  .work-item__link { grid-template-columns: 3.5rem minmax(0, 1fr) auto; }
+  .work-item__tags { grid-column: 2 / -1; }
+
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-brand { grid-column: 1 / -1; }
+
+  .column-rules { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   768px — TABLET PORTRAIT / MOBILE NAV
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  :root {
+    --space-section: clamp(4rem, 13vw, 5.5rem);
+    --gutter: 1.25rem;
+  }
+
+  /* Nav swaps to the drawer. The theme toggle stays in the header because
+     people look for it there; the language switch moves into the drawer,
+     where it gets a proper label. */
+  .nav { display: none; }
+  .header__actions .btn { display: none; }
+  .header__actions .lang-switch { display: none; }
+  .menu-toggle { display: inline-flex; }
+
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 5rem);
+    padding-bottom: var(--space-xl);
+  }
+  .hero__title { font-size: clamp(2.75rem, 13vw, 4.5rem); }
+  .hero__title .indent { padding-left: 0; }
+  .hero__scroll { margin-top: var(--space-lg); }
+  .hero__actions .btn { flex: 1 1 100%; }
+
+  .card-grid { grid-template-columns: minmax(0, 1fr); }
+  .quote-grid { grid-template-columns: minmax(0, 1fr); }
+  .quote:last-child { grid-column: auto; }
+
+  .project-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .project-card:nth-child(even) { transform: none; }
+  /* Index and year read better as a meta line above the title on phones */
+  .project-card__body { flex-direction: column; gap: var(--space-2xs); }
+  .project-card__meta {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-sm);
+    order: -1;
+  }
+  /* Touch devices can't hover — show the overlay affordance permanently */
+  .project-card__overlay { display: none; }
+
+  .work-item__link {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: var(--space-2xs) var(--space-sm);
+    padding-block: var(--space-md);
+  }
+  .work-item__link .index-num { grid-row: 1; }
+  .work-item__title { grid-column: 1 / -1; }
+  .work-item__tags { grid-column: 1 / -1; margin-top: 0.35rem; }
+  .work-item__link:hover { padding-inline: 0; }
+
+  .service-row__head { grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-sm); }
+  .service-row__head .index-num { grid-column: 1; grid-row: 1; }
+  .service-row__title { grid-column: 1; }
+  .service-row__toggle { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+
+  .value-item { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); }
+
+  .form__row { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  .form__footer { flex-direction: column; align-items: stretch; }
+  .form__footer .btn { width: 100%; }
+
+  .cta__actions { flex-direction: column; width: 100%; }
+  .cta__actions .btn { width: 100%; }
+
+  .footer-bottom { justify-content: flex-start; }
+
+  /* Touch targets: text links need a 44px tappable box on phones */
+  .footer-col a,
+  .footer-col span,
+  .footer-bottom a,
+  .mobile-menu__foot a,
+  .contact-block__value a,
+  .breadcrumb a,
+  .brand,
+  .to-top,
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .footer-col { gap: 0; }
+  .footer-social { gap: var(--space-lg); }
+
+  /* Reduce grain cost on phones */
+  .grain { opacity: 0.035; background-size: 140px 140px; }
+}
+
+/* --------------------------------------------------------------------------
+   560px — PHONE
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 420px) {
+  /* Mark only — the wordmark would crowd the header controls */
+  .brand__text { display: none; }
+  .controls { gap: 0.35rem; }
+}
+
+@media (max-width: 560px) {
+  .stats { grid-template-columns: minmax(0, 1fr); }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  .filters { gap: 0.4rem; padding-bottom: var(--space-lg); }
+  .filter-btn { flex: 1 1 calc(50% - 0.2rem); justify-content: center; }
+  .breadcrumb { flex-wrap: wrap; }
+  .chip-group { gap: 0.4rem; }
+  .chip span { flex: 1; justify-content: center; }
+  .process__step { width: 84vw; min-height: 320px; }
+  .marquee__item { gap: var(--space-md); }
+  .marquee__track { gap: var(--space-md); padding-right: var(--space-md); }
+  .footer-wordmark { -webkit-text-stroke-width: 0.5px; }
+}
+
+/* --------------------------------------------------------------------------
+   SHORT VIEWPORTS — landscape phones
+   -------------------------------------------------------------------------- */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero { min-height: auto; padding-top: calc(var(--header-height) + 3rem); padding-bottom: var(--space-lg); }
+  .hero__scroll { display: none; }
+  .mobile-menu { padding-top: calc(var(--header-height) + 1rem); }
+  .mobile-menu__link { font-size: 2rem; }
+}
+
+/* --------------------------------------------------------------------------
+   PRINT
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .site-header, .mobile-menu, .cursor, .grain, .loader,
+  .column-rules, .scroll-progress, .work-preview, .marquee { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 1.5rem; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.75em; }
+}

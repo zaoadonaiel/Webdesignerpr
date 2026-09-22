@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbf8f2"/><stop offset="100%" stop-color="#efeade"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e04a24" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#e04a24" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="acc3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e04a24"/><stop offset="100%" stop-color="#c08a3a"/>
+    </linearGradient>
+    <filter id="grain3" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg3)"/>
+  <circle cx="600" cy="420" r="480" fill="url(#glow3)"/>
+  <circle cx="600" cy="400" r="210" fill="url(#acc3)" opacity=".92"/>
+  <rect x="392" y="430" width="416" height="6.0" fill="#efeade" opacity=".85"/>
+  <rect x="395" y="444" width="411" height="5.7" fill="#efeade" opacity=".85"/>
+  <rect x="398" y="458" width="404" height="5.4" fill="#efeade" opacity=".85"/>
+  <rect x="403" y="472" width="395" height="5.1" fill="#efeade" opacity=".85"/>
+  <rect x="408" y="486" width="383" height="4.8" fill="#efeade" opacity=".85"/>
+  <rect x="415" y="500" width="369" height="4.5" fill="#efeade" opacity=".85"/>
+  <rect x="424" y="514" width="353" height="4.2" fill="#efeade" opacity=".85"/>
+  <rect x="434" y="528" width="333" height="3.9" fill="#efeade" opacity=".85"/>
+  <rect x="445" y="542" width="309" height="3.6" fill="#efeade" opacity=".85"/>
+  <rect x="459" y="556" width="281" height="3.3" fill="#efeade" opacity=".85"/>
+  <rect x="477" y="570" width="247" height="3.0" fill="#efeade" opacity=".85"/>
+  <rect x="499" y="584" width="202" height="2.7" fill="#efeade" opacity=".85"/>
+  <rect x="530" y="598" width="140" height="2.4" fill="#efeade" opacity=".85"/>
+  <line x1="72" y1="660" x2="1128" y2="660" stroke="#14120e" stroke-width="1" opacity="0.143"/>
+  <line x1="118" y1="686" x2="1082" y2="686" stroke="#14120e" stroke-width="1" opacity="0.125"/>
+  <line x1="164" y1="712" x2="1036" y2="712" stroke="#14120e" stroke-width="1" opacity="0.108"/>
+  <line x1="210" y1="738" x2="990" y2="738" stroke="#14120e" stroke-width="1" opacity="0.09"/>
+  <line x1="256" y1="764" x2="944" y2="764" stroke="#14120e" stroke-width="1" opacity="0.073"/>
+  <line x1="302" y1="790" x2="898" y2="790" stroke="#14120e" stroke-width="1" opacity="0.055"/>
+  <line x1="348" y1="816" x2="852" y2="816" stroke="#14120e" stroke-width="1" opacity="0.037"/>
+  <rect width="1200" height="900" filter="url(#grain3)" opacity="0.045"/>
+  <text x="72" y="804" fill="#14120e" font-family="Instrument Serif, Iowan Old Style, Georgia, serif" font-size="70" letter-spacing="-2">Solaz</text>
+  <text x="74" y="844" fill="#5f5b53" font-family="JetBrains Mono, ui-monospace, Menlo, monospace" font-size="19" letter-spacing="3.4">HOSPITALITY &#183; BOOKING</text>
+  <text x="1128" y="108" fill="#837e74" text-anchor="end" font-family="JetBrains Mono, ui-monospace, Menlo, monospace" font-size="18" letter-spacing="3.4">CONCEPT</text>
+</svg>
