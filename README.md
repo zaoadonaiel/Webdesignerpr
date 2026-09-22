@@ -133,6 +133,7 @@ webdesignerpr/
 │   ├── process.json          The six process steps (used on two pages)
 │   ├── capabilities.json     The tool grid
 │   ├── testimonials.json     Quotes
+│   ├── notfound.json         404 page copy
 │   └── projects/             One file per project — add, remove, reorder
 │       ├── marea.json
 │       └── …
@@ -161,6 +162,7 @@ webdesignerpr/
 │   └── uploads/              ← Where CMS image uploads land
 ├── fonts/                Empty — see fonts/README.md for self-hosting
 ├── _headers              Cloudflare headers (keeps /admin/ out of search)
+├── wrangler.jsonc        Pins the deploy to dist/ — see Deployment
 │
 └── dist/                 ← BUILD OUTPUT. Git-ignored. Never edit by hand.
 ```
@@ -264,24 +266,37 @@ fields:
 Three things, in this order. You need to do these yourself — they involve your
 GitHub and Cloudflare accounts.
 
-### 1. Point Cloudflare Pages at the build
+### 1. Point Cloudflare at the build
 
-In the Cloudflare dashboard → **Workers & Pages** → your project → **Settings**
-→ **Build**:
+The site deploys as a **Cloudflare Worker with static assets**, built by
+Workers Builds. Two things control it:
+
+**`wrangler.jsonc` (in this repo)** pins what gets published:
+
+```jsonc
+"build":  { "command": "python3 build.py" },
+"assets": { "directory": "dist", "not_found_handling": "404-page" }
+```
+
+**Workers Builds settings** (dashboard → Workers & Pages → `webdesignerpr` →
+Settings → Build):
 
 | Setting | Value |
 | --- | --- |
 | Build command | `python3 build.py` |
-| Build output directory | `dist` |
+| Deploy command | `npx wrangler deploy` |
 | Root directory | *(leave empty)* |
 
-**Do this before or immediately after pushing these changes.** The generated
-HTML no longer sits at the repo root, so with the old settings (no build
-command, output `/`) the site would serve an empty directory.
+The build command is set in both places on purpose. `wrangler.jsonc` covers it
+if Wrangler runs the build itself; the dashboard setting guarantees it. Running
+twice is harmless — the build is deterministic and takes about 30ms.
 
-Cloudflare's build image ships Python 3.11+ already; there is nothing to
-install. If you ever want to pin it, set a `PYTHON_VERSION` environment
-variable.
+The Workers build image ships Python 3.13; there is nothing to install.
+
+> **Why `wrangler.jsonc` matters.** Without it, `wrangler deploy` guesses the
+> output directory. Since the built HTML lives in git-ignored `dist/`, the only
+> `index.html` in the repo is `admin/index.html` — so Wrangler published the
+> CMS as the entire website. Pinning `assets.directory` removes the guess.
 
 ### 2. Deploy the OAuth worker
 
@@ -321,26 +336,32 @@ Anyone with write access to the repository can then sign in and edit.
 
 ## Deployment
 
-Cloudflare Pages is already connected to this repository. Every push to `main`
-— including the commits the CMS makes — triggers `python3 build.py` and
-publishes `dist/`. See
-[Setting up the CMS](#setting-up-the-cms--one-time) for the exact build
-settings.
+Every push to `main` — including commits the CMS makes — triggers Workers
+Builds, which runs `python3 build.py` and deploys `dist/` as the Worker's
+static assets. Settings are in
+[Setting up the CMS](#setting-up-the-cms--one-time).
+
+**Never commit `dist/`.** It is git-ignored and rebuilt on every deploy.
+Committing it would let stale HTML shadow real content changes.
+
+**Routing.** `html_handling: "auto-trailing-slash"` means `/about` and
+`/about.html` both resolve. `not_found_handling: "404-page"` serves the
+bilingual `404.html` for anything unmatched.
 
 **Other hosts.** Anything that can run a command and serve a folder works:
 
-| Host | Build command | Output directory |
+| Host | Build command | Output |
 | --- | --- | --- |
+| Cloudflare Workers | `python3 build.py` | `dist` (via `wrangler.jsonc`) |
 | Cloudflare Pages | `python3 build.py` | `dist` |
-| Netlify | `python3 build.py` | `dist` |
-| Vercel | `python3 build.py` | `dist` |
-| Plain static hosting | run `python3 build.py` locally, upload `dist/` | — |
+| Netlify / Vercel | `python3 build.py` | `dist` |
+| Plain static hosting | run locally, upload `dist/` | — |
 
 GitHub Pages needs an Actions workflow, since it will not run Python for you.
 
 **If you change domain**, update `SITE_URL` in `generator/content.py`. It feeds
 the canonical tags, `hreflang` alternates, Open Graph URLs and the sitemap in
-one place — there are no hard-coded domains in the templates.
+one place.
 
 ---
 

@@ -21,7 +21,7 @@ sys.path.insert(0, ROOT)
 
 from generator.content import LANGS, PAGES
 from generator.partials import Ctx
-from generator.pages import BUILDERS
+from generator.pages import BUILDERS, render_404
 
 DIST = os.path.join(ROOT, "dist")
 
@@ -61,6 +61,12 @@ def render():
             builder(ctx)
             pages += 1
     return pages
+
+
+def write_404():
+    """One 404 for the whole site — Cloudflare serves it for any unmatched path."""
+    with open(os.path.join(DIST, "404.html"), "w", encoding="utf-8") as f:
+        f.write(render_404())
 
 
 def write_sitemap():
@@ -106,6 +112,7 @@ def main():
     clean()
     assets = copy_static()
     pages = render()
+    write_404()
     write_sitemap()
     write_robots()
     print(f"built {pages} pages + {assets} assets -> dist/  ({time.time() - start:.2f}s)")

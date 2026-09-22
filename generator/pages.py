@@ -2,7 +2,7 @@
 """Renders the five pages from content/. Every string comes from the CMS."""
 from .content import DEFAULT_LANG, load, load_projects, shared, texts
 from .partials import (head, chrome, header, footer, scripts, cta, section_head,
-                       page_header, themed_img, ARROW, ARROW_R, STAR)
+                       page_header, themed_img, ARROW, ARROW_R, STAR, MARK_PATH)
 
 # Hand-drawn inline icons, keyed by the service id used in content/services.json
 SVC_ICONS = {
@@ -857,3 +857,74 @@ def build_contact(c):
 
 
 BUILDERS = [build_home, build_about, build_services, build_portfolio, build_contact]
+
+
+# ---------------------------------------------------------------------------
+# 404
+#
+# Served for any unmatched path, at any depth, so every URL here must be
+# root-absolute rather than relative. Shows both languages because we cannot
+# know which one the visitor was after.
+# ---------------------------------------------------------------------------
+
+def render_404():
+    from .content import SITE_URL
+    d = load("notfound")
+    es, en = d["es"], d["en"]
+    settings = load("settings")
+
+    def block(loc, lang, home, work):
+        return f"""        <div class="notfound__block" lang="{lang}">
+          <h2 class="display-3">{loc['title']}</h2>
+          <p class="prose u-mt-md">{loc['body']}</p>
+          <div class="hero__actions u-mt-lg">
+            <a class="btn btn--primary" href="{home}"><span>{loc['home']} {ARROW}</span></a>
+            <a class="btn btn--ghost" href="{work}"><span>{loc['work']} {ARROW}</span></a>
+          </div>
+        </div>"""
+
+    return f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>404 &mdash; WebDesignerPR</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#08090b" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/images/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script>(function(){{try{{if(localStorage.getItem("wdpr:theme")==="dark")
+document.documentElement.setAttribute("data-theme","dark")}}catch(e){{}}}})();</script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="notfound" id="main">
+    <div class="glow glow--primary notfound__glow" aria-hidden="true"></div>
+    <div class="container">
+      <a class="brand" href="/" aria-label="WebDesignerPR">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" style="color:var(--color-primary)">
+          {MARK_PATH}
+          <circle cx="16" cy="16" r="2.4" fill="var(--color-background)"/>
+        </svg>
+        <span class="brand__text">WebDesigner<em>PR</em></span>
+      </a>
+
+      <p class="display-mega notfound__code" aria-hidden="true">{es['code']}</p>
+      <h1 class="visually-hidden">404 &mdash; {es['title']} / {en['title']}</h1>
+
+      <div class="notfound__grid">
+{block(es, 'es', '/', '/portfolio.html')}
+{block(en, 'en', '/en/', '/en/portfolio.html')}
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+"""

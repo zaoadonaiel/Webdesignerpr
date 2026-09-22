@@ -474,6 +474,15 @@ h1, h2, h3, h4, h5 {
 }
 .btn:hover::before, .btn:focus-visible::before { transform: scaleY(1); }
 
+/* The label span wraps text + arrow. Without this it relies on the
+   [data-magnetic] rule to stay on one line, which breaks on any button that
+   isn't magnetic (the 404 page, for one). */
+.btn > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
 .btn__arrow {
   width: 1em; height: 1em;
   flex: none;
@@ -1826,3 +1835,49 @@ body.is-locked .site-header {
 .u-mb-lg { margin-bottom: var(--space-lg); }
 .u-center { text-align: center; }
 .u-relative { position: relative; z-index: 1; }
+
+/* --------------------------------------------------------------------------
+   24. 404
+   Served for any unmatched path, so it carries its own minimal layout and
+   shows both languages.
+   -------------------------------------------------------------------------- */
+
+.notfound {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-2xl);
+  overflow: hidden;
+}
+.notfound__glow {
+  width: 55vw; height: 55vw;
+  top: -20%; right: -15%;
+}
+.notfound .container { position: relative; z-index: 1; }
+.notfound__code {
+  font-family: var(--font-display);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-line-strong);
+  margin-block: var(--space-lg) var(--space-xl);
+  user-select: none;
+}
+.notfound__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xl) var(--gutter);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-line);
+}
+.notfound__block .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+
+@media (max-width: 768px) {
+  .notfound__grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  .notfound__grid .notfound__block + .notfound__block {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-line);
+  }
+  .notfound__block .hero__actions .btn { flex: 1 1 100%; }
+}

@@ -1,0 +1,16 @@
+{
+  "es": {
+    "code": "404",
+    "title": "Esta página no existe.",
+    "body": "Puede que el enlace esté roto o que la página se haya movido. Desde el inicio llegas a todo lo demás.",
+    "home": "Ir al inicio",
+    "work": "Ver el trabajo"
+  },
+  "en": {
+    "code": "404",
+    "title": "This page doesn't exist.",
+    "body": "The link may be broken, or the page may have moved. Everything else is one step away from the homepage.",
+    "home": "Go to the homepage",
+    "work": "See the work"
+  }
+}
