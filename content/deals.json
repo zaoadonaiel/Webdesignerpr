@@ -6,22 +6,112 @@
     "lead": "Plantillas de sitios web de una página. Listas para lanzar, personalizadas para tu negocio. Configuración, hospedaje de 30 días y SEO incluidos.",
     "templates": [
       {
+        "label": "Alquileres de Autos",
+        "title": "Sitio de Alquiler",
+        "description": "Atrae viajeros con una experiencia de reserva simplificada y diseño orientado a consultas que convierte navegadores en clientes.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Car-Rental-Website-Template-The-X-Digital.png"
+      },
+      {
         "label": "Consultoría / Abogados",
-        "title": "Sitio de Consultoría",
+        "title": "Sitio Legal",
         "description": "Establece autoridad con claridad en áreas de práctica, testimonios y reserva de consulta confidencial.",
         "image": "https://thexdigital.com/wp-content/uploads/2026/09/Attorney-Website-The-X-Digital-scaled.png"
       },
       {
-        "label": "Bienes Raíces",
-        "title": "Sitio de Agente",
-        "description": "Atrae compradores con galerías de propiedades, búsqueda por vecindario y formularios de contacto directo.",
-        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Attorney-Website-The-X-Digital-scaled.png"
+        "label": "Techado",
+        "title": "Sitio de Techado",
+        "description": "Construye confianza con dueños de casa mediante demostraciones de servicio, mensajes de respuesta de emergencia y solicitudes de presupuesto instantáneo.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Roofing-Website-Template-The-X-Digital.png"
       },
       {
-        "label": "Servicios",
-        "title": "Sitio de Servicios",
-        "description": "Convierte consultas en citas con demostración de experiencia, testimonios y solicitudes de presupuesto rápido.",
-        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Roofing-Website-Template-The-X-Digital.png"
+        "label": "HVAC",
+        "title": "Sitio de HVAC",
+        "description": "Convierte preocupaciones de comodidad en llamadas de servicio con mensajería estacional y posicionamiento de respuesta rápida.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/HVAC-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Plomería",
+        "title": "Sitio de Plomería",
+        "description": "Captura reparaciones urgentes con señalización de disponibilidad 24/7, claridad de área de servicio y prominencia de contacto de emergencia.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Plumbing-Website-Template-For-Same-The-X-Digital.png"
+      },
+      {
+        "label": "Contador / CPA",
+        "title": "Sitio Contador",
+        "description": "Posiciona experiencia con mensajería enfocada en cumplimiento, ofertas de servicio y programación de consultas que atrae clientes serios.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/CPA-Website-Template-For-Sale-The-X-Digital.png"
+      },
+      {
+        "label": "Mudanzas",
+        "title": "Sitio de Mudanzas",
+        "description": "Guía a familias en reubicación mediante servicios con precios transparentes, testimonios y formularios de solicitud de presupuesto.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Moving-Company-Website-Template-For-Sale-The-X-Digital.png"
+      },
+      {
+        "label": "Detallado Móvil",
+        "title": "Sitio de Detallado",
+        "description": "Muestra transformaciones antes/después con calendarios de reserva y mapeo de área de servicio para citas móviles.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Mobile-Detailer-Website-Template-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Construcción",
+        "title": "Sitio de Construcción",
+        "description": "Muestra proyectos completados y certificaciones para ganar licitaciones comerciales y residenciales mediante fortaleza de portafolio.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Construction-Company-Template-for-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Remoción de Basura",
+        "title": "Sitio de Remoción",
+        "description": "Convierte preocupaciones de desorden en solicitudes de servicio con formularios de presupuesto rápido y mensajería de disponibilidad el mismo día.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Junk-Removal-Website-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Electricista",
+        "title": "Sitio de Electricista",
+        "description": "Construye credibilidad con demostraciones de licencia, anuncios de servicio de emergencia y posicionamiento de respuesta rápida.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Electrician-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Piso",
+        "title": "Sitio de Piso",
+        "description": "Inspira decisiones de diseño con galerías de materiales, cronogramas de instalación y solicitudes de consulta en el hogar.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Flooring-Company-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Reparación de Electrodomésticos",
+        "title": "Sitio de Reparación",
+        "description": "Reduce ansiedad de reparación con claridad de área de servicio, información de garantía y reserva de cita el mismo día.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Appliance-Repair-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Mecánica",
+        "title": "Sitio de Mecánica",
+        "description": "Gana confianza mediante certificaciones ASE, transparencia de servicio y posicionamiento de experiencia en diagnóstico.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Mecahnic-website-template-for-sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Concreto",
+        "title": "Sitio de Concreto",
+        "description": "Demuestra durabilidad y artesanía mediante galerías de proyectos y formularios de solicitud de presupuesto gratuito.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Concrete-Website-Template-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Reparación de Crédito",
+        "title": "Sitio de Crédito",
+        "description": "Construye confianza con mensajería de cumplimiento regulatorio, historias de éxito y programación de consultas.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Credit-Repair-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Pintor",
+        "title": "Sitio de Pintor",
+        "description": "Muestra galerías de transformación de color con garantías de protección de pintura y solicitudes de presupuesto gratuito.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Painter-Website-Template-For-Sale-The-X-Digital.png"
+      },
+      {
+        "label": "Paisajismo",
+        "title": "Sitio de Paisajismo",
+        "description": "Permite que otros exploren galerías de transformación de paisaje y disfruten de tranquilidad con tus servicios excepcionales.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Landscape-Website-Template-For-Sale-The-X-Digital-2.png"
       }
     ],
     "cta": {
@@ -37,22 +127,112 @@
     "lead": "One-page website templates. Ready to launch, customized for your business. Setup, 30 days hosting and SEO included.",
     "templates": [
       {
-        "label": "Consulting / Legal",
-        "title": "Consulting Website",
+        "label": "Car Rental",
+        "title": "Car Rental Website",
+        "description": "Attract travelers with a streamlined booking experience and inquiry-driven design that turns browsers into renters.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Car-Rental-Website-Template-The-X-Digital.png"
+      },
+      {
+        "label": "Legal",
+        "title": "Legal Website",
         "description": "Establish authority with practice area clarity, testimonials, and confidential consultation booking.",
         "image": "https://thexdigital.com/wp-content/uploads/2026/09/Attorney-Website-The-X-Digital-scaled.png"
       },
       {
-        "label": "Real Estate",
-        "title": "Agent Website",
-        "description": "Attract buyers with property galleries, neighborhood search and direct contact forms.",
-        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Attorney-Website-The-X-Digital-scaled.png"
+        "label": "Roofing",
+        "title": "Roofing Website",
+        "description": "Build trust with homeowners through service showcases, emergency response messaging, and instant quote requests.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Roofing-Website-Template-The-X-Digital.png"
       },
       {
-        "label": "Services",
-        "title": "Services Website",
-        "description": "Turn inquiries into appointments with expertise demonstration, testimonials and quick quote requests.",
-        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Roofing-Website-Template-The-X-Digital.png"
+        "label": "HVAC",
+        "title": "HVAC Website",
+        "description": "Convert comfort concerns into service calls with seasonal messaging and fast-response positioning.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/HVAC-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Plumbing",
+        "title": "Plumbing Website",
+        "description": "Capture urgent repairs with 24/7 availability signaling, service area clarity, and emergency contact prominence.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Plumbing-Website-Template-For-Same-The-X-Digital.png"
+      },
+      {
+        "label": "CPA / Accountant",
+        "title": "Accounting Website",
+        "description": "Position expertise with compliance-focused messaging, service offerings, and consultation scheduling that attracts serious clients.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/CPA-Website-Template-For-Sale-The-X-Digital.png"
+      },
+      {
+        "label": "Moving Company",
+        "title": "Moving Website",
+        "description": "Guide relocating families through services with transparent pricing, testimonials, and quote request forms.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Moving-Company-Website-Template-For-Sale-The-X-Digital.png"
+      },
+      {
+        "label": "Mobile Detailer",
+        "title": "Mobile Detailing Website",
+        "description": "Showcase transformation before/afters with booking calendars and service area mapping for mobile appointments.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Mobile-Detailer-Website-Template-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Construction",
+        "title": "Construction Website",
+        "description": "Display completed projects and certifications to win commercial and residential bids through portfolio strength.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Construction-Company-Template-for-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Junk Removal",
+        "title": "Junk Removal Website",
+        "description": "Convert clutter concerns into service requests with quick-quote forms and same-day availability messaging.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Junk-Removal-Website-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Electrician",
+        "title": "Electrician Website",
+        "description": "Build credibility with licensing displays, emergency service callouts, and rapid-response positioning.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Electrician-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Flooring",
+        "title": "Flooring Website",
+        "description": "Inspire design decisions with material galleries, installation timelines, and in-home consultation requests.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Flooring-Company-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Appliance Repair",
+        "title": "Appliance Repair Website",
+        "description": "Reduce repair anxiety with service area clarity, warranty info, and same-day appointment booking.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Appliance-Repair-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Mechanic",
+        "title": "Mechanic Website",
+        "description": "Earn trust through ASE certifications, service transparency, and diagnostic expertise positioning.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Mecahnic-website-template-for-sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Concrete",
+        "title": "Concrete Website",
+        "description": "Demonstrate durability and craftsmanship through project galleries and free estimate request forms.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Concrete-Website-Template-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Credit Repair",
+        "title": "Credit Repair Website",
+        "description": "Build confidence with regulatory compliance messaging, success stories, and consultation scheduling.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Credit-Repair-Website-Template-For-Sale-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Painter",
+        "title": "Painter Website",
+        "description": "Showcase color transformation galleries with paint protection guarantees and free estimate requests.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Painter-Website-Template-For-Sale-The-X-Digital.png"
+      },
+      {
+        "label": "Landscaping",
+        "title": "Landscaping Website",
+        "description": "Allow others to explore landscape makeover galleries and enjoy peace of mind with your amazing services.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Landscape-Website-Template-For-Sale-The-X-Digital-2.png"
       }
     ],
     "cta": {
