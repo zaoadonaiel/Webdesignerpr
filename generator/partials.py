@@ -129,6 +129,7 @@ def head(c, page):
 document.documentElement.setAttribute("data-theme","dark")}}catch(e){{}}
 document.documentElement.classList.add("js-ready")}})();</script>
   <noscript><style>.loader{{display:none!important}}.js-ready [data-reveal]{{opacity:1!important;transform:none!important}}</style></noscript>
+  <script src="https://app.zaochat.com/widget/widget.js?v=1788014309" data-client-code="130aa379-9729-46f6-879e-55871e187ca4" async></script>
 </head>
 <body>
   <a class="skip-link" href="#main">{c.ui['skip']}</a>
