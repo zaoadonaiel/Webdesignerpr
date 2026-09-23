@@ -1539,8 +1539,8 @@ body.is-locked .site-header {
   gap: var(--space-lg) var(--gutter);
   align-items: flex-start;
 }
-.split__media { grid-column: span 6; display: flex; flex-direction: column; }
-.split__body  { grid-column: span 5 / -1; }
+.split__media { grid-column: span 3; display: flex; flex-direction: column; }
+.split__body  { grid-column: span 8 / -1; }
 .split--reverse .split__media { order: 2; }
 
 .split__caption {
