@@ -110,8 +110,8 @@ def head(c, page):
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="{SITE_URL}/images/logo/og-image.jpg">
 
-  <link rel="icon" href="{c.asset('favicon.svg')}" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="{c.asset('favicon.svg')}">
+  <link rel="icon" href="{c.asset('favicon.png')}" type="image/png">
+  <link rel="apple-touch-icon" href="{c.asset('favicon.png')}">
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
