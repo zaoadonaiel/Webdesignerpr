@@ -894,11 +894,12 @@ def build_article_pages(c):
         body = article.get("body", "")
         excerpt = article.get("excerpt", "")
         
-        # SEO: use article title + site name, and excerpt as description
-        seo_title = f"{title} — Web Designer Puerto Rico"
-        seo_description = excerpt if excerpt else title
+        # Use Zao Flo's SEO fields if available; fallback to title/excerpt
+        seo_title = article.get("seo_title", f"{title} — Web Designer Puerto Rico")
+        seo_description = article.get("seo_description", excerpt if excerpt else title)
+        seo_keywords = article.get("seo_keywords", "")
         
-        out = [head(c, f"articles/{slug}.html", title=seo_title, description=seo_description), chrome(c), header(c, f"articles/{slug}.html")]
+        out = [head(c, f"articles/{slug}.html", title=seo_title, description=seo_description, keywords=seo_keywords), chrome(c), header(c, f"articles/{slug}.html")]
         out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
         
         # Article header

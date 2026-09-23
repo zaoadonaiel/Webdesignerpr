@@ -69,7 +69,7 @@ META_KEY = {"index.html": "home", "about.html": "about", "services.html": "servi
             "portfolio.html": "portfolio", "deals.html": "deals", "contact.html": "contact", "articles.html": "articles"}
 
 
-def head(c, page, title=None, description=None):
+def head(c, page, title=None, description=None, keywords=None):
     if title is None or description is None:
         # Use meta from settings.json
         meta = c.s["meta"][META_KEY[page]]
@@ -88,6 +88,7 @@ def head(c, page, title=None, description=None):
   <meta name="google" content="notranslate">
   <title>{title}</title>
   <meta name="description" content="{description}">
+  {f'<meta name="keywords" content="{keywords}">' if keywords else ''}
   <link rel="canonical" href="{c.page_url(page)}">
 
   <!-- Both language versions of this page -->
