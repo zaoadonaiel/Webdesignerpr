@@ -56,24 +56,24 @@
       "standards_label": "Lo que nos exigimos",
       "stats": [
         {
-          "value": "95",
-          "suffix": "+",
-          "label": "Puntuación mínima de rendimiento en Lighthouse con la que publicamos, medida en móvil."
+          "value": "2002",
+          "suffix": "",
+          "label": "Branding since 2002. Zao's foundation in design thinking started early."
         },
         {
-          "value": "1.5",
-          "suffix": "s",
-          "label": "Largest Contentful Paint objetivo en un teléfono de gama media sobre 4G."
+          "value": "190",
+          "suffix": "+",
+          "label": "More than 190 websites that we host for our clients. All fast, all ours."
         },
         {
           "value": "100",
           "suffix": "%",
-          "label": "Código front-end a la medida. Cero temas, cero constructores de páginas, nunca."
+          "label": "Satisfaction guaranteed. Custom code. Zero themes. Zero page builders. Ever."
         },
         {
-          "value": "",
+          "value": "2010",
           "suffix": "",
-          "label": "Conformidad WCAG 2.2 nivel AA como base en cada proyecto, no como extra."
+          "label": "Coding and developing since 2010. Fourteen years building for real businesses."
         }
       ],
       "stat_static": "AA"
@@ -202,24 +202,24 @@
       "standards_label": "What we hold ourselves to",
       "stats": [
         {
-          "value": "95",
-          "suffix": "+",
-          "label": "Minimum Lighthouse performance score we ship against, tested on mobile."
+          "value": "2002",
+          "suffix": "",
+          "label": "Branding since 2002. Zao's foundation in design thinking started early."
         },
         {
-          "value": "1.5",
-          "suffix": "s",
-          "label": "Target Largest Contentful Paint on a mid-tier phone over 4G."
+          "value": "190",
+          "suffix": "+",
+          "label": "More than 190 websites that we host for our clients. All fast, all ours."
         },
         {
           "value": "100",
           "suffix": "%",
-          "label": "Custom front-end code. Zero themes, zero page builders, ever."
+          "label": "Satisfaction guaranteed. Custom code. Zero themes. Zero page builders. Ever."
         },
         {
-          "value": "",
+          "value": "2010",
           "suffix": "",
-          "label": "WCAG 2.2 conformance is the baseline on every build, not an upgrade."
+          "label": "Coding and developing since 2010. Fourteen years building for real businesses."
         }
       ],
       "stat_static": "AA"
