@@ -206,7 +206,7 @@ def header(c, page):
     s = c.s
     links = "\n".join(
         f'          <a class="nav__link" data-nav-link href="{n["href"]}">{n["label"]}</a>'
-        for n in s["nav"] if n["href"] != "contact.html")
+        for n in s["nav"])
     drawer_items = "\n".join(f"""      <div class="mobile-menu__item">
         <a class="mobile-menu__link" data-nav-link href="{n['href']}">
           <span class="index-num">{n['index']}</span> {n['label']}
