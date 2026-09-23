@@ -398,7 +398,27 @@ def build_about(c):
       </div>
     </section>
 
-    <!-- ============ 04 — DESIGN PHILOSOPHY ============ -->
+    <!-- ============ 04 — ABOUT DAVID DUARTE ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal-media>
+            <div class="media-frame media-frame--tall">
+              <img src="{d['about_founder']['image']}" alt="{d['about_founder']['image_alt']}" width="400" height="500" style="width:100%;height:auto;border-radius:var(--radius-lg);display:block">
+            </div>
+          </div>
+          <div class="split__body">
+            <span class="index-num">{d['about_founder']['index']}</span>
+            <h2 class="display-2 u-mb-lg">{d['about_founder']['title']}</h2>
+            <div class="prose prose--large">
+              {d['about_founder']['bio']}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 — DESIGN PHILOSOPHY ============ -->
     <section class="section">
       <div class="container">
 {section_head(ph['index'], ph['eyebrow'], ph['title'], ph['aside'])}
@@ -430,7 +450,7 @@ def build_about(c):
       </div>
     </section>
 
-    <!-- ============ 05 — CAPABILITIES ============ -->
+    <!-- ============ 06 — CAPABILITIES ============ -->
     <section class="section">
       <div class="container">
 {section_head(cap['index'], cap['eyebrow'], cap['title'], cap['aside'])}
@@ -446,7 +466,7 @@ def build_about(c):
       </div>
     </section>
 
-    <!-- ============ 06 — WORK PROCESS ============ -->
+    <!-- ============ 07 — WORK PROCESS ============ -->
     <section class="section process" data-process>
       <div class="container">
 {section_head(pr['index'], pr['eyebrow'], pr['title'], pr['aside'])}

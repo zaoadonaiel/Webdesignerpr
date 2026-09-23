@@ -115,7 +115,7 @@
       "stat_static": "1&times;"
     },
     "process": {
-      "index": "06",
+      "index": "05",
       "eyebrow": "Proceso de trabajo",
       "title": "Seis etapas, <em class=\"italic\">sin sorpresas</em>.",
       "aside": "Siempre sabrás en qué etapa estamos, qué sigue, y qué necesitamos de ti para seguir avanzando."
@@ -123,7 +123,16 @@
     "cta": {
       "title": "Si así es como te gustaría <em>trabajar</em>, hablemos.",
       "body": "Envíanos el problema, no una especificación. La primera conversación es sobre si somos el estudio correcto para resolverlo &mdash; y te lo diremos si no lo somos.",
-      "secondary": "Ver nuestros servicios"
+      "secondary": "Ver nuestros servicios",
+      "index": "06"
+    },
+    "about_founder": {
+      "index": "04",
+      "eyebrow": "El estudio",
+      "title": "Sobre David Duarte",
+      "image": "/images/davey-duarte.png",
+      "image_alt": "Retrato de David Duarte, Diseñador Web en Puerto Rico",
+      "bio": "<p><strong>David Duarte es Diseñador Web y Director Creativo desde 2002.</strong> Comenzó con sitios estáticos y plantillas, pero rápidamente se dio cuenta de que el verdadero trabajo estaba en entender el negocio primero.</p><p>En 2010, agregó desarrollo full-stack a su repertorio. Desde entonces, ha liderado la construcción de más de 190 sitios web personalizados para negocios en Estados Unidos, el Caribe y Europa.</p><p>Web Designer Puerto Rico, su agencia, tiene base en San Juan, Puerto Rico. Trabaja de forma remota con clientes alrededor del mundo, pero hace énfasis en el trabajo personalizado y las relaciones a largo plazo. No cree en plantillas, construcciones sin código o decisiones de diseño que no sirvan al negocio.</p><p>Cuando no está diseñando o programando, disfruta de la fotografía, video y las cosas que se pueden construir con las manos.</p>"
     }
   },
   "en": {
@@ -176,7 +185,7 @@
       ]
     },
     "philosophy": {
-      "index": "04",
+      "index": "05",
       "eyebrow": "Design philosophy",
       "title": "Five rules we will <em class=\"italic\">argue for</em>.",
       "aside": "These are not preferences. They are the reasons our projects finish on time and the reason the results hold up under traffic.",
@@ -213,7 +222,7 @@
       ]
     },
     "capabilities": {
-      "index": "05",
+      "index": "06",
       "eyebrow": "Capabilities",
       "title": "What we can <em class=\"italic\">actually do</em>.",
       "aside": "A short, honest list. Anything outside it we will either decline or bring in a trusted specialist for &mdash; and tell you which.",
@@ -242,7 +251,7 @@
       "stat_static": "1&times;"
     },
     "process": {
-      "index": "06",
+      "index": "07",
       "eyebrow": "Work process",
       "title": "Six stages, <em class=\"italic\">no surprises</em>.",
       "aside": "You will always know which stage we are in, what is due next, and what we need from you to keep moving."
@@ -251,6 +260,14 @@
       "title": "If this sounds like how you would like to <em>work</em>, let us talk.",
       "body": "Send us the problem, not a specification. The first conversation is about whether we are the right studio for it &mdash; and we will say so if we are not.",
       "secondary": "See our services"
+    },
+    "about_founder": {
+      "index": "04",
+      "eyebrow": "The studio",
+      "title": "About David Duarte",
+      "image": "/images/davey-duarte.png",
+      "image_alt": "Portrait of David Duarte, Web Designer in Puerto Rico",
+      "bio": "<p><strong>David Duarte is a Web Designer and Creative Director since 2002.</strong> He started with static sites and templates, but quickly realized the real work was understanding the business first.</p><p>In 2010, he added full-stack development to his toolkit. Since then, he has led the construction of 190+ custom websites for businesses across the United States, the Caribbean, and Europe.</p><p>Web Designer Puerto Rico, his agency, is based in San Juan, Puerto Rico. He works remotely with clients around the world, but emphasizes personalized work and long-term relationships. He does not believe in templates, no-code builders, or design decisions that don't serve the business.</p><p>When he is not designing or coding, he enjoys photography, video, and things that can be built by hand.</p>"
     }
   }
 }
