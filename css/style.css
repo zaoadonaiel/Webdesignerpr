@@ -924,6 +924,7 @@ body.is-locked .site-header {
   padding-bottom: var(--space-lg);
   overflow: hidden;
   background-attachment: fixed;
+  color: #f2efe9;
 }
 
 .hero__overlay {
