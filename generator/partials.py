@@ -373,8 +373,6 @@ def footer(c):
       </div>
     </div>
 
-    <p class="footer-wordmark" aria-hidden="true">Web Designer Puerto Rico</p>
-
     <div class="container">
       <div class="footer-bottom">
         <span>&copy; <span data-year>2026</span> Web Designer Puerto Rico. {f['rights']}</span>
