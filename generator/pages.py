@@ -846,7 +846,7 @@ def build_articles(c):
         for article in articles:
             pub_date = article.get("published_date", "")
             out.append(f"""          <article class="article-card" data-reveal="up">
-            <a class="article-card__link" href="{article.get('slug', '#')}">
+            <a class="article-card__link" href="articles/{article.get('slug', '#')}.html">
               <h3 class="article-card__title">{article.get('title', '')}</h3>
               <p class="article-card__excerpt">{article.get('excerpt', '')}</p>
               <div class="article-card__meta">
@@ -877,6 +877,67 @@ def build_articles(c):
     out.append(footer(c))
     out.append(scripts(c))
     c.write("articles.html", "".join(out))
+
+
+def build_article_pages(c):
+    """Generate individual article detail pages for each article in articles.json"""
+    articles_data = load("articles")
+    articles = articles_data[c.lang].get("articles", [])
+    
+    for article in articles:
+        slug = article.get("slug", "")
+        if not slug:
+            continue
+        
+        title = article.get("title", "")
+        published_date = article.get("published_date", "")
+        body = article.get("body", "")
+        excerpt = article.get("excerpt", "")
+        
+        out = [head(c, f"articles/{slug}.html"), chrome(c), header(c, f"articles/{slug}.html")]
+        out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
+        
+        # Article header
+        out.append(f"""
+  <!-- ============ ARTICLE HEADER ============ -->
+  <header class="page-header" style="background-image: url('{c.media('/images/hero/pr-background.jpg')}'); background-size: cover; background-position: center;">
+    <div class="page-header__overlay" aria-hidden="true"></div>
+    <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="{c.ui.get('breadcrumb', 'Breadcrumb')}">
+        <a class="link-underline" href="{c.asset('index.html')}">{c.ui['breadcrumb_home']}</a>
+        <span aria-hidden="true">/</span>
+        <a class="link-underline" href="{c.asset('articles.html')}">{articles_data[c.lang]['crumb']}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{title}</span>
+      </nav>
+      <h1 class="display-1 page-header__title" data-split="words">{title}</h1>
+      <div class="page-header__grid" style="grid-template-columns:1fr;gap:var(--space-lg)">
+        <div style="display:flex;gap:var(--space-md);align-items:center;color:var(--color-text-muted);font-size:var(--fs-small)">
+          <span>{published_date}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- ============ ARTICLE CONTENT ============ -->
+    <section class="section section--flush-top">
+      <div class="container container--narrow">
+        <article class="prose">
+          {body}
+        </article>
+        
+        <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--color-line)">
+          <a class="btn btn--ghost" href="{c.asset('articles.html')}"><span>{c.ui['back_to_top']} {ARROW}</span></a>
+        </div>
+      </div>
+    </section>
+""")
+        
+        out.append("  </main>\n")
+        out.append(footer(c))
+        out.append(scripts(c))
+        c.write(f"articles/{slug}.html", "".join(out))
 
 
 BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact, build_articles]

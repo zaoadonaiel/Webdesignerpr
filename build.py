@@ -60,6 +60,10 @@ def render():
         for builder in BUILDERS:
             builder(ctx)
             pages += 1
+        # Build individual article pages
+        from generator.pages import build_article_pages
+        build_article_pages(ctx)
+        # Count article pages (will be counted in the next loop when they actually exist)
     return pages
 
 
