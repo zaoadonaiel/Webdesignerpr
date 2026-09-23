@@ -42,6 +42,7 @@
 
   --color-secondary:       #0c7f63;   /* Sea Glass, darkened for light       */
   --color-accent:          #8a6420;   /* Warm Sand, darkened for light       */
+  --color-pr-blue:         #0052cc;   /* Puerto Rican flag blue               */
 
   /* --- Hairlines -------------------------------------------------------- */
   --color-line:            rgba(20, 18, 14, 0.15);
@@ -495,7 +496,7 @@ h1, h2, h3, h4, h5 {
   /* --color-on-primary is whichever of ink/white clears AA on this theme */
   color: var(--color-on-primary);
 }
-.btn--primary::before { background: var(--color-secondary); }
+.btn--primary::before { background: var(--color-pr-blue); }
 .btn--primary:hover, .btn--primary:focus-visible { color: var(--color-on-primary); }
 
 .btn--ghost {
