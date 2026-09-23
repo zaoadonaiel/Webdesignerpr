@@ -205,6 +205,10 @@ html {
 
 body {
   background-color: var(--color-background);
+  background-image: url('/images/hero/pr-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--color-text);
   font-family: var(--font-sans);
   font-size: var(--fs-body);
