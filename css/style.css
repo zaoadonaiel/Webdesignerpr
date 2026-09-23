@@ -1536,11 +1536,11 @@ body.is-locked .site-header {
 .split {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--space-lg) var(--gutter);
+  gap: var(--space-md) var(--space-lg);
   align-items: flex-start;
 }
 .split__media { grid-column: span 3; display: flex; flex-direction: column; }
-.split__body  { grid-column: span 8 / -1; }
+.split__body  { grid-column: span 9 / -1; }
 .split--reverse .split__media { order: 2; }
 
 .split__caption {
