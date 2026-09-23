@@ -727,138 +727,40 @@ def build_portfolio(c):
 
 def build_contact(c):
     d = load("contact")[c.lang]
-    lab, ph, msg = d["labels"], d["placeholders"], d["messages"]
     out = [head(c, "contact.html"), chrome(c), header(c, "contact.html")]
     out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
 
-    # Clean hero with just title and lead
+    # Hero with chat on right
     out.append(f"""
-  <!-- ============ PAGE HEADER ============ -->
+  <!-- ============ PAGE HEADER WITH CHAT ============ -->
   <header class="page-header" style="background-image: url('/images/hero/pr-background.jpg'); background-size: cover; background-position: center;">
     <div class="page-header__overlay" aria-hidden="true"></div>
     <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
     <div class="container">
-      <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">
-        <a class="link-underline" href="index.html">{c.ui['breadcrumb_home']}</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">{d['crumb']}</span>
-      </nav>
-      <h1 class="display-1 page-header__title" data-split="words">{d['title']}</h1>
-      <div class="page-header__grid">
-        <p class="lead" style="max-width:48ch" data-reveal="up">{d['lead']}</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;min-height:60vh">
+        
+        <!-- LEFT: Hero Content -->
+        <div style="position:relative;z-index:3">
+          <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">
+            <a class="link-underline" href="index.html">{c.ui['breadcrumb_home']}</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{d['crumb']}</span>
+          </nav>
+          <h1 class="display-1 page-header__title" data-split="words">{d['title']}</h1>
+          <div class="page-header__grid" style="grid-template-columns:1fr;gap:var(--space-lg)">
+            <p class="lead" style="max-width:48ch" data-reveal="up">{d['lead']}</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Chat Widget -->
+        <div style="display:flex;justify-content:center;align-items:flex-start;flex-direction:column;gap:1.5rem;position:relative;z-index:3">
+          <img src="images/logo/zao-chat-logo.png" alt="Zao Chat" width="120" height="120" style="display:block;width:100px;height:100px"/>
+          <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="600" height="640" style="width:100%;max-width:600px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
+        </div>
+
       </div>
     </div>
   </header>
-""")
-
-    opts = "".join(f'                  <option value="{t}">{t}</option>\n'
-                   for t in texts(d["project_types"]))
-    chips = "".join(f"""                  <label class="chip">
-                    <input type="radio" name="budget" value="{b['value']}">
-                    <span>{b['label']}</span>
-                  </label>\n""" for b in d["budgets"])
-
-    # Validation strings travel with the markup so each language ships its own.
-    msgs = (f'data-msg-required="{msg["required"]}" data-msg-email-required="{msg["email_required"]}" '
-            f'data-msg-name="{msg["name"]}" data-msg-email="{msg["email"]}" '
-            f'data-msg-details="{msg["details"]}" data-msg-budget="{msg["budget"]}" '
-            f'data-msg-error-strong="{msg["error_strong"]}" data-msg-error="{msg["error"]}" '
-            f'data-msg-sending="{msg["sending"]}" data-msg-ok-strong="{msg["ok_strong"]}" '
-            f'data-msg-ok="{msg["ok"]}"')
-
-    notice = (f"""
-              <!-- Integration notice: this form has no backend yet. -->
-              <div class="notice">
-                <svg class="notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6h.01"/>
-                </svg>
-                <p><strong>{d['notice_strong']}</strong>{d['notice']}</p>
-              </div>""" if d.get("notice") else "")
-
-    # 50/50 split layout - form left, chat right
-    out.append(f"""
-    <!-- ============ 02 — FORM & CHAT SPLIT ============ -->
-    <section class="section section--flush-top">
-      <div class="container">
-        <div class="contact-split-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
-          
-          <!-- LEFT: Form -->
-          <div>
-            <!-- Frontend validation only. novalidate hands validation to our
-                 own script so every field gets a consistent, styled message. -->
-            <form class="form" data-contact-form novalidate {msgs}>
-
-              <div class="form__row">
-                <div class="field">
-                  <label class="field__label" for="name">{lab['name']} <span class="req" aria-hidden="true">*</span></label>
-                  <input class="field__input" type="text" id="name" name="name" autocomplete="name"
-                         placeholder="{ph['name']}" required aria-describedby="err-name">
-                  <span class="field__error" id="err-name" role="alert"></span>
-                </div>
-
-                <div class="field">
-                  <label class="field__label" for="email">{lab['email']} <span class="req" aria-hidden="true">*</span></label>
-                  <input class="field__input" type="email" id="email" name="email" autocomplete="email"
-                         placeholder="{ph['email']}" required aria-describedby="err-email">
-                  <span class="field__error" id="err-email" role="alert"></span>
-                </div>
-              </div>
-
-              <div class="form__row">
-                <div class="field">
-                  <label class="field__label" for="company">{lab['company']}</label>
-                  <input class="field__input" type="text" id="company" name="company" autocomplete="organization"
-                         placeholder="{ph['company']}" aria-describedby="err-company">
-                  <span class="field__error" id="err-company" role="alert"></span>
-                </div>
-
-                <div class="field">
-                  <label class="field__label" for="project-type">{lab['type']} <span class="req" aria-hidden="true">*</span></label>
-                  <div class="field__select-wrap">
-                    <select class="field__select" id="project-type" name="projectType" required aria-describedby="err-type">
-                      <option value="">{ph['select']}</option>
-{opts}                    </select>
-                  </div>
-                  <span class="field__error" id="err-type" role="alert"></span>
-                </div>
-              </div>
-
-              <fieldset class="field" data-budget-group>
-                <legend class="field__label">{lab['budget']} <span class="req" aria-hidden="true">*</span></legend>
-                <div class="chip-group u-mt-sm">
-{chips}                </div>
-                <span class="field__error" role="alert"></span>
-              </fieldset>
-
-              <div class="field">
-                <label class="field__label" for="details">{lab['details']} <span class="req" aria-hidden="true">*</span></label>
-                <textarea class="field__textarea" id="details" name="details" required
-                          placeholder="{ph['details']}"
-                          aria-describedby="err-details"></textarea>
-                <span class="field__error" id="err-details" role="alert"></span>
-              </div>
-
-              <div class="form__footer">
-                <p class="muted" style="font-size:var(--fs-sm);max-width:34ch">{d['privacy']}</p>
-                <button class="btn btn--primary btn--lg" type="submit" data-magnetic="0.25">
-                  <span>{d['submit']} {ARROW}</span>
-                </button>
-              </div>
-
-              <div class="form-status" data-form-status role="status" aria-live="polite"></div>
-{notice}
-            </form>
-          </div>
-
-          <!-- RIGHT: Chat Widget -->
-          <div style="display:flex;justify-content:center;align-items:flex-start;flex-direction:column;gap:1.5rem">
-            <img src="images/logo/zao-chat-logo.png" alt="Zao Chat" width="120" height="120" style="display:block;width:100px;height:100px"/>
-            <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="600" height="640" style="width:100%;max-width:600px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
-          </div>
-
-        </div>
-      </div>
-    </section>
 """)
     
     out.append("  </main>\n")
