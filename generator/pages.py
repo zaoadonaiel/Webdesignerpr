@@ -149,11 +149,7 @@ def build_home(c):
     </section>
 
     <!-- ============ MARQUEE ============ -->
-    <div class="marquee" data-marquee data-marquee-speed="0.5" aria-hidden="true">
-      <div class="marquee__track">
-        {marquee}
-      </div>
-    </div>
+    <!-- Marquee removed due to stacking issues on mobile -->
 
     <!-- ============ 01 — INTRODUCTION ============ -->
     <section class="section" id="studio">
