@@ -864,7 +864,54 @@ def build_contact(c):
     c.write("contact.html", "".join(out))
 
 
-BUILDERS = [build_home, build_about, build_services, build_portfolio, build_contact]
+# ---------------------------------------------------------------------------
+# DEALS
+# ---------------------------------------------------------------------------
+
+def build_deals(c):
+    d = load("deals")[c.lang]
+    out = [head(c, "deals.html"), chrome(c), header(c, "deals.html")]
+    out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
+
+    out.append(page_header(c, d["eyebrow"], d["title"], d["lead"]))
+
+    # Build template cards
+    cards = []
+    for i, template in enumerate(d["templates"], start=1):
+        cards.append(f"""          <article class="deal-card" data-reveal="up">
+            <div class="deal-card__media">
+              <img src="{template['image']}" alt="{template['title']}" width="600" height="400" loading="lazy"/>
+            </div>
+            <div class="deal-card__body">
+              <span class="tag">{template['label']}</span>
+              <h2 class="deal-card__title">{template['title']}</h2>
+              <p class="deal-card__desc">{template['description']}</p>
+              <a href="tel:+19392299233" class="btn btn--small btn--ghost u-mt-md">
+                <span>{"Llamar para ordenar" if c.lang == "es" else "Call To Order"} →</span>
+              </a>
+            </div>
+          </article>""")
+
+    out.append(f"""
+    <!-- ============ 02 — TEMPLATE GRID ============ -->
+    <section class="section section--flush-top">
+      <div class="container">
+        <div class="deal-grid" data-reveal-group>
+{chr(10).join(cards)}
+        </div>
+      </div>
+    </section>
+""")
+
+    out.append(cta(c, d["cta"], primary=("tel:+19392299233", "Llamar ahora" if c.lang == "es" else "Call now"), 
+                   secondary=("services.html", d["cta"]["secondary"])))
+    out.append("  </main>\n")
+    out.append(footer(c))
+    out.append(scripts(c))
+    c.write("deals.html", "".join(out))
+
+
+BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact]
 
 
 # ---------------------------------------------------------------------------

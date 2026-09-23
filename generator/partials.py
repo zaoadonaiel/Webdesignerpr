@@ -64,7 +64,7 @@ class Ctx:
 
 # CMS field names cannot contain dots, so page metadata is keyed by a plain name
 META_KEY = {"index.html": "home", "about.html": "about", "services.html": "services",
-            "portfolio.html": "portfolio", "contact.html": "contact"}
+            "portfolio.html": "portfolio", "deals.html": "deals", "contact.html": "contact"}
 
 
 def head(c, page):

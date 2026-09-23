@@ -22,9 +22,14 @@
         "index": "04"
       },
       {
+        "href": "deals.html",
+        "label": "Ofertas",
+        "index": "05"
+      },
+      {
         "href": "contact.html",
         "label": "Contacto",
-        "index": "05"
+        "index": "06"
       }
     ],
     "contact": {
@@ -99,6 +104,10 @@
         "title": "Portafolio de Proyectos Web | Web Designer Puerto Rico",
         "description": "Proyectos web reales de diseño y desarrollo. Desde fintech hasta e-commerce, hospitality y SaaS. Casos de estudio que muestran nuestro proceso creativo y técnico."
       },
+      "deals": {
+        "title": "Plantillas de Sitios Web — Ofertas | Web Designer Puerto Rico",
+        "description": "Sitios web listos en días. Plantillas personalizables para consultoría, bienes raíces y servicios. Configuración, hospedaje y SEO incluidos. Desde $500."
+      },
       "contact": {
         "title": "Contacto — Inicia tu Proyecto Web | Web Designer Puerto Rico",
         "description": "¿Necesitas un sitio web? Cuéntanos tu proyecto. Diseño y desarrollo personalizado en Puerto Rico. Respuestas rápidas, soluciones creativas. Contacta hoy mismo."
@@ -147,9 +156,14 @@
         "index": "04"
       },
       {
+        "href": "deals.html",
+        "label": "Deals",
+        "index": "05"
+      },
+      {
         "href": "contact.html",
         "label": "Contact",
-        "index": "05"
+        "index": "06"
       }
     ],
     "contact": {
@@ -223,6 +237,10 @@
       "portfolio": {
         "title": "Portfolio — Concept Projects | Web Designer Puerto Rico",
         "description": "11 real client projects spanning fintech, hospitality, e-commerce, SaaS, legal tech and more. Custom web design and development by Web Designer Puerto Rico."
+      },
+      "deals": {
+        "title": "Website Templates — Ready-Made Sites | Web Designer Puerto Rico",
+        "description": "Websites ready in days. Customizable templates for consulting, real estate, and services. Setup, hosting, and SEO included. From $500."
       },
       "contact": {
         "title": "Contact — Start a Project | Web Designer Puerto Rico",

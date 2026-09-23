@@ -1,0 +1,64 @@
+{
+  "es": {
+    "crumb": "Ofertas",
+    "eyebrow": "Soluciones rápidas",
+    "title": "Sitios web <em class=\"italic accent-text\">listos en días.</em>",
+    "lead": "Plantillas de sitios web de una página. Listas para lanzar, personalizadas para tu negocio. Configuración, hospedaje de 30 días y SEO incluidos.",
+    "templates": [
+      {
+        "label": "Consultoría / Abogados",
+        "title": "Sitio de Consultoría",
+        "description": "Establece autoridad con claridad en áreas de práctica, testimonios y reserva de consulta confidencial.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Attorney-Website-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Bienes Raíces",
+        "title": "Sitio de Agente",
+        "description": "Atrae compradores con galerías de propiedades, búsqueda por vecindario y formularios de contacto directo.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Attorney-Website-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Servicios",
+        "title": "Sitio de Servicios",
+        "description": "Convierte consultas en citas con demostración de experiencia, testimonios y solicitudes de presupuesto rápido.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Roofing-Website-Template-The-X-Digital.png"
+      }
+    ],
+    "cta": {
+      "title": "¿Listo para lanzar?",
+      "body": "Escoge tu plantilla y actívala hoy. Soporte completo durante la configuración, hospedaje incluido por 30 días y optimización SEO.",
+      "secondary": "Ver nuestros servicios"
+    }
+  },
+  "en": {
+    "crumb": "Deals",
+    "eyebrow": "Quick Solutions",
+    "title": "Websites <em class=\"italic accent-text\">ready in days.</em>",
+    "lead": "One-page website templates. Ready to launch, customized for your business. Setup, 30 days hosting and SEO included.",
+    "templates": [
+      {
+        "label": "Consulting / Legal",
+        "title": "Consulting Website",
+        "description": "Establish authority with practice area clarity, testimonials, and confidential consultation booking.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Attorney-Website-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Real Estate",
+        "title": "Agent Website",
+        "description": "Attract buyers with property galleries, neighborhood search and direct contact forms.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Attorney-Website-The-X-Digital-scaled.png"
+      },
+      {
+        "label": "Services",
+        "title": "Services Website",
+        "description": "Turn inquiries into appointments with expertise demonstration, testimonials and quick quote requests.",
+        "image": "https://thexdigital.com/wp-content/uploads/2026/09/Roofing-Website-Template-The-X-Digital.png"
+      }
+    ],
+    "cta": {
+      "title": "Ready to launch?",
+      "body": "Pick your website and get it live today. Full support during setup, 30 days of hosting included and SEO optimization.",
+      "secondary": "See our services"
+    }
+  }
+}

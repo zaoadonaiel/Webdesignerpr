@@ -1927,6 +1927,74 @@ body.is-locked .site-header {
 .u-relative { position: relative; z-index: 1; }
 
 /* --------------------------------------------------------------------------
+   24. DEALS
+   Website template showcase grid with deal cards
+   -------------------------------------------------------------------------- */
+
+.deal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--gutter);
+  padding-top: var(--space-xl);
+}
+
+.deal-card {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: all var(--ease-out);
+}
+
+.deal-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(214, 58, 25, 0.1);
+  transform: translateY(-2px);
+}
+
+.deal-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.deal-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deal-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.deal-card__title {
+  font-size: var(--text-md);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-text-strong);
+}
+
+.deal-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn--small {
+  font-size: var(--text-sm);
+  padding: 0.5rem 1rem;
+}
+
+/* --------------------------------------------------------------------------
    24. 404
    Served for any unmatched path, so it carries its own minimal layout and
    shows both languages.
