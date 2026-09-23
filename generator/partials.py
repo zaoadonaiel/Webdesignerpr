@@ -144,7 +144,7 @@ def chrome(c):
   <!-- Preloader: shown once per session, removed from the DOM afterwards -->
   <div class="loader" role="status" aria-live="polite">
     <div class="loader__inner">
-      <p class="loader__word">WebDesigner<em>PR</em></p>
+      <p class="loader__word">Web Designer <em>Puerto Rico</em></p>
       <div class="loader__bar"><i></i></div>
       <p class="loader__count">000</p>
     </div>
@@ -164,13 +164,9 @@ def chrome(c):
 
 
 def brand(c):
-    label = "WebDesignerPR &mdash; " + ("inicio" if c.lang == "es" else "home")
+    label = "Web Designer Puerto Rico &mdash; " + ("inicio" if c.lang == "es" else "home")
     return f"""<a class="brand" href="index.html" aria-label="{label}">
-        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" style="color:var(--color-primary)">
-          {MARK_PATH}
-          <circle cx="16" cy="16" r="2.4" fill="var(--color-background)"/>
-        </svg>
-        <span class="brand__text">WebDesigner<em>PR</em></span>
+        <span class="brand__text">Web Designer <em>Puerto Rico</em></span>
       </a>"""
 
 
