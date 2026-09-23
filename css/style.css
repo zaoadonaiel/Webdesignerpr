@@ -935,6 +935,28 @@ body.is-locked .site-header {
 
 .hero__inner { position: relative; z-index: 2; width: 100%; }
 
+.hero__content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--gutter);
+  align-items: center;
+}
+
+.hero__left { flex: 1; }
+
+.hero__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero__mockup {
+  max-width: 320px;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
 .hero__title {
   font-size: var(--fs-h1);
   line-height: 0.88;

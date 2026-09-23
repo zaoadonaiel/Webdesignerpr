@@ -124,20 +124,28 @@ def build_home(c):
       <div class="container hero__inner">
         <p class="label" data-hero-fade>{d['eyebrow']}</p>
 
-        <h1 class="hero__title">
+        <div class="hero__content">
+          <div class="hero__left">
+            <h1 class="hero__title">
 {lines}
-        </h1>
+            </h1>
 
-        <div class="hero__meta">
-          <p class="lead" data-hero-fade>{d['hero_lead']}</p>
+            <div class="hero__meta">
+              <p class="lead" data-hero-fade>{d['hero_lead']}</p>
 
-          <div class="hero__actions" data-hero-fade>
-            <a class="btn btn--primary btn--lg" href="contact.html" data-magnetic="0.3">
-              <span>{c.ui['cta_primary']} {ARROW}</span>
-            </a>
-            <a class="btn btn--ghost btn--lg" href="portfolio.html" data-magnetic="0.3">
-              <span>{c.ui['cta_secondary']} {ARROW}</span>
-            </a>
+              <div class="hero__actions" data-hero-fade>
+                <a class="btn btn--primary btn--lg" href="contact.html" data-magnetic="0.3">
+                  <span>{c.ui['cta_primary']} {ARROW}</span>
+                </a>
+                <a class="btn btn--ghost btn--lg" href="portfolio.html" data-magnetic="0.3">
+                  <span>{c.ui['cta_secondary']} {ARROW}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__right">
+            <img src="/images/hero/zao-chat-mockup.png" alt="Zao Chat mobile app mockup" width="280" height="580" loading="eager" decoding="async" class="hero__mockup">
           </div>
         </div>
 
