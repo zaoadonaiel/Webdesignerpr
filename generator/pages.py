@@ -111,7 +111,7 @@ def build_home(c):
         f'          <span class="line{" indent" if i == 1 else ""}"><span>{t}</span></span>'
         for i, t in enumerate(texts(d["hero_lines"])))
     marquee = "\n        ".join(
-        f'<span class="marquee__item">{t} {STAR}</span>' for t in texts(d["marquee"]))
+        f'<span class="marquee__item">{t} <span class="marquee__dot">•</span></span>' for t in texts(d["marquee"]))
     st = d["studio"]
 
     out.append(f"""

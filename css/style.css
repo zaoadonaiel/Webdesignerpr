@@ -1027,7 +1027,7 @@ body.is-locked .site-header {
   color: var(--color-text-muted);
 }
 .marquee__item em { font-style: italic; color: var(--color-text); }
-.marquee__star { color: var(--color-primary); flex: none; width: 0.5em; height: 0.5em; }
+.marquee__dot { color: var(--color-primary); font-size: 0.6em; }
 
 /* --------------------------------------------------------------------------
    12. WORK / PORTFOLIO
