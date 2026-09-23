@@ -1,42 +1,42 @@
 {
   "es": {
-    "kind": "E&#8209;commerce &middot; Shopify",
-    "description": "Un tostador de café de especialidad que pasa del puesto de mercado a la tienda. Arquitectura centrada en suscripciones, un checkout reducido a cuatro campos, y páginas de producto que venden el origen tanto como el tueste.",
+    "kind": "Legal &middot; Servicios",
+    "description": "Reconstruimos el sitio desactualizado de este bufete establecido de defensa penal de Hawaii con análisis competitivo, contenido reescrito, y optimización moderna. Tiempos de carga rápidos, SEO local fuerte, y diseño profesional los posicionó de nuevo como una opción principal. Hemos sido su socio de alojamiento confiable durante 3 años, y están contentos de continuar con nosotros.",
     "disciplines": [
       {
-        "text": "Shopify"
+        "text": "Web Design"
       },
       {
-        "text": "UX de E-commerce"
+        "text": "SEO Local"
       },
       {
-        "text": "Dirección de Fotografía"
+        "text": "Content"
       }
     ],
-    "order": 5,
-    "slug": "bodega-luz",
-    "name": "Bodega Luz",
-    "year": "2024",
+    "order": 4,
+    "slug": "kaneshirolaw",
+    "name": "Kaneshiro Law",
+    "year": "2023",
     "categories": [
-      "ecommerce",
-      "web-design"
+      "web-design",
+      "services"
     ],
-    "image_light": "/images/portfolio/bodega-luz.svg",
-    "image_dark": "/images/portfolio/bodega-luz-dark.svg",
+    "image_light": "/images/portfolio/kaneshirolaw.svg",
+    "image_dark": "/images/portfolio/kaneshirolaw-dark.svg",
     "featured": true
   },
   "en": {
-    "kind": "E&#8209;commerce &middot; Shopify",
-    "description": "A specialty coffee roaster moving from market stall to storefront. Subscription-first architecture, a checkout stripped to four fields, and product pages that sell origin as much as roast.",
+    "kind": "Legal &middot; Services",
+    "description": "We rebuilt this established Hawaii criminal defense firm's outdated website with competitive analysis, rewritten content, and modern optimization. Fast load times, strong local SEO, and professional design positioned them back as a top choice. We've been their trusted hosting partner for 3 years, and they're happy to continue with us.",
     "disciplines": [
       {
-        "text": "Shopify"
+        "text": "Web Design"
       },
       {
-        "text": "E-commerce UX"
+        "text": "Local SEO"
       },
       {
-        "text": "Photography Art Direction"
+        "text": "Content"
       }
     ]
   }

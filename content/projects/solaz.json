@@ -1,42 +1,42 @@
 {
   "es": {
-    "kind": "Hospitalidad &middot; Reservas",
-    "description": "Un grupo hotelero boutique con seis propiedades y una sola voz. Reserva directa construida para superar a los agregadores, sobre un WordPress que los equipos en propiedad de verdad disfrutan usar.",
+    "kind": "Lujo &middot; Concierge",
+    "description": "Servicio de concierge de alto perfil que atiende a celebridades de A-list se asoció con nosotros para construir su sitio exclusivo de alquiler de propiedades de $30M. Entregamos una plataforma optimizada para SEO con reservación integrada y verificación de huéspedes, para que el propietario solo acepte reservaciones calificadas sin cribado manual. Diseño hermoso que se alinea con conveniencia operacional.",
     "disciplines": [
       {
-        "text": "Estrategia UX"
+        "text": "Diseño Lujo"
       },
       {
-        "text": "WordPress"
+        "text": "Reservaciones"
       },
       {
-        "text": "CRO"
+        "text": "SEO"
       }
     ],
-    "order": 3,
-    "slug": "solaz",
-    "name": "Solaz",
+    "order": 8,
+    "slug": "kauailuxuryhouse",
+    "name": "Kauai Luxury House",
     "year": "2024",
     "categories": [
-      "web-design",
-      "wordpress"
+      "hospitality",
+      "luxury"
     ],
-    "image_light": "/images/portfolio/solaz.svg",
-    "image_dark": "/images/portfolio/solaz-dark.svg",
+    "image_light": "/images/portfolio/kauailuxuryhouse.svg",
+    "image_dark": "/images/portfolio/kauailuxuryhouse-dark.svg",
     "featured": true
   },
   "en": {
-    "kind": "Hospitality &middot; Booking",
-    "description": "A boutique hotel group with six properties and one voice. Direct booking built to out-convert the aggregators, on a WordPress back end the on-property teams actually enjoy using.",
+    "kind": "Luxury &middot; Concierge",
+    "description": "A high-profile concierge service serving A-list celebrities partnered with us to build their exclusive $30M property rental site. We delivered an SEO-optimized platform with integrated booking and guest vetting, so the owner accepts only qualified bookings without manual screening. Beautiful design meets operational convenience.",
     "disciplines": [
       {
-        "text": "UX Strategy"
+        "text": "Luxury Design"
       },
       {
-        "text": "WordPress"
+        "text": "Booking"
       },
       {
-        "text": "CRO"
+        "text": "SEO"
       }
     ]
   }

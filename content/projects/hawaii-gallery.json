@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "E-commerce &middot; Tienda",
+    "description": "Línea de ropa diseñada por nuestro director creativo Davey Duarte. Tienda Shopify personalizada integrada con un socio de impresión bajo demanda. Diseño moderno sin necesidad de inventario. Ropa y accesorios premium impresos y enviados bajo demanda directamente a los clientes.",
+    "disciplines": [
+      {
+        "text": "Diseño de Producto"
+      },
+      {
+        "text": "Shopify"
+      },
+      {
+        "text": "Branding"
+      }
+    ],
+    "order": 3,
+    "slug": "hawaii-gallery",
+    "name": "Hawaii Gallery",
+    "year": "2023",
+    "categories": [
+      "ecommerce",
+      "branding"
+    ],
+    "image_light": "/images/portfolio/hawaii-gallery.svg",
+    "image_dark": "/images/portfolio/hawaii-gallery-dark.svg",
+    "featured": true
+  },
+  "en": {
+    "kind": "E-commerce &middot; Clothing Line",
+    "description": "Clothing line designed by our Creative Director Davey Duarte. Custom Shopify store integrated with print fulfillment so we don't carry inventory. Beautiful design meets zero overhead.",
+    "disciplines": [
+      {
+        "text": "Product Design"
+      },
+      {
+        "text": "Shopify"
+      },
+      {
+        "text": "Branding"
+      }
+    ]
+  }
+}

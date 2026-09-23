@@ -1,42 +1,42 @@
 {
   "es": {
-    "kind": "SaaS &middot; Marketing + App",
-    "description": "Software de logística para gente que detesta el software de logística. Un sitio de marketing y un dashboard que comparten una biblioteca de componentes, para que la promesa y el producto por fin se parezcan.",
+    "kind": "Legal &middot; SaaS",
+    "description": "Centro digital de protección que ayuda a creadores a marcar con timestamp, certificar, y proteger legalmente su trabajo original. Sube cualquier activo creativo—música, arte, escritura, fotos, video—y recibe un certificado de creación verificado por blockchain a prueba de manipulación. Características incluyen dashboard de gestión de trabajo, documentación legal automática, y archivos buscables. Los creadores obtienen prueba irrefutable de propiedad que se sostiene en corte.",
     "disciplines": [
       {
-        "text": "Sistema de Diseño"
+        "text": "SaaS"
       },
       {
-        "text": "Diseño UI"
+        "text": "Blockchain"
       },
       {
-        "text": "Front-end"
+        "text": "Legal Tech"
       }
     ],
-    "order": 4,
-    "slug": "kinetik",
-    "name": "Kinetik",
-    "year": "2025",
+    "order": 5,
+    "slug": "copyrightrecords",
+    "name": "Copyright Records",
+    "year": "2024",
     "categories": [
-      "ui-ux",
-      "web-design"
+      "saas",
+      "legal-tech"
     ],
-    "image_light": "/images/portfolio/kinetik.svg",
-    "image_dark": "/images/portfolio/kinetik-dark.svg",
+    "image_light": "/images/portfolio/copyrightrecords.svg",
+    "image_dark": "/images/portfolio/copyrightrecords-dark.svg",
     "featured": true
   },
   "en": {
-    "kind": "SaaS &middot; Marketing + App",
-    "description": "Logistics software for people who hate logistics software. A marketing site and dashboard sharing one component library, so the promise and the product finally look related.",
+    "kind": "Legal &middot; SaaS",
+    "description": "A digital protection hub that helps creators instantly timestamp, certify, and legally protect their original work. Upload any creative asset—music, art, writing, photos, video—and receive a tamper-proof, blockchain-verified certificate of creation. Features include a work management dashboard, automatic legal documentation, and searchable archives. Creators gain irrefutable proof of ownership that holds up in court.",
     "disciplines": [
       {
-        "text": "Design System"
+        "text": "SaaS"
       },
       {
-        "text": "UI Design"
+        "text": "Blockchain"
       },
       {
-        "text": "Front-end"
+        "text": "Legal Tech"
       }
     ]
   }

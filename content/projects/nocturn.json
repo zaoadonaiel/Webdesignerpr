@@ -1,42 +1,42 @@
 {
   "es": {
-    "kind": "Medios &middot; Streaming",
-    "description": "La sala de escucha de un sello independiente. Navegación guiada por formas de onda, un reproductor que sobrevive al cambio de página, y páginas de artista hechas para compartirse más que para rastrearse.",
+    "kind": "Guía &middot; Negocios Locales",
+    "description": "Una guía completa de los mejores negocios, atracciones y servicios de Hawaii construida para turistas que descubren las islas y locales que apoyan su comunidad. Los usuarios pueden explorar listados curados, recibir notificaciones en tiempo real sobre eventos y ofertas, programar reservaciones o citas directamente a través de la app, y acceder a notificaciones push para recomendaciones personalizadas. Búsqueda avanzada, calendario integrado, y reseñas de usuarios. Los propietarios de negocios acceden a un dashboard de analytics que rastrea insights de visitantes, tendencias de reservaciones, y métricas de engagement.",
     "disciplines": [
       {
-        "text": "Diseño de Interacción"
+        "text": "Plataforma Local"
       },
       {
-        "text": "Front-end"
+        "text": "App Web"
       },
       {
-        "text": "Movimiento"
+        "text": "Analytics"
       }
     ],
-    "order": 8,
-    "slug": "nocturn",
-    "name": "Nocturn",
+    "order": 6,
+    "slug": "iminhawaii",
+    "name": "In My Hawaii",
     "year": "2023",
     "categories": [
-      "ui-ux",
-      "web-design"
+      "platform",
+      "directory"
     ],
-    "image_light": "/images/portfolio/nocturn.svg",
-    "image_dark": "/images/portfolio/nocturn-dark.svg",
-    "featured": false
+    "image_light": "/images/portfolio/iminhawaii.svg",
+    "image_dark": "/images/portfolio/iminhawaii-dark.svg",
+    "featured": true
   },
   "en": {
-    "kind": "Media &middot; Streaming",
-    "description": "An independent label's listening room. Waveform-driven navigation, a player that survives a page change, and artist pages built to be shared rather than crawled.",
+    "kind": "Directory &middot; Local Businesses",
+    "description": "A comprehensive guide to Hawaii's best businesses, attractions, and services built for both tourists discovering the islands and locals supporting their community. Users can browse curated listings, receive real-time notifications about events and deals, schedule reservations or appointments directly through the app, and access push notifications for personalized recommendations. Advanced search and filtering, integrated scheduling calendars, and user reviews. Business owners gain access to their own analytics dashboard tracking visitor insights, booking trends, and engagement metrics.",
     "disciplines": [
       {
-        "text": "Interaction Design"
+        "text": "Local Platform"
       },
       {
-        "text": "Front-end"
+        "text": "Web App"
       },
       {
-        "text": "Motion"
+        "text": "Analytics"
       }
     ]
   }

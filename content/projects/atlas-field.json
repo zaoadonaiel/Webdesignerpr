@@ -1,42 +1,42 @@
 {
   "es": {
-    "kind": "Marca &middot; Sistema de Identidad",
-    "description": "Una firma de estudios ambientales con datos hermosos y ninguna forma de mostrarlos. Identidad, lenguaje visual de curvas de nivel, y un sitio que hace que los informes de suelo valgan la pena leer.",
+    "kind": "E-commerce &middot; IRA",
+    "description": "Gold Depot Online quedó tan impresionado con nuestro trabajo en su sitio principal que nos encargó construir una plataforma dedicada para su departamento de IRA de alto crecimiento. Diseñamos una experiencia especializada de Gold IRA que simplifica el proceso de conversión, educa a inversionistas primerizos, y captura leads calificados a escala. Con integración de precios en vivo, centro educativo, formularios simplificados, y optimización del viaje del cliente.",
     "disciplines": [
       {
-        "text": "Identidad"
+        "text": "E-commerce"
       },
       {
-        "text": "Visualización de Datos"
+        "text": "Lead Capture"
       },
       {
-        "text": "Diseño Web"
+        "text": "Education"
       }
     ],
-    "order": 6,
-    "slug": "atlas-field",
-    "name": "Atlas Field",
+    "order": 3,
+    "slug": "golddepotira",
+    "name": "Gold Depot IRA",
     "year": "2024",
     "categories": [
-      "branding",
-      "ui-ux"
+      "ecommerce",
+      "finance"
     ],
-    "image_light": "/images/portfolio/atlas-field.svg",
-    "image_dark": "/images/portfolio/atlas-field-dark.svg",
-    "featured": false
+    "image_light": "/images/portfolio/golddepotira.svg",
+    "image_dark": "/images/portfolio/golddepotira-dark.svg",
+    "featured": true
   },
   "en": {
-    "kind": "Brand &middot; Identity System",
-    "description": "An environmental survey firm with beautiful data and no way to show it. Identity, contour-map visual language, and a site that makes soil reports genuinely worth reading.",
+    "kind": "E-commerce &middot; IRA",
+    "description": "Gold Depot Online was so impressed with our work on their main precious metals site that they commissioned us to build a dedicated platform for their high-growth IRA department. We designed a specialized Gold IRA experience that simplifies the rollover process, educates first-time investors, and captures qualified leads at scale. Live pricing integration, educational content hub, streamlined lead forms, and seamless customer journey optimization.",
     "disciplines": [
       {
-        "text": "Identity"
+        "text": "E-commerce"
       },
       {
-        "text": "Data Visualisation"
+        "text": "Lead Capture"
       },
       {
-        "text": "Web Design"
+        "text": "Education"
       }
     ]
   }

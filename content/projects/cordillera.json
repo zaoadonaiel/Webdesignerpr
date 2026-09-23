@@ -1,42 +1,42 @@
 {
   "es": {
-    "kind": "Arquitectura &middot; Editorial",
-    "description": "La monografía de un despacho disfrazada de sitio web. Láminas de proyecto a sangre completa, un sistema tipográfico tomado del dibujo técnico, y un scroll que se comporta como pasar páginas.",
+    "kind": "E-commerce &middot; Shopify",
+    "description": "Plataforma de comercio electrónico completamente integrada en Shopify con sincronización de inventario en tiempo real. El propietario gestiona su inventario a través de su base de datos personalizada, y construimos una API propietaria que conecta perfectamente su sistema backend con Shopify. Esto elimina entrada de datos manual, previene sobreventa, y mantiene inventario sincronizado en todos los canales.",
     "disciplines": [
       {
-        "text": "Dirección de Arte"
+        "text": "Shopify"
       },
       {
-        "text": "Diseño Editorial"
+        "text": "API"
       },
       {
-        "text": "Front-end"
+        "text": "Backend"
       }
     ],
     "order": 2,
-    "slug": "cordillera",
-    "name": "Cordillera",
-    "year": "2025",
+    "slug": "golddepotonline",
+    "name": "Gold Depot Online",
+    "year": "2023",
     "categories": [
-      "web-design",
-      "branding"
+      "ecommerce",
+      "integration"
     ],
-    "image_light": "/images/portfolio/cordillera.svg",
-    "image_dark": "/images/portfolio/cordillera-dark.svg",
+    "image_light": "/images/portfolio/golddepotonline.svg",
+    "image_dark": "/images/portfolio/golddepotonline-dark.svg",
     "featured": true
   },
   "en": {
-    "kind": "Architecture &middot; Editorial",
-    "description": "A practice monograph disguised as a website. Full-bleed project plates, a type system borrowed from technical drawings, and a scroll that behaves like turning pages.",
+    "kind": "E-commerce &middot; Shopify",
+    "description": "Custom Shopify ecommerce platform powered by real-time inventory sync. The owner manages inventory through their own custom-built database, and we built a proprietary API that seamlessly connects their backend system to Shopify. Eliminates manual data entry, prevents overselling, and keeps inventory perfectly in sync across all channels.",
     "disciplines": [
       {
-        "text": "Art Direction"
+        "text": "Shopify"
       },
       {
-        "text": "Editorial Design"
+        "text": "API"
       },
       {
-        "text": "Front-end"
+        "text": "Backend"
       }
     ]
   }

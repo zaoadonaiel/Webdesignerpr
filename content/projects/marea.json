@@ -1,42 +1,42 @@
 {
   "es": {
-    "kind": "Fintech &middot; Producto",
-    "description": "Una app de ahorro para la diáspora caribeña. Visualización de datos serena, bilingüe desde el primer wireframe, y un onboarding que explica el interés compuesto sin una sola hoja de cálculo.",
+    "kind": "News &middot; Platform",
+    "description": "Fuente de noticias establecida sobre acciones, criptomonedas e inversiones con 4 años como cliente valioso. Originalmente construimos su sitio en WordPress. Recientemente lanzamos una plataforma personalizada con Node.js que integra todo su ecosistema backend—entregando rendimiento más rápido, personalización completa y flexibilidad para evolucionar sin depender de plugins de WordPress.",
     "disciplines": [
       {
-        "text": "Diseño de Producto"
+        "text": "Full-stack"
       },
       {
-        "text": "Front-end"
+        "text": "Backend"
       },
       {
-        "text": "Movimiento"
+        "text": "Performance"
       }
     ],
     "order": 1,
-    "slug": "marea",
-    "name": "Marea",
-    "year": "2025",
+    "slug": "stockwatchindex",
+    "name": "Stock Watch Index",
+    "year": "2024",
     "categories": [
-      "web-design",
-      "ui-ux"
+      "news",
+      "platform"
     ],
-    "image_light": "/images/portfolio/marea.svg",
-    "image_dark": "/images/portfolio/marea-dark.svg",
+    "image_light": "/images/portfolio/stockwatchindex.svg",
+    "image_dark": "/images/portfolio/stockwatchindex-dark.svg",
     "featured": true
   },
   "en": {
-    "kind": "Fintech &middot; Product Site",
-    "description": "A savings app for the Caribbean diaspora. Calm data visualisation, bilingual from the first wireframe, and an onboarding flow that explains compound interest without a single spreadsheet.",
+    "kind": "News &middot; Platform",
+    "description": "Stock Watch Index, an established news source covering stocks, crypto, and investments, has been a valued client for four years. Originally built on WordPress. Recently launched a custom Node.js platform integrating their entire backend ecosystem—faster performance, complete in-house customization, and flexibility to evolve without WordPress plugins.",
     "disciplines": [
       {
-        "text": "Product Design"
+        "text": "Full-stack"
       },
       {
-        "text": "Front-end"
+        "text": "Backend"
       },
       {
-        "text": "Motion"
+        "text": "Performance"
       }
     ]
   }

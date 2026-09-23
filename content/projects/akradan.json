@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "SaaS &middot; AI Platform",
+    "description": "Plataforma de colaboración con IA que unifica acceso a 300+ modelos de IA en una sola interfaz. Análisis de uso, generación de imágenes, colaboración en proyectos, enlaces compartibles, y facturación automatizada. Una plataforma que reemplaza múltiples herramientas.",
+    "disciplines": [
+      {
+        "text": "Diseño de Producto"
+      },
+      {
+        "text": "Full-stack"
+      },
+      {
+        "text": "Analytics"
+      }
+    ],
+    "order": 1,
+    "slug": "akradan",
+    "name": "Akradan",
+    "year": "2024",
+    "categories": [
+      "saas",
+      "product"
+    ],
+    "image_light": "/images/portfolio/akradan.svg",
+    "image_dark": "/images/portfolio/akradan-dark.svg",
+    "featured": true
+  },
+  "en": {
+    "kind": "SaaS &middot; AI Platform",
+    "description": "Custom-built AI collaboration platform giving users access to 300+ AI models in one place. Features include usage analytics, image generation, project collaboration, shareable links, and automated invoicing. One platform replaces the need for multiple tools.",
+    "disciplines": [
+      {
+        "text": "Product Design"
+      },
+      {
+        "text": "Full-stack"
+      },
+      {
+        "text": "Analytics"
+      }
+    ]
+  }
+}

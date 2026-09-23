@@ -1,42 +1,42 @@
 {
   "es": {
-    "kind": "Sin Fines de Lucro &middot; Plataforma",
-    "description": "Una organización de defensa de vivienda que atiende a tres grupos lingüísticos. Una biblioteca de recursos que funciona en un Android de cinco años con señal débil, porque esa es justamente la gente que más la necesita.",
+    "kind": "E-commerce &middot; B2B",
+    "description": "Mercado de alto rendimiento para liquidación de hoteles y FF&E (muebles, fixtures y equipamiento premium). Optimizado para conversiones con navegación intuitiva, especificaciones detalladas, y checkout simplificado. Respaldado por Google Ads dirigido a compradores de hospitalidad, optimización SEO para palabras clave de alto interés, y automatización de marketing impulsada por IA. Gestión de inventario en tiempo real e seguimiento inteligente mantienen el pipeline de ventas consistentemente lleno.",
     "disciplines": [
       {
-        "text": "Accesibilidad"
+        "text": "E-commerce"
       },
       {
-        "text": "WordPress"
+        "text": "Ads & Marketing"
       },
       {
-        "text": "Estrategia de Contenido"
+        "text": "Conversión"
       }
     ],
     "order": 7,
-    "slug": "puerta",
-    "name": "Puerta",
-    "year": "2025",
+    "slug": "hotelserviceinc",
+    "name": "Hotel Services Inc",
+    "year": "2023",
     "categories": [
-      "wordpress",
-      "web-design"
+      "ecommerce",
+      "b2b"
     ],
-    "image_light": "/images/portfolio/puerta.svg",
-    "image_dark": "/images/portfolio/puerta-dark.svg",
-    "featured": false
+    "image_light": "/images/portfolio/hotelserviceinc.svg",
+    "image_dark": "/images/portfolio/hotelserviceinc-dark.svg",
+    "featured": true
   },
   "en": {
-    "kind": "Nonprofit &middot; Platform",
-    "description": "A housing advocacy nonprofit serving three language groups. A resource library that works on a five-year-old Android over a weak signal, because that is who needs it most.",
+    "kind": "E-commerce &middot; B2B",
+    "description": "High-converting hotel liquidation & FF&E marketplace for premium furniture, fixtures, and equipment. Optimized for conversions with intuitive browsing, detailed specs, and streamlined checkout. Backed by managed Google Ads targeting hospitality buyers and designers, SEO optimization for high-intent keywords, and AI-powered marketing automation. Real-time inventory management and intelligent follow-up keep the sales pipeline consistently full.",
     "disciplines": [
       {
-        "text": "Accessibility"
+        "text": "E-commerce"
       },
       {
-        "text": "WordPress"
+        "text": "Ads & Marketing"
       },
       {
-        "text": "Content Strategy"
+        "text": "Conversion"
       }
     ]
   }

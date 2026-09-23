@@ -1,0 +1,43 @@
+{
+  "es": {
+    "kind": "AI &middot; Lead Generation",
+    "description": "Asistente de IA inteligente que captura leads 24/7. Aprende tu negocio, entrega prospectos calificados directamente a tu teléfono, soporta 50+ idiomas, y te permite tomar control de conversaciones en cualquier momento. Elige entre múltiples modelos de IA para que corresponda con tu marca.",
+    "disciplines": [
+      {
+        "text": "Product Design"
+      },
+      {
+        "text": "Backend"
+      },
+      {
+        "text": "AI/ML Integration"
+      }
+    ],
+    "order": 2,
+    "slug": "zaochat",
+    "name": "Zao Chat",
+    "year": "2024",
+    "categories": [
+      "saas",
+      "ai"
+    ],
+    "image_light": "/images/portfolio/zaochat.svg",
+    "image_dark": "/images/portfolio/zaochat-dark.svg",
+    "featured": true
+  },
+  "en": {
+    "kind": "AI &middot; Lead Generation",
+    "description": "Smart, lead-capturing AI assistant that learns your business and captures every lead 24/7. Delivers qualified prospects directly to your phone or app, supports 50+ languages, and lets you take over conversations anytime. Choose from multiple AI models to match your brand voice.",
+    "disciplines": [
+      {
+        "text": "Product Design"
+      },
+      {
+        "text": "Backend"
+      },
+      {
+        "text": "AI/ML Integration"
+      }
+    ]
+  }
+}
