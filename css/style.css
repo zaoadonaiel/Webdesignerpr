@@ -2184,3 +2184,90 @@ body.is-locked .site-header {
   font-weight: 600;
 }
 /* Cache bust: Wed Sep 23 19:35:41 UTC 2026 */
+
+/* --------------------------------------------------------------------------
+   25. ARTICLE HERO + BYLINE
+   -------------------------------------------------------------------------- */
+
+.article-hero {
+  position: relative;
+  padding-top: calc(var(--header-height) + clamp(3rem, 8vw, 7rem));
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.article-hero .glow { z-index: 2; }
+.article-hero .container { position: relative; z-index: 3; }
+
+/* The background photo sits behind a dark scrim in both themes, so the hero
+   text is always light here regardless of the active theme. */
+.article-hero,
+.article-hero .breadcrumb a,
+.article-hero .byline__name { color: #f2efe9; }
+.article-hero .breadcrumb { color: rgba(242, 239, 233, 0.62); }
+.article-hero .breadcrumb a:hover { color: #fff; }
+
+.article-hero__category {
+  margin-bottom: var(--space-md);
+  color: var(--color-primary-on-bg);
+}
+.article-hero__category::before { background: var(--color-primary); }
+
+.article-hero__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  /* Headlines here are long, so this tops out smaller than a page title */
+  font-size: clamp(1.9rem, 1.1rem + 3.2vw, 3.9rem);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+  color: #f2efe9;
+}
+
+/* --- byline ------------------------------------------------------------ */
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(242, 239, 233, 0.18);
+}
+.byline__avatar {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-surface-2);
+  border: 1px solid rgba(242, 239, 233, 0.25);
+}
+.byline__text { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+.byline__name {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.byline__role,
+.byline__meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  color: rgba(242, 239, 233, 0.66);
+}
+.byline__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+  text-transform: uppercase;
+}
+.byline__meta-item { white-space: nowrap; }
+
+@media (max-width: 560px) {
+  .byline__avatar { width: 40px; height: 40px; }
+  .byline__meta { gap: 0.35em; }
+}

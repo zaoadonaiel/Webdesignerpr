@@ -4,7 +4,10 @@
     {
       "name": "webdesignerpr",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["/Users/haseebs/Documents/GitHub/Webdesignerpr/build.py", "--serve"],
+      "runtimeArgs": [
+        "/Users/haseebs/Documents/GitHub/Webdesignerpr/.claude/preview-dist.py",
+        "4173"
+      ],
       "port": 4173
     }
   ]

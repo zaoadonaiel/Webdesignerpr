@@ -42,6 +42,13 @@
       "phone_display": "(939) 229-9233",
       "phone_href": "tel:+19392299233"
     },
+    "author": {
+      "name": "David Duarte",
+      "role": "Diseñador Web y Director Creativo",
+      "avatar": "/images/davey-duarte.png",
+      "avatar_alt": "Retrato de David Duarte",
+      "read_label": "min de lectura"
+    },
     "social": [
       {
         "label": "Instagram",
@@ -184,6 +191,13 @@
       "email": "info@webdesignerpr.com",
       "phone_display": "(939) 229-9233",
       "phone_href": "tel:+19392299233"
+    },
+    "author": {
+      "name": "David Duarte",
+      "role": "Web Designer &amp; Creative Director",
+      "avatar": "/images/davey-duarte.png",
+      "avatar_alt": "Portrait of David Duarte",
+      "read_label": "min read"
     },
     "social": [
       {

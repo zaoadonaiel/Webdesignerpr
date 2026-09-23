@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Renders the five pages from content/. Every string comes from the CMS."""
+import re
+
 from .content import DEFAULT_LANG, load, load_projects, shared, texts
 from .partials import (head, chrome, header, footer, scripts, cta, section_head,
                        page_header, themed_img, ARROW, ARROW_R, STAR, MARK_PATH)
@@ -30,6 +32,55 @@ def _img(doc, *path):
     for key in path:
         node = node[key]
     return node
+
+
+# ---------------------------------------------------------------------------
+# ARTICLE BYLINE HELPERS
+# ---------------------------------------------------------------------------
+
+MONTHS = {
+    "es": ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+           "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    "en": ["January", "February", "March", "April", "May", "June",
+           "July", "August", "September", "October", "November", "December"],
+}
+
+
+def format_date(iso, lang):
+    """2026-09-23 -> '23 de septiembre de 2026' / 'September 23, 2026'.
+
+    Returns the raw string unchanged if it isn't an ISO date, so a hand-typed
+    value never breaks the page.
+    """
+    if not iso:
+        return ""
+    parts = str(iso).strip()[:10].split("-")
+    if len(parts) != 3 or not all(x.isdigit() for x in parts):
+        return str(iso)
+    year, month, day = (int(x) for x in parts)
+    if not 1 <= month <= 12:
+        return str(iso)
+    name = MONTHS.get(lang, MONTHS["en"])[month - 1]
+    return f"{day} de {name} de {year}" if lang == "es" else f"{name} {day}, {year}"
+
+
+def reading_minutes(html, wpm=200):
+    """Rough reading time from the article body, tags stripped."""
+    text = re.sub(r"<[^>]+>", " ", html or "")
+    words = len(text.split())
+    return max(1, round(words / wpm)) if words else 1
+
+
+def article_author(article, c):
+    """Per-article author if the CMS or Zao Flo supplied one, else the site
+    default from Settings. Any missing field falls back individually."""
+    default = c.s.get("author", {}) or {}
+    override = article.get("author") or {}
+    if isinstance(override, str):          # a bare name is allowed
+        override = {"name": override}
+    merged = dict(default)
+    merged.update({k: v for k, v in override.items() if v})
+    return merged
 
 
 # ---------------------------------------------------------------------------
@@ -880,69 +931,117 @@ def build_articles(c):
 
 
 def build_article_pages(c):
-    """Generate individual article detail pages for each article in articles.json"""
+    """Generate individual article detail pages for each article in articles.json.
+
+    These live one folder below the language root (articles/<slug>.html), so
+    everything is rendered inside `at_depth(1)` — that is what makes the
+    stylesheet, the scripts and every nav link resolve from down there.
+    """
     articles_data = load("articles")
     articles = articles_data[c.lang].get("articles", [])
-    
+
+    # Slugs that exist in the other language, so the language switch can fall
+    # back to the articles index rather than a 404 for untranslated posts.
+    other_lang = "en" if c.lang == "es" else "es"
+    translated = {
+        a.get("slug") for a in articles_data.get(other_lang, {}).get("articles", [])
+        if a.get("slug")
+    }
+
     for article in articles:
         slug = article.get("slug", "")
         if not slug:
             continue
         
-        title = article.get("title", "")
-        published_date = article.get("published_date", "")
-        body = article.get("body", "")
-        excerpt = article.get("excerpt", "")
+        with c.at_depth(1):
+            title = article.get("title", "")
+            published_date = article.get("published_date", "")
+            body = article.get("body", "")
+            excerpt = article.get("excerpt", "")
         
-        # Use Zao Flo's SEO fields if available; fallback to title/excerpt
-        seo_title = article.get("seo_title", f"{title} — Web Designer Puerto Rico")
-        seo_description = article.get("seo_description", excerpt if excerpt else title)
-        seo_keywords = article.get("seo_keywords", "")
+            # Use Zao Flo's SEO fields if available; fallback to title/excerpt
+            seo_title = article.get("seo_title", f"{title} — Web Designer Puerto Rico")
+            seo_description = article.get("seo_description", excerpt if excerpt else title)
+            seo_keywords = article.get("seo_keywords", "")
         
-        out = [head(c, f"articles/{slug}.html", title=seo_title, description=seo_description, keywords=seo_keywords), chrome(c), header(c, f"articles/{slug}.html")]
-        out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
-        
-        # Article header
-        out.append(f"""
-  <!-- ============ ARTICLE HEADER ============ -->
-  <header class="page-header" style="background-image: url('{c.media('/images/hero/pr-background.jpg')}'); background-size: cover; background-position: center;">
-    <div class="page-header__overlay" aria-hidden="true"></div>
-    <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="{c.ui.get('breadcrumb', 'Breadcrumb')}">
-        <a class="link-underline" href="{c.asset('index.html')}">{c.ui['breadcrumb_home']}</a>
-        <span aria-hidden="true">/</span>
-        <a class="link-underline" href="{c.asset('articles.html')}">{articles_data[c.lang]['crumb']}</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">{title}</span>
-      </nav>
-      <h1 class="display-1 page-header__title" data-split="words">{title}</h1>
-      <div class="page-header__grid" style="grid-template-columns:1fr;gap:var(--space-lg)">
-        <div style="display:flex;gap:var(--space-md);align-items:center;color:var(--color-text-muted);font-size:var(--fs-small)">
-          <span>{published_date}</span>
-        </div>
-      </div>
-    </div>
-  </header>
+            page_path = f"articles/{slug}.html"
+            other_path = page_path if slug in translated else "articles.html"
 
-    <!-- ============ ARTICLE CONTENT ============ -->
-    <section class="section section--flush-top">
-      <div class="container container--narrow">
-        <article class="prose">
-          {body}
-        </article>
+            out = [head(c, page_path, title=seo_title, description=seo_description, keywords=seo_keywords),
+                   chrome(c),
+                   header(c, page_path, other_page=other_path)]
+            out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
         
-        <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--color-line)">
-          <a class="btn btn--ghost" href="{c.asset('articles.html')}"><span>{c.ui['back_to_top']} {ARROW}</span></a>
+            # Article header
+            author = article_author(article, c)
+            # The breadcrumb already ends in "Articles"; showing a category
+            # label that says the same thing reads as a mistake.
+            category = article.get("category", "")
+            if category.strip().lower() == str(articles_data[c.lang]["crumb"]).strip().lower():
+                category = ""
+            date_display = format_date(published_date, c.lang)
+            minutes = reading_minutes(body)
+
+            avatar = c.media(author.get("avatar", ""))
+            avatar_html = (
+                f'<img class="byline__avatar" src="{avatar}" alt="{author.get("avatar_alt", "")}"'
+                f' width="96" height="96" loading="eager" decoding="async">'
+                if avatar else "")
+
+            meta_bits = []
+            if date_display:
+                meta_bits.append(
+                    f'<time datetime="{published_date}">{date_display}</time>')
+            if minutes:
+                meta_bits.append(f'<span>{minutes} {c.s.get("author", {}).get("read_label", "min read")}</span>')
+            meta_html = '<span aria-hidden="true">&middot;</span>'.join(
+                f'<span class="byline__meta-item">{b}</span>' for b in meta_bits)
+
+            out.append(f"""
+      <!-- ============ ARTICLE HERO ============ -->
+      <header class="article-hero" style="background-image: url('{c.media('/images/hero/pr-background.jpg')}');">
+        <div class="page-header__overlay" aria-hidden="true"></div>
+        <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
+        <div class="container container--narrow">
+          <nav class="breadcrumb" aria-label="{c.ui.get('breadcrumb', 'Breadcrumb')}">
+            <a class="link-underline" href="{c.link('index.html')}">{c.ui['breadcrumb_home']}</a>
+            <span aria-hidden="true">/</span>
+            <a class="link-underline" href="{c.link('articles.html')}">{articles_data[c.lang]['crumb']}</a>
+          </nav>
+
+          {f'<p class="label article-hero__category">{category}</p>' if category else ''}
+
+          <h1 class="article-hero__title" data-split="words">{title}</h1>
+
+          <div class="byline">
+            {avatar_html}
+            <div class="byline__text">
+              <p class="byline__name">{author.get('name', '')}</p>
+              {f'<p class="byline__role">{author.get("role", "")}</p>' if author.get("role") else ''}
+              <p class="byline__meta">{meta_html}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-""")
+      </header>
+
+        <!-- ============ ARTICLE CONTENT ============ -->
+        <section class="section section--flush-top">
+          <div class="container container--narrow">
+            <article class="prose">
+              {body}
+            </article>
         
-        out.append("  </main>\n")
-        out.append(footer(c))
-        out.append(scripts(c))
-        c.write(f"articles/{slug}.html", "".join(out))
+            <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--color-line)">
+              <a class="btn btn--ghost" href="{c.link('articles.html')}"><span>{c.ui['back_to_top']} {ARROW}</span></a>
+            </div>
+          </div>
+        </section>
+    """)
+        
+            out.append("  </main>\n")
+            out.append(footer(c))
+            out.append(scripts(c))
+            c.write(f"articles/{slug}.html", "".join(out))
 
 
 BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact, build_articles]

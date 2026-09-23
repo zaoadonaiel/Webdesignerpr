@@ -767,6 +767,23 @@ collections:
               - { name: phone_display, label: Phone (as shown), widget: string, i18n: duplicate }
               - { name: phone_href, label: "Phone (tel: link)", widget: string, i18n: duplicate }
 
+          - name: author
+            label: Article author
+            widget: object
+            i18n: true
+            collapsed: true
+            hint: >-
+              The default byline on every article. Articles published by Zao Flo
+              inherit this automatically; an article can override it with its own
+              author field.
+            fields:
+              - { name: name, label: Name, widget: string, i18n: duplicate }
+              - { name: role, label: Role, widget: string, required: false, i18n: true }
+              - { name: avatar, label: Headshot, widget: image, required: false, i18n: duplicate }
+              - { name: avatar_alt, label: Headshot alt text, widget: string, required: false, i18n: true }
+              - { name: read_label, label: "\"min read\" label", widget: string, i18n: true,
+                  hint: "Follows the number, e.g. 9 min read / 9 min de lectura" }
+
           - name: social
             label: Social links
             widget: list

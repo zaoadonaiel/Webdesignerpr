@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Shared chrome — head, header, drawer, CTA, footer — rendered per language."""
 import os
+from contextlib import contextmanager
 from .content import SITE_URL, DEFAULT_LANG, load
 
 ARROW = ('<svg class="btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" '
@@ -18,21 +19,52 @@ MARK_PATH = ('<path d="M16 0c.9 6.6 2.6 10.9 5.3 13.1C23.6 15 27.4 15.9 32 16c-4
 
 
 class Ctx:
-    """Everything that varies by language: paths, URLs and the chrome strings."""
+    """Everything that varies by language: paths, URLs and the chrome strings.
+
+    Links are relative, so they depend on how deep the page being rendered
+    sits. A page at the language root (about.html) and one in a subfolder
+    (articles/some-slug.html) need different prefixes for the same target.
+    `depth` tracks that: set it via `at_depth()` while rendering nested pages,
+    and every helper below adjusts.
+    """
 
     def __init__(self, lang, out_root):
         self.lang = lang
-        self.pre = "" if lang == DEFAULT_LANG else "../"
         self.out = out_root if lang == DEFAULT_LANG else os.path.join(out_root, lang)
+        # How far the language folder sits below the site root
+        self._lang_depth = 0 if lang == DEFAULT_LANG else 1
+        # How far the current page sits below its language folder
+        self.depth = 0
         settings = load("settings")
         self.s = settings[lang]
         self.s_default = settings[DEFAULT_LANG]
         # Interface strings are grouped so the CMS can collapse them
         self.ui = self.s["interface"]
 
+    # --- depth ---------------------------------------------------------
+    @contextmanager
+    def at_depth(self, depth):
+        """Render a page that sits `depth` folders below the language root."""
+        previous = self.depth
+        self.depth = depth
+        try:
+            yield self
+        finally:
+            self.depth = previous
+
+    @property
+    def pre(self):
+        """Prefix from the current page up to the SITE root."""
+        return "../" * (self._lang_depth + self.depth)
+
+    @property
+    def here(self):
+        """Prefix from the current page up to its LANGUAGE root."""
+        return "../" * self.depth
+
     # --- paths ---------------------------------------------------------
     def asset(self, path):
-        """Relative path to a site asset from this language's folder."""
+        """Relative path to a site-root asset (css, js, images)."""
         return self.pre + path.lstrip("/")
 
     def media(self, path):
@@ -44,13 +76,27 @@ class Ctx:
             return path
         return self.pre + path.lstrip("/")
 
+    def link(self, page):
+        """Relative path to another page in the SAME language."""
+        if not page:
+            return ""
+        if page.startswith(("http://", "https://", "mailto:", "tel:", "#")):
+            return page
+        return self.here + page.lstrip("/")
+
     def page_url(self, page, lang=None):
         lang = lang or self.lang
         leaf = "" if page == "index.html" else page
         return SITE_URL + ("/" if lang == DEFAULT_LANG else "/" + lang + "/") + leaf
 
     def other_href(self, page):
-        return ("en/" + page) if self.lang == DEFAULT_LANG else ("../" + page)
+        """The same page in the other language, relative to where we are."""
+        page = page.lstrip("/")
+        if self.lang == DEFAULT_LANG:
+            # up to the site root, then down into /en/
+            return self.here + "en/" + page
+        # up out of /en/ entirely, then down to the page
+        return self.here + "../" + page
 
     def write(self, page, html):
         os.makedirs(self.out, exist_ok=True)
@@ -117,8 +163,8 @@ def head(c, page, title=None, description=None, keywords=None):
   <meta name="twitter:description" content="{description}">
   <meta name="twitter:image" content="{SITE_URL}/images/logo/og-image.jpg">
 
-  <link rel="icon" href="{c.asset('favicon.png')}" type="image/png">
-  <link rel="apple-touch-icon" href="{c.asset('favicon.png')}">
+  <link rel="icon" href="{c.asset('images/logo/favicon.png')}" type="image/png">
+  <link rel="apple-touch-icon" href="{c.asset('images/logo/favicon.png')}">
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -173,7 +219,7 @@ def chrome(c):
 
 def brand(c):
     label = "Web Designer Puerto Rico &mdash; " + ("inicio" if c.lang == "es" else "home")
-    return f"""<a class="brand" href="index.html" aria-label="{label}">
+    return f"""<a class="brand" href="{c.link('index.html')}" aria-label="{label}">
         <picture class="brand__logo">
           <source media="(prefers-color-scheme: dark)" srcset="/images/logo/zao-chat-light.png">
           <img src="/images/logo/zao-chat-light.png" alt="Zao Chat" width="32" height="32">
@@ -197,10 +243,14 @@ def theme_toggle(c):
         </button>"""
 
 
-def lang_switch(c, page):
+def lang_switch(c, page, other_page=None):
+    """`other_page` overrides the target in the other language — used when a
+    page has no direct counterpart (an untranslated article, say), so the
+    switch lands somewhere real instead of a 404."""
+    other = other_page or page
     es_current = c.lang == "es"
-    es_href = page if es_current else c.other_href(page)
-    en_href = c.other_href(page) if es_current else page
+    es_href = c.link(page) if es_current else c.other_href(other)
+    en_href = c.other_href(other) if es_current else c.link(page)
     return f"""<div class="lang-switch" role="group" aria-label="{c.ui['lang_label']}">
           <a class="lang-switch__opt" href="{es_href}" hreflang="es" lang="es"
              data-lang-switch="es"{' aria-current="true"' if es_current else ''}>ES</a>
@@ -209,13 +259,13 @@ def lang_switch(c, page):
         </div>"""
 
 
-def header(c, page):
+def header(c, page, other_page=None):
     s = c.s
     links = "\n".join(
-        f'          <a class="nav__link" data-nav-link href="{n["href"]}">{n["label"]}</a>'
+        f'          <a class="nav__link" data-nav-link href="{c.link(n["href"])}">{n["label"]}</a>'
         for n in s["nav"])
     drawer_items = "\n".join(f"""      <div class="mobile-menu__item">
-        <a class="mobile-menu__link" data-nav-link href="{n['href']}">
+        <a class="mobile-menu__link" data-nav-link href="{c.link(n['href'])}">
           <span class="index-num">{n['index']}</span> {n['label']}
         </a>
       </div>""" for n in s["nav"])
@@ -231,7 +281,7 @@ def header(c, page):
 
       <div class="header__actions">
         <div class="controls">
-          {lang_switch(c, page)}
+          {lang_switch(c, page, other_page)}
           {theme_toggle(c)}
         </div>
         <a class="btn btn--primary" href="tel:+19392299233" data-magnetic="0.25">
@@ -252,7 +302,7 @@ def header(c, page):
     <div class="mobile-menu__foot">
       <div class="mobile-menu__controls">
         <span class="control-label">{c.ui['lang_label']}</span>
-        {lang_switch(c, page)}
+        {lang_switch(c, page, other_page)}
       </div>
       <p class="label label--plain">{c.ui['drawer_cta']}</p>
       <a class="display-4 link-underline" href="mailto:{c.s_default['contact']['email']}">{c.s_default['contact']['email']}</a>
@@ -290,7 +340,7 @@ def page_header(c, eyebrow, title_html, lead, meta_html=""):
     <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
     <div class="container">
       <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">
-        <a class="link-underline" href="index.html">{c.ui['breadcrumb_home']}</a>
+        <a class="link-underline" href="{c.link('index.html')}">{c.ui['breadcrumb_home']}</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">{eyebrow}</span>
       </nav>
@@ -327,8 +377,8 @@ def cta(c, block, primary=None, secondary=None):
         <h2 class="display-2 cta__title" data-split="words">{block['title']}</h2>
         <p class="prose u-center" style="margin-inline:auto" data-reveal="up">{block['body']}</p>
         <div class="cta__actions" data-reveal="up" data-delay="0.1">
-          <a class="btn btn--primary btn--lg" href="{p_href}" data-magnetic="0.3"><span>{p_label} {ARROW}</span></a>
-          <a class="btn btn--ghost btn--lg" href="{s_href}" data-magnetic="0.3"><span>{s_label} {ARROW}</span></a>
+          <a class="btn btn--primary btn--lg" href="{c.link(p_href)}" data-magnetic="0.3"><span>{p_label} {ARROW}</span></a>
+          <a class="btn btn--ghost btn--lg" href="{c.link(s_href)}" data-magnetic="0.3"><span>{s_label} {ARROW}</span></a>
         </div>
         <div class="cta__meta" data-reveal="fade" data-delay="0.2">
           <span class="label label--plain"><span class="pulse-dot" aria-hidden="true"><i></i></span> {c.ui['cta_availability']}</span>
@@ -344,10 +394,10 @@ def footer(c):
     s, f = c.s, c.s["footer"]
     contact = c.s_default["contact"]
     svc = "\n          ".join(
-        f'<a class="link-underline" href="services.html#{x["anchor"]}">{x["label"]}</a>'
+        f'<a class="link-underline" href="{c.link("services.html")}#{x["anchor"]}">{x["label"]}</a>'
         for x in f["service_links"])
     pages = "\n          ".join(
-        f'<a class="link-underline" href="{n["href"]}">{n["label"]}</a>' for n in s["nav"])
+        f'<a class="link-underline" href="{c.link(n["href"])}">{n["label"]}</a>' for n in s["nav"])
 
     return f"""
   <!-- ============ FOOTER ============ -->
