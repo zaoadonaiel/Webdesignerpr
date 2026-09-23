@@ -641,7 +641,7 @@ def build_portfolio(c):
                if c.lang == "es" else f"Concept artwork for {name}, a {plain} project.")
         tags = "".join(f'<span class="tag">{x}</span>' for x in texts(loc["disciplines"]))
         cards.append(f"""          <article class="project-card" id="{slug}" data-categories="{cats}" data-reveal="up">
-            <a href="#{slug}" class="project-card__media" data-reveal-media data-cursor="view" data-cursor-label="{VIEW[c.lang]}"
+            <a href="{shared(p, 'url')}" target="_blank" rel="noopener noreferrer" class="project-card__media" data-reveal-media data-cursor="view" data-cursor-label="{VIEW[c.lang]}"
                aria-label="{name} — {plain}">
               {themed_img(c, shared(p, 'image_light'), shared(p, 'image_dark'), alt, 1200, 900)}
             </a>
