@@ -873,21 +873,23 @@ def build_deals(c):
     out = [head(c, "deals.html"), chrome(c), header(c, "deals.html")]
     out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
 
-    out.append(page_header(c, d["eyebrow"], d["title"], d["lead"]))
+    # Add pricing to lead
+    lead_html = f'{d["lead"]}<div class="deals-pricing" data-reveal="up" data-delay="0.1"><span class="deals-price-label">{d["price_label"]}</span> <span class="deals-price">{d["price"]}</span></div>'
+    out.append(page_header(c, d["eyebrow"], d["title"], lead_html))
 
-    # Build template cards
+    # Build template cards with 2 columns
     cards = []
     for i, template in enumerate(d["templates"], start=1):
         cards.append(f"""          <article class="deal-card" data-reveal="up">
-            <div class="deal-card__media">
+            <a href="{template['preview_url']}" target="_blank" rel="noopener noreferrer" class="deal-card__media">
               <img src="{template['image']}" alt="{template['title']}" width="600" height="400" loading="lazy"/>
-            </div>
+            </a>
             <div class="deal-card__body">
               <span class="tag">{template['label']}</span>
               <h2 class="deal-card__title">{template['title']}</h2>
               <p class="deal-card__desc">{template['description']}</p>
-              <a href="tel:+19392299233" class="btn btn--small btn--ghost u-mt-md">
-                <span>{"Llamar para ordenar" if c.lang == "es" else "Call To Order"} →</span>
+              <a href="{template['preview_url']}" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--ghost u-mt-md">
+                <span>{"Ver sitio" if c.lang == "es" else "View Site"} →</span>
               </a>
             </div>
           </article>""")

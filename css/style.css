@@ -1931,9 +1931,30 @@ body.is-locked .site-header {
    Website template showcase grid with deal cards
    -------------------------------------------------------------------------- */
 
+.deals-pricing {
+  margin-top: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-primary);
+  color: var(--color-background);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+}
+
+.deals-price-label {
+  opacity: 0.9;
+}
+
+.deals-price {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
 .deal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--gutter);
   padding-top: var(--space-xl);
 }
@@ -1956,17 +1977,20 @@ body.is-locked .site-header {
 }
 
 .deal-card__media {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 3 / 2;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--color-background);
+  text-decoration: none;
 }
 
 .deal-card__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 .deal-card__body {
@@ -1980,6 +2004,7 @@ body.is-locked .site-header {
   font-weight: 500;
   line-height: 1.3;
   color: var(--color-text-strong);
+  margin: 0;
 }
 
 .deal-card__desc {
