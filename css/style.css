@@ -499,6 +499,10 @@ h1, h2, h3, h4, h5 {
 .btn--primary::before { background: var(--color-pr-blue); }
 .btn--primary:hover, .btn--primary:focus-visible { color: var(--color-on-primary); }
 
+/* Header phone button always white */
+.header__actions .btn--primary { color: #ffffff; }
+.header__actions .btn--primary:hover, .header__actions .btn--primary:focus-visible { color: #ffffff; }
+
 .btn--ghost {
   border-color: var(--color-line-strong);
   color: var(--color-text);
