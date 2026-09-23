@@ -643,6 +643,7 @@ def build_portfolio(c):
         cards.append(f"""          <article class="project-card" id="{slug}" data-categories="{cats}" data-reveal="up">
             <a href="#{slug}" class="project-card__media" data-reveal-media data-cursor="view" data-cursor-label="{VIEW[c.lang]}"
                aria-label="{name} — {plain}">
+              {themed_img(c, shared(p, 'image_light'), shared(p, 'image_dark'), alt, 1200, 900)}
               <span class="project-card__overlay">
                 <span class="link-arrow">{d['view']} {ARROW_R}</span>
               </span>
