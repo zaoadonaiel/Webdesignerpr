@@ -1595,6 +1595,15 @@ body.is-locked .site-header {
   padding-bottom: clamp(3rem, 6vw, 6rem);
   overflow: hidden;
 }
+.page-header__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.9) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.page-header .glow { z-index: 2; }
+.page-header .container { position: relative; z-index: 3; }
 .page-header__glow { width: 40vw; height: 40vw; top: -20%; right: -10%; }
 .page-header__title { margin-block: var(--space-md) var(--space-lg); }
 .page-header__grid {

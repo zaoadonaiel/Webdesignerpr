@@ -712,7 +712,24 @@ def build_contact(c):
     out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
 
     # Clean hero with just title and lead
-    out.append(page_header(c, d["crumb"], d["title"], d["lead"]))
+    out.append(f"""
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="page-header" style="background-image: url('/images/hero/pr-background.jpg'); background-size: cover; background-position: center;">
+    <div class="page-header__overlay" aria-hidden="true"></div>
+    <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">
+        <a class="link-underline" href="index.html">{c.ui['breadcrumb_home']}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{d['crumb']}</span>
+      </nav>
+      <h1 class="display-1 page-header__title" data-split="words">{d['title']}</h1>
+      <div class="page-header__grid">
+        <p class="lead" style="max-width:48ch" data-reveal="up">{d['lead']}</p>
+      </div>
+    </div>
+  </header>
+""")
 
     opts = "".join(f'                  <option value="{t}">{t}</option>\n'
                    for t in texts(d["project_types"]))
