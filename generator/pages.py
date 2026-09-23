@@ -814,7 +814,8 @@ def build_contact(c):
           </div>
 
           <!-- RIGHT: Chat Widget -->
-          <div style="display:flex;justify-content:center;align-items:flex-start">
+          <div style="display:flex;justify-content:center;align-items:flex-start;flex-direction:column;gap:1.5rem">
+            <img src="images/logo/zao-chat-logo.png" alt="Zao Chat" width="120" height="120" style="display:block;width:100px;height:100px"/>
             <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="600" height="640" style="width:100%;max-width:600px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
           </div>
 
