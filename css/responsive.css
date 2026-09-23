@@ -212,7 +212,7 @@
   .chip-group { gap: 0.4rem; }
   .chip span { flex: 1; justify-content: center; }
   .process__step { width: 84vw; min-height: 320px; }
-  .marquee__item { gap: var(--space-md); }
+  .marquee__item { gap: var(--space-md); font-size: 1.2rem; }
   .marquee__track { gap: var(--space-md); padding-right: var(--space-md); }
   .footer-wordmark { -webkit-text-stroke-width: 0.5px; }
 }
