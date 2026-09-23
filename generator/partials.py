@@ -222,8 +222,8 @@ def header(c, page):
           {lang_switch(c, page)}
           {theme_toggle(c)}
         </div>
-        <a class="btn btn--primary" href="contact.html" data-magnetic="0.25">
-          <span>{c.ui['cta_primary']} {ARROW}</span>
+        <a class="btn btn--primary" href="tel:+19392299233" data-magnetic="0.25">
+          <span>(939) 229-9233</span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="{c.ui['menu_open']}">
           <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
