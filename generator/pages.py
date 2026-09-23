@@ -894,7 +894,11 @@ def build_article_pages(c):
         body = article.get("body", "")
         excerpt = article.get("excerpt", "")
         
-        out = [head(c, f"articles/{slug}.html"), chrome(c), header(c, f"articles/{slug}.html")]
+        # SEO: use article title + site name, and excerpt as description
+        seo_title = f"{title} — Web Designer Puerto Rico"
+        seo_description = excerpt if excerpt else title
+        
+        out = [head(c, f"articles/{slug}.html", title=seo_title, description=seo_description), chrome(c), header(c, f"articles/{slug}.html")]
         out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
         
         # Article header

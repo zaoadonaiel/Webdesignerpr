@@ -54,7 +54,9 @@ class Ctx:
 
     def write(self, page, html):
         os.makedirs(self.out, exist_ok=True)
-        with open(os.path.join(self.out, page), "w", encoding="utf-8") as f:
+        filepath = os.path.join(self.out, page)
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
+        with open(filepath, "w", encoding="utf-8") as f:
             f.write(html)
 
 
@@ -67,9 +69,13 @@ META_KEY = {"index.html": "home", "about.html": "about", "services.html": "servi
             "portfolio.html": "portfolio", "deals.html": "deals", "contact.html": "contact", "articles.html": "articles"}
 
 
-def head(c, page):
-    meta = c.s["meta"][META_KEY[page]]
-    title, desc = meta["title"], meta["description"]
+def head(c, page, title=None, description=None):
+    if title is None or description is None:
+        # Use meta from settings.json
+        meta = c.s["meta"][META_KEY[page]]
+        title = title or meta["title"]
+        description = description or meta["description"]
+    
     es_url, en_url = c.page_url(page, "es"), c.page_url(page, "en")
     og_locale = "es_PR" if c.lang == "es" else "en_US"
     og_alt = "en_US" if c.lang == "es" else "es_PR"
@@ -81,7 +87,7 @@ def head(c, page):
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="google" content="notranslate">
   <title>{title}</title>
-  <meta name="description" content="{desc}">
+  <meta name="description" content="{description}">
   <link rel="canonical" href="{c.page_url(page)}">
 
   <!-- Both language versions of this page -->
@@ -97,7 +103,7 @@ def head(c, page):
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Web Designer Puerto Rico">
   <meta property="og:title" content="{title}">
-  <meta property="og:description" content="{desc}">
+  <meta property="og:description" content="{description}">
   <meta property="og:url" content="{c.page_url(page)}">
   <meta property="og:image" content="{SITE_URL}/images/logo/og-image.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -107,7 +113,7 @@ def head(c, page):
   <meta property="og:locale:alternate" content="{og_alt}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{title}">
-  <meta name="twitter:description" content="{desc}">
+  <meta name="twitter:description" content="{description}">
   <meta name="twitter:image" content="{SITE_URL}/images/logo/og-image.jpg">
 
   <link rel="icon" href="{c.asset('favicon.png')}" type="image/png">

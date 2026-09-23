@@ -6,7 +6,15 @@
     "est": "Publicado regularmente",
     "est_note": "Nuevos artículos cada semana sobre diseño web, desarrollo y estrategia digital.",
     "no_articles": "No hay artículos publicados aún.",
-    "articles": []
+    "articles": [
+      {
+        "title": "Por Qué el Diseño Web Importa en 2024",
+        "slug": "por-que-diseño-web-importa",
+        "excerpt": "En un mundo digital en constante cambio, un sitio web bien diseñado es tu activo más importante.",
+        "published_date": "2024-01-15",
+        "body": "<p>El diseño web es mucho más que hacer que algo se vea bonito. Es sobre crear experiencias que resuelven problemas reales para tus clientes.</p><p>Cuando diseñamos un sitio, pensamos en cada interacción, cada pixel, cada decisión tipográfica.</p>"
+      }
+    ]
   },
   "en": {
     "crumb": "Articles",
@@ -15,6 +23,14 @@
     "est": "Published regularly",
     "est_note": "New articles every week on web design, development, and digital strategy.",
     "no_articles": "No articles published yet.",
-    "articles": []
+    "articles": [
+      {
+        "title": "Why Web Design Matters in 2024",
+        "slug": "why-web-design-matters",
+        "excerpt": "In a constantly changing digital world, a well-designed website is your most important asset.",
+        "published_date": "2024-01-15",
+        "body": "<p>Web design is much more than making something look pretty. It's about creating experiences that solve real problems for your clients.</p><p>When we design a site, we think about every interaction, every pixel, every typographic decision.</p>"
+      }
+    ]
   }
 }
