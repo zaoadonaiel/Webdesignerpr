@@ -69,7 +69,7 @@
   .section-head__title { max-width: 22ch; }
 
   .hero__content { grid-template-columns: minmax(0, 1fr); }
-  .hero__right { justify-content: center; margin-top: var(--space-lg); }
+  .hero__right { justify-content: center; margin-top: var(--space-lg); display: none; }
   .hero__mockup { max-width: 280px; }
   .hero__meta { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
   .hero__title .indent { padding-left: clamp(0rem, 8vw, 4rem); }

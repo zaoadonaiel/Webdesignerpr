@@ -145,7 +145,24 @@ def build_home(c):
           </div>
 
           <div class="hero__right">
-            <img src="/images/hero/zao-chat-mockup.png" alt="Zao Chat mobile app mockup" width="280" height="580" loading="eager" decoding="async" class="hero__mockup">
+            <div id="zao-chat-widget" class="hero__chatbot"></div>
+            <script>
+              (function() {{
+                const script = document.createElement('script');
+                script.src = 'https://zaochat.com/embed.js';
+                script.async = true;
+                script.onload = function() {{
+                  if (window.ZaoChat) {{
+                    window.ZaoChat.init({{
+                      containerId: 'zao-chat-widget',
+                      width: '100%',
+                      height: '600px'
+                    }});
+                  }}
+                }};
+                document.body.appendChild(script);
+              }})();
+            </script>
           </div>
         </div>
 

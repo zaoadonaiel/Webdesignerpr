@@ -957,6 +957,14 @@ body.is-locked .site-header {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+.hero__chatbot {
+  min-width: 350px;
+  min-height: 600px;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
 .hero__title {
   font-size: var(--fs-h1);
   line-height: 0.88;
