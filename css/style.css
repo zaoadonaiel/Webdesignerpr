@@ -308,6 +308,45 @@ h1, h2, h3, h4, h5 {
 }
 .prose p + p { margin-top: 1.25em; }
 .prose strong { color: var(--color-text); font-weight: 500; }
+.prose h2 {
+  color: var(--color-text);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  line-height: var(--lh-tight);
+}
+.prose h3 {
+  color: var(--color-text);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.prose ul,
+.prose ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.75em;
+}
+.prose li {
+  margin-top: 0.5em;
+}
+.prose li + li {
+  margin-top: 0.5em;
+}
+.prose a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.prose a:hover {
+  color: var(--color-primary-hover);
+}
+.prose em {
+  font-style: italic;
+}
 
 /* Mono label — the system's connective tissue */
 .label {
