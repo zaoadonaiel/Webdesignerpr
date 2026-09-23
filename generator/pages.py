@@ -146,7 +146,6 @@ def build_home(c):
           </div>
 
           <div class="hero__right">
-            <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="400" height="640" style="width:100%;max-width:400px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
           </div>
         </div>
 
