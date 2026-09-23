@@ -111,7 +111,7 @@ def build_home(c):
         f'          <span class="line{" indent" if i == 1 else ""}"><span>{t}</span></span>'
         for i, t in enumerate(texts(d["hero_lines"])))
     marquee = "\n        ".join(
-        f'<span class="marquee__item">{t} <span class="marquee__dot">•</span></span>' for t in texts(d["marquee"]))
+        f'<span class="service-tag">{t}</span>' for t in texts(d["marquee"]))
     st = d["studio"]
 
     out.append(f"""
@@ -148,8 +148,14 @@ def build_home(c):
       </div>
     </section>
 
-    <!-- ============ MARQUEE ============ -->
-    <!-- Marquee removed due to stacking issues on mobile -->
+    <!-- ============ SERVICES TAGS ============ -->
+    <section class="services-tags">
+      <div class="container">
+        <div class="services-tags__grid">
+{marquee}
+        </div>
+      </div>
+    </section>
 
     <!-- ============ 01 — INTRODUCTION ============ -->
     <section class="section" id="studio">
