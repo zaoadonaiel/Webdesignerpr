@@ -400,7 +400,7 @@ def build_about(c):
               <div class="stamp" data-reveal="scale" aria-hidden="true">
                 <svg class="stamp__ring" viewBox="0 0 132 132" width="132" height="132">
                   <defs><path id="stamp-path" d="M66,66 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"/></defs>
-                  <text fill="var(--color-text-muted)" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="3.4">
+                  <text fill="var(--color-text-muted)" font-family="Google Sans, sans-serif" font-size="11" letter-spacing="3.4">
                     <textPath href="#stamp-path">{ph['stamp']}</textPath>
                   </text>
                 </svg>
