@@ -593,6 +593,8 @@ h1, h2, h3, h4, h5 {
   gap: 0.7rem;
   flex: none;
 }
+.brand__logo { width: 32px; height: 32px; flex: none; }
+.brand__logo img { width: 100%; height: auto; display: block; }
 .brand__mark { width: 30px; height: 30px; flex: none; }
 .brand__mark path, .brand__mark circle { transition: fill var(--dur-base) var(--ease-out); }
 .brand__text {

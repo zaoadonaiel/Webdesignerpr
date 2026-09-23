@@ -167,6 +167,10 @@ def chrome(c):
 def brand(c):
     label = "Web Designer Puerto Rico &mdash; " + ("inicio" if c.lang == "es" else "home")
     return f"""<a class="brand" href="index.html" aria-label="{label}">
+        <picture class="brand__logo">
+          <source media="(prefers-color-scheme: dark)" srcset="/images/logo/zao-chat-dark.png">
+          <img src="/images/logo/zao-chat-light.png" alt="Zao Chat" width="32" height="32">
+        </picture>
         <span class="brand__text">Web Designer <em>Puerto Rico</em></span>
       </a>"""
 
