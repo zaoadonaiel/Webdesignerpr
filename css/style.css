@@ -302,50 +302,50 @@ h1, h2, h3, h4, h5 {
 
 .prose {
   max-width: var(--measure);
-  color: var(--color-text-muted);
-  font-size: var(--fs-body);
-  line-height: var(--lh-relaxed);
+  color: var(--color-text-muted) !important;
+  font-size: var(--fs-body) !important;
+  line-height: var(--lh-relaxed) !important;
 }
-.prose p + p { margin-top: 1.25em; }
-.prose strong { color: var(--color-text); font-weight: 500; }
+.prose p + p { margin-top: 1.25em !important; }
+.prose strong { color: var(--color-text) !important; font-weight: 500 !important; }
 .prose h2 {
-  color: var(--color-text);
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  margin-top: 2em;
-  margin-bottom: 0.75em;
-  line-height: var(--lh-tight);
+  color: var(--color-text) !important;
+  font-size: var(--fs-lg) !important;
+  font-weight: 600 !important;
+  margin-top: 2em !important;
+  margin-bottom: 0.75em !important;
+  line-height: var(--lh-tight) !important;
 }
 .prose h3 {
-  color: var(--color-text);
-  font-size: var(--fs-body);
-  font-weight: 600;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  color: var(--color-text) !important;
+  font-size: var(--fs-body) !important;
+  font-weight: 600 !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
 }
 .prose ul,
 .prose ol {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  padding-left: 1.75em;
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+  padding-left: 1.75em !important;
 }
 .prose li {
-  margin-top: 0.5em;
+  margin-top: 0.5em !important;
 }
 .prose li + li {
-  margin-top: 0.5em;
+  margin-top: 0.5em !important;
 }
 .prose a {
-  color: var(--color-primary);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  color: var(--color-primary) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.2em !important;
 }
 .prose a:hover {
-  color: var(--color-primary-hover);
+  color: var(--color-primary-hover) !important;
 }
 .prose em {
-  font-style: italic;
+  font-style: italic !important;
 }
 
 /* Mono label — the system's connective tissue */
