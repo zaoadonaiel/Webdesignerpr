@@ -890,7 +890,7 @@ def render_404():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>404 &mdash; WebDesignerPR</title>
+  <title>404 &mdash; Web Designer Puerto Rico</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#08090b" media="(prefers-color-scheme: dark)">
@@ -910,7 +910,7 @@ document.documentElement.setAttribute("data-theme","dark")}}catch(e){{}}}})();</
   <main class="notfound" id="main">
     <div class="glow glow--primary notfound__glow" aria-hidden="true"></div>
     <div class="container">
-      <a class="brand" href="/" aria-label="WebDesignerPR">
+      <a class="brand" href="/" aria-label="Web Designer Puerto Rico">
         <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" style="color:var(--color-primary)">
           {MARK_PATH}
           <circle cx="16" cy="16" r="2.4" fill="var(--color-background)"/>

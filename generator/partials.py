@@ -95,7 +95,7 @@ def head(c, page):
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="WebDesignerPR">
+  <meta property="og:site_name" content="Web Designer Puerto Rico">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:url" content="{c.page_url(page)}">
@@ -371,11 +371,11 @@ def footer(c):
       </div>
     </div>
 
-    <p class="footer-wordmark" aria-hidden="true">WebDesignerPR</p>
+    <p class="footer-wordmark" aria-hidden="true">Web Designer Puerto Rico</p>
 
     <div class="container">
       <div class="footer-bottom">
-        <span>&copy; <span data-year>2026</span> WebDesignerPR. {f['rights']}</span>
+        <span>&copy; <span data-year>2026</span> Web Designer Puerto Rico. {f['rights']}</span>
         <div class="footer-social">
           {social}
         </div>
