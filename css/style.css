@@ -1539,18 +1539,18 @@ body.is-locked .site-header {
   gap: var(--space-lg) var(--gutter);
   align-items: center;
 }
-.split__media { grid-column: span 6; }
+.split__media { grid-column: span 6; display: flex; flex-direction: column; }
 .split__body  { grid-column: span 5 / -1; }
 .split--reverse .split__media { order: 2; }
 
 .split__caption {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-md);
   font-family: var(--font-display);
   font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.5;
   color: var(--color-text-muted);
   font-style: italic;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .media-frame {
