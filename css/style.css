@@ -1207,7 +1207,7 @@ body.is-locked .site-header {
 }
 .project-card__media img {
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 1.1s var(--ease-out), filter 0.8s var(--ease-out);
   will-change: transform;
 }
