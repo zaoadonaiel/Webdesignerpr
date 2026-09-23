@@ -79,6 +79,7 @@ def head(c, page):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="google" content="notranslate">
   <title>{title}</title>
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{c.page_url(page)}">
