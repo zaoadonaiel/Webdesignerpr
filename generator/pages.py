@@ -146,24 +146,7 @@ def build_home(c):
           </div>
 
           <div class="hero__right">
-            <div id="zao-chat-widget" class="hero__chatbot"></div>
-            <script>
-              (function() {{
-                const script = document.createElement('script');
-                script.src = 'https://zaochat.com/embed.js';
-                script.async = true;
-                script.onload = function() {{
-                  if (window.ZaoChat) {{
-                    window.ZaoChat.init({{
-                      containerId: 'zao-chat-widget',
-                      width: '100%',
-                      height: '600px'
-                    }});
-                  }}
-                }};
-                document.body.appendChild(script);
-              }})();
-            </script>
+            <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="400" height="640" style="width:100%;max-width:400px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
           </div>
         </div>
 

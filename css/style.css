@@ -955,7 +955,7 @@ body.is-locked .site-header {
 .hero__right {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hero__mockup {
