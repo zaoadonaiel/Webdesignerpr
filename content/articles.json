@@ -1,0 +1,20 @@
+{
+  "es": {
+    "crumb": "Artículos",
+    "title": "Pensamientos sobre <em class=\"italic accent-text\">diseño web</em>.",
+    "lead": "Escribimos sobre diseño, desarrollo, negocios en la web y las decisiones que hacen la diferencia en los sitios que construimos.",
+    "est": "Publicado regularmente",
+    "est_note": "Nuevos artículos cada semana sobre diseño web, desarrollo y estrategia digital.",
+    "no_articles": "No hay artículos publicados aún.",
+    "articles": []
+  },
+  "en": {
+    "crumb": "Articles",
+    "title": "Thoughts on <em class=\"italic accent-text\">web design</em>.",
+    "lead": "We write about design, development, web business, and the decisions that make a difference in the sites we build.",
+    "est": "Published regularly",
+    "est_note": "New articles every week on web design, development, and digital strategy.",
+    "no_articles": "No articles published yet.",
+    "articles": []
+  }
+}

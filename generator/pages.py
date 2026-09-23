@@ -916,7 +916,69 @@ def build_deals(c):
     c.write("deals.html", "".join(out))
 
 
-BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact]
+# ---------------------------------------------------------------------------
+# ARTICLES / BLOG
+# ---------------------------------------------------------------------------
+
+def build_articles(c):
+    d = load("articles")[c.lang]
+    out = [head(c, "articles.html"), chrome(c), header(c, "articles.html")]
+    out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
+
+    # Hero header
+    out.append(page_header(c, d["crumb"], d["title"], d["lead"],
+        f"""<div style="display:flex;flex-direction:column;gap:var(--space-sm)" data-reveal="up" data-delay="0.1">
+          <p class="label label--plain"><span class="pulse-dot" aria-hidden="true"><i></i></span> {d['est']}</p>
+          <p class="muted" style="font-size:var(--fs-sm)">{d['est_note']}</p>
+        </div>"""))
+
+    # Articles section
+    articles = d.get("articles", [])
+    
+    if articles:
+        out.append(f"""
+    <!-- ============ ARTICLES GRID ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="article-grid">
+""")
+        for article in articles:
+            pub_date = article.get("published_date", "")
+            out.append(f"""          <article class="article-card" data-reveal="up">
+            <a class="article-card__link" href="{article.get('slug', '#')}">
+              <h3 class="article-card__title">{article.get('title', '')}</h3>
+              <p class="article-card__excerpt">{article.get('excerpt', '')}</p>
+              <div class="article-card__meta">
+                <span class="article-card__date">{pub_date}</span>
+                <span class="article-card__arrow">{ARROW}</span>
+              </div>
+            </a>
+          </article>
+""")
+        out.append("""        </div>
+      </div>
+    </section>
+""")
+    else:
+        out.append(f"""
+    <!-- ============ NO ARTICLES YET ============ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <div style="text-align:center;padding:4rem 2rem">
+          <p class="muted" style="font-size:var(--fs-lg);margin-bottom:2rem">{d['no_articles']}</p>
+          <p class="muted">Check back soon for our first piece.</p>
+        </div>
+      </div>
+    </section>
+""")
+
+    out.append("  </main>\n")
+    out.append(footer(c))
+    out.append(scripts(c))
+    c.write("articles.html", "".join(out))
+
+
+BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact, build_articles]
 
 
 # ---------------------------------------------------------------------------

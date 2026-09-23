@@ -30,6 +30,11 @@
         "href": "contact.html",
         "label": "Contacto",
         "index": "06"
+      },
+      {
+        "href": "articles.html",
+        "label": "Artículos",
+        "index": "07"
       }
     ],
     "contact": {
@@ -111,6 +116,10 @@
       "contact": {
         "title": "Contacto — Inicia tu Proyecto Web | Web Designer Puerto Rico",
         "description": "¿Necesitas un sitio web? Cuéntanos tu proyecto. Diseño y desarrollo personalizado en Puerto Rico. Respuestas rápidas, soluciones creativas. Contacta hoy mismo."
+      },
+      "articles": {
+        "title": "Artículos — Diseño Web, Desarrollo y Estrategia Digital | Web Designer Puerto Rico",
+        "description": "Artículos sobre diseño web, desarrollo y estrategia digital. Pensamientos sobre las decisiones que hacen la diferencia en los sitios que construimos."
       }
     },
     "interface": {
@@ -164,6 +173,11 @@
         "href": "contact.html",
         "label": "Contact",
         "index": "06"
+      },
+      {
+        "href": "articles.html",
+        "label": "Articles",
+        "index": "07"
       }
     ],
     "contact": {
@@ -245,6 +259,10 @@
       "contact": {
         "title": "Contact — Start a Project | Web Designer Puerto Rico",
         "description": "Tell us about your project. Custom web design and development from a web design agency in San Juan, Puerto Rico. Replies within one business day."
+      },
+      "articles": {
+        "title": "Articles — Web Design, Development &amp; Digital Strategy | Web Designer Puerto Rico",
+        "description": "Articles on web design, development and digital strategy. Thoughts on the decisions that make a difference in the sites we build."
       }
     },
     "interface": {

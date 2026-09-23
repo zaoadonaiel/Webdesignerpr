@@ -18,7 +18,7 @@ CONTENT = os.path.join(ROOT, "content")
 SITE_URL = "https://webdesignerpr.com"
 LANGS = ("es", "en")
 DEFAULT_LANG = "es"
-PAGES = ["index.html", "about.html", "services.html", "portfolio.html", "deals.html", "contact.html"]
+PAGES = ["index.html", "about.html", "services.html", "portfolio.html", "deals.html", "contact.html", "articles.html"]
 
 
 def _read(path):
