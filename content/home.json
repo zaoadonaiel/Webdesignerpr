@@ -36,7 +36,7 @@
     ],
     "studio": {
       "index": "01",
-      "eyebrow": "El estudio",
+      "eyebrow": "La agencia",
       "title": "Un sitio web es el único empleado que trabaja todas las horas del año. <em class=\"italic accent-text\">Los nuestros están bien entrenados.</em>",
       "image_light": "/images/hero/studio.svg",
       "image_dark": "/images/hero/studio-dark.svg",
@@ -182,7 +182,7 @@
     ],
     "studio": {
       "index": "01",
-      "eyebrow": "The studio",
+      "eyebrow": "The agency",
       "title": "A website is the only employee that works every hour of the year. <em class=\"italic accent-text\">Ours are trained properly.</em>",
       "image_light": "/images/hero/studio.svg",
       "image_dark": "/images/hero/studio-dark.svg",
