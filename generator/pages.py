@@ -170,19 +170,19 @@ def build_home(c):
     <section class="section" id="studio">
       <div class="container">
 {section_head(st['index'], st['eyebrow'], st['title'])}
-        <div class="split">
-          <div class="split__media" data-reveal-media>
-            <div class="media-frame media-frame--tall">
-              {themed_img(c, _img(doc, 'studio', 'image_light'), _img(doc, 'studio', 'image_dark'), st['image_alt'], 900, 1125, 'data-parallax="0.12"')}
-            </div>
-          </div>
-
+        <div class="split split--reverse">
           <div class="split__body">
             <div class="prose">
               {"".join(f"<p>{p}</p>" for p in texts(st['paragraphs']))}
             </div>
             <div class="u-mt-lg">
               <a class="link-arrow" href="about.html">{st['link']} {ARROW_R}</a>
+            </div>
+          </div>
+
+          <div class="split__media" data-reveal-media>
+            <div class="media-frame media-frame--tall">
+              <img src="/images/hero/agency-workspace.png" alt="Web Designer Puerto Rico agency workspace in San Juan" width="900" height="1125" loading="lazy" decoding="async" data-parallax="0.12" style="width:100%;height:auto;">
             </div>
           </div>
         </div>
