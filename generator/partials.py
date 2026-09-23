@@ -341,9 +341,6 @@ def footer(c):
         for x in f["service_links"])
     pages = "\n          ".join(
         f'<a class="link-underline" href="{n["href"]}">{n["label"]}</a>' for n in s["nav"])
-    social = "\n          ".join(
-        f'<a class="link-underline" href="{x["url"]}" rel="noopener">{x["label"]}</a>'
-        for x in c.s_default["social"])
 
     return f"""
   <!-- ============ FOOTER ============ -->
@@ -381,9 +378,6 @@ def footer(c):
     <div class="container">
       <div class="footer-bottom">
         <span>&copy; <span data-year>2026</span> Web Designer Puerto Rico. {f['rights']}</span>
-        <div class="footer-social">
-          {social}
-        </div>
         <a class="to-top" href="#top" data-to-top>{c.ui['back_to_top']} {ARROW_UP}</a>
       </div>
     </div>
