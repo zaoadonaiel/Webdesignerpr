@@ -116,7 +116,8 @@ def build_home(c):
 
     out.append(f"""
     <!-- ============ HERO ============ -->
-    <section class="hero">
+    <section class="hero" style="background-image: url('/images/hero/pr-background.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+      <div class="hero__overlay"></div>
       <canvas class="hero__canvas" aria-hidden="true"></canvas>
       <div class="glow glow--primary hero__glow-a" aria-hidden="true"></div>
       <div class="glow glow--secondary hero__glow-b" aria-hidden="true"></div>
