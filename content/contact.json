@@ -150,6 +150,11 @@
       "body": "También funciona. Escríbenos directamente e incluye el contexto que tengas &mdash; te responderemos con ideas reales, no con un folleto.",
       "primary": "Escribir al estudio",
       "secondary": "Ver el trabajo primero"
+    },
+    "chat_section": {
+      "eyebrow": "O simplemente chatea",
+      "title": "Úsalo para consultas rápidas",
+      "body": "Tenemos un asistente de IA que responde preguntas sobre nuestros servicios y presupuestos. Es el mejor lugar para empezar si tienes prisa."
     }
   },
   "en": {
@@ -303,6 +308,11 @@
       "body": "That works too. Write to us directly and include whatever context you have &mdash; we will reply with real thoughts, not a brochure.",
       "primary": "Email the studio",
       "secondary": "See the work first"
+    },
+    "chat_section": {
+      "eyebrow": "Or simply chat",
+      "title": "Use it for quick questions",
+      "body": "We have an AI assistant that answers questions about our services and pricing. It's the best place to start if you're in a hurry."
     }
   }
 }

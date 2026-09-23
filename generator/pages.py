@@ -858,6 +858,22 @@ def build_contact(c):
     out.append(cta(c, d["cta"],
                    primary=("mailto:" + email, d["cta"]["primary"]),
                    secondary=("portfolio.html", d["cta"]["secondary"])))
+    
+    # ============ CHAT SECTION ============
+    chat = d.get("chat_section", {})
+    if chat:
+        out.append(f"""
+    <!-- ============ 04 — ZAO CHAT ============ -->
+    <section class="section">
+      <div class="container container--narrow">
+{section_head(chat.get('eyebrow', ''), '', chat.get('title', ''))}
+        <p class="u-mb-lg">{chat.get('body', '')}</p>
+        <div style="display:flex;justify-content:center;margin:2rem 0">
+          <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="600" height="640" style="width:100%;max-width:600px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
+        </div>
+      </div>
+    </section>""")
+    
     out.append("  </main>\n")
     out.append(footer(c))
     out.append(scripts(c))
