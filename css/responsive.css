@@ -206,6 +206,10 @@
   .controls { gap: 0.35rem; }
 }
 
+@media (max-width: 768px) {
+  .contact-split-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 2rem !important; }
+}
+
 @media (max-width: 560px) {
   .stats { grid-template-columns: minmax(0, 1fr); }
   .footer-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }

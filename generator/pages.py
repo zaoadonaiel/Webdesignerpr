@@ -711,11 +711,8 @@ def build_contact(c):
     out = [head(c, "contact.html"), chrome(c), header(c, "contact.html")]
     out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
 
-    out.append(page_header(c, d["crumb"], d["title"], d["lead"],
-        f"""<div style="display:flex;flex-direction:column;gap:var(--space-sm)" data-reveal="up" data-delay="0.1">
-          <p class="label label--plain"><span class="pulse-dot" aria-hidden="true"><i></i></span> {d['booking']}</p>
-          <p class="muted" style="font-size:var(--fs-sm)">{d['booking_note']}</p>
-        </div>"""))
+    # Clean hero with just title and lead
+    out.append(page_header(c, d["crumb"], d["title"], d["lead"]))
 
     opts = "".join(f'                  <option value="{t}">{t}</option>\n'
                    for t in texts(d["project_types"]))
@@ -723,16 +720,6 @@ def build_contact(c):
                     <input type="radio" name="budget" value="{b['value']}">
                     <span>{b['label']}</span>
                   </label>\n""" for b in d["budgets"])
-
-    aside_blocks = []
-    for a in d["aside"]:
-        val = (f'<a class="link-underline" href="{a["href"]}">{a["value"]}</a>'
-               if a.get("href") else a["value"])
-        aside_blocks.append(f"""            <div class="contact-block" data-reveal="up">
-              <span class="label">{a['label']}</span>
-              <p class="contact-block__value">{val}</p>
-              <p class="contact-block__note">{a['note']}</p>
-            </div>""")
 
     # Validation strings travel with the markup so each language ships its own.
     msgs = (f'data-msg-required="{msg["required"]}" data-msg-email-required="{msg["email_required"]}" '
@@ -751,17 +738,15 @@ def build_contact(c):
                 <p><strong>{d['notice_strong']}</strong>{d['notice']}</p>
               </div>""" if d.get("notice") else "")
 
-    tips = d["tips"]
+    # 50/50 split layout - form left, chat right
     out.append(f"""
-    <!-- ============ 02 — FORM ============ -->
+    <!-- ============ 02 — FORM & CHAT SPLIT ============ -->
     <section class="section section--flush-top">
       <div class="container">
-        <div class="form-layout">
-
-          <!-- ---------- The form ---------- -->
+        <div class="contact-split-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+          
+          <!-- LEFT: Form -->
           <div>
-            <h2 class="display-3 u-mb-lg" data-split="words">{d['form_h2']}</h2>
-
             <!-- Frontend validation only. novalidate hands validation to our
                  own script so every field gets a consistent, styled message. -->
             <form class="form" data-contact-form novalidate {msgs}>
@@ -828,51 +813,15 @@ def build_contact(c):
             </form>
           </div>
 
-          <!-- ---------- Contact details ---------- -->
-          <aside class="contact-aside">
-{chr(10).join(aside_blocks)}
+          <!-- RIGHT: Chat Widget -->
+          <div style="display:flex;justify-content:center;align-items:flex-start">
+            <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="600" height="640" style="width:100%;max-width:600px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
+          </div>
 
-            <div class="contact-block" data-reveal="up">
-              <span class="label">{d['next_label']}</span>
-              <ol class="service-row__deliverables u-mt-sm">
-{"".join(f"                <li>{t}</li>" for t in texts(d['next_steps']))}
-              </ol>
-            </div>
-          </aside>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ 03 — BEFORE YOU WRITE ============ -->
-    <section class="section">
-      <div class="container container--narrow">
-{section_head(tips['index'], tips['eyebrow'], tips['title'])}
-        <ul class="value-list">
-{_value_list(tips['items'])}
-        </ul>
       </div>
     </section>
 """)
-
-    email = c.s_default["contact"]["email"]
-    out.append(cta(c, d["cta"],
-                   primary=("mailto:" + email, d["cta"]["primary"]),
-                   secondary=("portfolio.html", d["cta"]["secondary"])))
-    
-    # ============ CHAT SECTION ============
-    chat = d.get("chat_section", {})
-    if chat:
-        out.append(f"""
-    <!-- ============ 04 — ZAO CHAT ============ -->
-    <section class="section">
-      <div class="container container--narrow">
-{section_head(chat.get('eyebrow', ''), '', chat.get('title', ''))}
-        <p class="u-mb-lg">{chat.get('body', '')}</p>
-        <div style="display:flex;justify-content:center;margin:2rem 0">
-          <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="600" height="640" style="width:100%;max-width:600px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
-        </div>
-      </div>
-    </section>""")
     
     out.append("  </main>\n")
     out.append(footer(c))
