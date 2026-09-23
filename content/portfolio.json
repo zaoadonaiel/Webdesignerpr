@@ -75,10 +75,10 @@
   },
   "en": {
     "crumb": "Portfolio",
-    "title": "Eight projects. <em class=\"italic accent-text\">Eight different problems.</em>",
+    "title": "11 projects. <em class=\"italic accent-text\">11 different problems.</em>",
     "lead": "A studio portfolio should show range and judgement, not just finished pixels. Each piece below states the problem it was solving, so you can judge the thinking and not only the surface.",
-    "notice_strong": "About this work.",
-    "notice": "Every project shown here is a self-initiated concept created to demonstrate range, using fictional brands. None of it is presented as commissioned client work. Real client case studies are available on request under NDA.",
+    "notice_strong": "Want to see more?",
+    "notice": "These eleven projects represent a sampling of our work across different industries and scales. We have significantly more—from fintech platforms to e-commerce builds to SaaS products—but many remain confidential under NDA. If you'd like to explore additional case studies or discuss how we could approach your specific challenge, let's talk.",
     "filter_label": "Filter projects by category",
     "projects_h2": "Projects",
     "view": "View project",
