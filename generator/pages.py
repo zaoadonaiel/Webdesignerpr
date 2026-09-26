@@ -431,15 +431,8 @@ def build_about(c):
     <section class="section">
       <div class="container">
 {section_head(mi['index'], mi['eyebrow'], mi['title'])}
-        <div class="split u-mb-lg">
-          <div class="split__media" data-reveal-media>
-            <div class="media-frame media-frame--crop">
-              {themed_img(c, _img(doc, 'mission', 'system_image_light'), _img(doc, 'mission', 'system_image_dark'), mi['system_alt'], 900, 1125, 'data-parallax="0.09"')}
-            </div>
-          </div>
-          <div class="split__body">
-            <p class="prose">{mi['system_text']}</p>
-          </div>
+        <div class="u-mb-lg">
+          <p class="prose">{mi['system_text']}</p>
         </div>
 
         <div class="card-grid" data-stagger="0.1">
