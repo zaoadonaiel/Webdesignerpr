@@ -922,7 +922,11 @@ def build_articles(c):
         for article in articles:
             pub_date = article.get("published_date", "")
             formatted_date = format_date(pub_date, c.lang)
+            featured_img = article.get('featured_image', '')
+            article_title = article.get('title', 'Article')
+            img_html = f'<div class="article-card__image"><img src="{featured_img}" alt="{article_title}" width="600" height="400" loading="lazy" decoding="async"></div>' if featured_img else ''
             out.append(f"""          <article class="article-card" data-reveal="up">
+            {img_html}
             <a class="article-card__link" href="articles/{article.get('slug', '#')}.html">
               <h3 class="article-card__title">{article.get('title', '')}</h3>
               <p class="article-card__excerpt">{article.get('excerpt', '')}</p>
@@ -1049,6 +1053,9 @@ def build_article_pages(c):
           </div>
         </div>
       </header>
+
+        <!-- ============ ARTICLE FEATURED IMAGE ============ -->
+        {f'<section style="margin-bottom: 3rem;"><div class="container" style="max-width: 100%;"><img src="{article.get("featured_image")}" alt="{title}" style="width: 100%; height: auto; border-radius: var(--border-radius-lg); object-fit: cover;" width="1200" height="600" loading="eager" decoding="async"></div></section>' if article.get('featured_image') else ''}
 
         <!-- ============ ARTICLE CONTENT ============ -->
         <section class="section section--flush-top" style="margin-top: 50px;">
