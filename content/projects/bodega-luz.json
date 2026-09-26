@@ -24,7 +24,8 @@
     ],
     "image_light": "/images/portfolio/Abogado Web Design San Juan Puerto Rico.png",
     "image_dark": "/images/portfolio/Abogado Web Design San Juan Puerto Rico.png",
-    "featured": true
+    "featured": true,
+    "image": "Abogado Web Design San Juan Puerto Rico.png"
   },
   "en": {
     "kind": "Legal &middot; Services",
@@ -39,6 +40,7 @@
       {
         "text": "Content"
       }
-    ]
+    ],
+    "image": "Abogado Web Design San Juan Puerto Rico.png"
   }
 }

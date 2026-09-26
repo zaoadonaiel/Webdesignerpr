@@ -3,27 +3,44 @@
     "kind": "SaaS &middot; Protección de Derechos",
     "description": "Certificados de derechos de autor con marca de tiempo y notaría para profesionales creativos.",
     "disciplines": [
-      {"text": "Diseño Web"},
-      {"text": "E-Commerce"},
-      {"text": "SEO"}
+      {
+        "text": "Diseño Web"
+      },
+      {
+        "text": "E-Commerce"
+      },
+      {
+        "text": "SEO"
+      }
     ],
     "order": 1,
     "slug": "copyright",
     "name": "Copyright Records",
     "year": "2024",
     "url": "https://copyrightrecords.com",
-    "categories": ["saas", "service"],
+    "categories": [
+      "saas",
+      "service"
+    ],
     "image_light": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
     "image_dark": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
-    "featured": true
+    "featured": true,
+    "image": "Copyright Records Website Design - Web Designer Puerto Rico.png"
   },
   "en": {
     "kind": "SaaS &middot; Copyright Protection",
     "description": "Timestamped, notarized copyright certificates for creative professionals. Get instant proof of ownership for your creative work.",
     "disciplines": [
-      {"text": "Web Design"},
-      {"text": "E-Commerce"},
-      {"text": "SEO"}
-    ]
+      {
+        "text": "Web Design"
+      },
+      {
+        "text": "E-Commerce"
+      },
+      {
+        "text": "SEO"
+      }
+    ],
+    "image": "Copyright Records Website Design - Web Designer Puerto Rico.png"
   }
 }
