@@ -460,6 +460,7 @@ def page_header(c, eyebrow, title_html, lead, meta_html=""):
     return f"""
   <!-- ============ PAGE HEADER ============ -->
   <header class="page-header">
+    <div class="page-header__overlay" aria-hidden="true"></div>
     <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
     <div class="container">
       <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">

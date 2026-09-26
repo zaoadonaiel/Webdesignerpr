@@ -779,7 +779,7 @@ def build_contact(c):
     # Hero with chat on right
     out.append(f"""
   <!-- ============ PAGE HEADER WITH CHAT ============ -->
-  <header class="page-header" style="background-image: url('/images/hero/pr-background.jpg'); background-size: cover; background-position: center;">
+  <header class="page-header">
     <div class="page-header__overlay" aria-hidden="true"></div>
     <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
     <div class="container">
@@ -1237,6 +1237,7 @@ def _landing_hero(c, crumb, crumb_href, current, kicker_html, h1, lead, labels):
     return f"""
   <!-- ============ LANDING HERO ============ -->
   <header class="page-header service-hero">
+    <div class="page-header__overlay" aria-hidden="true"></div>
     <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
     <div class="container">
       <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">

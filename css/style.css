@@ -1762,6 +1762,24 @@ body.is-locked .site-header {
   padding-top: calc(var(--header-height) + clamp(4rem, 10vw, 9rem));
   padding-bottom: clamp(3rem, 6vw, 6rem);
   overflow: hidden;
+  /* Same photo, fit and fixed attachment as the home hero, under the same
+     scrim (.page-header__overlay). Path is relative to this stylesheet, so
+     it resolves from pages at any depth. */
+  background: url("../images/hero/pr-background.jpg") center / cover no-repeat;
+  background-attachment: fixed;
+
+  /* The scrim is near-black in both themes, so text inside always uses the
+     dark-theme palette — light type, light hairlines — like the home hero. */
+  --color-text:          #f2efe9;
+  --color-text-muted:    #b4b2ab;
+  --color-text-faint:    #9a988f;
+  --color-primary-on-bg: #ff7a60;
+  --color-accent:        #e8c89a;
+  --color-line:          rgba(242, 239, 233, 0.16);
+  --color-line-soft:     rgba(242, 239, 233, 0.08);
+  --color-line-strong:   rgba(242, 239, 233, 0.30);
+  --color-surface-2:     rgba(242, 239, 233, 0.08);
+  color: var(--color-text);
 }
 .page-header__overlay {
   position: absolute;
