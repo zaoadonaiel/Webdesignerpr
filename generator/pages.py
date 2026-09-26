@@ -1026,14 +1026,38 @@ def build_article_pages(c):
 
         <!-- ============ ARTICLE CONTENT ============ -->
         <section class="section section--flush-top" style="margin-top: 50px;">
-          <div class="container container--narrow">
-            <article class="prose">
-              {f'<p style="font-size: 1.1rem; font-style: italic; color: var(--color-text-muted); margin-bottom: 2rem;">{excerpt}</p>' if excerpt else ''}
-              {body}
-            </article>
-        
-            <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--color-line)">
-              <a class="btn btn--ghost" href="{c.link('articles.html')}"><span>{c.ui['back_to_top']} {ARROW}</span></a>
+          <div class="container" style="max-width: 1200px;">
+            <div style="display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start;">
+              <!-- Main article -->
+              <article class="prose">
+                {f'<p style="font-size: 1.1rem; font-style: italic; color: var(--color-text-muted); margin-bottom: 2rem;">{excerpt}</p>' if excerpt else ''}
+                {body}
+              
+                <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--color-line)">
+                  <a class="btn btn--ghost" href="{c.link('articles.html')}"><span>{c.ui['back_to_top']} {ARROW}</span></a>
+                </div>
+              </article>
+
+              <!-- Right sidebar -->
+              <aside style="display: none; @media (min-width: 1024px) {{ display: block; }}">
+                <div style="position: sticky; top: 2rem;">
+                  <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text);">What We Do</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                      <li><a href="{c.link('services.html')}" class="link-underline" style="font-size: 0.95rem;">Web Design</a></li>
+                      <li><a href="{c.link('services.html')}" class="link-underline" style="font-size: 0.95rem;">SEO Optimization</a></li>
+                      <li><a href="{c.link('services.html')}" class="link-underline" style="font-size: 0.95rem;">WordPress Hosting</a></li>
+                      <li><a href="{c.link('services.html')}" class="link-underline" style="font-size: 0.95rem;">Digital Marketing</a></li>
+                      <li><a href="{c.link('services.html')}" class="link-underline" style="font-size: 0.95rem;">Content Strategy</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Zao Chat Widget -->
+                  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+                    <iframe src="https://flo.thexdigital.com/webdesignerpr" style="width: 100%; height: 500px; border: none; border-radius: 8px;" title="Chat with us"></iframe>
+                  </div>
+                </div>
+              </aside>
             </div>
           </div>
         </section>
