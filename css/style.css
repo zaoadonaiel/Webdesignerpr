@@ -1209,7 +1209,7 @@ body.is-locked .site-header {
   position: absolute;
   inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
 }
 
@@ -1249,6 +1249,8 @@ body.is-locked .site-header {
   aspect-ratio: 4 / 3;
   background: var(--color-surface);
   border: 1px solid var(--color-line-soft);
+  max-width: 70%;
+  margin: 0 auto;
 }
 .project-card__media img {
   width: 100%; height: 100%;
@@ -1607,13 +1609,15 @@ body.is-locked .site-header {
   overflow: hidden;
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--color-line-soft);
+  max-width: 70%;
+  margin: 0 auto;
   background: var(--color-surface);
 }
 .media-frame img { width: 100%; display: block; will-change: transform; }
 .media-frame--tall { aspect-ratio: 4 / 5; }
-.media-frame--tall img { height: 100%; object-fit: cover; }
+.media-frame--tall img { height: 100%; object-fit: contain; }
 .media-frame--crop { aspect-ratio: 16 / 10; }
-.media-frame--crop img { height: 100%; object-fit: cover; }
+.media-frame--crop img { height: 100%; object-fit: contain; }
 
 /* Numbered value list */
 .value-list { display: flex; flex-direction: column; }
@@ -2240,7 +2244,7 @@ body.is-locked .site-header {
   height: 48px;
   flex: none;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   background: var(--color-surface-2);
   border: 1px solid rgba(242, 239, 233, 0.25);
 }
