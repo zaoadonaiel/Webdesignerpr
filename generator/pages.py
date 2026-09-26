@@ -1025,9 +1025,10 @@ def build_article_pages(c):
       </header>
 
         <!-- ============ ARTICLE CONTENT ============ -->
-        <section class="section section--flush-top">
+        <section class="section section--flush-top" style="margin-top: 50px;">
           <div class="container container--narrow">
             <article class="prose">
+              {f'<p style="font-size: 1.1rem; font-style: italic; color: var(--color-text-muted); margin-bottom: 2rem;">{excerpt}</p>' if excerpt else ''}
               {body}
             </article>
         
