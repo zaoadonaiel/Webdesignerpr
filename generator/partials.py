@@ -371,9 +371,11 @@ def cta(c, block, primary=None, secondary=None):
   <!-- ============ CALL TO ACTION ============ -->
   <section class="cta">
     <div class="glow glow--primary cta__glow" aria-hidden="true"></div>
-    <img class="cta__orbit float-slow" src="{c.asset('images/hero/orbit.svg')}"
-         data-src-light="{c.asset('images/hero/orbit.svg')}" data-src-dark="{c.asset('images/hero/orbit-dark.svg')}"
-         alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" data-parallax="0.08">
+    <video class="cta__orbit float-slow" width="720" height="720" autoplay muted loop playsinline 
+         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.1;z-index:0;object-fit:cover;"
+         aria-hidden="true" loading="lazy" decoding="async">
+      <source src="{c.media('/images/portfolio/Web Designer Puerto Rico - Website Design San Juan.mp4')}" type="video/mp4">
+    </video>
     <div class="container">
       <div class="cta__inner">
         <p class="label" data-reveal="fade">{c.ui['next_step']}</p>
@@ -430,15 +432,6 @@ def footer(c):
           <span>{f['location']}</span>
           <span>{f['hours']}</span>
         </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div style="margin-bottom:var(--space-xl);">
-        <video width="100%" height="auto" controls style="border-radius:16px;display:block;" loading="lazy">
-          <source src="{c.media('/images/portfolio/Web Designer Puerto Rico - Website Design San Juan.mp4')}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
 
