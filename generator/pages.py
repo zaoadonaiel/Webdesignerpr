@@ -197,7 +197,6 @@ def build_home(c):
           </div>
 
           <div class="hero__right">
-            <iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="400" height="640" style="width:100%;max-width:400px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>
           </div>
         </div>
 
@@ -231,7 +230,12 @@ def build_home(c):
             </div>
           </div>
 
-
+          <div class="split__media" data-reveal-media>
+            <div class="media-frame media-frame--tall">
+              <img src="/images/hero/agency-workspace.png" alt="Web Designer Puerto Rico agency workspace in San Juan" width="900" height="1125" loading="lazy" decoding="async" data-parallax="0.12" style="width:100%;height:auto;">
+              <p class="split__caption" data-reveal="up">Where strategy, design, and engineering meet. No handoffs. No templates. Just results.</p>
+            </div>
+          </div>
         </div>
 
         <!-- Standards, not a brag sheet: commitments we build against -->
@@ -354,10 +358,6 @@ def build_home(c):
             <blockquote class="quote__text">{q['quote']}</blockquote>
             <figcaption class="quote__author">
               <span class="quote__name">{q['name']}</span>
-              <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.25rem;font-size:0.75rem;">
-                <span style="letter-spacing:-0.02em;">{'★' * q.get('stars', 5)}</span>
-                <span style="color:var(--text-muted);">{q.get('website', '')}</span>
-              </div>
               <span class="quote__role">{q['role']}</span>
             </figcaption>
           </figure>''' for q in quotes)}
@@ -426,8 +426,15 @@ def build_about(c):
     <section class="section">
       <div class="container">
 {section_head(mi['index'], mi['eyebrow'], mi['title'])}
-        <div class="u-mb-lg">
-          <p class="prose">{mi['system_text']}</p>
+        <div class="split u-mb-lg">
+          <div class="split__media" data-reveal-media>
+            <div class="media-frame media-frame--crop">
+              {themed_img(c, _img(doc, 'mission', 'system_image_light'), _img(doc, 'mission', 'system_image_dark'), mi['system_alt'], 900, 1125, 'data-parallax="0.09"')}
+            </div>
+          </div>
+          <div class="split__body">
+            <p class="prose">{mi['system_text']}</p>
+          </div>
         </div>
 
         <div class="card-grid" data-stagger="0.1">
@@ -447,7 +454,9 @@ def build_about(c):
       <div class="container">
         <div class="split">
           <div class="split__media" data-reveal-media>
-            <img src="{d['about_founder']['image']}" alt="{d['about_founder']['image_alt']}" width="400" height="500" style="width:100%;height:auto;border-radius:var(--radius-lg);display:block">
+            <div class="media-frame media-frame--tall">
+              <img src="{d['about_founder']['image']}" alt="{d['about_founder']['image_alt']}" width="400" height="500" style="width:100%;height:auto;border-radius:var(--radius-lg);display:block">
+            </div>
           </div>
           <div class="split__body">
             <span class="index-num">{d['about_founder']['index']}</span>
@@ -560,7 +569,11 @@ def build_services(c):
                 <div>
                   <p class="label u-mb-lg">{d['included']}</p>
                   <ul class="service-row__deliverables">{"".join(f"<li>{t}</li>" for t in texts(x['deliverables']))}</ul>
-                  <p class="u-mt-lg"><a class="link-arrow" href="contact.html">{d['enquire']} {ARROW_R}</a></p>
+                  <p class="u-mt-lg">
+                  <a class="link-arrow" href="contact.html">{d['enquire']} {ARROW_R}</a>
+                  <br>
+                  <a class="link-arrow" href="services/{x['id']}.html" style="margin-top:0.5rem;display:inline-block;">Learn more {ARROW_R}</a>
+                </p>
                 </div>
               </div>
             </div>
@@ -868,44 +881,15 @@ def build_articles(c):
     out = [head(c, "articles.html"), chrome(c), header(c, "articles.html")]
     out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
 
-    # Hero header with Zao Chat widget on the right
-    widget_html = f"""<iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="400" height="640" style="width:100%;max-width:400px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>"""
-    
-    # Custom header layout with widget on right
-    header_html = f"""
-  <!-- ============ PAGE HEADER ============ -->
-  <header class="page-header">
-    <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">
-        <a class="link-underline" href="{c.link('index.html')}">{c.ui['breadcrumb_home']}</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">{d["crumb"]}</span>
-      </nav>
-      <div style="display:flex;gap:var(--space-lg);align-items:flex-start;justify-content:space-between;">
-        <div style="flex:1;">
-          <h1 class="display-1 page-header__title" data-split="words">{d["title"]}</h1>
-          <div class="page-header__grid">
-            <p class="lead" style="max-width:48ch" data-reveal="up">{d["lead"]}</p>
-            <div style="display:flex;flex-direction:column;gap:var(--space-sm)" data-reveal="up" data-delay="0.1">
-              <p class="label label--plain"><span class="pulse-dot" aria-hidden="true"><i></i></span> {d['est']}</p>
-              <p class="muted" style="font-size:var(--fs-sm)">{d['est_note']}</p>
-            </div>
-          </div>
-        </div>
-        <div style="flex-shrink:0;" data-reveal="up">
-          {widget_html}
-        </div>
-      </div>
-    </div>
-  </header>
-"""
-    out.append(header_html)
+    # Hero header
+    out.append(page_header(c, d["crumb"], d["title"], d["lead"],
+        f"""<div style="display:flex;flex-direction:column;gap:var(--space-sm)" data-reveal="up" data-delay="0.1">
+          <p class="label label--plain"><span class="pulse-dot" aria-hidden="true"><i></i></span> {d['est']}</p>
+          <p class="muted" style="font-size:var(--fs-sm)">{d['est_note']}</p>
+        </div>"""))
 
     # Articles section
     articles = d.get("articles", [])
-    # Sort articles by published_date in reverse order (most recent first)
-    articles = sorted(articles, key=lambda x: x.get("published_date", ""), reverse=True)
     
     if articles:
         out.append(f"""
@@ -917,11 +901,7 @@ def build_articles(c):
         for article in articles:
             pub_date = article.get("published_date", "")
             formatted_date = format_date(pub_date, c.lang)
-            featured_img = article.get('featured_image', '')
-            article_title = article.get('title', 'Article')
-            img_html = f'<div class="article-card__image"><img src="{featured_img}" alt="{article_title}" width="600" height="400" loading="lazy" decoding="async"></div>' if featured_img else ''
             out.append(f"""          <article class="article-card" data-reveal="up">
-            {img_html}
             <a class="article-card__link" href="articles/{article.get('slug', '#')}.html">
               <h3 class="article-card__title">{article.get('title', '')}</h3>
               <p class="article-card__excerpt">{article.get('excerpt', '')}</p>
@@ -1049,9 +1029,6 @@ def build_article_pages(c):
         </div>
       </header>
 
-        <!-- ============ ARTICLE FEATURED IMAGE ============ -->
-        {f'<section style="margin-bottom: 3rem;"><div class="container" style="max-width: 100%;"><img src="{article.get("featured_image")}" alt="{title}" style="width: 100%; height: auto; border-radius: var(--border-radius-lg); object-fit: cover;" width="1200" height="600" loading="eager" decoding="async"></div></section>' if article.get('featured_image') else ''}
-
         <!-- ============ ARTICLE CONTENT ============ -->
         <section class="section section--flush-top" style="margin-top: 50px;">
           <div class="container" style="max-width: 1200px;">
@@ -1097,7 +1074,80 @@ def build_article_pages(c):
             c.write(f"articles/{slug}.html", "".join(out))
 
 
-BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact, build_articles]
+
+# ---------------------------------------------------------------------------
+# SERVICE DETAIL PAGES
+# ---------------------------------------------------------------------------
+
+def build_service_pages(c):
+    """Build individual service detail pages for each service."""
+    doc = load("services")
+    services = doc[c.lang].get("items", [])
+    
+    for service in services:
+        service_id = service.get("id", "")
+        if not service_id:
+            continue
+        
+        out = [head(c, "services.html", title=service.get("title")), 
+               chrome(c), 
+               header(c, "services.html")]
+        out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
+        
+        # Page header with service title
+        out.append(page_header(c, 
+            doc[c.lang]['crumb'], 
+            service['title'], 
+            service['summary']))
+        
+        # Service details section
+        out.append(f"""
+    <!-- ============ SERVICE DETAIL ============ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="prose u-mb-lg">
+          {service['body']}
+        </div>
+        
+        <div>
+          <p class="label u-mb-lg">{doc[c.lang]['included']}</p>
+          <ul class="service-row__deliverables">
+            {"".join(f"<li>{item['text']}</li>" for item in service['deliverables'])}
+          </ul>
+        </div>
+        
+        <div class="u-mt-lg">
+          <a class="btn btn--primary" href="{c.link('contact.html')}"><span>{doc[c.lang]['enquire']} {ARROW}</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RELATED SERVICES ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="display-3 u-mb-lg">{c.ui.get('related_services', 'Other Services')}</h2>
+        <div class="card-grid">
+          {"".join(f'''          <article class="card">
+            <span class="index-num">{s['index']}</span>
+            <div>
+              <h3 class="card__title">{s['title']}</h3>
+              <p class="card__text u-mt-sm">{s['summary']}</p>
+            </div>
+            <a class="link-arrow" href="{c.link(f'services/{s["id"]}.html')}">{c.ui.get('learn_more', 'Learn more')} {ARROW_R}</a>
+          </article>''' for s in services if s.get('id') != service_id)}
+        </div>
+      </div>
+    </section>
+""")
+        
+        out.append(cta(c, doc[c.lang]['cta']))
+        out.append("  </main>\n")
+        out.append(footer(c))
+        out.append(scripts(c))
+        c.write(f"services/{service_id}.html", "".join(out))
+
+
+BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact, build_articles, build_service_pages]
 
 
 # ---------------------------------------------------------------------------
