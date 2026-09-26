@@ -21,20 +21,20 @@
         "label": "Diseño Web"
       },
       {
-        "key": "ui-ux",
-        "label": "UI / UX"
-      },
-      {
         "key": "ecommerce",
         "label": "E-commerce"
       },
       {
-        "key": "wordpress",
-        "label": "WordPress"
-      },
-      {
         "key": "branding",
         "label": "Marca"
+      },
+      {
+        "key": "saas",
+        "label": "SaaS"
+      },
+      {
+        "key": "ui-ux",
+        "label": "UI / UX"
       }
     ],
     "ships": {
@@ -86,27 +86,27 @@
     "filters": [
       {
         "key": "all",
-        "label": "All work"
+        "label": "All"
       },
       {
         "key": "web-design",
         "label": "Web Design"
       },
       {
-        "key": "ui-ux",
-        "label": "UI / UX"
-      },
-      {
         "key": "ecommerce",
         "label": "E-commerce"
       },
       {
-        "key": "wordpress",
-        "label": "WordPress"
-      },
-      {
         "key": "branding",
         "label": "Branding"
+      },
+      {
+        "key": "saas",
+        "label": "SaaS"
+      },
+      {
+        "key": "ui-ux",
+        "label": "UI / UX"
       }
     ],
     "ships": {
