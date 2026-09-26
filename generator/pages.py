@@ -358,6 +358,10 @@ def build_home(c):
             <blockquote class="quote__text">{q['quote']}</blockquote>
             <figcaption class="quote__author">
               <span class="quote__name">{q['name']}</span>
+              <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.25rem;font-size:0.75rem;">
+                <span style="letter-spacing:-0.02em;">{'★' * q.get('stars', 5)}</span>
+                <span style="color:var(--text-muted);">{q.get('website', '')}</span>
+              </div>
               <span class="quote__role">{q['role']}</span>
             </figcaption>
           </figure>''' for q in quotes)}
@@ -454,9 +458,7 @@ def build_about(c):
       <div class="container">
         <div class="split">
           <div class="split__media" data-reveal-media>
-            <div class="media-frame media-frame--tall">
-              <img src="{d['about_founder']['image']}" alt="{d['about_founder']['image_alt']}" width="400" height="500" style="width:100%;height:auto;border-radius:var(--radius-lg);display:block">
-            </div>
+            <img src="{d['about_founder']['image']}" alt="{d['about_founder']['image_alt']}" width="400" height="500" style="width:100%;height:auto;border-radius:var(--radius-lg);display:block">
           </div>
           <div class="split__body">
             <span class="index-num">{d['about_founder']['index']}</span>

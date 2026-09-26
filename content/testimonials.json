@@ -4,42 +4,58 @@
       {
         "quote": "Los mejores precios de hosting, soporte y valor sin duda.",
         "name": "Dalkita",
-        "role": "Firma de arquitectura especializada en cervecerías que ha confiado en nuestro servicio de hosting desde 2024."
+        "role": "Firma de arquitectura especializada en cervecerías que ha confiado en nuestro servicio de hosting desde 2024.",
+        "website": "dalkita.com",
+        "stars": 5
       },
       {
         "quote": "Nos encanta no tener que preocuparnos por actualizaciones de servidor y todas esas cosas.",
         "name": "Hadads Fine Arts",
-        "role": "Estudio de Bellas Artes de Orange County, CA que necesitaba una empresa de hosting confiable para su plataforma de ecommerce desde 2025."
+        "role": "Estudio de Bellas Artes de Orange County, CA que necesitaba una empresa de hosting confiable para su plataforma de ecommerce desde 2025.",
+        "website": "hadadsfinearts.com",
+        "stars": 5
       },
       {
         "quote": "Es bueno tener a Davey y su equipo cuidando cualquier problema de hosting que tengo día a día.",
         "name": "Stock Watch Index",
-        "role": "Fuente de noticias de acciones y criptomonedas de Los Ángeles, CA que ha estado con nosotros desde 2022."
+        "role": "Fuente de noticias de acciones y criptomonedas de Los Ángeles, CA que ha estado con nosotros desde 2022.",
+        "website": "stockwatchindex.com",
+        "stars": 5
       },
       {
         "quote": "The X Digital es una opción sólida para alojar nuestro sitio web y realizar nuestro marketing continuo.",
         "name": "Interior Design Solutions Maui",
-        "role": "Firma establecida de Diseño de Interiores de Maui con más de 30 años de experiencia alojada con nosotros desde 2021."
+        "role": "Firma establecida de Diseño de Interiores de Maui con más de 30 años de experiencia alojada con nosotros desde 2021.",
+        "website": "idsmaui.com",
+        "stars": 5
       },
       {
         "quote": "Nos salvó de un diseñador web muy inconstante que era difícil de localizar.",
         "name": "Teralite",
-        "role": "La empresa de pisos más grande de Silicon Valley eligió reconstruir su sitio web con nosotros desde 2023."
+        "role": "La empresa de pisos más grande de Silicon Valley eligió reconstruir su sitio web con nosotros desde 2023.",
+        "website": "teralite.com",
+        "stars": 5
       },
       {
         "quote": "Una empresa de hosting fácil. Se encargan de todo para que no tenga que preocuparme por actualizaciones.",
         "name": "Cargo Transport Solutions, Inc.",
-        "role": "Empresa de logística de El Paso, TX que confía en nosotros para alojamiento web desde 2023."
+        "role": "Empresa de logística de El Paso, TX que confía en nosotros para alojamiento web desde 2023.",
+        "website": "cargotransportsolutions.com",
+        "stars": 5
       },
       {
         "quote": "Una empresa muy fácil de trabajar.",
         "name": "Silicon Valley Mariachi Festival",
-        "role": "Organización leal con la que hemos estado trabajando desde 2023 en soporte, diseño, hosting y más."
+        "role": "Organización leal con la que hemos estado trabajando desde 2023 en soporte, diseño, hosting y más.",
+        "website": "sv-mariachifest.com",
+        "stars": 5
       },
       {
         "quote": "Increíble agencia de diseño web y empresa de hosting. Todavía enamorado de mi sitio web, no quiero cambiar nada.",
         "name": "Vivint El Paso",
-        "role": "Vivint El Paso vino a nosotros para ayuda y superamos expectativas. Alojamiento desde 2024."
+        "role": "Vivint El Paso vino a nosotros para ayuda y superamos expectativas. Alojamiento desde 2024.",
+        "website": "vivintelpaso.com",
+        "stars": 5
       }
     ]
   },
@@ -48,42 +64,58 @@
       {
         "quote": "Best hosting prices, support & value hands down.",
         "name": "Dalkita",
-        "role": "Brewery architecture firm that came to us for a reliable hosting service which we have been providing since 2024."
+        "role": "Brewery architecture firm that came to us for a reliable hosting service which we have been providing since 2024.",
+        "website": "dalkita.com",
+        "stars": 5
       },
       {
         "quote": "We love not having to worry about server updates and all that jazz.",
         "name": "Hadads Fine Arts",
-        "role": "Fine Art Studio from Orange County, CA that needed a reliable hosting company to host their ecommerce platform since 2025."
+        "role": "Fine Art Studio from Orange County, CA that needed a reliable hosting company to host their ecommerce platform since 2025.",
+        "website": "hadadsfinearts.com",
+        "stars": 5
       },
       {
         "quote": "It's nice having Davey and his team take care of any hosting issues I have on a day-to-day basis.",
         "name": "Stock Watch Index",
-        "role": "Stock and Crypto news source from Los Angeles, CA has been with us since 2022."
+        "role": "Stock and Crypto news source from Los Angeles, CA has been with us since 2022.",
+        "website": "stockwatchindex.com",
+        "stars": 5
       },
       {
         "quote": "The X Digital is a solid choice to host our website and do our ongoing marketing.",
         "name": "Interior Design Solutions Maui",
-        "role": "Established Interior Design firm from Maui with over 30 years of experience hosts with us and has been using our marketing solutions since 2021."
+        "role": "Established Interior Design firm from Maui with over 30 years of experience hosts with us and has been using our marketing solutions since 2021.",
+        "website": "idsmaui.com",
+        "stars": 5
       },
       {
         "quote": "Saved us from a really flakey web guy that was hard to get a hold of.",
         "name": "Teralite",
-        "role": "Silicon Valley's largest flooring company chose us to rebuild their website and have been hosting with us since 2023."
+        "role": "Silicon Valley's largest flooring company chose us to rebuild their website and have been hosting with us since 2023.",
+        "website": "teralite.com",
+        "stars": 5
       },
       {
         "quote": "Easy hosting company. They take care of everything so I don't have to worry about updates and stuff.",
         "name": "Cargo Transport Solutions, Inc.",
-        "role": "We helped this logistics company from El Paso, TX with website hosting so that they can have peace of mind. Hosted since 2023."
+        "role": "We helped this logistics company from El Paso, TX with website hosting so that they can have peace of mind. Hosted since 2023.",
+        "website": "cargotransportsolutions.com",
+        "stars": 5
       },
       {
         "quote": "A very easy company to work with.",
         "name": "Silicon Valley Mariachi Festival",
-        "role": "A loyal organization who we have been helping since 2023 with support, design, hosting and much more."
+        "role": "A loyal organization who we have been helping since 2023 with support, design, hosting and much more.",
+        "website": "sv-mariachifest.com",
+        "stars": 5
       },
       {
         "quote": "Awesome web design agency and hosting company. Still in love with my website, don't wanna change anything about it.",
         "name": "Vivint El Paso",
-        "role": "Vivint El Paso came to us for help and we over-delivered. Hosting since 2024."
+        "role": "Vivint El Paso came to us for help and we over-delivered. Hosting since 2024.",
+        "website": "vivintelpaso.com",
+        "stars": 5
       }
     ]
   }
