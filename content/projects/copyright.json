@@ -1,0 +1,22 @@
+{
+  "en": {
+    "name": "Copyright Records",
+    "description": "Timestamped, notarized copyright certificates for creative professionals",
+    "url": "https://copyrightrecords.com",
+    "year": 2024,
+    "image_light": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
+    "image_dark": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
+    "featured": true,
+    "tags": ["E-COMMERCE", "SEO"]
+  },
+  "es": {
+    "name": "Copyright Records",
+    "description": "Certificados de derechos de autor con marca de tiempo y notaría",
+    "url": "https://copyrightrecords.com",
+    "year": 2024,
+    "image_light": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
+    "image_dark": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
+    "featured": true,
+    "tags": ["E-COMMERCE", "SEO"]
+  }
+}
