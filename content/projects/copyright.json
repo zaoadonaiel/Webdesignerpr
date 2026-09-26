@@ -1,6 +1,12 @@
 {
-  "shared": {
-    "text": "Copyright Protection",
+  "es": {
+    "kind": "SaaS &middot; Protección de Derechos",
+    "description": "Certificados de derechos de autor con marca de tiempo y notaría para profesionales creativos.",
+    "disciplines": [
+      {"text": "Diseño Web"},
+      {"text": "E-Commerce"},
+      {"text": "SEO"}
+    ],
     "order": 1,
     "slug": "copyright",
     "name": "Copyright Records",
@@ -19,7 +25,5 @@
       {"text": "E-Commerce"},
       {"text": "SEO"}
     ]
-python3 build.py
-git add -A
-git commit -m "Add Copyright Records project with correct format"
-git push origin main
+  }
+}
