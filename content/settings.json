@@ -2,39 +2,34 @@
   "es": {
     "nav": [
       {
-        "href": "index.html",
-        "label": "Inicio",
-        "index": "01"
-      },
-      {
         "href": "about.html",
         "label": "Agencia",
-        "index": "02"
+        "index": "01"
       },
       {
         "href": "services.html",
         "label": "Servicios",
-        "index": "03"
+        "index": "02"
       },
       {
         "href": "portfolio.html",
         "label": "Portafolio",
-        "index": "04"
+        "index": "03"
       },
       {
         "href": "deals.html",
         "label": "Ofertas",
-        "index": "05"
+        "index": "04"
       },
       {
         "href": "contact.html",
         "label": "Contacto",
-        "index": "06"
+        "index": "05"
       },
       {
         "href": "articles.html",
         "label": "Artículos",
-        "index": "07"
+        "index": "06"
       }
     ],
     "contact": {
@@ -152,39 +147,34 @@
   "en": {
     "nav": [
       {
-        "href": "index.html",
-        "label": "Home",
-        "index": "01"
-      },
-      {
         "href": "about.html",
         "label": "About",
-        "index": "02"
+        "index": "01"
       },
       {
         "href": "services.html",
         "label": "Services",
-        "index": "03"
+        "index": "02"
       },
       {
         "href": "portfolio.html",
         "label": "Portfolio",
-        "index": "04"
+        "index": "03"
       },
       {
         "href": "deals.html",
         "label": "Deals",
-        "index": "05"
+        "index": "04"
       },
       {
         "href": "contact.html",
         "label": "Contact",
-        "index": "06"
+        "index": "05"
       },
       {
         "href": "articles.html",
         "label": "Articles",
-        "index": "07"
+        "index": "06"
       }
     ],
     "contact": {
