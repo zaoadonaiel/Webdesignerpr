@@ -2329,6 +2329,25 @@ body.is-locked .site-header {
   background-size: cover;
   background-position: center;
 }
+/* Article body + sidebar. Mobile-first: one full-width column, so the text
+   uses the whole screen inside the normal container gutters. The 280px
+   sidebar track only exists from 1024px up. The sidebar itself stays hidden
+   at every width for now, matching how the page has always rendered. */
+.article-layout__container { max-width: 1200px; }
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+.article-layout > .prose { min-width: 0; }
+.article-layout__aside { display: none; }
+@media (min-width: 1024px) {
+  .article-layout { grid-template-columns: minmax(0, 1fr) 280px; }
+}
+
+/* Flat 90% black over the featured image, whatever the photo */
+.article-hero__overlay { background: rgba(0, 0, 0, 0.9); }
 .article-hero .glow { z-index: 2; }
 .article-hero .container { position: relative; z-index: 3; }
 

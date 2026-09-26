@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Renders the five pages from content/. Every string comes from the CMS."""
+import os
 import re
 
 from .content import DEFAULT_LANG, load, load_projects, shared, texts
@@ -864,6 +865,25 @@ def build_deals(c):
 # ARTICLES / BLOG
 # ---------------------------------------------------------------------------
 
+def _published_at(article):
+    """Sort key for an article's published_date.
+
+    Dates arrive both as full ISO timestamps ("2026-09-26T05:46:44.286Z")
+    and as plain dates ("2026-09-23"); both are normalised to aware UTC
+    datetimes. Missing or unreadable dates sort as oldest.
+    """
+    from datetime import datetime, timezone
+    raw = str(article.get("published_date") or "").strip()
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        try:
+            dt = datetime.strptime(raw[:10], "%Y-%m-%d")
+        except ValueError:
+            return datetime.min.replace(tzinfo=timezone.utc)
+    return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+
+
 def build_articles(c):
     d = load("articles")[c.lang]
     out = [head(c, "articles.html"), chrome(c), header(c, "articles.html")]
@@ -876,8 +896,9 @@ def build_articles(c):
           <p class="muted" style="font-size:var(--fs-sm)">{d['est_note']}</p>
         </div>"""))
 
-    # Articles section
-    articles = d.get("articles", [])
+    # Articles section — newest first by published date, whatever order they
+    # were added to the file in, so the latest sits top-left in the grid
+    articles = sorted(d.get("articles", []), key=_published_at, reverse=True)
     
     if articles:
         out.append(f"""
@@ -921,6 +942,26 @@ def build_articles(c):
     out.append(footer(c))
     out.append(scripts(c))
     c.write("articles.html", "".join(out))
+
+
+ARTICLE_HERO_FALLBACK = "/images/hero/pr-background.jpg"
+
+
+def _article_hero_image(article):
+    """The article's featured image, shown behind the hero under a 90% black
+    scrim. Falls back to the site photo when the post has none, or when it
+    names a local file that was never uploaded — a missing image would leave
+    the hero flat black."""
+    from .content import ROOT
+    path = (article.get("featured_image") or "").strip()
+    if not path:
+        return ARTICLE_HERO_FALLBACK
+    if path.startswith(("http://", "https://")):
+        return path
+    if not os.path.isfile(os.path.join(ROOT, path.lstrip("/"))):
+        print(f"  warning: featured image not found, using fallback: {path}")
+        return ARTICLE_HERO_FALLBACK
+    return path
 
 
 def build_article_pages(c):
@@ -990,10 +1031,12 @@ def build_article_pages(c):
             meta_html = '<span aria-hidden="true">&middot;</span>'.join(
                 f'<span class="byline__meta-item">{b}</span>' for b in meta_bits)
 
+            hero_bg = c.media(_article_hero_image(article))
+
             out.append(f"""
       <!-- ============ ARTICLE HERO ============ -->
-      <header class="article-hero" style="background-image: url('{c.media('/images/hero/pr-background.jpg')}');">
-        <div class="page-header__overlay" aria-hidden="true"></div>
+      <header class="article-hero" style="background-image: url('{hero_bg}');">
+        <div class="page-header__overlay article-hero__overlay" aria-hidden="true"></div>
         <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
         <div class="container container--narrow">
           <nav class="breadcrumb" aria-label="{c.ui.get('breadcrumb', 'Breadcrumb')}">
@@ -1019,8 +1062,8 @@ def build_article_pages(c):
 
         <!-- ============ ARTICLE CONTENT ============ -->
         <section class="section section--flush-top" style="margin-top: 50px;">
-          <div class="container" style="max-width: 1200px;">
-            <div style="display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start;">
+          <div class="container article-layout__container">
+            <div class="article-layout">
               <!-- Main article -->
               <article class="prose">
                 {f'<p style="font-size: 1.1rem; font-style: italic; color: var(--color-text-muted); margin-bottom: 2rem;">{excerpt}</p>' if excerpt else ''}
@@ -1032,7 +1075,7 @@ def build_article_pages(c):
               </article>
 
               <!-- Right sidebar -->
-              <aside style="display: none; @media (min-width: 1024px) {{ display: block; }}">
+              <aside class="article-layout__aside">
                 <div style="position: sticky; top: 2rem;">
                   <div style="margin-bottom: 2rem;">
                     <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text);">What We Do</h3>

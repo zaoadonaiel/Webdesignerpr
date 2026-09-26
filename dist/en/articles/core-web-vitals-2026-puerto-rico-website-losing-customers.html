@@ -310,7 +310,7 @@ document.documentElement.classList.add("js-ready")})();</script>
 
       <!-- ============ ARTICLE HERO ============ -->
       <header class="article-hero" style="background-image: url('../../images/hero/pr-background.jpg');">
-        <div class="page-header__overlay" aria-hidden="true"></div>
+        <div class="page-header__overlay article-hero__overlay" aria-hidden="true"></div>
         <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
         <div class="container container--narrow">
           <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -336,8 +336,8 @@ document.documentElement.classList.add("js-ready")})();</script>
 
         <!-- ============ ARTICLE CONTENT ============ -->
         <section class="section section--flush-top" style="margin-top: 50px;">
-          <div class="container" style="max-width: 1200px;">
-            <div style="display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start;">
+          <div class="container article-layout__container">
+            <div class="article-layout">
               <!-- Main article -->
               <article class="prose">
                 <p style="font-size: 1.1rem; font-style: italic; color: var(--color-text-muted); margin-bottom: 2rem;">Slow websites cost you customers. Learn why Core Web Vitals matter in 2026 and how to optimize your Puerto Rico website for faster load times, better conversions, and improved rankings.</p>
@@ -469,7 +469,7 @@ document.documentElement.classList.add("js-ready")})();</script>
               </article>
 
               <!-- Right sidebar -->
-              <aside style="display: none; @media (min-width: 1024px) { display: block; }">
+              <aside class="article-layout__aside">
                 <div style="position: sticky; top: 2rem;">
                   <div style="margin-bottom: 2rem;">
                     <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text);">What We Do</h3>
