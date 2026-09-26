@@ -434,6 +434,15 @@ def footer(c):
     </div>
 
     <div class="container">
+      <div style="margin-bottom:var(--space-xl);">
+        <video width="100%" height="auto" controls style="border-radius:16px;display:block;" loading="lazy">
+          <source src="{c.media('/images/portfolio/Web Designer Puerto Rico - Website Design San Juan.mp4')}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="container">
       <div class="footer-bottom">
         <span>&copy; <span data-year>2026</span> Web Designer Puerto Rico. {f['rights']}</span>
         <a class="to-top" href="#top" data-to-top>{c.ui['back_to_top']} {ARROW_UP}</a>
