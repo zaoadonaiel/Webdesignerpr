@@ -369,14 +369,14 @@ def cta(c, block, primary=None, secondary=None):
     s_href, s_label = secondary or ("portfolio.html", c.ui["cta_secondary"])
     return f"""
   <!-- ============ CALL TO ACTION ============ -->
-  <section class="cta">
+  <section class="cta" style="position:relative;overflow:hidden;">
     <div class="glow glow--primary cta__glow" aria-hidden="true"></div>
     <video class="cta__orbit float-slow" width="100%" height="100%" autoplay muted loop playsinline 
          style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.1;z-index:0;object-fit:cover;"
          aria-hidden="true" loading="lazy" decoding="async">
       <source src="{c.media('/images/portfolio/Web Designer Puerto Rico - Website Design San Juan.mp4')}" type="video/mp4">
     </video>
-    <div class="container">
+    <div class="container" style="position:relative;z-index:1;">
       <div class="cta__inner">
         <p class="label" data-reveal="fade">{c.ui['next_step']}</p>
         <h2 class="display-2 cta__title" data-split="words">{block['title']}</h2>
