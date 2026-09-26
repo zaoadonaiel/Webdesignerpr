@@ -169,7 +169,7 @@ def head(c, page, title=None, description=None, keywords=None):
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Google+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 
   <link rel="stylesheet" href="{c.asset('css/style.css')}">
   <link rel="stylesheet" href="{c.asset('css/animations.css')}">
@@ -288,9 +288,7 @@ def header(c, page, other_page=None):
           <span>(939) 229-9233</span>
         </a>
         <a class="whatsapp-btn" href="https://wa.me/19392299233" target="_blank" rel="noopener noreferrer" data-magnetic="0.25" title="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background-color: #25D366; color: white; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a6.963 6.963 0 00-6.953 6.965c0 1.535.427 3.036 1.237 4.35L2.82 22.625l4.594-1.206a6.966 6.966 0 004.651 1.522h.004c3.837 0 6.954-3.118 6.954-6.954 0-1.856-.72-3.603-2.028-4.911a6.928 6.928 0 00-4.921-2.035zm8.122-10.814C14.166 1.048 11.969 0 9.57 0 4.695 0 .72 3.976.72 8.851c0 1.532.374 3.036 1.083 4.35L0 23.999l5.255-1.379C6.661 23.537 8.073 24 9.57 24c4.876 0 8.85-3.976 8.85-8.851 0-2.364-.92-4.587-2.59-6.258a8.84 8.84 0 00-6.266-2.596z"/>
-          </svg>
+<img src="/images/whatsapp-icon.png" alt="WhatsApp" width="24" height="24" />
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="{c.ui['menu_open']}">
           <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>

@@ -896,12 +896,13 @@ def build_articles(c):
 """)
         for article in articles:
             pub_date = article.get("published_date", "")
+            formatted_date = format_date(pub_date, c.lang)
             out.append(f"""          <article class="article-card" data-reveal="up">
             <a class="article-card__link" href="articles/{article.get('slug', '#')}.html">
               <h3 class="article-card__title">{article.get('title', '')}</h3>
               <p class="article-card__excerpt">{article.get('excerpt', '')}</p>
               <div class="article-card__meta">
-                <span class="article-card__date">{pub_date}</span>
+                <span class="article-card__date">{formatted_date}</span>
                 <span class="article-card__arrow">{ARROW}</span>
               </div>
             </a>
