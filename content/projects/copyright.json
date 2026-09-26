@@ -1,22 +1,25 @@
 {
-  "en": {
+  "shared": {
+    "text": "Copyright Protection",
+    "order": 1,
+    "slug": "copyright",
     "name": "Copyright Records",
-    "description": "Timestamped, notarized copyright certificates for creative professionals",
+    "year": "2024",
     "url": "https://copyrightrecords.com",
-    "year": 2024,
+    "categories": ["saas", "service"],
     "image_light": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
     "image_dark": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
-    "featured": true,
-    "tags": ["E-COMMERCE", "SEO"]
+    "featured": true
   },
-  "es": {
-    "name": "Copyright Records",
-    "description": "Certificados de derechos de autor con marca de tiempo y notaría",
-    "url": "https://copyrightrecords.com",
-    "year": 2024,
-    "image_light": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
-    "image_dark": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",
-    "featured": true,
-    "tags": ["E-COMMERCE", "SEO"]
-  }
-}
+  "en": {
+    "kind": "SaaS &middot; Copyright Protection",
+    "description": "Timestamped, notarized copyright certificates for creative professionals. Get instant proof of ownership for your creative work.",
+    "disciplines": [
+      {"text": "Web Design"},
+      {"text": "E-Commerce"},
+      {"text": "SEO"}
+    ]
+python3 build.py
+git add -A
+git commit -m "Add Copyright Records project with correct format"
+git push origin main
