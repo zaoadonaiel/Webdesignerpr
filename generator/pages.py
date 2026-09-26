@@ -886,6 +886,8 @@ def build_articles(c):
 
     # Articles section
     articles = d.get("articles", [])
+    # Sort articles by published_date in reverse order (most recent first)
+    articles = sorted(articles, key=lambda x: x.get("published_date", ""), reverse=True)
     
     if articles:
         out.append(f"""
