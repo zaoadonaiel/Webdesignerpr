@@ -1,0 +1,2 @@
+sed -i '' 's|"image_light": "[^"]*",|"image_light": "/images/portfolio/Copyright Records Website Design - Web Designer Puerto Rico.png",|' content/projects/copyrightrecords.json
+
