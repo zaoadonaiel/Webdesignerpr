@@ -371,8 +371,8 @@ def cta(c, block, primary=None, secondary=None):
   <!-- ============ CALL TO ACTION ============ -->
   <section class="cta">
     <div class="glow glow--primary cta__glow" aria-hidden="true"></div>
-    <video class="cta__orbit float-slow" width="720" height="720" autoplay muted loop playsinline 
-         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.1;z-index:0;object-fit:cover;"
+    <video class="cta__orbit float-slow" width="100%" height="100%" autoplay muted loop playsinline 
+         style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.1;z-index:0;object-fit:cover;"
          aria-hidden="true" loading="lazy" decoding="async">
       <source src="{c.media('/images/portfolio/Web Designer Puerto Rico - Website Design San Juan.mp4')}" type="video/mp4">
     </video>
