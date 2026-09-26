@@ -877,12 +877,39 @@ def build_articles(c):
     out = [head(c, "articles.html"), chrome(c), header(c, "articles.html")]
     out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
 
-    # Hero header
-    out.append(page_header(c, d["crumb"], d["title"], d["lead"],
-        f"""<div style="display:flex;flex-direction:column;gap:var(--space-sm)" data-reveal="up" data-delay="0.1">
-          <p class="label label--plain"><span class="pulse-dot" aria-hidden="true"><i></i></span> {d['est']}</p>
-          <p class="muted" style="font-size:var(--fs-sm)">{d['est_note']}</p>
-        </div>"""))
+    # Hero header with Zao Chat widget on the right
+    widget_html = f"""<iframe src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4" title="Chat assistant" width="400" height="640" style="width:100%;max-width:400px;height:640px;border:0;border-radius:16px;overflow:hidden" loading="lazy" referrerpolicy="origin"></iframe>"""
+    
+    # Custom header layout with widget on right
+    header_html = f"""
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="page-header">
+    <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">
+        <a class="link-underline" href="{c.link('index.html')}">{c.ui['breadcrumb_home']}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{d["crumb"]}</span>
+      </nav>
+      <div style="display:flex;gap:var(--space-lg);align-items:flex-start;justify-content:space-between;">
+        <div style="flex:1;">
+          <h1 class="display-1 page-header__title" data-split="words">{d["title"]}</h1>
+          <div class="page-header__grid">
+            <p class="lead" style="max-width:48ch" data-reveal="up">{d["lead"]}</p>
+            <div style="display:flex;flex-direction:column;gap:var(--space-sm)" data-reveal="up" data-delay="0.1">
+              <p class="label label--plain"><span class="pulse-dot" aria-hidden="true"><i></i></span> {d['est']}</p>
+              <p class="muted" style="font-size:var(--fs-sm)">{d['est_note']}</p>
+            </div>
+          </div>
+        </div>
+        <div style="flex-shrink:0;" data-reveal="up">
+          {widget_html}
+        </div>
+      </div>
+    </div>
+  </header>
+"""
+    out.append(header_html)
 
     # Articles section
     articles = d.get("articles", [])
