@@ -22,13 +22,13 @@
         "index": "04"
       },
       {
-        "href": "contact.html",
-        "label": "Contacto",
+        "href": "articles.html",
+        "label": "Artículos",
         "index": "05"
       },
       {
-        "href": "articles.html",
-        "label": "Artículos",
+        "href": "contact.html",
+        "label": "Contacto",
         "index": "06"
       }
     ],
@@ -167,13 +167,13 @@
         "index": "04"
       },
       {
-        "href": "contact.html",
-        "label": "Contact",
+        "href": "articles.html",
+        "label": "Articles",
         "index": "05"
       },
       {
-        "href": "articles.html",
-        "label": "Articles",
+        "href": "contact.html",
+        "label": "Contact",
         "index": "06"
       }
     ],
