@@ -443,8 +443,10 @@ def build_about(c):
       <div class="container">
         <div class="split">
           <div class="split__media" data-reveal-media>
-            <div class="media-frame media-frame--tall">
-              <img src="{d['about_founder']['image']}" alt="{d['about_founder']['image_alt']}" width="400" height="500" style="width:100%;height:auto;border-radius:var(--radius-lg);display:block">
+            <!-- No fixed aspect ratio: the frame hugs the photo, so there is
+                 never an empty band below it whatever shape the photo is -->
+            <div class="media-frame">
+              <img src="{c.media(d['about_founder']['image'])}" alt="{d['about_founder']['image_alt']}" width="1024" height="1024" loading="lazy" decoding="async" style="width:100%;height:auto;display:block">
             </div>
           </div>
           <div class="split__body">
