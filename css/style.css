@@ -1005,6 +1005,7 @@ body.is-locked .site-header {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  min-width: 420px;
 }
 
 .hero__mockup {
