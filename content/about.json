@@ -55,8 +55,8 @@
       "aside": "Esto no son preferencias. Son la razón por la que nuestros proyectos terminan a tiempo y la razón por la que los resultados aguantan bajo tráfico.",
       "craft_alt": "Lámina tipográfica que muestra la jerarquía de tipos del estudio.",
       "stamp": "HECHO A LA MEDIDA &#183; SAN JUAN PR &#183; DESDE 2016 &#183; ",
-      "craft_image_light": "/images/hero/craft.svg",
-      "craft_image_dark": "/images/hero/craft-dark.svg",
+      "craft_image_light": "/images/hero/rules-desk.jpg",
+      "craft_image_dark": "/images/hero/rules-desk.jpg",
       "items": [
         {
           "index": "01",
@@ -137,7 +137,7 @@
   },
   "en": {
     "crumb": "About",
-    "title": "A small studio with <em class=\"italic accent-text\">unreasonable standards</em>.",
+    "title": "A small agency with <em class=\"italic accent-text\">unreasonable standards</em>.",
     "lead": "We started Web Designer Puerto Rico because too many good businesses were being sold the same template with a different photograph on it. Nine years later, the position has not softened.",
     "est": "Designing since 2002 &middot; Developing since 2010",
     "est_note": "Working with clients across the Caribbean, the United States mainland and Europe &mdash; remotely, and in person when it matters.",
@@ -174,7 +174,7 @@
         },
         {
           "kicker": "Vision",
-          "title": "Prove that small studios can out-build big ones",
+          "title": "Prove that small agencies can out-build big ones",
           "text": "Without layers of account management, work gets better and cheaper at the same time. We want a portfolio that makes that argument for us, and clients who stay long enough to see the compounding."
         },
         {
@@ -191,8 +191,8 @@
       "aside": "These are not preferences. They are the reasons our projects finish on time and the reason the results hold up under traffic.",
       "craft_alt": "Typographic specimen plate showing the studio's type hierarchy.",
       "stamp": "CUSTOM BUILT &#183; SAN JUAN PR &#183; SINCE 2016 &#183; ",
-      "craft_image_light": "/images/hero/craft.svg",
-      "craft_image_dark": "/images/hero/craft-dark.svg",
+      "craft_image_light": "/images/hero/rules-desk.jpg",
+      "craft_image_dark": "/images/hero/rules-desk.jpg",
       "items": [
         {
           "index": "01",
