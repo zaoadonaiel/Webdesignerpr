@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="420" height="80" role="img" aria-label="WebDesignerPR">
+  <path d="M40 16c.7 5.2 2 8.6 4.2 10.3C46 27.8 49 28.5 52.5 28.6 49 28.7 46 29.4 44.2 30.9 42 32.6 40.7 36 40 41.2c-.7-5.2-2-8.6-4.2-10.3C34 29.4 31 28.7 27.5 28.6 31 28.5 34 27.8 35.8 26.3 38 24.6 39.3 21.2 40 16Z" fill="#ff4d2e" transform="translate(0,11)"/>
+  <text x="76" y="50" font-family="Inter Tight, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="-1" fill="#f2efe9">WebDesigner</text>
+  <text x="272" y="50" font-family="Instrument Serif, Georgia, serif" font-size="32" font-style="italic" fill="#ff7a60">PR</text>
+</svg>

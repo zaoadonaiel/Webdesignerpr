@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="google" content="notranslate">
+  <title>Core Web Vitals 2026: Por Qué Tu Sitio Web de Puerto Rico Está Perdiendo Clientes por Tiempos de Carga Lentos — Web Designer Puerto Rico</title>
+  <meta name="description" content="Los sitios web lentos te cuestan clientes. Aprende por qué Core Web Vitals importan en 2026 y cómo optimizar tu sitio web de Puerto Rico para tiempos de carga más rápidos, mejores conversiones y rankings mejorados.">
+  
+  <link rel="canonical" href="https://webdesignerpr.com/articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html">
+
+  <!-- Both language versions of this page -->
+  <link rel="alternate" hreflang="es" href="https://webdesignerpr.com/articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html">
+  <link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html">
+  <link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html">
+
+  <!-- Matches whichever theme is active, so browser UI follows the page -->
+  <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#08090b" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Web Designer Puerto Rico">
+  <meta property="og:title" content="Core Web Vitals 2026: Por Qué Tu Sitio Web de Puerto Rico Está Perdiendo Clientes por Tiempos de Carga Lentos — Web Designer Puerto Rico">
+  <meta property="og:description" content="Los sitios web lentos te cuestan clientes. Aprende por qué Core Web Vitals importan en 2026 y cómo optimizar tu sitio web de Puerto Rico para tiempos de carga más rápidos, mejores conversiones y rankings mejorados.">
+  <meta property="og:url" content="https://webdesignerpr.com/articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html">
+  <meta property="og:image" content="https://webdesignerpr.com/images/logo/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_PR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Core Web Vitals 2026: Por Qué Tu Sitio Web de Puerto Rico Está Perdiendo Clientes por Tiempos de Carga Lentos — Web Designer Puerto Rico">
+  <meta name="twitter:description" content="Los sitios web lentos te cuestan clientes. Aprende por qué Core Web Vitals importan en 2026 y cómo optimizar tu sitio web de Puerto Rico para tiempos de carga más rápidos, mejores conversiones y rankings mejorados.">
+  <meta name="twitter:image" content="https://webdesignerpr.com/images/logo/og-image.jpg">
+
+  <link rel="icon" href="../images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo/favicon.png">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <!-- Applies the saved theme and marks the document script-capable BEFORE
+       first paint, so a returning dark-mode visitor never sees a flash of
+       light and pre-animation states apply cleanly. -->
+  <script>(function(){try{if(localStorage.getItem("wdpr:theme")==="dark")
+document.documentElement.setAttribute("data-theme","dark")}catch(e){}
+document.documentElement.classList.add("js-ready")})();</script>
+  <noscript><style>.loader{display:none!important}.js-ready [data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+  <script src="https://app.zaochat.com/widget/widget.js?v=1788014309" data-client-code="130aa379-9729-46f6-879e-55871e187ca4" async></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- Preloader: shown once per session, removed from the DOM afterwards -->
+  <div class="loader" role="status" aria-live="polite">
+    <div class="loader__inner">
+      <p class="loader__word">Web Designer <em>Puerto Rico</em></p>
+      <div class="loader__bar"><i></i></div>
+      <p class="loader__count">000</p>
+    </div>
+    <span class="visually-hidden">Cargando</span>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="column-rules" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <!-- Custom cursor: rendered only on fine-pointer, motion-tolerant devices -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label">Ver</span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../index.html" aria-label="Web Designer Puerto Rico &mdash; inicio">
+        <picture class="brand__logo">
+          <source media="(prefers-color-scheme: dark)" srcset="/images/logo/zao-chat-light.png">
+          <img src="/images/logo/zao-chat-light.png" alt="Zao Chat" width="32" height="32">
+        </picture>
+        <span class="brand__text">Web Designer <em>Puerto Rico</em></span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+          <a class="nav__link" data-nav-link href="../about.html">Agencia</a>
+          <a class="nav__link" data-nav-link href="../services.html">Servicios</a>
+          <a class="nav__link" data-nav-link href="../portfolio.html">Portafolio</a>
+          <a class="nav__link" data-nav-link href="../deals.html">Ofertas</a>
+          <a class="nav__link" data-nav-link href="../articles.html">Artículos</a>
+          <a class="nav__link" data-nav-link href="../contact.html">Contacto</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="controls">
+          <div class="lang-switch" role="group" aria-label="Idioma">
+          <a class="lang-switch__opt" href="../articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html" hreflang="es" lang="es"
+             data-lang-switch="es" aria-current="true">ES</a>
+          <a class="lang-switch__opt" href="../en/articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html" hreflang="en" lang="en"
+             data-lang-switch="en">EN</a>
+        </div>
+          <button class="theme-toggle" type="button" data-theme-toggle
+                aria-pressed="false"
+                aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro"
+                data-label-to-dark="Cambiar a modo oscuro" data-label-to-light="Cambiar a modo claro">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+          </svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"/>
+            <path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
+          </svg>
+        </button>
+        </div>
+        <a class="btn btn--primary" href="tel:+19392299233" data-magnetic="0.25">
+          <span>(939) 229-9233</span>
+        </a>
+        <a class="whatsapp-btn" href="https://wa.me/19392299233" target="_blank" rel="noopener noreferrer" data-magnetic="0.25" title="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background-color: #25D366; color: white; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;">
+<img src="/images/whatsapp-icon.png" alt="WhatsApp" width="24" height="24" />
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+          <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-screen drawer for narrow viewports -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Móvil">
+      <div class="mobile-menu__item">
+        <a class="mobile-menu__link" data-nav-link href="../about.html">
+          <span class="index-num">01</span> Agencia
+        </a>
+      </div>
+      <div class="mobile-menu__item">
+        <a class="mobile-menu__link" data-nav-link href="../services.html">
+          <span class="index-num">02</span> Servicios
+        </a>
+      </div>
+      <div class="mobile-menu__item">
+        <a class="mobile-menu__link" data-nav-link href="../portfolio.html">
+          <span class="index-num">03</span> Portafolio
+        </a>
+      </div>
+      <div class="mobile-menu__item">
+        <a class="mobile-menu__link" data-nav-link href="../deals.html">
+          <span class="index-num">04</span> Ofertas
+        </a>
+      </div>
+      <div class="mobile-menu__item">
+        <a class="mobile-menu__link" data-nav-link href="../articles.html">
+          <span class="index-num">05</span> Artículos
+        </a>
+      </div>
+      <div class="mobile-menu__item">
+        <a class="mobile-menu__link" data-nav-link href="../contact.html">
+          <span class="index-num">06</span> Contacto
+        </a>
+      </div>
+    </nav>
+    <div class="mobile-menu__foot">
+      <div class="mobile-menu__controls">
+        <span class="control-label">Idioma</span>
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <a class="lang-switch__opt" href="../articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html" hreflang="es" lang="es"
+             data-lang-switch="es" aria-current="true">ES</a>
+          <a class="lang-switch__opt" href="../en/articles/core-web-vitals-2026-puerto-rico-website-losing-customers.html" hreflang="en" lang="en"
+             data-lang-switch="en">EN</a>
+        </div>
+      </div>
+      <p class="label label--plain">Conversemos</p>
+      <a class="display-4 link-underline" href="mailto:info@webdesignerpr.com">info@webdesignerpr.com</a>
+      <p class="muted" style="font-size:var(--fs-sm)">San Juan, Puerto Rico &middot; Trabajamos en remoto con todo el mundo</p>
+    </div>
+  </div>
+  <main class="site-main" id="main">
+    <span id="top"></span>
+
+      <!-- ============ ARTICLE HERO ============ -->
+      <header class="article-hero" style="background-image: url('../images/hero/pr-background.jpg');">
+        <div class="page-header__overlay" aria-hidden="true"></div>
+        <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
+        <div class="container container--narrow">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a class="link-underline" href="../index.html">Inicio</a>
+            <span aria-hidden="true">/</span>
+            <a class="link-underline" href="../articles.html">Artículos</a>
+          </nav>
+
+          
+
+          <h1 class="article-hero__title" data-split="words">Core Web Vitals 2026: Por Qué Tu Sitio Web de Puerto Rico Está Perdiendo Clientes por Tiempos de Carga Lentos</h1>
+
+          <div class="byline">
+            <img class="byline__avatar" src="../images/davey-duarte.png" alt="Retrato de David Duarte" width="96" height="96" loading="eager" decoding="async">
+            <div class="byline__text">
+              <p class="byline__name">David Duarte</p>
+              <p class="byline__role">Diseñador Web y Director Creativo</p>
+              <p class="byline__meta"><span class="byline__meta-item"><time datetime="2026-09-23">23 de septiembre de 2026</time></span><span aria-hidden="true">&middot;</span><span class="byline__meta-item"><span>9 min de lectura</span></span></p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+        <!-- ============ ARTICLE CONTENT ============ -->
+        <section class="section section--flush-top" style="margin-top: 50px;">
+          <div class="container" style="max-width: 1200px;">
+            <div style="display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start;">
+              <!-- Main article -->
+              <article class="prose">
+                <p style="font-size: 1.1rem; font-style: italic; color: var(--color-text-muted); margin-bottom: 2rem;">Los sitios web lentos te cuestan clientes. Aprende por qué Core Web Vitals importan en 2026 y cómo optimizar tu sitio web de Puerto Rico para tiempos de carga más rápidos, mejores conversiones y rankings mejorados.</p>
+                <p><strong>Core Web Vitals 2026</strong> are no longer just technical metrics for developers. They are business signals that influence whether a customer in San Juan, Ponce, Mayagüez, or anywhere else in Puerto Rico stays on your website, trusts your brand, and completes an inquiry or purchase. When pages load slowly, buttons respond late, or content shifts unexpectedly, visitors often leave before they ever see your offer.</p>
+
+<p>That matters even more for Puerto Rican businesses competing for mobile users, local searches, tourists, online shoppers, and customers arriving through paid advertising. A slow landing page can waste an otherwise successful Google Ads campaign, weaken organic visibility, and increase the cost of every lead. In this guide, you will learn what Core Web Vitals measure, why mobile performance matters in 2026, which problems commonly affect Puerto Rico websites, and how a practical website page speed optimization plan can reduce friction and improve conversions.</p>
+
+<h2>Core Web Vitals 2026: The Metrics Behind Website Performance</h2>
+
+<p>Core Web Vitals measure three parts of the real-world experience: loading performance, responsiveness, and visual stability. Google recommends evaluating these metrics using real user data, particularly at the 75th percentile. That means your site should perform well for the majority of visitors—not only for someone testing it on a fast office connection.</p>
+
+<p>Google's current guidance identifies three primary metrics:</p>
+
+<ul>
+  <li><strong>Largest Contentful Paint (LCP):</strong> How quickly the main content, such as a hero image, headline, or product area, becomes visible. A good target is 2.5 seconds or less.</li>
+  <li><strong>Interaction to Next Paint (INP):</strong> How quickly the page responds after a visitor clicks, taps, types, or interacts. A good target is 200 milliseconds or less.</li>
+  <li><strong>Cumulative Layout Shift (CLS):</strong> How much the page unexpectedly moves while loading. A good target is a score of 0.1 or less.</li>
+</ul>
+
+<p>You can review the definitions and recommended thresholds in <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer">Google Search Central's Core Web Vitals documentation</a>. These metrics are not a substitute for strong content, relevant services, accurate business information, or a good offer. However, they help determine whether visitors can actually access and use those assets without unnecessary frustration.</p>
+
+<h3>Why a fast desktop score is not enough</h3>
+
+<p>Many businesses test their website from a laptop connected to fast Wi-Fi and assume the results represent every customer. They do not. A visitor may be using an older phone, a congested cellular connection, or a browser with limited processing power. A page that feels acceptable on a developer's computer may take several more seconds to become usable on mobile.</p>
+
+<p>Google's Chrome UX Report, or CrUX, uses aggregated real-user experience data. PageSpeed Insights combines this field data with controlled Lighthouse tests, allowing you to compare what happens in a simulated test with what actual visitors experience. As Chrome explains, the reported percentiles correspond to the 75th percentile of user experiences.</p>
+
+<p>For a Puerto Rico business, that distinction is important. Your customers may include local residents searching on mobile, visitors planning activities while traveling, and people comparing several providers at once. Every delay gives them another reason to return to Google, open a competitor's website, or abandon a form.</p>
+
+<h2>How Slow Load Times Turn Into Lost Customers</h2>
+
+<p>Slow performance rarely causes a single, obvious failure. Instead, it creates small moments of friction throughout the customer journey. A visitor waits for the hero section to appear. A menu opens late. A booking button moves just as it is tapped. A form takes too long to submit. Each moment reduces confidence.</p>
+
+<h3>Slow pages damage first impressions</h3>
+
+<p>Your website is often the first interaction a customer has with your company. For a law firm, financial advisor, clinic, contractor, hotel, or restaurant, a polished and responsive site suggests organization and reliability. A page that looks broken or takes too long to load can communicate the opposite—even when the underlying business is excellent.</p>
+
+<p>This is especially costly for high-intent visitors. Someone searching "plumber near me," "San Juan wedding venue," "Puerto Rico tax advisor," or "best tours in Vieques" may be ready to call or book. If the landing page does not load quickly, the visitor may never see your phone number, service area, pricing information, or reservation button.</p>
+
+<h3>Performance affects conversion paths</h3>
+
+<p>Slow websites can reduce completed actions at several points:</p>
+
+<ul>
+  <li><strong>Lead forms:</strong> Visitors abandon forms that are slow, difficult to use, or unresponsive after submission.</li>
+  <li><strong>Online stores:</strong> Delays during product browsing, cart updates, or checkout create opportunities for shoppers to leave.</li>
+  <li><strong>Booking pages:</strong> Hotel, restaurant, and tour reservations require fast access to dates, availability, and payment steps.</li>
+  <li><strong>Paid campaigns:</strong> You can pay for a click without receiving a lead if the landing page fails to become usable quickly.</li>
+  <li><strong>Local search:</strong> A visitor may choose another business if your website is slower or harder to navigate than nearby alternatives.</li>
+</ul>
+
+<p>A high bounce rate does not prove that speed is the only problem. Weak messaging, poor targeting, confusing navigation, or an unattractive offer can also drive abandonment. However, website page speed optimization removes one of the most preventable barriers to conversion and makes your other marketing investments more effective.</p>
+
+<h2>Why Puerto Rico Websites Need a Mobile-First Performance Strategy</h2>
+
+<p>Mobile optimization is not simply about making a desktop layout fit a smaller screen. It requires designing around touch interactions, constrained bandwidth, limited device resources, and the impatient behavior of users who are often searching while moving between locations.</p>
+
+<p>For Puerto Rican businesses, the mobile experience can be central to discovery. A tourist may search for restaurants from a beach or hotel. A local customer may look for emergency services while away from home. A shopper may discover a product through social media and open the page on a phone. In each case, the website must communicate its value immediately.</p>
+
+<h3>Common mobile performance problems</h3>
+
+<p>Several issues appear repeatedly in WordPress and other content-managed websites:</p>
+
+<ul>
+  <li>Large hero images uploaded without modern compression or responsive sizing.</li>
+  <li>Autoplay video backgrounds that consume bandwidth before the visitor reaches the main message.</li>
+  <li>Too many third-party scripts for chat, analytics, tracking, pop-ups, reviews, and advertising.</li>
+  <li>Page builders loading CSS and JavaScript that a particular page does not use.</li>
+  <li>Web fonts that delay the display of headings and buttons.</li>
+  <li>Unoptimized plugins, outdated themes, or database queries that slow server response time.</li>
+  <li>Images and banners without reserved dimensions, causing layout shifts as content loads.</li>
+</ul>
+
+<p>These problems can affect LCP, INP, and CLS simultaneously. For example, an oversized hero image may delay the main visual content, while several JavaScript tools can block interaction. A late-loading promotional banner may push a form downward, causing a visitor to tap the wrong element.</p>
+
+<h3>Build for real conditions, not ideal conditions</h3>
+
+<p>A reliable mobile-first strategy starts with the pages that matter most: service pages, location pages, campaign landing pages, product pages, booking pages, and contact forms. Test those URLs on realistic mobile profiles rather than focusing only on the homepage.</p>
+
+<p>It is also useful to separate lab testing from field testing. Lighthouse can identify likely technical problems under controlled conditions, while CrUX and Search Console show how eligible real Chrome users experience your pages. Chrome's documentation notes that some metrics, including INP, depend on real interaction data and cannot be fully represented by a simple page-load test.</p>
+
+<h2>A Practical Website Page Speed Optimization Plan for 2026</h2>
+
+<p>Improving Core Web Vitals is not about chasing a perfect score for its own sake. The objective is to make important pages load, respond, and remain stable for the people most likely to become customers.</p>
+
+<h3>1. Establish a performance baseline</h3>
+
+<p>Begin with PageSpeed Insights, Google Search Console, and analytics data. Record performance for both mobile and desktop, then identify which templates generate the most traffic, leads, revenue, or advertising costs. A low-traffic blog post may be less urgent than a slow service page receiving thousands of paid visits.</p>
+
+<p>Look beyond a single score. Review LCP, INP, CLS, Time to First Byte, image opportunities, JavaScript execution, and server response time. In the Chrome UX Report, data may be available at the URL or origin level depending on the site's traffic and eligibility.</p>
+
+<h3>2. Improve the largest visible content</h3>
+
+<p>For LCP, optimize the element visitors need to see first. Compress hero images, use modern formats where appropriate, preload only critical assets, and avoid hiding the main headline behind delayed scripts. Serve images in the dimensions actually required by the device instead of sending a large desktop file to every phone.</p>
+
+<h3>3. Reduce unnecessary JavaScript</h3>
+
+<p>For INP, remove or delay scripts that are not essential to the first interaction. Review chat widgets, pop-ups, sliders, heatmaps, social embeds, advertising tags, and plugin bundles. Where possible, load noncritical tools after the main content is usable. Keep forms, menus, filters, and checkout interactions lightweight.</p>
+
+<h3>4. Prevent layout movement</h3>
+
+<p>For CLS, reserve space for images, advertisements, embedded maps, review widgets, and promotional notices. Specify image dimensions, avoid inserting content above an existing form, and make sure fonts do not cause major text or button movement during loading.</p>
+
+<h3>5. Improve the technical foundation</h3>
+
+<p>Performance work may also require better hosting, caching, a content delivery network, database cleanup, updated software, and a carefully configured WordPress stack. Cloudflare, Vercel, optimized server environments, and modern frameworks such as Astro or Svelte can be useful in the right project, but technology alone does not solve poor content structure or oversized assets.</p>
+
+<p>Finally, retest after every major change. A plugin update, new tracking platform, redesign, or seasonal campaign can quietly introduce new delays. Ongoing monitoring is more reliable than a one-time launch audit.</p>
+
+<h2>Make Performance Part of Puerto Rico Web Design</h2>
+
+<p>Fast performance should be planned during discovery and design—not added after a website is already built. A performance-aware design system limits unnecessary effects, prioritizes the content customers need, and creates clear paths to call, message, book, buy, or request a quote.</p>
+
+<p>For businesses in Puerto Rico, that means combining local SEO, responsive design, accessible content, conversion-focused layouts, and technical performance. A hotel needs fast room and booking pages. A clinic needs a quick path to appointments. A contractor needs visible service areas and a responsive quote form. An e-commerce company needs efficient product and checkout experiences.</p>
+
+<p>At Web Designer Puerto Rico, our approach connects design, development, SEO, analytics, and ongoing optimization. We can audit existing WordPress websites, improve mobile performance, reduce technical friction, and create faster custom experiences for businesses across Puerto Rico and the United States. With more than 190 websites and digital solutions completed, our goal is not merely to produce a better speed report—it is to help more qualified visitors become customers.</p>
+
+<h2>Conclusion: Turn Faster Pages Into More Opportunities</h2>
+
+<p>Core Web Vitals 2026 should be treated as a customer-experience priority, not a checkbox for developers. Slow loading, delayed interactions, and unstable layouts can weaken trust, increase abandonment, waste advertising spend, and make it harder for local businesses to compete online.</p>
+
+<p>Start by measuring your most important mobile pages with real user data. Then prioritize the changes most likely to improve customer journeys: compress large assets, reduce unnecessary scripts, stabilize layouts, improve hosting, and monitor performance after every update. The result should be a website that feels clear, dependable, and easy to use—whether a customer is searching from San Juan, browsing a product from Caguas, or planning a Puerto Rico trip from abroad.</p>
+
+<p><strong>Need help improving your website's speed and conversions?</strong> Web Designer Puerto Rico can audit your Core Web Vitals, identify performance bottlenecks, and build a faster digital experience aligned with your business goals.</p>
+              
+                <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--color-line)">
+                  <a class="btn btn--ghost" href="../articles.html"><span>Volver arriba <svg class="btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5"/></svg></span></a>
+                </div>
+              </article>
+
+              <!-- Right sidebar -->
+              <aside style="display: none; @media (min-width: 1024px) { display: block; }">
+                <div style="position: sticky; top: 2rem;">
+                  <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-text);">What We Do</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                      <li><a href="../services.html" class="link-underline" style="font-size: 0.95rem;">Web Design</a></li>
+                      <li><a href="../services.html" class="link-underline" style="font-size: 0.95rem;">SEO Optimization</a></li>
+                      <li><a href="../services.html" class="link-underline" style="font-size: 0.95rem;">WordPress Hosting</a></li>
+                      <li><a href="../services.html" class="link-underline" style="font-size: 0.95rem;">Digital Marketing</a></li>
+                      <li><a href="../services.html" class="link-underline" style="font-size: 0.95rem;">Content Strategy</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Zao Chat Widget -->
+                  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+                    <iframe src="https://flo.thexdigital.com/webdesignerpr" style="width: 100%; height: 500px; border: none; border-radius: 8px;" title="Chat with us"></iframe>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../index.html" aria-label="Web Designer Puerto Rico &mdash; inicio">
+        <picture class="brand__logo">
+          <source media="(prefers-color-scheme: dark)" srcset="/images/logo/zao-chat-light.png">
+          <img src="/images/logo/zao-chat-light.png" alt="Zao Chat" width="32" height="32">
+        </picture>
+        <span class="brand__text">Web Designer <em>Puerto Rico</em></span>
+      </a>
+          <p class="muted" style="font-size:var(--fs-sm)">Una agencia de diseño y desarrollo en San Juan, Puerto Rico, que construye sitios web a la medida para marcas que necesitan que las tomen en serio.</p>
+          <p class="label label--plain"><span class="pulse-dot" aria-hidden="true"><i></i></span> Disponibles para nuevos proyectos</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Pie de página">
+          <h2 class="footer-col__title">Páginas</h2>
+          <a class="link-underline" href="../about.html">Agencia</a>
+          <a class="link-underline" href="../services.html">Servicios</a>
+          <a class="link-underline" href="../portfolio.html">Portafolio</a>
+          <a class="link-underline" href="../deals.html">Ofertas</a>
+          <a class="link-underline" href="../articles.html">Artículos</a>
+          <a class="link-underline" href="../contact.html">Contacto</a>
+        </nav>
+
+        <div class="footer-col">
+          <h2 class="footer-col__title">Servicios</h2>
+          <a class="link-underline" href="../services.html#website-design">Diseño Web</a>
+          <a class="link-underline" href="../services.html#website-development">Desarrollo</a>
+          <a class="link-underline" href="../services.html#wordpress">WordPress</a>
+          <a class="link-underline" href="../services.html#ecommerce">E-commerce</a>
+          <a class="link-underline" href="../services.html#ui-ux">Diseño UI/UX</a>
+          <a class="link-underline" href="../services.html#performance">Rendimiento</a>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-col__title">Contacto</h2>
+          <a class="link-underline" href="mailto:info@webdesignerpr.com">info@webdesignerpr.com</a>
+          <a class="link-underline" href="tel:+19392299233">(939) 229-9233</a>
+          <span>San Juan, Puerto Rico</span>
+          <span>Lun&ndash;Vie, 9:00&ndash;18:00 AST</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Web Designer Puerto Rico. Todos los derechos reservados.</span>
+        <a class="to-top" href="#top" data-to-top>Volver arriba <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 14V2M3 7l5-5 5 5"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP from CDN. If either file fails to load, js/animations.js detects the
+       absence and the CSS fallback in animations.css reveals all content. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/navigation.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+</body>
+</html>

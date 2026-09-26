@@ -1,0 +1,14 @@
+# WebDesignerPR language routing rules for Cloudflare Pages
+#
+# Spanish (es) is the default language at the root /
+# English (en) is available at /en/*
+#
+# These rules prevent browser language auto-detection from interfering
+# with the user's chosen language via the toggle.
+
+# If someone tries to access /en (without trailing slash), ensure /en/
+/en /en/ 301
+
+# All other paths are served as-is
+# Root / serves the Spanish version (index.html in dist/)
+# /en/* serves the English version (index.html in dist/en/)
