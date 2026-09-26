@@ -21,6 +21,21 @@ DEFAULT_LANG = "es"
 PAGES = ["index.html", "about.html", "services.html", "portfolio.html", "deals.html", "contact.html", "articles.html"]
 
 
+def page_url(page, lang):
+    """Absolute public URL for a page, in the form the host actually serves.
+
+    Cloudflare's `auto-trailing-slash` 307-redirects /about.html to /about,
+    so canonicals, hreflang and the sitemap must use the extensionless form
+    or every one of them points search engines at a redirect.
+    """
+    leaf = page.lstrip("/")
+    if leaf.endswith(".html"):
+        leaf = leaf[:-5]
+    if leaf == "index":
+        leaf = ""
+    return SITE_URL + ("/" if lang == DEFAULT_LANG else "/" + lang + "/") + leaf
+
+
 def _read(path):
     with open(path, encoding="utf-8") as f:
         return json.load(f)

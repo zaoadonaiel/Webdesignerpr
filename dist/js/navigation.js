@@ -149,18 +149,72 @@
 
   /* ------------------------------------------------------------------
      3. ACTIVE LINK — marks the current page in both navs
+     Compares resolved paths, so "../services/x.html" from a nested page
+     and the host's extensionless "/services/x" both match.
      ------------------------------------------------------------------ */
 
   (function markCurrent() {
-    var here = window.location.pathname.split("/").pop() || "index.html";
+    function norm(path) {
+      return path.replace(/index\.html$/, "").replace(/\.html$/, "").replace(/\/$/, "") || "/";
+    }
+    var here = norm(window.location.pathname);
     Array.prototype.forEach.call(doc.querySelectorAll("[data-nav-link]"), function (link) {
-      var target = link.getAttribute("href");
-      if (!target) return;
-      if (target === here || (here === "index.html" && target === "index.html")) {
+      if (!link.getAttribute("href")) return;
+      var target = norm(link.pathname);
+      var section = link.getAttribute("data-nav-section");
+      if (target === here || (section && here.indexOf("/" + section + "/") !== -1)) {
         link.setAttribute("aria-current", "page");
       }
     });
   })();
+
+  /* ------------------------------------------------------------------
+     3b. SERVICES MEGA MENU
+     Opens on hover (with a short grace period so the pointer can cross
+     the gap into the panel), on the caret button, and closes on Escape,
+     outside click or when focus leaves it.
+     ------------------------------------------------------------------ */
+
+  Array.prototype.forEach.call(doc.querySelectorAll("[data-mega]"), function (item) {
+    var btn = item.querySelector("[data-mega-toggle]");
+    var panel = item.querySelector("[data-mega-panel]");
+    if (!btn || !panel) return;
+    var timer = null;
+
+    function set(open) {
+      window.clearTimeout(timer);
+      item.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", String(open));
+    }
+    function later(open, ms) {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(function () { set(open); }, ms);
+    }
+
+    if (WDPR.finePointer) {
+      item.addEventListener("pointerenter", function () { later(true, 80); });
+      item.addEventListener("pointerleave", function () { later(false, 220); });
+    }
+    btn.addEventListener("click", function () {
+      set(btn.getAttribute("aria-expanded") !== "true");
+      if (item.classList.contains("is-open")) {
+        var first = panel.querySelector("a");
+        first && first.focus();
+      }
+    });
+    item.addEventListener("focusout", function (e) {
+      if (!item.contains(e.relatedTarget)) set(false);
+    });
+    item.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && item.classList.contains("is-open")) {
+        set(false);
+        btn.focus();
+      }
+    });
+    doc.addEventListener("click", function (e) {
+      if (!item.contains(e.target)) set(false);
+    });
+  });
 
   /* ------------------------------------------------------------------
      4. SMOOTH IN-PAGE ANCHORS (honours reduced motion)

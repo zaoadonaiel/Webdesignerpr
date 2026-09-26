@@ -4,19 +4,8 @@ import re
 
 from .content import DEFAULT_LANG, load, load_projects, shared, texts
 from .partials import (head, chrome, header, footer, scripts, cta, section_head,
-                       page_header, themed_img, ARROW, ARROW_R, STAR, MARK_PATH)
-
-# Hand-drawn inline icons, keyed by the service id used in content/services.json
-SVC_ICONS = {
- "website-design": '<path d="M3 5h28v22H3z"/><path d="M3 11h28M8 8h.01M11 8h.01M14 8h.01"/>',
- "website-development": '<path d="M11 22 4 15l7-7M23 10l7 7-7 7M19 6l-4 22"/>',
- "wordpress": '<circle cx="17" cy="17" r="13"/><path d="M5 12h9M9 12l5 14 4-11M22 12h5l-4 14-3-9"/>',
- "ecommerce": '<path d="M4 6h4l3 15h15l3-11H10"/><circle cx="13" cy="27" r="2"/><circle cx="25" cy="27" r="2"/>',
- "ui-ux": '<circle cx="11" cy="11" r="7"/><rect x="18" y="18" width="12" height="12" rx="2"/><path d="M18 11h12"/>',
- "redesign": '<path d="M29 17a12 12 0 1 1-3.5-8.5M29 4v6h-6"/>',
- "performance": '<path d="M17 29a12 12 0 1 1 12-12"/><path d="M17 17l8-6"/><circle cx="17" cy="17" r="2"/>',
-}
-FALLBACK_ICON = '<circle cx="17" cy="17" r="13"/><path d="M17 11v12M11 17h12"/>'
+                       page_header, themed_img, ARROW, ARROW_R, STAR, MARK_PATH,
+                       SVC_ICONS, FALLBACK_ICON, svc_icon)
 
 VIEW = {"es": "Ver", "en": "View"}
 
@@ -301,7 +290,7 @@ def build_home(c):
               <h3 class="card__title">{x['title']}</h3>
               <p class="card__text u-mt-sm">{x['summary']}</p>
             </div>
-            <a class="link-arrow" href="services.html#{x['id']}">{sv['detail_link']} {ARROW_R}</a>
+            <a class="link-arrow" href="{c.link(f"services/{x['id']}.html")}">{sv['detail_link']} {ARROW_R}</a>
           </article>""" for x in svc_items)
 
     why, proc, tst, cap = d["why"], d["process"], d["testimonials"], d["capabilities"]
@@ -569,9 +558,9 @@ def build_services(c):
                   <p class="label u-mb-lg">{d['included']}</p>
                   <ul class="service-row__deliverables">{"".join(f"<li>{t}</li>" for t in texts(x['deliverables']))}</ul>
                   <p class="u-mt-lg">
-                  <a class="link-arrow" href="contact.html">{d['enquire']} {ARROW_R}</a>
+                  <a class="link-arrow" href="{c.link(f"services/{x['id']}.html")}">{d.get('detail_page', {}).get('learn_more', d['detail'])}: {x['title']} {ARROW_R}</a>
                   <br>
-                  <a class="link-arrow" href="services/{x['id']}.html" style="margin-top:0.5rem;display:inline-block;">Learn more {ARROW_R}</a>
+                  <a class="link-arrow" href="{c.link('contact.html')}" style="margin-top:0.5rem;display:inline-block;">{d['enquire']} {ARROW_R}</a>
                 </p>
                 </div>
               </div>
@@ -626,7 +615,7 @@ def build_services(c):
               {"".join(f"<p>{p}</p>" for p in texts(pf['paragraphs']))}
             </div>
             <div class="u-mt-lg">
-              <a class="btn btn--ghost" href="#performance" data-magnetic="0.25"><span>{pf['link']} {ARROW}</span></a>
+              <a class="btn btn--ghost" href="{c.link('services/performance.html')}" data-magnetic="0.25"><span>{pf['link']} {ARROW}</span></a>
             </div>
           </div>
         </div>
@@ -649,7 +638,7 @@ def build_services(c):
               {"".join(f"<p>{p}</p>" for p in texts(cm['paragraphs']))}
             </div>
             <div class="u-mt-lg">
-              <a class="btn btn--ghost" href="#ecommerce" data-magnetic="0.25"><span>{cm['link']} {ARROW}</span></a>
+              <a class="btn btn--ghost" href="{c.link('services/ecommerce.html')}" data-magnetic="0.25"><span>{cm['link']} {ARROW}</span></a>
             </div>
           </div>
         </div>
@@ -1075,75 +1064,283 @@ def build_article_pages(c):
 
 
 # ---------------------------------------------------------------------------
-# SERVICE DETAIL PAGES
+# SERVICE LANDING PAGES
 # ---------------------------------------------------------------------------
 
+SERVICE_PAGE_DEFAULTS = {
+    "es": {"services_crumb": "Servicios", "learn_more": "Ver servicio", "overview": "Resumen",
+           "included": "Qué incluye", "benefits": "Por qué importa", "process": "Cómo trabajamos",
+           "ideal": "Para quién es", "faq": "Preguntas frecuentes",
+           "faq_title": "Lo que nos preguntan <em class=\"italic\">sobre este servicio</em>.",
+           "related": "Otros servicios",
+           "related_title": "Servicios que suelen ir <em class=\"italic\">de la mano</em>.",
+           "quote": "Solicitar cotización", "call": "Llamar", "all": "Ver todos los servicios"},
+    "en": {"services_crumb": "Services", "learn_more": "View service", "overview": "Overview",
+           "included": "What's included", "benefits": "Why it matters", "process": "How we work",
+           "ideal": "Who it's for", "faq": "FAQ",
+           "faq_title": "What people ask <em class=\"italic\">about this service</em>.",
+           "related": "Other services",
+           "related_title": "Services that often go <em class=\"italic\">hand in hand</em>.",
+           "quote": "Request a quote", "call": "Call", "all": "All services"},
+}
+
+ENTITIES = {"&mdash;": "—", "&ndash;": "–", "&amp;": "&", "&middot;": "·", "&nbsp;": " "}
+
+
+def _strip_tags(html):
+    """Plain text for meta tags and JSON-LD."""
+    text = re.sub(r"<[^>]+>", "", html or "")
+    for entity, char in ENTITIES.items():
+        text = text.replace(entity, char)
+    return text.strip()
+
+
+def _service_schema(c, service, page_path, labels):
+    """JSON-LD for a service landing page: the Service itself, its place in
+    the site (BreadcrumbList) and its questions (FAQPage)."""
+    import json
+    from .content import SITE_URL
+    contact = c.s_default["contact"]
+    url = c.page_url(page_path)
+    area = [{"@type": "State", "name": "Puerto Rico"},
+            {"@type": "Country", "name": "United States"}]
+    graph = [
+        {
+            "@type": "Service",
+            "@id": url + "#service",
+            "name": _strip_tags(service["title"]),
+            "serviceType": _strip_tags(service["title"]),
+            "description": _strip_tags(service.get("seo_description") or service["summary"]),
+            "url": url,
+            "inLanguage": "es-PR" if c.lang == "es" else "en-US",
+            "areaServed": area,
+            "provider": {
+                "@type": "ProfessionalService",
+                "@id": SITE_URL + "/#business",
+                "name": "Web Designer Puerto Rico",
+                "url": SITE_URL + "/",
+                "image": SITE_URL + "/images/logo/og-image.jpg",
+                "telephone": contact["phone_href"].replace("tel:", ""),
+                "email": contact["email"],
+                "address": {"@type": "PostalAddress", "addressLocality": "San Juan",
+                            "addressRegion": "PR", "addressCountry": "US"},
+                "areaServed": area,
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": _strip_tags(labels["included"]),
+                "itemListElement": [
+                    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": _strip_tags(t)}}
+                    for t in texts(service.get("deliverables"))],
+            },
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": _strip_tags(c.ui["breadcrumb_home"]),
+                 "item": c.page_url("index.html")},
+                {"@type": "ListItem", "position": 2, "name": _strip_tags(labels["services_crumb"]),
+                 "item": c.page_url("services.html")},
+                {"@type": "ListItem", "position": 3, "name": _strip_tags(service["title"]),
+                 "item": url},
+            ],
+        },
+    ]
+    if service.get("faq"):
+        graph.append({
+            "@type": "FAQPage",
+            "mainEntity": [{"@type": "Question", "name": _strip_tags(q["question"]),
+                            "acceptedAnswer": {"@type": "Answer", "text": _strip_tags(q["answer"])}}
+                           for q in service["faq"]],
+        })
+    data = json.dumps({"@context": "https://schema.org", "@graph": graph},
+                      ensure_ascii=False, indent=1).replace("</", "<\\/")
+    return '  <script type="application/ld+json">\n' + data + "\n  </script>"
+
+
+def _service_faq(sid, faq):
+    return "".join(f"""          <div class="faq-item" data-accordion-item>
+            <h3>
+              <button class="faq-item__q" type="button" data-accordion-trigger aria-expanded="false" aria-controls="faq-{sid}-{n}">
+                {q['question']}
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-item__a" id="faq-{sid}-{n}"><div><p>{q['answer']}</p></div></div>
+          </div>""" for n, q in enumerate(faq))
+
+
 def build_service_pages(c):
-    """Build individual service detail pages for each service."""
-    doc = load("services")
-    services = doc[c.lang].get("items", [])
-    
-    for service in services:
-        service_id = service.get("id", "")
-        if not service_id:
-            continue
-        
-        out = [head(c, "services.html", title=service.get("title")), 
-               chrome(c), 
-               header(c, "services.html")]
-        out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
-        
-        # Page header with service title
-        out.append(page_header(c, 
-            doc[c.lang]['crumb'], 
-            service['title'], 
-            service['summary']))
-        
-        # Service details section
-        out.append(f"""
-    <!-- ============ SERVICE DETAIL ============ -->
-    <section class="section">
-      <div class="container container--narrow">
-        <div class="prose u-mb-lg">
-          {service['body']}
-        </div>
-        
-        <div>
-          <p class="label u-mb-lg">{doc[c.lang]['included']}</p>
-          <ul class="service-row__deliverables">
-            {"".join(f"<li>{item['text']}</li>" for item in service['deliverables'])}
-          </ul>
-        </div>
-        
-        <div class="u-mt-lg">
-          <a class="btn btn--primary" href="{c.link('contact.html')}"><span>{doc[c.lang]['enquire']} {ARROW}</span></a>
+    """One SEO landing page per service, at services/<id>.html.
+
+    Rendered one folder below the language root, so everything happens
+    inside `at_depth(1)` — that is what makes the stylesheet, scripts and nav
+    links resolve. All copy comes from content/services.json; the SEO fields
+    (seo_title, intro, benefits, process, faq…) sit on each service item and
+    every section is skipped cleanly if its field is empty.
+    """
+    d = load("services")[c.lang]
+    labels = {**SERVICE_PAGE_DEFAULTS[c.lang], **(d.get("detail_page") or {})}
+    services = [x for x in d.get("items", []) if x.get("id")]
+    contact = c.s_default["contact"]
+
+    for i, service in enumerate(services):
+        sid = service["id"]
+        page_path = f"services/{sid}.html"
+        title_plain = _strip_tags(service["title"])
+        num = iter(f"{n:02d}" for n in range(1, 10))
+
+        with c.at_depth(1):
+            out = [head(c, page_path,
+                        title=service.get("seo_title") or f"{title_plain} | Web Designer PR",
+                        description=service.get("seo_description") or _strip_tags(service["summary"]),
+                        keywords=service.get("seo_keywords", ""),
+                        extra=_service_schema(c, service, page_path, labels)),
+                   chrome(c),
+                   header(c, page_path)]
+            out.append('  <main class="site-main" id="main">\n    <span id="top"></span>\n')
+
+            # --- hero -----------------------------------------------------
+            out.append(f"""
+  <!-- ============ SERVICE HERO ============ -->
+  <header class="page-header service-hero">
+    <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="{'Ruta' if c.lang == 'es' else 'Breadcrumb'}">
+        <a class="link-underline" href="{c.link('index.html')}">{c.ui['breadcrumb_home']}</a>
+        <span aria-hidden="true">/</span>
+        <a class="link-underline" href="{c.link('services.html')}">{labels['services_crumb']}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{service['title']}</span>
+      </nav>
+      <p class="label service-hero__kicker">{svc_icon(sid, 'service-hero__icon')} {service['index']} &middot; {service['title']}</p>
+      <h1 class="display-2 page-header__title service-hero__title" data-split="words">{service.get('h1') or service['title']}</h1>
+      <div class="page-header__grid">
+        <p class="lead" style="max-width:48ch" data-reveal="up">{service['summary']}</p>
+        <div class="service-hero__actions" data-reveal="up" data-delay="0.1">
+          <a class="btn btn--primary btn--lg" href="{c.link('contact.html')}" data-magnetic="0.3"><span>{labels['quote']} {ARROW}</span></a>
+          <a class="btn btn--ghost btn--lg" href="{contact['phone_href']}" data-magnetic="0.3"><span>{labels['call']} {contact['phone_display']}</span></a>
         </div>
       </div>
-    </section>
+    </div>
+  </header>
+""")
 
-    <!-- ============ RELATED SERVICES ============ -->
-    <section class="section">
+            # --- overview + what's included -------------------------------
+            intro = texts(service.get("intro")) + [service["body"]]
+            deliverables = "".join(f"<li>{t}</li>" for t in texts(service.get("deliverables")))
+            out.append(f"""
+    <!-- ============ OVERVIEW ============ -->
+    <section class="section section--flush-top">
       <div class="container">
-        <h2 class="display-3 u-mb-lg">{c.ui.get('related_services', 'Other Services')}</h2>
-        <div class="card-grid">
-          {"".join(f'''          <article class="card">
-            <span class="index-num">{s['index']}</span>
-            <div>
-              <h3 class="card__title">{s['title']}</h3>
-              <p class="card__text u-mt-sm">{s['summary']}</p>
-            </div>
-            <a class="link-arrow" href="{c.link(f'services/{s["id"]}.html')}">{c.ui.get('learn_more', 'Learn more')} {ARROW_R}</a>
-          </article>''' for s in services if s.get('id') != service_id)}
+        <div class="service-overview">
+          <div class="prose service-overview__body" data-reveal="up">
+            <p class="label u-mb-lg">{next(num)} &middot; {labels['overview']}</p>
+            {"".join(f"<p>{p}</p>" for p in intro)}
+          </div>
+          <aside class="service-overview__aside" data-reveal="up" data-delay="0.1">
+            <h2 class="label u-mb-lg">{labels['included']}</h2>
+            <ul class="service-row__deliverables">{deliverables}</ul>
+            <p class="u-mt-lg"><a class="link-arrow" href="{c.link('contact.html')}">{d['enquire']} {ARROW_R}</a></p>
+          </aside>
         </div>
       </div>
     </section>
 """)
-        
-        out.append(cta(c, doc[c.lang]['cta']))
-        out.append("  </main>\n")
-        out.append(footer(c))
-        out.append(scripts(c))
-        c.write(f"services/{service_id}.html", "".join(out))
+
+            # --- benefits -------------------------------------------------
+            if service.get("benefits"):
+                cards = "\n".join(f"""          <article class="card">
+            <span class="index-num">{n:02d}</span>
+            <div>
+              <h3 class="card__title">{b['title']}</h3>
+              <p class="card__text u-mt-sm">{b['text']}</p>
+            </div>
+          </article>""" for n, b in enumerate(service["benefits"], 1))
+                out.append(f"""
+    <!-- ============ BENEFITS ============ -->
+    <section class="section">
+      <div class="container">
+{section_head(next(num), labels['benefits'], service.get('benefits_title', ''))}
+        <div class="card-grid card-grid--2" data-stagger="0.1">
+{cards}
+        </div>
+      </div>
+    </section>
+""")
+
+            # --- process --------------------------------------------------
+            if service.get("process"):
+                steps = _value_list([{"index": f"{n:02d}", **p}
+                                     for n, p in enumerate(service["process"], 1)])
+                out.append(f"""
+    <!-- ============ PROCESS ============ -->
+    <section class="section">
+      <div class="container container--narrow">
+{section_head(next(num), labels['process'], service.get('process_title', ''))}
+        <ol class="value-list" role="list">
+{steps}
+        </ol>
+      </div>
+    </section>
+""")
+
+            # --- who it's for ---------------------------------------------
+            if service.get("ideal_for"):
+                ideal = "".join(f"<li>{t}</li>" for t in texts(service["ideal_for"]))
+                out.append(f"""
+    <!-- ============ WHO IT'S FOR ============ -->
+    <section class="section">
+      <div class="container">
+{section_head(next(num), labels['ideal'], service.get('ideal_title', ''))}
+        <ul class="service-ideal" role="list" data-stagger="0.06">{ideal}</ul>
+      </div>
+    </section>
+""")
+
+            # --- FAQ ------------------------------------------------------
+            if service.get("faq"):
+                out.append(f"""
+    <!-- ============ FAQ ============ -->
+    <section class="section">
+      <div class="container container--narrow">
+{section_head(next(num), labels['faq'], labels['faq_title'])}
+        <div data-accordion>
+{_service_faq(sid, service['faq'])}
+        </div>
+      </div>
+    </section>
+""")
+
+            # --- related: the next three services, wrapping around --------
+            related = [services[(i + k) % len(services)] for k in range(1, min(4, len(services)))]
+            cards = "\n".join(f"""          <article class="card">
+            {svc_icon(s['id'], 'card__icon')}
+            <div>
+              <h3 class="card__title">{s['title']}</h3>
+              <p class="card__text u-mt-sm">{s.get('menu_blurb') or s['summary']}</p>
+            </div>
+            <a class="link-arrow" href="{c.link('services/' + s['id'] + '.html')}">{labels['learn_more']}<span class="visually-hidden">: {s['title']}</span> {ARROW_R}</a>
+          </article>""" for s in related)
+            all_link = (f'<p class="u-mt-md"><a class="link-arrow" href="{c.link("services.html")}">'
+                        f'{labels["all"]} {ARROW_R}</a></p>')
+            out.append(f"""
+    <!-- ============ RELATED ============ -->
+    <section class="section">
+      <div class="container">
+{section_head(next(num), labels['related'], labels['related_title'], extra=all_link)}
+        <div class="card-grid" data-stagger="0.1">
+{cards}
+        </div>
+      </div>
+    </section>
+""")
+
+            out.append(cta(c, d["cta"], secondary=("services.html", labels["all"])))
+            out.append("  </main>\n")
+            out.append(footer(c))
+            out.append(scripts(c))
+            c.write(page_path, "".join(out))
 
 
 BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact, build_articles, build_service_pages]

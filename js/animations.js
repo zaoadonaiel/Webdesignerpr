@@ -185,7 +185,10 @@
   function playIntro() {
     var tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
-    toIf(tl, ".site-header__inner > *", { y: 0, opacity: 1, duration: 1, stagger: 0.1 });
+    // clearProps: a leftover transform would make .nav the containing block
+    // for the services mega menu, shrinking the panel to the nav's width.
+    toIf(tl, ".site-header__inner > *",
+         { y: 0, opacity: 1, duration: 1, stagger: 0.1, clearProps: "transform" });
     toIf(tl, ".hero__title .line > span",
          { yPercent: 0, duration: 1.25, stagger: 0.09, ease: "expo.out" }, 0.1);
     toIf(tl, ".hero [data-hero-fade]",

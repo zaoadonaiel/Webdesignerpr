@@ -75,20 +75,25 @@ def write_404():
 
 def write_sitemap():
     """A sitemap listing both languages, with hreflang alternates."""
-    from generator.content import SITE_URL, DEFAULT_LANG
+    from generator.content import LANGS, load, page_url
 
     today = time.strftime("%Y-%m-%d")
+    pages = list(PAGES)
+    # One landing page per service — the pages the mega menu links to
+    services = load("services")
+    pages += [f"services/{x['id']}.html"
+              for x in services.get("es", {}).get("items", []) if x.get("id")]
+
     urls = []
-    for page in PAGES:
-        leaf = "" if page == "index.html" else page
+    for page in pages:
         alts = "".join(
-            f'\n    <xhtml:link rel="alternate" hreflang="{l}" '
-            f'href="{SITE_URL}{"/" if l == DEFAULT_LANG else "/" + l + "/"}{leaf}"/>'
+            f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{page_url(page, l)}"/>'
             for l in LANGS)
+        alts += (f'\n    <xhtml:link rel="alternate" hreflang="x-default" '
+                 f'href="{page_url(page, LANGS[0])}"/>')
         for lang in LANGS:
-            loc = f'{SITE_URL}{"/" if lang == DEFAULT_LANG else "/" + lang + "/"}{leaf}'
             urls.append(
-                f'  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>'
+                f'  <url>\n    <loc>{page_url(page, lang)}</loc>\n    <lastmod>{today}</lastmod>'
                 f'{alts}\n  </url>')
 
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'

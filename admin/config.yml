@@ -321,8 +321,8 @@ collections:
             i18n: true
             summary: "{{fields.index}} — {{fields.title}}"
             hint: >-
-              The ID becomes the anchor link (services.html#website-design) and
-              picks the icon. Keep existing IDs unless you also update the
+              The ID becomes the landing page URL (services/website-design.html),
+              the anchor on the services page, and picks the icon. Keep existing IDs unless you also update the
               footer links on Settings.
             fields:
               - { name: id, label: ID / anchor, widget: string, i18n: duplicate,
@@ -337,6 +337,78 @@ collections:
                 i18n: true
                 fields:
                   - { name: text, label: Item, widget: string, i18n: true }
+
+              # ---- Landing page at services/<id>.html -----------------------
+              - { name: seo_title, label: "SEO — page title (≤ 60 characters)", widget: string, i18n: true, required: false }
+              - { name: seo_description, label: "SEO — meta description (140–160 characters)", widget: text, i18n: true, required: false }
+              - { name: seo_keywords, label: "SEO — keywords (comma-separated)", widget: string, i18n: true, required: false }
+              - { name: h1, label: "Landing page — main heading (H1)", widget: string, i18n: true, required: false }
+              - { name: menu_blurb, label: "Mega menu — one-line description", widget: string, i18n: true, required: false }
+              - name: intro
+                label: "Landing page — intro paragraphs"
+                widget: list
+                i18n: true
+                required: false
+                fields:
+                  - { name: text, label: Paragraph, widget: text, i18n: true }
+              - { name: benefits_title, label: "Landing page — benefits heading", widget: string, i18n: true, required: false }
+              - name: benefits
+                label: "Landing page — benefits"
+                widget: list
+                i18n: true
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+              - { name: process_title, label: "Landing page — process heading", widget: string, i18n: true, required: false }
+              - name: process
+                label: "Landing page — process steps"
+                widget: list
+                i18n: true
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+              - { name: ideal_title, label: "Landing page — who it's for heading", widget: string, i18n: true, required: false }
+              - name: ideal_for
+                label: "Landing page — who it's for"
+                widget: list
+                i18n: true
+                required: false
+                fields:
+                  - { name: text, label: Item, widget: string, i18n: true }
+              - name: faq
+                label: "Landing page — FAQ"
+                widget: list
+                i18n: true
+                required: false
+                summary: "{{fields.question}}"
+                fields:
+                  - { name: question, label: Question, widget: string, i18n: true }
+                  - { name: answer, label: Answer, widget: text, i18n: true }
+
+          - name: detail_page
+            label: Service landing page labels
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: services_crumb, label: "Breadcrumb — services", widget: string, i18n: true }
+              - { name: learn_more, label: "Link — view service", widget: string, i18n: true }
+              - { name: overview, label: "Section — overview", widget: string, i18n: true }
+              - { name: included, label: "Section — what's included", widget: string, i18n: true }
+              - { name: benefits, label: "Section — benefits", widget: string, i18n: true }
+              - { name: process, label: "Section — process", widget: string, i18n: true }
+              - { name: ideal, label: "Section — who it's for", widget: string, i18n: true }
+              - { name: faq, label: "Section — FAQ", widget: string, i18n: true }
+              - { name: faq_title, label: "FAQ heading", widget: string, i18n: true }
+              - { name: related, label: "Section — related", widget: string, i18n: true }
+              - { name: related_title, label: "Related heading", widget: string, i18n: true }
+              - { name: quote, label: "Button — request a quote", widget: string, i18n: true }
+              - { name: call, label: "Button — call", widget: string, i18n: true }
+              - { name: all, label: "Link — all services", widget: string, i18n: true }
 
           - name: engagements
             label: Engagement models

@@ -2,7 +2,7 @@
 """Shared chrome — head, header, drawer, CTA, footer — rendered per language."""
 import os
 from contextlib import contextmanager
-from .content import SITE_URL, DEFAULT_LANG, load
+from .content import SITE_URL, DEFAULT_LANG, load, page_url as _page_url
 
 ARROW = ('<svg class="btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" '
          'stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5"/></svg>')
@@ -16,6 +16,25 @@ STAR = ('<svg class="marquee__star" viewBox="0 0 24 24" fill="currentColor" aria
 MARK_PATH = ('<path d="M16 0c.9 6.6 2.6 10.9 5.3 13.1C23.6 15 27.4 15.9 32 16c-4.6.1-8.4 1-10.7 '
              '2.9C18.6 21.1 16.9 25.4 16 32c-.9-6.6-2.6-10.9-5.3-13.1C8.4 17 4.6 16.1 0 16c4.6-.1 '
              '8.4-1 10.7-2.9C13.4 10.9 15.1 6.6 16 0Z" fill="currentColor"/>')
+
+
+# Hand-drawn inline icons, keyed by the service id used in content/services.json
+SVC_ICONS = {
+ "website-design": '<path d="M3 5h28v22H3z"/><path d="M3 11h28M8 8h.01M11 8h.01M14 8h.01"/>',
+ "website-development": '<path d="M11 22 4 15l7-7M23 10l7 7-7 7M19 6l-4 22"/>',
+ "wordpress": '<circle cx="17" cy="17" r="13"/><path d="M5 12h9M9 12l5 14 4-11M22 12h5l-4 14-3-9"/>',
+ "ecommerce": '<path d="M4 6h4l3 15h15l3-11H10"/><circle cx="13" cy="27" r="2"/><circle cx="25" cy="27" r="2"/>',
+ "ui-ux": '<circle cx="11" cy="11" r="7"/><rect x="18" y="18" width="12" height="12" rx="2"/><path d="M18 11h12"/>',
+ "redesign": '<path d="M29 17a12 12 0 1 1-3.5-8.5M29 4v6h-6"/>',
+ "performance": '<path d="M17 29a12 12 0 1 1 12-12"/><path d="M17 17l8-6"/><circle cx="17" cy="17" r="2"/>',
+}
+FALLBACK_ICON = '<circle cx="17" cy="17" r="13"/><path d="M17 11v12M11 17h12"/>'
+
+
+def svc_icon(sid, cls="svc-icon"):
+    return (f'<svg class="{cls}" viewBox="0 0 34 34" fill="none" stroke="currentColor" '
+            f'stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+            f'{SVC_ICONS.get(sid, FALLBACK_ICON)}</svg>')
 
 
 class Ctx:
@@ -85,9 +104,7 @@ class Ctx:
         return self.here + page.lstrip("/")
 
     def page_url(self, page, lang=None):
-        lang = lang or self.lang
-        leaf = "" if page == "index.html" else page
-        return SITE_URL + ("/" if lang == DEFAULT_LANG else "/" + lang + "/") + leaf
+        return _page_url(page, lang or self.lang)
 
     def other_href(self, page):
         """The same page in the other language, relative to where we are."""
@@ -115,7 +132,7 @@ META_KEY = {"index.html": "home", "about.html": "about", "services.html": "servi
             "portfolio.html": "portfolio", "deals.html": "deals", "contact.html": "contact", "articles.html": "articles"}
 
 
-def head(c, page, title=None, description=None, keywords=None):
+def head(c, page, title=None, description=None, keywords=None, extra="", og_type="website"):
     if title is None or description is None:
         # Use meta from settings.json
         meta = c.s["meta"][META_KEY[page]]
@@ -147,7 +164,7 @@ def head(c, page, title=None, description=None, keywords=None):
   <meta name="theme-color" content="#08090b" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / social -->
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{og_type}">
   <meta property="og:site_name" content="Web Designer Puerto Rico">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
@@ -182,6 +199,7 @@ def head(c, page, title=None, description=None, keywords=None):
 document.documentElement.setAttribute("data-theme","dark")}}catch(e){{}}
 document.documentElement.classList.add("js-ready")}})();</script>
   <noscript><style>.loader{{display:none!important}}.js-ready [data-reveal]{{opacity:1!important;transform:none!important}}</style></noscript>
+{extra}
   <script src="https://app.zaochat.com/widget/widget.js?v=1788014309" data-client-code="130aa379-9729-46f6-879e-55871e187ca4" async></script>
 </head>
 <body>
@@ -259,15 +277,79 @@ def lang_switch(c, page, other_page=None):
         </div>"""
 
 
+CHEVRON = ('<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" '
+           'aria-hidden="true"><path d="M3 4.5 6 7.5l3-3"/></svg>')
+
+MEGA_COPY = {
+    "es": {"label": "Servicios", "toggle": "Mostrar servicios",
+           "aside_label": "¿No sabes por dónde empezar?",
+           "aside_title": "Una llamada de 30 minutos y te decimos qué necesitas &mdash; <em>y qué no</em>.",
+           "all": "Ver todos los servicios", "call": "Agendar llamada"},
+    "en": {"label": "Services", "toggle": "Show services",
+           "aside_label": "Not sure where to start?",
+           "aside_title": "One 30-minute call and we will tell you what you need &mdash; <em>and what you don't</em>.",
+           "all": "All services", "call": "Book a call"},
+}
+
+
+def _services_menu(c):
+    """Service id, title and one-line blurb, in menu order."""
+    items = load("services")[c.lang].get("items", [])
+    return [(x["id"], x["title"], x.get("menu_blurb") or x.get("summary", ""))
+            for x in items if x.get("id")]
+
+
+def mega_menu(c, n):
+    """The Services nav item: a real link to services.html plus a disclosure
+    button that opens a panel of every service landing page. The link stays a
+    link so the index page is one click away and crawlable either way."""
+    m = MEGA_COPY[c.lang]
+    items = "\n".join(f"""              <li><a class="mega__item" href="{c.link(f'services/{sid}.html')}" data-nav-link>
+                {svc_icon(sid, 'mega__icon')}
+                <span class="mega__text"><span class="mega__title">{title}</span><span class="mega__desc">{blurb}</span></span>
+              </a></li>""" for sid, title, blurb in _services_menu(c))
+    contact = c.s_default["contact"]
+    return f"""          <div class="nav__item nav__item--mega" data-mega>
+            <a class="nav__link" data-nav-link data-nav-section="services" href="{c.link(n['href'])}">{n['label']}</a>
+            <button class="nav__caret" type="button" aria-expanded="false" aria-controls="mega-services"
+                    aria-label="{m['toggle']}" data-mega-toggle>{CHEVRON}</button>
+            <div class="mega" id="mega-services" data-mega-panel>
+              <div class="mega__inner">
+                <ul class="mega__grid" role="list">
+{items}
+                </ul>
+                <div class="mega__aside">
+                  <p class="label label--plain">{m['aside_label']}</p>
+                  <p class="mega__aside-title">{m['aside_title']}</p>
+                  <div class="mega__aside-actions">
+                    <a class="btn btn--primary" href="{c.link('contact.html')}"><span>{m['call']} {ARROW}</span></a>
+                    <a class="link-arrow" href="{c.link(n['href'])}">{m['all']} {ARROW_R}</a>
+                  </div>
+                  <a class="mega__phone" href="{contact['phone_href']}">{contact['phone_display']}</a>
+                </div>
+              </div>
+            </div>
+          </div>"""
+
+
 def header(c, page, other_page=None):
     s = c.s
     links = "\n".join(
+        mega_menu(c, n) if n["href"] == "services.html" else
         f'          <a class="nav__link" data-nav-link href="{c.link(n["href"])}">{n["label"]}</a>'
         for n in s["nav"])
+
+    def drawer_sub(n):
+        if n["href"] != "services.html":
+            return ""
+        return ('\n        <ul class="mobile-menu__sub" role="list">' + "".join(
+            f'\n          <li><a data-nav-link href="{c.link(f"services/{sid}.html")}">{title}</a></li>'
+            for sid, title, _ in _services_menu(c)) + "\n        </ul>")
+
     drawer_items = "\n".join(f"""      <div class="mobile-menu__item">
         <a class="mobile-menu__link" data-nav-link href="{c.link(n['href'])}">
           <span class="index-num">{n['index']}</span> {n['label']}
-        </a>
+        </a>{drawer_sub(n)}
       </div>""" for n in s["nav"])
 
     return f"""
@@ -399,7 +481,7 @@ def footer(c):
     s, f = c.s, c.s["footer"]
     contact = c.s_default["contact"]
     svc = "\n          ".join(
-        f'<a class="link-underline" href="{c.link("services.html")}#{x["anchor"]}">{x["label"]}</a>'
+        f'<a class="link-underline" href="{c.link("services/" + x["anchor"] + ".html")}">{x["label"]}</a>'
         for x in f["service_links"])
     pages = "\n          ".join(
         f'<a class="link-underline" href="{c.link(n["href"])}">{n["label"]}</a>' for n in s["nav"])
