@@ -261,3 +261,12 @@
   .article-card:last-child { border-bottom: none; }
   .article-card__link { padding: var(--space-md); }
 }
+
+/* --------------------------------------------------------------------------
+   1440px+ — DESKTOP: Show hero widget
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 1025px) {
+  .hero__content { grid-template-columns: 1fr auto; }
+  .hero__right { display: flex !important; min-width: 420px; margin-top: 0; }
+}
