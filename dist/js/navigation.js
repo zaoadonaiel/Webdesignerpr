@@ -140,7 +140,7 @@
     });
 
     // Leaving the mobile breakpoint mid-session shouldn't strand a locked body
-    var mq = window.matchMedia("(min-width: 769px)");
+    var mq = window.matchMedia("(min-width: 1101px)");  // matches the drawer breakpoint in style.css
     var onChange = function (e) {
       if (e.matches && menu.classList.contains("is-open")) setMenu(false);
     };

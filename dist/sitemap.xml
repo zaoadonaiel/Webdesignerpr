@@ -100,6 +100,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/articles"/>
   </url>
   <url>
+    <loc>https://webdesignerpr.com/industries</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries"/>
+  </url>
+  <url>
     <loc>https://webdesignerpr.com/services/website-design</loc>
     <lastmod>2026-09-27</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/services/website-design"/>
@@ -196,5 +210,117 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/services/performance"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/services/performance"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/services/performance"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/industries/restaurants</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/restaurants"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/restaurants"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/restaurants"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries/restaurants</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/restaurants"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/restaurants"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/restaurants"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/industries/healthcare</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/healthcare"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/healthcare"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/healthcare"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries/healthcare</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/healthcare"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/healthcare"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/healthcare"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/industries/law-firms</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/law-firms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/law-firms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/law-firms"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries/law-firms</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/law-firms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/law-firms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/law-firms"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/industries/real-estate</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/real-estate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/real-estate"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/real-estate"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries/real-estate</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/real-estate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/real-estate"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/real-estate"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/industries/tourism</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/tourism"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/tourism"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/tourism"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries/tourism</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/tourism"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/tourism"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/tourism"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/industries/contractors</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/contractors"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/contractors"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/contractors"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries/contractors</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/contractors"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/contractors"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/contractors"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/industries/retail</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/retail"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/retail"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/retail"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries/retail</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/retail"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/retail"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/retail"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/industries/beauty-wellness</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/beauty-wellness"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/beauty-wellness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/beauty-wellness"/>
+  </url>
+  <url>
+    <loc>https://webdesignerpr.com/en/industries/beauty-wellness</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://webdesignerpr.com/industries/beauty-wellness"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webdesignerpr.com/en/industries/beauty-wellness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webdesignerpr.com/industries/beauty-wellness"/>
   </url>
 </urlset>

@@ -1,0 +1,1830 @@
+{
+  "es": {
+    "crumb": "Industrias",
+    "seo_title": "Diseño Web por Industria en Puerto Rico | Web Designer PR",
+    "seo_description": "Diseño web para restaurantes, clínicas, abogados, bienes raíces, turismo, contratistas, tiendas y salones en Puerto Rico. Pide tu cotización hoy.",
+    "seo_keywords": "diseño web por industria, páginas web para negocios puerto rico, diseño web para restaurantes, diseño web para médicos, diseño web para abogados, diseño web bienes raíces puerto rico",
+    "title": "Sitios web hechos para <em class=\"italic accent-text\">tu tipo de negocio</em>.",
+    "lead": "Un restaurante y un bufete no necesitan el mismo sitio. Conocemos lo que cada industria en Puerto Rico necesita de su web &mdash; y lo construimos desde el primer boceto.",
+    "meta_a": "Ocho industrias, un mismo estándar",
+    "meta_b": "Código a la medida, bilingüe, rápido en el celular y tuyo al terminar &mdash; sin importar a qué te dediques.",
+    "approach": {
+      "eyebrow": "Nuestro enfoque",
+      "title": "Lo que cambia por industria <em class=\"italic\">y lo que no</em>.",
+      "items": [
+        {
+          "title": "Empezamos por cómo te buscan",
+          "text": "Un paciente, un turista y un cliente de un bufete buscan distinto. Antes de diseñar, revisamos qué escribe tu cliente en Google y qué necesita ver para decidir."
+        },
+        {
+          "title": "La acción principal va primero",
+          "text": "Reservar, llamar, pedir cita, cotizar o comprar. Cada industria tiene una acción que importa más, y el sitio entero está diseñado para llevar a ella."
+        },
+        {
+          "title": "Bilingüe y pensado para el celular",
+          "text": "En Puerto Rico tu cliente puede llegar en español o en inglés, casi siempre desde el teléfono. Diseñamos para los dos idiomas y para datos móviles desde el inicio."
+        },
+        {
+          "title": "El mismo estándar técnico",
+          "text": "Sin importar la industria: código a la medida o WordPress sin constructores, accesible, rápido y con precio fijo. Lo que cambia es el contenido, no la calidad."
+        }
+      ]
+    },
+    "cta": {
+      "title": "¿Tu industria no aparece? <em>Igual podemos ayudarte</em>.",
+      "body": "Una llamada sin costo para entender tu negocio. Saldrás sabiendo qué necesita tu sitio, cuánto cuesta y cuánto toma &mdash; nos contrates o no.",
+      "secondary": "Ver servicios"
+    },
+    "detail_page": {
+      "crumb": "Industrias",
+      "kicker": "Diseño web para",
+      "view": "Ver industria",
+      "overview": "Resumen",
+      "must_haves": "Lo que tu sitio necesita",
+      "challenges": "El problema",
+      "features": "Lo que construimos",
+      "services": "Servicios recomendados",
+      "services_title": "Los servicios que <em class=\"italic\">más usan</em> negocios como el tuyo.",
+      "faq": "Preguntas frecuentes",
+      "faq_title": "Lo que nos preguntan <em class=\"italic\">en tu industria</em>.",
+      "others": "Otras industrias",
+      "others_title": "También trabajamos <em class=\"italic\">con</em>&hellip;",
+      "quote": "Solicitar cotización",
+      "call": "Llamar",
+      "all": "Ver todas las industrias",
+      "service_link": "Ver servicio"
+    },
+    "items": [
+      {
+        "id": "restaurants",
+        "index": "01",
+        "title": "Restaurantes",
+        "menu_blurb": "Menú, reservas y pedidos, rápidos en el celular",
+        "summary": "Sitios web para restaurantes, cafés, barras y food trucks en Puerto Rico: menú legible en el celular, reservas y pedidos a un toque, y el horario siempre al día.",
+        "seo_title": "Diseño Web de Restaurantes en Puerto Rico | Web Designer PR",
+        "seo_description": "Diseño web para restaurantes en Puerto Rico: menú en texto, reservas, pedidos y Google al día. Precio fijo y el sitio es tuyo. Agenda tu llamada gratis.",
+        "seo_keywords": "diseño web para restaurantes, página web para restaurante puerto rico, menú digital para restaurante, página web para cafetería, página web para food truck, reservaciones en línea restaurante, diseño web restaurantes san juan, pedidos en línea restaurante",
+        "h1": "Diseño web para restaurantes en Puerto Rico, <em class=\"italic accent-text\">con el menú a un toque</em>",
+        "intro": [
+          {
+            "text": "El diseño web para restaurantes en Puerto Rico tiene un trabajo concreto: que alguien con hambre encuentre tu menú, tu horario y cómo llegar antes de decidirse por otro sitio. Casi todo ese tráfico llega desde el celular, muchas veces desde Google Maps o Instagram y con datos móviles. Por eso empezamos por lo que la gente busca de verdad, antes de pensar en fotos grandes o animaciones."
+          },
+          {
+            "text": "Tu menú va en texto real, no en un PDF ni en una foto de la pizarra, para que se lea en cualquier pantalla, Google lo pueda leer y tú lo puedas cambiar en minutos cuando suba un precio o se acabe un plato. Conectamos el botón de reservas o de pedidos con la plataforma que ya usas y mantenemos tu dirección, horario y teléfono iguales a los de tu perfil de Google Business."
+          },
+          {
+            "text": "Trabajamos con restaurantes, cafés, barras y food trucks desde el Viejo San Juan y Condado hasta Dorado, Caguas, Ponce o Rincón. Si tu clientela mezcla turistas y gente de la zona, el sitio sale en español e inglés desde el primer boceto. El alcance y el precio se fijan después de una llamada gratis, los pagos van por etapas y todo lo que construimos es tuyo."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Menú en texto, fácil de actualizar"
+          },
+          {
+            "text": "Botón de reservas o pedidos visible en móvil"
+          },
+          {
+            "text": "Horario, dirección y teléfono a un toque"
+          },
+          {
+            "text": "Datos iguales a tu perfil de Google Business"
+          },
+          {
+            "text": "Versión en español e inglés para turistas"
+          },
+          {
+            "text": "Fotos optimizadas que no frenan la carga"
+          }
+        ],
+        "challenges_title": "Por qué tantas páginas de restaurantes pierden clientes en el celular",
+        "challenges": [
+          {
+            "title": "El menú en PDF",
+            "text": "Un PDF abre lento, obliga a hacer zoom y a los buscadores les cuesta leerlo. Cada vez que cambias un precio hay que diseñarlo y subirlo otra vez, así que termina desactualizado y el cliente llega esperando algo que ya no sirves."
+          },
+          {
+            "title": "Horarios que no coinciden",
+            "text": "El sitio dice una hora, Google otra y Facebook una tercera. Después de un feriado o un cambio de temporada nadie actualizó todo. El cliente que llega y encuentra el local cerrado deja de confiar en lo que publicas."
+          },
+          {
+            "title": "Reservas y pedidos escondidos",
+            "text": "Si reservar o pedir obliga a buscar un enlace al final de la página o a llamar en hora pico, mucha gente desiste. El próximo paso tiene que estar visible en la primera pantalla del celular, sin ventanas emergentes de por medio."
+          },
+          {
+            "title": "Fotos pesadas, sitio lento",
+            "text": "Las fotos de comida venden, pero subidas tal cual salen de la cámara pueden pesar varios megas cada una. Con datos móviles en la calle, el sitio tarda y el cliente cierra la pestaña antes de ver un solo plato."
+          }
+        ],
+        "features_title": "Qué incluye una página web para restaurante hecha con nosotros",
+        "features": [
+          {
+            "title": "Un menú que editas tú",
+            "text": "Construimos el menú como contenido estructurado, con secciones, precios, alérgenos y platos del día. Lo editas desde un panel sencillo, se ve bien en cualquier pantalla y los buscadores lo entienden como un menú de verdad."
+          },
+          {
+            "title": "Reservas y pedidos integrados",
+            "text": "Conectamos la herramienta que ya usas para reservas, pedidos para recoger o delivery, en vez de obligarte a cambiar de sistema. El botón queda fijo y visible en el celular, tanto en español como en inglés."
+          },
+          {
+            "title": "Búsqueda local bien hecha",
+            "text": "Marcamos tu dirección, horario, tipo de cocina y rango de precios con datos estructurados, y los alineamos con tu perfil de Google Business. Así quien busca dónde comer en Carolina, Guaynabo o Mayagüez encuentra la misma información en todas partes."
+          },
+          {
+            "title": "Buenas fotos, sitio liviano",
+            "text": "Tus fotos se sirven en formatos modernos y al tamaño exacto de cada pantalla. El sitio se mantiene liviano aunque tengas decenas de platos, para que cargue rápido incluso con la señal floja de la playa o del tapón."
+          }
+        ],
+        "services": [
+          "website-design",
+          "wordpress",
+          "performance"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto cuesta una página web para un restaurante en Puerto Rico?",
+            "answer": "Depende de cuántas páginas necesitas, si el sitio es bilingüe y qué integraciones lleva, como reservas o pedidos. Por eso no publicamos precios genéricos: hacemos una llamada gratis para entender el proyecto y luego te enviamos un precio fijo con el alcance por escrito. Los pagos van por etapas atadas a aprobaciones, nunca por hora."
+          },
+          {
+            "question": "¿Puedo cambiar el menú y los precios de mi restaurante yo mismo?",
+            "answer": "Sí. El menú se construye como contenido editable, no como imagen ni PDF, así que puedes cambiar un precio, marcar un plato como agotado o añadir el especial del día desde un panel sencillo. Te enseñamos a usarlo antes del lanzamiento, y durante los 30 días de monitoreo que siguen estamos pendientes por si surge alguna duda."
+          },
+          {
+            "question": "¿Pueden conectar la página web de mi restaurante con mi sistema de reservas o pedidos?",
+            "answer": "En la mayoría de los casos, sí. Muchas plataformas de reservas y pedidos ofrecen un enlace o un widget que podemos integrar en el sitio. En la llamada inicial revisamos qué usas hoy y cómo funciona su integración. Si todavía no usas ninguna, te explicamos las opciones generales, pero la decisión y el contrato con esa plataforma son tuyos."
+          },
+          {
+            "question": "¿Necesito que la página de mi restaurante esté también en inglés?",
+            "answer": "Si recibes turistas o estás en zonas como el Viejo San Juan, Condado, Isla Verde, Dorado o Rincón, casi seguro que sí. Nuestro equipo trabaja en español e inglés, y diseñamos el sitio para que ambas versiones quepan y se lean bien, con direcciones separadas para que cada idioma aparezca en las búsquedas correctas."
+          },
+          {
+            "question": "¿Cuánto tiempo toma hacer el sitio web de un restaurante?",
+            "answer": "Un proyecto típico toma unas ocho semanas desde la llamada inicial hasta el lanzamiento. Si incluye tienda en línea, por ejemplo para vender certificados de regalo o productos, o varios idiomas con mucho contenido, puede tomar de 10 a 12 semanas. Después del lanzamiento incluimos 30 días de monitoreo para corregir cualquier detalle."
+          }
+        ]
+      },
+      {
+        "id": "healthcare",
+        "index": "02",
+        "title": "Salud y clínicas",
+        "menu_blurb": "Citas, planes médicos y perfiles de doctores",
+        "summary": "Sitios web para oficinas médicas, clínicas, dentistas y terapeutas en Puerto Rico: solicitudes de cita claras, planes médicos aceptados a la vista y perfiles que generan confianza.",
+        "seo_title": "Diseño Web para Médicos en Puerto Rico | Web Designer PR",
+        "seo_description": "Diseño web para médicos, clínicas y dentistas en Puerto Rico: citas, planes médicos aceptados y perfiles claros. Precio fijo. Agenda tu llamada gratis.",
+        "seo_keywords": "diseño web para médicos, página web para clínica puerto rico, diseño web para dentistas, página web para consultorio médico, página web para psicólogos, citas en línea para clínicas, diseño web salud puerto rico, página web para terapeutas",
+        "h1": "Páginas web para médicos y clínicas en Puerto Rico, <em class=\"italic accent-text\">pensadas para el paciente</em>",
+        "intro": [
+          {
+            "text": "El diseño web para médicos en Puerto Rico empieza por una pregunta sencilla: qué necesita saber un paciente antes de llamar. Casi siempre es lo mismo: si aceptas su plan médico, dónde queda la oficina, qué horario tienes y cómo pedir una cita sin pasar media hora en espera. Si el sitio no contesta eso en la primera pantalla del celular, el paciente sigue buscando."
+          },
+          {
+            "text": "Organizamos tu práctica en páginas claras: servicios, doctores, planes aceptados, ubicaciones y un formulario para solicitar cita. Los formularios que recogen información de salud necesitan un proveedor que cumpla con HIPAA; el sitio se construye para integrarse con el que elijas, y los detalles se confirman con tu oficial de cumplimiento. Mientras tanto, un formulario básico puede pedir solo nombre, teléfono y horario preferido."
+          },
+          {
+            "text": "Trabajamos con consultorios, grupos médicos, dentistas, psicólogos y terapeutas en San Juan, Bayamón, Caguas, Ponce, Mayagüez y el resto de la isla. Muchos pacientes prefieren el español y otros llegan en inglés, así que el sitio puede salir bilingüe desde el principio. El precio se fija después de una llamada gratis, se paga por etapas, y el sitio, el dominio y el contenido son tuyos."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Solicitud de cita visible desde el celular"
+          },
+          {
+            "text": "Planes médicos aceptados, fáciles de actualizar"
+          },
+          {
+            "text": "Perfiles de doctores con especialidad y formación"
+          },
+          {
+            "text": "Formularios listos para un proveedor compatible con HIPAA"
+          },
+          {
+            "text": "Ubicaciones, horarios y teléfono a un toque"
+          },
+          {
+            "text": "Diseño accesible y legible para pacientes mayores"
+          }
+        ],
+        "challenges_title": "Los problemas más comunes en los sitios web de clínicas y consultorios",
+        "challenges": [
+          {
+            "title": "Planes médicos que nadie actualiza",
+            "text": "La lista de planes aceptados cambia y el sitio se queda atrás. El paciente llama para preguntar o, peor, llega a la cita y descubre que su plan ya no aplica. Es de la información más buscada y de la que menos se mantiene al día."
+          },
+          {
+            "title": "Formularios que piden demasiado",
+            "text": "Un formulario de contacto común que pregunta por síntomas o diagnósticos puede terminar enviando información de salud por correo sin protección. Antes de recoger ese tipo de datos hace falta un proveedor adecuado y la revisión de quien maneja el cumplimiento en tu práctica."
+          },
+          {
+            "title": "Difícil de usar para pacientes mayores",
+            "text": "Letra pequeña, poco contraste, botones diminutos y menús que se esconden. Muchos pacientes tienen la vista cansada o poca paciencia con la tecnología, y un sitio difícil de usar los manda directo al teléfono de la recepción."
+          },
+          {
+            "title": "Doctores sin cara",
+            "text": "Muchos sitios listan nombres y nada más. El paciente que escoge especialista quiere ver una foto, la formación, los idiomas que habla y qué tipo de casos atiende. Sin eso, la decisión depende de quién aparece primero en el directorio del plan."
+          }
+        ],
+        "features_title": "Qué construimos en una página web para clínicas y consultorios",
+        "features": [
+          {
+            "title": "Solicitudes de cita sin fricción",
+            "text": "Un botón de cita fijo en el celular que lleva a un formulario corto o a la herramienta de agenda que ya usas. Si el formulario va a recoger información de salud, lo conectamos con el proveedor compatible con HIPAA que tu práctica elija."
+          },
+          {
+            "title": "Planes y servicios que editas tú",
+            "text": "La lista de planes médicos aceptados, los servicios y los horarios viven en un panel sencillo. Cuando entra o sale un plan, lo cambias en un minuto y se actualiza en todas las páginas donde aparece."
+          },
+          {
+            "title": "Perfiles de doctores que dan confianza",
+            "text": "Cada doctor tiene su página con foto, especialidad, formación, idiomas y las ubicaciones donde atiende. Esas páginas también ayudan a que los pacientes encuentren al doctor por su nombre en Google, no solo a la clínica."
+          },
+          {
+            "title": "Accesible y legible por defecto",
+            "text": "Diseñamos con buen contraste, texto grande, navegación por teclado y etiquetas para lectores de pantalla, siguiendo las pautas WCAG. Qué requisitos de la ADA aplican a tu práctica lo confirma tu asesor legal; el sitio está construido para apoyarlos."
+          }
+        ],
+        "services": [
+          "website-design",
+          "ui-ux",
+          "website-development"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto cuesta una página web para una clínica o consultorio médico en Puerto Rico?",
+            "answer": "Depende del número de doctores, servicios y ubicaciones, de si el sitio es bilingüe y de las integraciones que lleve, como agenda o formularios seguros. No publicamos tarifas genéricas: hacemos una llamada gratis para entender tu práctica y luego te enviamos un precio fijo con el alcance por escrito. Los pagos van por etapas, nunca por hora."
+          },
+          {
+            "question": "¿El formulario de citas de la página web de mi clínica cumple con HIPAA?",
+            "answer": "Un formulario web por sí solo no hace que una práctica cumpla con HIPAA. Si va a recoger información de salud, tiene que enviarla a un proveedor que ofrezca las protecciones necesarias y que, por lo general, firme un acuerdo con tu práctica. El sitio se construye para integrarse con ese proveedor; la elección y los detalles los confirmas con tu oficial de cumplimiento."
+          },
+          {
+            "question": "¿Puedo actualizar yo mismo la lista de planes médicos que acepta mi oficina?",
+            "answer": "Sí. Los planes aceptados se manejan como una lista editable en el panel del sitio, así que tú o tu personal pueden añadir o quitar un plan sin llamarnos. El cambio se refleja en todas las páginas donde aparece la lista. Te enseñamos a hacerlo antes del lanzamiento y estamos pendientes durante los 30 días de monitoreo."
+          },
+          {
+            "question": "¿Pueden hacer la página web de mi consultorio en español e inglés?",
+            "answer": "Sí. Nuestro equipo trabaja en ambos idiomas y diseñamos el sitio bilingüe desde el primer boceto, con una versión completa en cada idioma y no una traducción automática. Ayuda si atiendes pacientes que se mudaron desde Estados Unidos, visitantes o familias en las que el paciente y quien lo acompaña prefieren idiomas distintos."
+          },
+          {
+            "question": "¿La página web de mi práctica puede aparecer en Google cuando buscan un doctor en mi pueblo?",
+            "answer": "Nadie puede garantizar posiciones en Google, pero sí podemos hacer bien la base. Creamos páginas para cada servicio, doctor y ubicación, marcamos tus datos con información estructurada y los alineamos con tu perfil de Google Business. Así, cuando alguien busque un dentista en Guaynabo o un pediatra en Carolina, tu práctica tiene lo necesario para competir."
+          }
+        ]
+      },
+      {
+        "id": "law-firms",
+        "index": "03",
+        "title": "Abogados y bufetes",
+        "menu_blurb": "Áreas de práctica, perfiles y consultas",
+        "summary": "Sitios web para abogados y bufetes en Puerto Rico: áreas de práctica explicadas con claridad, perfiles que generan confianza y un camino sencillo para pedir una consulta.",
+        "seo_title": "Diseño Web para Abogados en Puerto Rico | Web Designer PR",
+        "seo_description": "Diseño web para abogados y bufetes en Puerto Rico: áreas de práctica claras, perfiles y solicitudes de consulta. Precio fijo. Agenda tu llamada gratis.",
+        "seo_keywords": "diseño web para abogados, página web para bufete puerto rico, diseño web para bufetes de abogados, página web para abogado, página web para abogados san juan, marketing legal puerto rico, diseño web para firmas de abogados, página web bilingüe para abogados",
+        "h1": "Páginas web para abogados y bufetes en Puerto Rico, <em class=\"italic accent-text\">serias, claras y fáciles de contactar</em>",
+        "intro": [
+          {
+            "text": "El diseño web para abogados en Puerto Rico tiene que resolver algo delicado: alguien con un problema serio, a veces urgente, necesita entender en pocos minutos si tu bufete atiende su tipo de caso y cómo hablar contigo. No busca adjetivos ni fotos de mazos y balanzas; busca claridad, una trayectoria que pueda verificar y un próximo paso obvio desde el celular."
+          },
+          {
+            "text": "Organizamos el sitio por áreas de práctica, cada una con su propia página que explica qué atiendes, a quién representas y qué esperar de una primera consulta. El perfil de cada abogado muestra formación, admisiones y experiencia. Todo el contenido se revisa contigo para que se ajuste a tus obligaciones profesionales y a las normas de publicidad que te apliquen, y nada se publica sin tu aprobación."
+          },
+          {
+            "text": "Trabajamos con abogados que practican solos, bufetes pequeños y firmas con varias oficinas en San Juan, Hato Rey, Guaynabo, Bayamón, Ponce o Mayagüez, y con bufetes que atienden clientes desde Estados Unidos continental. El sitio puede salir en español e inglés desde el principio. El precio se fija tras una llamada gratis, se paga por etapas y el sitio completo es tuyo."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Una página propia para cada área de práctica"
+          },
+          {
+            "text": "Perfiles de abogados con formación y admisiones"
+          },
+          {
+            "text": "Solicitud de consulta clara y fácil de encontrar"
+          },
+          {
+            "text": "Textos revisados contigo según tus obligaciones profesionales"
+          },
+          {
+            "text": "Versión completa en español e inglés"
+          },
+          {
+            "text": "Datos de oficina iguales en Google Business"
+          }
+        ],
+        "challenges_title": "Por qué muchos sitios web de bufetes no generan consultas",
+        "challenges": [
+          {
+            "title": "Todo en una sola lista",
+            "text": "Muchos bufetes ponen quince áreas de práctica en una lista con dos líneas cada una. El cliente no sabe si su caso encaja y Google no tiene una página específica que mostrar cuando alguien busca un abogado de familia o de quiebras."
+          },
+          {
+            "title": "Lenguaje que el cliente no entiende",
+            "text": "Textos escritos para otros abogados, llenos de términos técnicos y citas legales. La persona que busca ayuda necesita saber en palabras sencillas qué haces, cómo funciona el proceso y qué documentos debería tener a mano para la consulta."
+          },
+          {
+            "title": "Contactar cuesta más de lo que debe",
+            "text": "Un solo correo genérico al final de la página, un formulario que no confirma si llegó o un teléfono que no se puede tocar en el celular. Cada obstáculo es una consulta que termina en el bufete de al lado."
+          },
+          {
+            "title": "Promesas que no deberían estar",
+            "text": "Frases como “garantizamos resultados” o “los mejores abogados de la isla” pueden chocar con las normas de publicidad profesional. Un sitio serio evita ese riesgo desde la redacción, y cada texto se revisa contigo antes de publicarse."
+          }
+        ],
+        "features_title": "Qué incluye una página web para bufete de abogados hecha con nosotros",
+        "features": [
+          {
+            "title": "Una página por área de práctica",
+            "text": "Cada área tiene su página con una explicación clara, preguntas frecuentes y una invitación a pedir consulta. Ayuda al cliente a reconocerse en el texto y le da a Google una página concreta para cada tipo de búsqueda legal."
+          },
+          {
+            "title": "Perfiles que respaldan al bufete",
+            "text": "Cada abogado tiene su página con foto, formación, admisiones, idiomas y áreas de práctica. Tú aportas la información y nosotros la presentamos de forma sobria, sin adjetivos que tengas que justificar después."
+          },
+          {
+            "title": "Solicitudes de consulta confiables",
+            "text": "Un formulario corto que confirma que llegó, más teléfono y WhatsApp a un toque si los usas. Definimos contigo qué datos pedir en ese primer contacto para no recoger más información confidencial de la necesaria."
+          },
+          {
+            "title": "Contenido revisado contigo",
+            "text": "No publicamos nada que no hayas aprobado. Redactamos y editamos contigo cada página para que el sitio se ajuste a tus obligaciones profesionales y a las normas de publicidad que te apliquen, y tú tienes la última palabra."
+          }
+        ],
+        "services": [
+          "website-design",
+          "wordpress",
+          "redesign"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto cuesta una página web para un abogado o bufete en Puerto Rico?",
+            "answer": "Depende de cuántas áreas de práctica y abogados incluye, de si el sitio es bilingüe y de si necesitas un blog o integraciones. No publicamos tarifas genéricas: después de una llamada gratis te enviamos un precio fijo con el alcance por escrito. Los pagos van por etapas atadas a aprobaciones, así que conoces el costo total antes de empezar."
+          },
+          {
+            "question": "¿Mi página web de abogado cumple con las reglas de publicidad para abogados en Puerto Rico?",
+            "answer": "No damos asesoría legal ni certificamos cumplimiento. Lo que sí hacemos es evitar desde la redacción las frases que suelen causar problemas, como garantías de resultados o comparaciones con otros bufetes, y revisar cada página contigo antes de publicarla para que se ajuste a tus obligaciones profesionales. La última palabra sobre qué se publica es tuya."
+          },
+          {
+            "question": "¿Puedo tener un blog en la página web de mi bufete?",
+            "answer": "Sí, y puede ayudarte a aparecer en búsquedas específicas, como preguntas sobre divorcio, herencias o despidos en Puerto Rico. Lo construimos para que publiques artículos tú mismo desde un panel sencillo. Nuestro consejo: escribir con calma y con fuentes. Un artículo bien hecho al mes suele rendir más que diez escritos a la carrera."
+          },
+          {
+            "question": "¿Es seguro recibir solicitudes de consulta a través de la página web del bufete?",
+            "answer": "El formulario se envía por una conexión cifrada y lo conectamos con el correo o la herramienta que ya usa tu bufete. Aun así, un formulario de contacto no es el lugar para recoger detalles confidenciales del caso. Definimos contigo qué datos pedir en ese primer paso y dejamos lo sensible para la consulta."
+          },
+          {
+            "question": "¿Pueden rediseñar la página web de mi bufete sin perder lo que ya aparece en Google?",
+            "answer": "Sí. Antes de cambiar nada, revisamos qué páginas de tu sitio actual reciben visitas y desde qué búsquedas. Mantenemos o redirigimos esas direcciones para que Google entienda el cambio, y conservamos el contenido que funciona. Nadie puede garantizar posiciones, pero un rediseño bien planificado evita perder lo que ya ganaste."
+          }
+        ]
+      },
+      {
+        "id": "real-estate",
+        "index": "04",
+        "title": "Bienes Raíces",
+        "menu_blurb": "Sitios para corredores, desarrolladores y gerentes",
+        "summary": "Sitios web para corredores, desarrolladores y administradores de propiedades en Puerto Rico: búsqueda de propiedades, fichas que venden y formularios que llegan al agente correcto, en español e inglés.",
+        "seo_title": "Diseño Web para Bienes Raíces en PR | Web Designer PR",
+        "seo_description": "Diseño web para bienes raíces en Puerto Rico: búsqueda de propiedades, fichas bilingües y captación de clientes. Precio fijo. Agenda tu llamada gratis hoy.",
+        "seo_keywords": "diseño web bienes raíces puerto rico, página web para corredor de bienes raíces, sitio web inmobiliaria puerto rico, página web para realtor en puerto rico, diseño web para desarrolladores inmobiliarios, sitio web con búsqueda de propiedades, página web para administración de propiedades, web bilingüe bienes raíces san juan",
+        "h1": "Páginas web para bienes raíces en Puerto Rico, <em class=\"italic accent-text\">hechas para cerrar citas</em>",
+        "intro": [
+          {
+            "text": "El diseño web para bienes raíces en Puerto Rico tiene que resolver algo concreto: que un comprador encuentre la propiedad, entienda el área y te escriba antes de irse al próximo portal. Construimos sitios para corredores, oficinas de corretaje, desarrolladores y administradores de propiedades que quieren prospectos propios, no solo visibilidad en páginas de terceros."
+          },
+          {
+            "text": "Tu público no es uno solo. Hay familias locales que buscan en Bayamón, Caguas o Carolina, inversionistas que comparan apartamentos en Condado o Dorado, y compradores que se mudan desde Estados Unidos continental, incluidos los que llegan por Act 60 y leen en inglés. Diseñamos el sitio bilingüe desde el principio, con fichas, filtros y formularios que funcionan igual de bien en ambos idiomas."
+          },
+          {
+            "text": "Si tu MLS o proveedor de datos permite mostrar listados en tu sitio, integramos la búsqueda por IDX o el feed que te autoricen; si no, montamos un catálogo propio que tu equipo actualiza sin llamarnos. El alcance y el precio se fijan antes de empezar, los pagos van por etapas, y el sitio, el código y los prospectos son tuyos."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Búsqueda de propiedades con filtros por pueblo y precio"
+          },
+          {
+            "text": "Fichas de propiedad con galería, mapa y detalles"
+          },
+          {
+            "text": "Formularios que envían el prospecto al agente correcto"
+          },
+          {
+            "text": "Contenido completo en español e inglés"
+          },
+          {
+            "text": "Páginas de barrios y pueblos para búsquedas locales"
+          },
+          {
+            "text": "Carga rápida de fotos en datos móviles"
+          }
+        ],
+        "challenges_title": "Por qué tantos sitios de bienes raíces no generan prospectos",
+        "challenges": [
+          {
+            "title": "Listados que nadie actualiza",
+            "text": "Propiedades vendidas que siguen apareciendo, precios viejos y fotos que no cargan. El comprador pierde confianza en un par de clics y vuelve al portal grande, donde tu listado compite con el de todos los demás."
+          },
+          {
+            "title": "Todo el tráfico se queda en los portales",
+            "text": "Si tu sitio es solo una tarjeta de presentación, los prospectos te llegan filtrados por terceros o no te llegan. Sin búsqueda propia ni contenido local, no tienes razones para que alguien empiece en tu página."
+          },
+          {
+            "title": "Inglés de segunda categoría",
+            "text": "Muchos sitios locales traducen el menú y dejan las fichas en español, o al revés. El comprador que se muda desde el continente o el inversionista de afuera se va si no entiende los detalles de la propiedad."
+          },
+          {
+            "title": "Galerías pesadas que ahogan el celular",
+            "text": "Una ficha con treinta fotos sin optimizar puede tardar demasiado en un celular con datos móviles. La mayoría de la gente busca casa desde el teléfono, así que una página lenta es un prospecto perdido."
+          }
+        ],
+        "features_title": "Lo que construimos en un sitio web para inmobiliarias",
+        "features": [
+          {
+            "title": "Búsqueda de propiedades a tu medida",
+            "text": "Integramos IDX o el feed que tu MLS autorice, o un catálogo propio si prefieres controlar el inventario. Filtros por pueblo, precio, tipo y habitaciones, con resultados que cargan rápido y se comparten por WhatsApp o correo."
+          },
+          {
+            "title": "Fichas que venden la propiedad",
+            "text": "Cada propiedad tiene galería optimizada, mapa, datos clave, descripción bilingüe y un botón de contacto visible en todo momento. Las fichas se generan de forma consistente, así que se ven bien aunque las suba cualquier persona de tu equipo."
+          },
+          {
+            "title": "Captación y reparto de prospectos",
+            "text": "Formularios cortos por propiedad, por agente o para valorar una casa, que llegan al buzón o CRM que nos indiques. Cada consulta incluye de qué página vino, para que el agente sepa exactamente qué le interesa al cliente."
+          },
+          {
+            "title": "Contenido local que se encuentra en Google",
+            "text": "Páginas de pueblos y sectores como Guaynabo, Dorado o Rincón, con la información que realmente buscan los compradores. Bien estructuradas para búsqueda local y conectadas a tu perfil de Google Business, sin rellenar el texto de palabras clave."
+          }
+        ],
+        "services": [
+          "website-development",
+          "website-design",
+          "wordpress"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto cuesta una página web para un corredor de bienes raíces en Puerto Rico?",
+            "answer": "Depende de si necesitas búsqueda por IDX, un catálogo propio, varias oficinas o agentes, y cuántas páginas de pueblos y proyectos quieres. Después de una llamada gratuita para entender el alcance, te damos un precio fijo por escrito. Pagas por etapas, sin cobro por hora, y el precio no cambia si el alcance no cambia."
+          },
+          {
+            "question": "¿Pueden conectar mi sitio web al MLS para mostrar listados?",
+            "answer": "Si tu MLS o proveedor de datos permite mostrar listados en sitios de sus miembros, integramos el IDX o feed autorizado siguiendo sus reglas de uso. Las condiciones y permisos los confirmas tú con tu MLS, porque cambian según la asociación. Si no hay acceso, montamos un catálogo propio que tu equipo administra."
+          },
+          {
+            "question": "¿Mi sitio de bienes raíces puede estar en inglés para compradores de Estados Unidos?",
+            "answer": "Sí. Nuestro equipo trabaja en español e inglés, y diseñamos el sitio bilingüe desde el principio: menús, fichas, formularios y páginas de pueblos. Podemos preparar contenido pensado para quien se muda desde el continente, incluidos compradores interesados en Act 60, aunque los temas contributivos los deben consultar con su propio asesor."
+          },
+          {
+            "question": "¿Puedo actualizar las propiedades yo mismo sin llamar al diseñador?",
+            "answer": "Sí. Si usas un catálogo propio, lo construimos sobre un tema de WordPress a la medida o un panel sencillo donde subes fotos, cambias precios y marcas propiedades como vendidas. Te entrenamos a ti y a tu equipo, y durante los 30 días después del lanzamiento vigilamos el sitio y resolvemos cualquier detalle."
+          },
+          {
+            "question": "¿Cuánto tiempo toma hacer un sitio web para una inmobiliaria o desarrollador?",
+            "answer": "Un proyecto típico toma unas ocho semanas desde el brief aprobado hasta el lanzamiento. Si el sitio es bilingüe completo, incluye integración con IDX o varios proyectos de desarrollo con sus propias páginas, calcula entre diez y doce semanas. El calendario se fija junto con el alcance antes de empezar."
+          }
+        ]
+      },
+      {
+        "id": "tourism",
+        "index": "05",
+        "title": "Turismo y Hospedería",
+        "menu_blurb": "Hoteles, hospederías, alquileres y excursiones",
+        "summary": "Sitios web para hoteles, hospederías, alquileres vacacionales y operadores de excursiones en Puerto Rico, pensados para reservas directas, visitantes que leen en inglés y celulares con datos lentos.",
+        "seo_title": "Diseño Web para Hoteles y Turismo en PR | Web Designer PR",
+        "seo_description": "Diseño web para hoteles y turismo en Puerto Rico: reservas directas, motor de reservas y un sitio bilingüe rápido en el celular. Agenda una llamada gratis.",
+        "seo_keywords": "diseño web para hoteles puerto rico, página web para hospedería, sitio web para alquiler vacacional puerto rico, página web para tours en puerto rico, diseño web turismo puerto rico, reservas directas hotel, integración motor de reservas, página web bilingüe para hotel",
+        "h1": "Diseño web para turismo en Puerto Rico, <em class=\"italic accent-text\">con más reservas directas</em>",
+        "intro": [
+          {
+            "text": "El diseño web para hoteles y turismo en Puerto Rico tiene que convencer rápido. El huésped compara tu hospedería con otras diez en una plataforma de reservas, entra a tu sitio para confirmar y decide en un par de minutos. Si ahí encuentra fotos claras, precios visibles y una forma sencilla de reservar directo, tienes la oportunidad de quedarte con esa reserva sin pagar comisión."
+          },
+          {
+            "text": "Construimos sitios para hoteles pequeños, hospederías, alquileres vacacionales y operadores de excursiones desde San Juan hasta Rincón, Culebra o Vieques. La mayoría de tus visitantes llega desde Estados Unidos continental y lee en inglés, muchas veces desde un celular con roaming o el wifi del hotel. Por eso diseñamos bilingüe desde el principio y con un presupuesto de peso estricto."
+          },
+          {
+            "text": "No reemplazamos tu motor de reservas ni tu channel manager: los integramos para que el calendario y los precios sigan en un solo lugar. Tu sitio se encarga de enamorar al huésped y llevarlo a reservar sin fricción. El alcance y el precio se fijan antes de empezar, los pagos van por etapas, y el sitio y su contenido son tuyos."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Botón de reservar visible en cada página"
+          },
+          {
+            "text": "Motor de reservas o calendario integrado"
+          },
+          {
+            "text": "Contenido completo en inglés y español"
+          },
+          {
+            "text": "Galerías rápidas que cargan con datos móviles"
+          },
+          {
+            "text": "Mapa, cómo llegar y detalles de estacionamiento"
+          },
+          {
+            "text": "Políticas claras de cancelación y check-in"
+          }
+        ],
+        "challenges_title": "Por qué tantos sitios turísticos pierden reservas ante las plataformas",
+        "challenges": [
+          {
+            "title": "El huésped no encuentra cómo reservar",
+            "text": "El botón de reservar está escondido, el motor abre en otra ventana con otro diseño o pide demasiados pasos. El visitante duda, vuelve a la plataforma que ya conoce y reserva allí, con comisión incluida."
+          },
+          {
+            "title": "Fotos pesadas en conexiones lentas",
+            "text": "Un turista en el aeropuerto o con roaming no espera a que carguen veinte fotos de alta resolución. Si la página tarda, se va a la opción que carga primero, aunque tu propiedad sea mejor."
+          },
+          {
+            "title": "Inglés traducido a la carrera",
+            "text": "Textos traducidos automáticamente, precios sin moneda clara o políticas solo en español generan dudas justo cuando el huésped está por pagar. En turismo, la confianza se gana con detalles bien explicados en su idioma."
+          },
+          {
+            "title": "Información vieja después de cada temporada",
+            "text": "Tarifas del año pasado, excursiones que ya no se ofrecen o avisos de huracán que nadie quitó. Si el sitio no se puede actualizar fácilmente, termina diciendo cosas que ya no son ciertas."
+          }
+        ],
+        "features_title": "Lo que construimos en una página web para hoteles y excursiones",
+        "features": [
+          {
+            "title": "Reserva directa sin fricción",
+            "text": "Integramos el motor de reservas, channel manager o plataforma de excursiones que ya usas, con estilo consistente con tu sitio. El botón de reservar se mantiene visible y cada habitación o tour lleva directo a su disponibilidad."
+          },
+          {
+            "title": "Rápido en cualquier celular",
+            "text": "Fijamos un presupuesto de peso desde el diseño: imágenes en formatos modernos y tamaños correctos, fuentes livianas y nada de scripts innecesarios. Así el sitio carga bien con datos móviles, roaming o el wifi compartido de un hotel."
+          },
+          {
+            "title": "Bilingüe de verdad",
+            "text": "Contenido escrito para el visitante que llega desde el continente y para el turista local, no una traducción automática. Habitaciones, excursiones, políticas y preguntas frecuentes en ambos idiomas, con un selector de idioma claro."
+          },
+          {
+            "title": "Fácil de actualizar en temporada",
+            "text": "Un panel sencillo, en código propio o en un tema de WordPress a la medida, donde cambias tarifas, fotos, avisos y ofertas sin llamarnos. Útil para temporada alta, eventos especiales o avisos durante la temporada de huracanes."
+          }
+        ],
+        "services": [
+          "website-design",
+          "website-development",
+          "performance"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto cuesta una página web para un hotel pequeño o una hospedería en Puerto Rico?",
+            "answer": "Depende del número de habitaciones o experiencias, la integración con tu motor de reservas y si el sitio será bilingüe completo. Después de una llamada gratuita para entender el alcance, te damos un precio fijo por escrito. Pagas por etapas, nunca por hora, y el precio no cambia si el alcance no cambia."
+          },
+          {
+            "question": "¿Pueden integrar mi motor de reservas o channel manager actual?",
+            "answer": "En la mayoría de los casos, sí. Trabajamos con el motor de reservas, channel manager o plataforma de excursiones que ya usas, siempre que ofrezca un widget, enlace o integración para sitios externos. Así tu calendario y tus precios siguen en un solo lugar y el sitio solo se encarga de llevar al huésped a reservar."
+          },
+          {
+            "question": "¿Un sitio web propio me ayuda a depender menos de las plataformas de reservas?",
+            "answer": "Puede ayudar, pero no hacemos promesas de números. Un sitio rápido, claro y con reserva directa sencilla le da al huésped una razón para reservar contigo después de encontrarte en una plataforma. Muchas propiedades combinan ambas cosas: las plataformas para que las descubran y el sitio propio para cerrar la reserva."
+          },
+          {
+            "question": "¿Mi sitio de turismo debe estar en inglés además de español?",
+            "answer": "Si recibes visitantes de Estados Unidos continental u otros países, casi siempre sí. Nuestro equipo trabaja en español e inglés y diseñamos el sitio bilingüe desde el principio, con textos escritos para cada público en vez de traducciones automáticas. Si tu negocio está registrado con la Compañía de Turismo, confirma con ellos cualquier requisito de información."
+          },
+          {
+            "question": "¿Cuánto tiempo toma hacer un sitio web para un hotel o un operador de excursiones?",
+            "answer": "Un proyecto típico toma unas ocho semanas desde el brief aprobado hasta el lanzamiento. Si el sitio es bilingüe completo o incluye venta en línea de excursiones y productos, calcula entre diez y doce semanas. Conviene planificar el lanzamiento antes de la temporada alta, y te acompañamos los 30 días siguientes."
+          }
+        ]
+      },
+      {
+        "id": "contractors",
+        "index": "06",
+        "title": "Contratistas y Construcción",
+        "menu_blurb": "Construcción, techado, solar y servicios al hogar",
+        "summary": "Sitios web para contratistas, constructoras, techadores, instaladores solares y servicios al hogar en Puerto Rico: galerías de proyectos, solicitudes de cotización y áreas de servicio claras en toda la isla.",
+        "seo_title": "Diseño Web para Contratistas en PR | Web Designer PR",
+        "seo_description": "Diseño web para contratistas en Puerto Rico: galerías de proyectos, formularios de cotización y áreas de servicio. Precio fijo. Agenda tu llamada gratis.",
+        "seo_keywords": "diseño web para contratistas puerto rico, página web para compañía de construcción, página web para techado puerto rico, sitio web para instaladores de placas solares, página web para servicios al hogar, diseño web constructora puerto rico, página web para contratista en bayamón, formulario de cotización página web",
+        "h1": "Páginas web para contratistas en Puerto Rico <em class=\"italic accent-text\">que traen cotizaciones serias</em>",
+        "intro": [
+          {
+            "text": "El diseño web para contratistas en Puerto Rico tiene que contestar tres preguntas antes de que el cliente llame: si haces el trabajo que necesita, si llegas a su pueblo y si puede confiar en ti. Construimos sitios para constructoras, techadores, instaladores de placas solares, electricistas, plomeros y empresas de servicios al hogar que quieren cotizaciones mejor calificadas, no más llamadas perdidas."
+          },
+          {
+            "text": "La mayoría de tus clientes te busca desde el celular, muchas veces después de una tormenta o cuando un vecino le recomendó a alguien. Por eso el sitio tiene que cargar rápido, mostrar tu trabajo real con fotos de antes y después, y dejar clarísimo a qué pueblos llegas, sea Bayamón, Caguas, Mayagüez o Ponce. El botón de llamar y el de cotizar siempre están a la mano."
+          },
+          {
+            "text": "Presentamos tus licencias, seguros y certificaciones tal como tú nos los das, sin exagerar nada. Diseñamos en español e inglés si tienes clientes comerciales o residentes que prefieren inglés. El alcance y el precio se fijan antes de empezar, los pagos van por etapas, y el sitio, el código y las fotos de tus proyectos son tuyos."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Galería de proyectos con fotos de antes y después"
+          },
+          {
+            "text": "Formulario de cotización con fotos y detalles"
+          },
+          {
+            "text": "Páginas por servicio y por área de servicio"
+          },
+          {
+            "text": "Botón de llamar visible en el celular"
+          },
+          {
+            "text": "Licencias, seguros y certificaciones que nos provees"
+          },
+          {
+            "text": "Perfil de Google Business conectado y al día"
+          }
+        ],
+        "challenges_title": "Por qué tantos sitios de contratistas no generan trabajo",
+        "challenges": [
+          {
+            "title": "Cotizaciones que llegan incompletas",
+            "text": "Un formulario genérico que solo pide nombre y teléfono obliga a llamar de vuelta para averiguar lo básico. Pierdes tiempo con prospectos que no encajan y tardas más en contestar a los que sí."
+          },
+          {
+            "title": "No se ve el trabajo real",
+            "text": "Fotos de banco de imágenes en vez de tus proyectos, o una galería desordenada sin contexto. El cliente quiere ver techos, cocinas o instalaciones solares que hiciste tú, con una idea clara de dónde y qué se resolvió."
+          },
+          {
+            "title": "No queda claro a qué pueblos llegas",
+            "text": "Si el sitio no dice dónde trabajas, el cliente de Mayagüez asume que no llegas o que te cobrará de más por la distancia. Google tampoco tiene cómo mostrarte en búsquedas locales de esos pueblos."
+          },
+          {
+            "title": "Sitios que no aguantan el celular",
+            "text": "Después de un huracán o un apagón, la gente busca contratistas con poca batería y señal inestable. Un sitio pesado o con menús complicados pierde justo esos clientes que necesitan ayuda ya."
+          }
+        ],
+        "features_title": "Lo que construimos en una página web para compañías de construcción",
+        "features": [
+          {
+            "title": "Cotizaciones mejor calificadas",
+            "text": "Formularios por tipo de servicio que piden lo que necesitas saber: pueblo, tipo de propiedad, alcance aproximado y fotos del área. Llegan a tu correo o CRM organizados, para que contestes con información y no a ciegas."
+          },
+          {
+            "title": "Galerías de proyectos que venden",
+            "text": "Proyectos organizados por servicio, con fotos de antes y después, pueblo y una descripción corta del trabajo. Imágenes optimizadas que cargan rápido en el celular, y un panel donde tu equipo sube proyectos nuevos sin llamarnos."
+          },
+          {
+            "title": "Páginas por área de servicio",
+            "text": "Páginas útiles para los pueblos y regiones donde trabajas, del área metro al oeste o al sur, con servicios y proyectos relevantes. Estructuradas para búsqueda local y conectadas a tu perfil de Google Business, sin textos repetidos."
+          },
+          {
+            "title": "Confianza sin exageraciones",
+            "text": "Mostramos tus licencias, números de registro, seguros, garantías y certificaciones de fabricantes exactamente como nos los provees. Tú confirmas que cada dato esté vigente; nosotros lo presentamos de forma clara y fácil de verificar."
+          }
+        ],
+        "services": [
+          "website-design",
+          "wordpress",
+          "redesign"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto cuesta una página web para un contratista en Puerto Rico?",
+            "answer": "Depende de cuántos servicios ofreces, cuántas áreas de servicio quieres cubrir, el tamaño de la galería de proyectos y si el sitio será bilingüe. Después de una llamada gratuita para entender el alcance, te damos un precio fijo por escrito. Pagas por etapas, nunca por hora, y el precio no cambia si el alcance no cambia."
+          },
+          {
+            "question": "¿Puedo subir fotos de proyectos nuevos yo mismo?",
+            "answer": "Sí. Construimos la galería sobre un tema de WordPress a la medida o un panel sencillo donde subes fotos, escoges el servicio y el pueblo, y escribes una descripción corta. Las imágenes se optimizan solas para que el sitio siga rápido. Te entrenamos a ti y a tu equipo antes del lanzamiento."
+          },
+          {
+            "question": "¿Cómo hago para que me encuentren en Google en otros pueblos de Puerto Rico?",
+            "answer": "Ayuda tener páginas útiles por servicio y por área de servicio, un perfil de Google Business completo y proyectos reales asociados a cada zona. Estructuramos el sitio para búsqueda local desde el principio, pero nadie puede garantizar posiciones en Google; lo que sí controlamos es que el sitio sea rápido, claro y bien construido."
+          },
+          {
+            "question": "¿Qué licencias o permisos debo mostrar en el sitio web de mi compañía?",
+            "answer": "Eso lo debes confirmar con tu abogado, tu asesor o la agencia que regula tu oficio, porque varía según el tipo de trabajo. Nosotros presentamos las licencias, registros, seguros y certificaciones que nos proveas, en un lugar visible y fácil de verificar, y te recordamos revisar que estén vigentes."
+          },
+          {
+            "question": "Ya tengo un sitio web viejo, ¿vale la pena rediseñarlo o empezar de cero?",
+            "answer": "Depende de qué tan lento sea, si lo puedes actualizar y si te trae cotizaciones. En la llamada de alcance revisamos tu sitio actual y te decimos con franqueza qué conviene. Si rediseñamos, conservamos lo que funciona, como contenido y fotos, y cuidamos las redirecciones para no perder lo que Google ya conoce."
+          }
+        ]
+      },
+      {
+        "id": "retail",
+        "index": "07",
+        "title": "Tiendas y comercios",
+        "menu_blurb": "Boutiques, tiendas locales y ventas en línea",
+        "summary": "Sitios y tiendas en línea para comercios en Puerto Rico: catálogo claro, recogido en tienda, envíos en la isla y a Estados Unidos, y un checkout cómodo en el celular.",
+        "seo_title": "Diseño Web para Tiendas en Puerto Rico | Web Designer PR",
+        "seo_description": "Diseño web para tiendas y boutiques en Puerto Rico: Shopify o WooCommerce, recogido en tienda y envíos a EE. UU. Precio fijo. Agenda tu llamada gratis.",
+        "seo_keywords": "diseño web para tiendas puerto rico, tienda en línea puerto rico, página web para boutique, crear tienda shopify puerto rico, woocommerce puerto rico, tienda online con ath móvil, diseño de ecommerce san juan, página web para comercio local",
+        "h1": "Páginas web para tiendas y boutiques, <em class=\"italic accent-text\">listas para vender en la isla y fuera de ella</em>",
+        "intro": [
+          {
+            "text": "El diseño web para tiendas en Puerto Rico tiene que resolver algo muy concreto: que el cliente encuentre el producto, vea si hay disponible y compre sin fricción, sea desde Bayamón o desde Orlando. Para una boutique en el Viejo San Juan o una tienda de artículos locales en Caguas, el sitio es la vitrina que sigue abierta cuando cierras el local."
+          },
+          {
+            "text": "Trabajamos con Shopify o WooCommerce según lo que tu negocio necesita. Shopify suele convenir si quieres manejar inventario sin preocuparte por servidores; WooCommerce, si ya tienes WordPress o necesitas más control sobre el contenido. En ambos casos el diseño es propio, no un tema comprado, y configuramos recogido en tienda, envíos dentro de la isla y hacia Estados Unidos continental."
+          },
+          {
+            "text": "Antes de cotizar, hablamos de tu catálogo, tus métodos de pago y cómo manejas hoy los pedidos. El IVU lo configuramos según las instrucciones de tu contador, y si la plataforma lo permite evaluamos contigo ATH Móvil como método de pago. Recibes un precio fijo, pagos por etapas y una tienda que es tuya: código, contenido, dominio y datos de clientes."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Catálogo con filtros por talla, color y precio"
+          },
+          {
+            "text": "Checkout rápido y cómodo desde el celular"
+          },
+          {
+            "text": "Opción de recogido en tienda"
+          },
+          {
+            "text": "Tarifas de envío para la isla y Estados Unidos"
+          },
+          {
+            "text": "IVU configurado según indique tu contador"
+          },
+          {
+            "text": "Ficha en Google Business Profile bien conectada"
+          }
+        ],
+        "challenges_title": "Por qué tantas tiendas en línea de Puerto Rico no venden",
+        "challenges": [
+          {
+            "title": "Temas pesados que cargan lento",
+            "text": "Muchas tiendas usan un tema comprado con decenas de apps encima. Cada una añade scripts, y el resultado es una página de producto que tarda en abrir con datos móviles, justo donde está la mayoría de tus compradores."
+          },
+          {
+            "title": "Envíos confusos para la isla",
+            "text": "Los carritos configurados para Estados Unidos continental a veces calculan mal los envíos a Puerto Rico o no ofrecen recogido en tienda. El cliente llega al final, ve un costo inesperado y abandona la compra."
+          },
+          {
+            "title": "Pagos que no reflejan cómo pagan aquí",
+            "text": "Si tu clientela prefiere pagar con ATH Móvil o recoger y pagar en persona, un checkout que solo acepta tarjeta deja ventas en la mesa. Hay que revisar qué permite tu plataforma antes de diseñar."
+          },
+          {
+            "title": "Catálogo difícil de mantener",
+            "text": "Cuando subir un producto nuevo requiere llamar a alguien, el catálogo se queda viejo. Fotos desactualizadas, tallas agotadas que aparecen disponibles y precios que no cuadran con la tienda física le restan confianza al sitio."
+          }
+        ],
+        "features_title": "Lo que construimos para tu tienda en línea en Puerto Rico",
+        "features": [
+          {
+            "title": "Plataforma elegida a conciencia",
+            "text": "Comparamos Shopify y WooCommerce con tu inventario, tu presupuesto de mantenimiento y tu equipo en mente. Te explicamos qué ganas y qué cedes con cada una antes de decidir, para que no tengas que migrar en dos años."
+          },
+          {
+            "title": "Páginas de producto que venden",
+            "text": "Fotos grandes y livianas, tallas y variantes claras, disponibilidad visible y una política de devoluciones fácil de encontrar. Cada página contesta las preguntas que hoy te hacen por mensaje directo antes de que el cliente se vaya."
+          },
+          {
+            "title": "Envíos, recogido y pagos a la medida",
+            "text": "Configuramos zonas de envío para la isla y el continente, recogido en uno o varios locales y los métodos de pago que tu plataforma soporte. El IVU queda como lo indique tu contador, no con un valor genérico."
+          },
+          {
+            "title": "Tienda que puedes manejar tú",
+            "text": "Te entregamos un panel ordenado y una guía corta para subir productos, cambiar precios y lanzar ofertas por temporada. Incluimos treinta días de monitoreo después del lanzamiento para corregir lo que aparezca con pedidos reales."
+          }
+        ],
+        "services": [
+          "ecommerce",
+          "wordpress",
+          "performance"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto cuesta una tienda en línea para un negocio en Puerto Rico?",
+            "answer": "Depende del tamaño del catálogo, la plataforma, los métodos de pago y si necesitas uno o dos idiomas. No damos precios genéricos: después de una llamada de alcance sin costo te enviamos un precio fijo por escrito. Lo pagas en etapas atadas a aprobaciones, y si el alcance no cambia, el precio tampoco."
+          },
+          {
+            "question": "¿Qué es mejor para mi tienda en Puerto Rico, Shopify o WooCommerce?",
+            "answer": "Shopify conviene si quieres una plataforma administrada y poco mantenimiento técnico, a cambio de una mensualidad y comisiones según tu plan. WooCommerce funciona sobre WordPress y da más control sobre contenido y hospedaje, pero requiere más cuidado. Lo decidimos contigo según tu catálogo, tu equipo y cómo piensas crecer."
+          },
+          {
+            "question": "¿Se puede aceptar ATH Móvil en una tienda en línea?",
+            "answer": "Depende de la plataforma y de las integraciones disponibles al momento del proyecto. Lo revisamos en la etapa de alcance y te decimos con claridad qué opciones existen para tu caso, qué costos o requisitos tienen y cómo se vería el checkout. Si no hay una integración confiable, te proponemos alternativas como pago al recoger."
+          },
+          {
+            "question": "¿Cómo se maneja el IVU y los envíos a Estados Unidos?",
+            "answer": "El IVU lo configuramos siguiendo las instrucciones de tu contador, porque la forma correcta depende de tu negocio y de lo que vendes. Para envíos, preparamos zonas separadas para Puerto Rico y Estados Unidos continental con sus tarifas, además de recogido en tienda si lo ofreces."
+          },
+          {
+            "question": "¿Cuánto tiempo toma lanzar una tienda en línea?",
+            "answer": "Un proyecto de comercio electrónico suele tomar de diez a doce semanas del arranque al lanzamiento. Lo que más influye es qué tan listo está tu catálogo: fotos, descripciones, variantes y precios. Si ya tienes una tienda en otra plataforma, planificamos la migración de productos y clientes dentro de ese calendario."
+          }
+        ]
+      },
+      {
+        "id": "beauty-wellness",
+        "index": "08",
+        "title": "Belleza y bienestar",
+        "menu_blurb": "Salones, barberías, spas, gimnasios y estudios",
+        "summary": "Sitios web para salones, barberías, spas, med-spas, gimnasios y estudios en Puerto Rico: citas en línea, menú de servicios claro, galería de trabajos y reseñas que convencen.",
+        "seo_title": "Diseño Web para Salones y Spas en PR | Web Designer PR",
+        "seo_description": "Diseño web para salones, barberías y spas en Puerto Rico con citas en línea, menú de servicios y galería. Precio fijo y el sitio es tuyo. Agenda tu llamada.",
+        "seo_keywords": "diseño web para salones de belleza puerto rico, página web para barbería, página web para spa puerto rico, sitio web para gimnasio, página web med spa puerto rico, citas en línea para salón, diseño web para estudio de yoga, página web para estilistas san juan",
+        "h1": "Páginas web para salones, barberías y spas, <em class=\"italic accent-text\">con la agenda abierta las 24 horas</em>",
+        "intro": [
+          {
+            "text": "El diseño web para salones y spas en Puerto Rico tiene que convertir a alguien que te vio en Instagram en una cita confirmada. Esa persona llega desde el celular, quiere ver tus trabajos, saber qué ofreces y cuánto cuesta, y reservar sin tener que escribir por mensaje directo y esperar respuesta. Si no puede hacerlo en un minuto, se va con otro."
+          },
+          {
+            "text": "Construimos sitios para salones en Guaynabo, barberías en Carolina, spas en Dorado, gimnasios y estudios de yoga o pilates por toda la isla. Integramos la herramienta de citas que ya usas, o te ayudamos a escoger una, y armamos un menú de servicios con los precios y duraciones que tú defines. La galería se ve bien y carga rápido, aunque tenga muchas fotos."
+          },
+          {
+            "text": "Si tu negocio es un med-spa o hace tratamientos estéticos, planificamos el sitio para que la información de salud no pase por formularios que no estén preparados para eso, y te recomendamos confirmar los requisitos con tu asesor de cumplimiento. Como en todos nuestros proyectos, el precio es fijo, los pagos van por etapas y el sitio queda a tu nombre."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Botón de reservar visible en cada página"
+          },
+          {
+            "text": "Menú de servicios con precios y duración"
+          },
+          {
+            "text": "Galería de trabajos que carga rápido"
+          },
+          {
+            "text": "Reseñas reales de Google y otras plataformas"
+          },
+          {
+            "text": "Perfiles del equipo con especialidades"
+          },
+          {
+            "text": "Enlace directo a tu Instagram y WhatsApp"
+          }
+        ],
+        "challenges_title": "Los problemas más comunes en las páginas web de salones y spas",
+        "challenges": [
+          {
+            "title": "Todo depende de Instagram",
+            "text": "Muchos negocios de belleza solo existen en redes sociales. Instagram atrae, pero no ordena servicios ni precios, no aparece bien en Google para búsquedas como barbería en Caguas y depende de un algoritmo que no controlas."
+          },
+          {
+            "title": "Citas por mensaje directo",
+            "text": "Contestar cada pregunta de precio y disponibilidad por DM consume horas y se pierden clientes que escriben de noche. Sin un sistema de reservas conectado, la agenda depende de que alguien esté pendiente del teléfono."
+          },
+          {
+            "title": "Galerías lentas y pesadas",
+            "text": "Las fotos de cortes, uñas o tratamientos son lo que vende, pero subidas sin optimizar hacen que la página tarde en abrir con datos móviles. El visitante se cansa antes de ver tu mejor trabajo."
+          },
+          {
+            "title": "Información vieja o incompleta",
+            "text": "Horarios que cambiaron, servicios que ya no se ofrecen o estilistas que ya no están en el equipo. Cuando el sitio no refleja la realidad, el cliente llega con expectativas equivocadas o simplemente reserva en otro lado."
+          }
+        ],
+        "features_title": "Lo que construimos para tu salón, spa o gimnasio en Puerto Rico",
+        "features": [
+          {
+            "title": "Reservas integradas, no un enlace suelto",
+            "text": "Conectamos la plataforma de citas que usas para que el cliente escoja servicio, profesional y hora sin salir de tu marca. Si todavía no tienes una, comparamos opciones contigo según tu tipo de negocio y cómo cobras."
+          },
+          {
+            "title": "Menú de servicios fácil de actualizar",
+            "text": "Organizamos servicios por categoría con precio, duración y una descripción corta. Tú cambias precios o añades tratamientos desde un panel sencillo, sin depender de nadie, para que el menú siempre cuadre con lo que ofreces."
+          },
+          {
+            "title": "Galería que presume tu trabajo",
+            "text": "Diseñamos una galería con fotos optimizadas que se ven nítidas y cargan rápido en el celular. Puede incluir antes y después, trabajos por estilista y una sección que muestra tus publicaciones recientes de Instagram."
+          },
+          {
+            "title": "Listo para búsquedas locales",
+            "text": "Estructuramos cada página para búsquedas como salón en Bayamón o spa en Dorado, conectamos tu Google Business Profile y dejamos tus reseñas visibles. Incluimos treinta días de monitoreo después del lanzamiento."
+          }
+        ],
+        "services": [
+          "website-design",
+          "website-development",
+          "performance"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto cuesta una página web para un salón de belleza en Puerto Rico?",
+            "answer": "Depende de cuántos servicios y locales tienes, de la integración de citas y de si necesitas el sitio en español e inglés. No damos precios genéricos: después de una llamada de alcance sin costo te enviamos un precio fijo por escrito. Lo pagas en etapas atadas a aprobaciones, sin cargos por hora."
+          },
+          {
+            "question": "¿Pueden conectar mi sistema de citas actual a la página web?",
+            "answer": "En la mayoría de los casos, sí. Muchas plataformas de reservas para salones, barberías y gimnasios permiten integrarse en un sitio web, aunque cada una tiene sus límites. Lo revisamos durante la llamada de alcance y te decimos cómo se verá la experiencia de reservar antes de empezar el diseño."
+          },
+          {
+            "question": "¿Necesito página web si ya tengo Instagram?",
+            "answer": "Instagram es excelente para mostrar tu trabajo, pero no sustituye un sitio. Una página web aparece en Google cuando alguien busca un salón o un spa en su pueblo, organiza tus servicios y precios, recibe reservas y es tuya, sin depender de cambios en el algoritmo. Lo ideal es que ambos trabajen juntos."
+          },
+          {
+            "question": "¿Qué debe tener la página web de un med-spa en Puerto Rico?",
+            "answer": "Además de servicios, equipo y reservas, un med-spa debe explicar bien sus tratamientos y quién los realiza. Diseñamos el sitio para no recoger información de salud por formularios que no estén preparados para eso, y te recomendamos validar el contenido y los requisitos de privacidad con tu asesor legal o de cumplimiento."
+          },
+          {
+            "question": "¿Cuánto tiempo toma hacer la página web de un spa o gimnasio?",
+            "answer": "Un proyecto típico toma unas ocho semanas del arranque al lanzamiento. Si el sitio es bilingüe o tiene tienda de productos o membresías, puede tomar de diez a doce. Lo que más influye es tener listas las fotos, la lista de servicios y los datos del equipo."
+          }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "crumb": "Industries",
+    "seo_title": "Web Design by Industry in Puerto Rico | Web Designer PR",
+    "seo_description": "Web design for restaurants, clinics, law firms, real estate, tourism, contractors, retail and salons in Puerto Rico. Request your quote today.",
+    "seo_keywords": "web design by industry, business websites puerto rico, restaurant web design, medical website design, law firm web design, real estate website puerto rico",
+    "title": "Websites built for <em class=\"italic accent-text\">your kind of business</em>.",
+    "lead": "A restaurant and a law firm do not need the same website. We know what each industry in Puerto Rico needs from the web &mdash; and we build it in from the first sketch.",
+    "meta_a": "Eight industries, one standard",
+    "meta_b": "Custom-built, bilingual, fast on a phone and yours when we finish &mdash; whatever you do.",
+    "approach": {
+      "eyebrow": "Our approach",
+      "title": "What changes by industry <em class=\"italic\">and what doesn't</em>.",
+      "items": [
+        {
+          "title": "We start with how people search",
+          "text": "A patient, a tourist and a law-firm client search differently. Before designing, we look at what your customers type into Google and what they need to see before they decide."
+        },
+        {
+          "title": "The main action comes first",
+          "text": "Book, call, request an appointment, get a quote or buy. Every industry has one action that matters most, and the whole site is designed to lead to it."
+        },
+        {
+          "title": "Bilingual and built for the phone",
+          "text": "In Puerto Rico your customer may arrive in Spanish or English, almost always on a phone. We design for both languages and for mobile data from the start."
+        },
+        {
+          "title": "The same technical standard",
+          "text": "Whatever the industry: custom code or WordPress without page builders, accessible, fast and fixed-price. The content changes, not the quality."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Industry not listed? <em>We can still help</em>.",
+      "body": "One free call to understand your business. You will leave knowing what your site needs, what it costs and how long it takes &mdash; whether or not you hire us.",
+      "secondary": "See services"
+    },
+    "detail_page": {
+      "crumb": "Industries",
+      "kicker": "Web design for",
+      "view": "View industry",
+      "overview": "Overview",
+      "must_haves": "What your site needs",
+      "challenges": "The problem",
+      "features": "What we build",
+      "services": "Recommended services",
+      "services_title": "The services businesses like yours <em class=\"italic\">use most</em>.",
+      "faq": "FAQ",
+      "faq_title": "What people ask <em class=\"italic\">in your industry</em>.",
+      "others": "Other industries",
+      "others_title": "We also work <em class=\"italic\">with</em>&hellip;",
+      "quote": "Request a quote",
+      "call": "Call",
+      "all": "All industries",
+      "service_link": "View service"
+    },
+    "items": [
+      {
+        "id": "restaurants",
+        "index": "01",
+        "title": "Restaurants",
+        "menu_blurb": "Menus, bookings and ordering that work on phones",
+        "summary": "Websites for restaurants, cafés, bars and food trucks in Puerto Rico: a menu you can read on a phone, one-tap bookings and ordering, and opening hours that stay current.",
+        "seo_title": "Restaurant Website Design in Puerto Rico | Web Designer PR",
+        "seo_description": "Restaurant website design in Puerto Rico: text menus, reservations, online ordering and accurate Google listings. Fixed price, you own it. Book a free call.",
+        "seo_keywords": "restaurant website design, restaurant website puerto rico, restaurant web design san juan, online menu for restaurant, cafe website design, food truck website, restaurant online ordering website, restaurant reservation website",
+        "h1": "Restaurant website design in Puerto Rico, <em class=\"italic accent-text\">with the menu one tap away</em>",
+        "intro": [
+          {
+            "text": "Restaurant website design in Puerto Rico has one concrete job: get a hungry person to your menu, your hours and your address before they settle on somewhere else. Almost all of that traffic arrives on a phone, often from Google Maps or Instagram, over mobile data. So we start with what people actually look for, and only then think about big photos or animation."
+          },
+          {
+            "text": "Your menu goes in as real text, not a PDF or a photo of the chalkboard, so it reads on any screen, search engines can understand it, and you can change it in minutes when a price goes up or a dish sells out. We connect the booking or ordering button to the platform you already use, and keep your address, hours and phone number matching your Google Business Profile."
+          },
+          {
+            "text": "We work with restaurants, cafés, bars and food trucks from Old San Juan and Condado to Dorado, Caguas, Ponce and Rincón. If your crowd is a mix of tourists and locals, the site is built in Spanish and English from the first sketch. Scope and price are fixed after a free call, payments are staged, and everything we build belongs to you."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "A text menu that is easy to update"
+          },
+          {
+            "text": "Booking or ordering button visible on mobile"
+          },
+          {
+            "text": "Hours, address and phone one tap away"
+          },
+          {
+            "text": "Details that match your Google Business Profile"
+          },
+          {
+            "text": "Spanish and English versions for visitors"
+          },
+          {
+            "text": "Optimized photos that do not slow the page"
+          }
+        ],
+        "challenges_title": "Why so many restaurant websites lose customers on mobile",
+        "challenges": [
+          {
+            "title": "The PDF menu",
+            "text": "A PDF loads slowly, forces pinch-zooming and is hard for search engines to read. Every price change means redesigning and re-uploading it, so it drifts out of date and guests arrive expecting dishes you no longer serve."
+          },
+          {
+            "title": "Hours that disagree",
+            "text": "The website says one thing, Google says another and Facebook a third. After a holiday or a seasonal change, nobody updated all of them. A guest who shows up to a closed door stops trusting anything you post."
+          },
+          {
+            "title": "Hidden booking and ordering",
+            "text": "If booking or ordering means hunting for a link at the bottom of the page or calling during the rush, plenty of people give up. The next step has to sit on the first screen of a phone, with no pop-ups in the way."
+          },
+          {
+            "title": "Heavy photos, slow site",
+            "text": "Food photos sell, but uploaded straight off the camera they can weigh several megabytes each. On mobile data out on the street, the page drags and the visitor closes the tab before seeing a single dish."
+          }
+        ],
+        "features_title": "What goes into a restaurant website we build",
+        "features": [
+          {
+            "title": "A menu you edit yourself",
+            "text": "We build the menu as structured content with sections, prices, allergens and daily specials. You edit it from a simple dashboard, it looks right on every screen, and search engines understand it as an actual menu."
+          },
+          {
+            "title": "Booking and ordering, connected",
+            "text": "We connect the tool you already use for reservations, pickup or delivery instead of making you switch systems. The button stays pinned and visible on mobile, in both Spanish and English."
+          },
+          {
+            "title": "Local search done properly",
+            "text": "We mark up your address, hours, cuisine and price range with structured data and line them up with your Google Business Profile, so someone looking for dinner in Carolina, Guaynabo or Mayagüez sees the same details everywhere."
+          },
+          {
+            "title": "Good photos, light pages",
+            "text": "Your photos are served in modern formats at the exact size each screen needs. The site stays light even with dozens of dishes, so it loads quickly on a weak signal at the beach or stuck in traffic."
+          }
+        ],
+        "services": [
+          "website-design",
+          "wordpress",
+          "performance"
+        ],
+        "faq": [
+          {
+            "question": "How much does a restaurant website cost in Puerto Rico?",
+            "answer": "It depends on how many pages you need, whether the site is bilingual, and which integrations it includes, such as reservations or ordering. That is why we do not publish generic prices: we have a free call to understand the project, then send a fixed quote with the scope in writing. Payments are staged and tied to sign-offs, never hourly."
+          },
+          {
+            "question": "Can I update my restaurant's menu and prices myself?",
+            "answer": "Yes. The menu is built as editable content, not an image or a PDF, so you can change a price, mark a dish as sold out or add the daily special from a simple dashboard. We walk you through it before launch, and during the 30 days of monitoring that follow we are on hand if anything comes up."
+          },
+          {
+            "question": "Can you connect my restaurant website to my reservation or ordering system?",
+            "answer": "In most cases, yes. Many reservation and ordering platforms provide a link or widget we can build into the site. On the first call we look at what you use today and how its integration works. If you do not use one yet, we can outline the general options, but the choice and the contract with that platform are yours."
+          },
+          {
+            "question": "Does my restaurant website need to be in English as well as Spanish?",
+            "answer": "If you get tourists, or you are in areas like Old San Juan, Condado, Isla Verde, Dorado or Rincón, almost certainly. Our team works in Spanish and English, and we design the site so both versions fit and read well, with separate URLs so each language shows up in the right searches."
+          },
+          {
+            "question": "How long does it take to build a restaurant website?",
+            "answer": "A typical project takes about eight weeks from the first call to launch. If it includes an online store, for example to sell gift cards or products, or several languages with a lot of content, plan on 10 to 12 weeks. After launch we include 30 days of monitoring to fix anything that needs attention."
+          }
+        ]
+      },
+      {
+        "id": "healthcare",
+        "index": "02",
+        "title": "Healthcare",
+        "menu_blurb": "Appointments, accepted plans and doctor profiles",
+        "summary": "Websites for medical practices, clinics, dentists and therapists in Puerto Rico: clear appointment requests, accepted insurance plans in plain view, and doctor profiles patients can trust.",
+        "seo_title": "Medical Website Design in Puerto Rico | Web Designer PR",
+        "seo_description": "Medical website design in Puerto Rico for practices, clinics and dentists: appointment requests, accepted plans and profiles. Fixed price. Book a free call.",
+        "seo_keywords": "medical website design, healthcare website design puerto rico, dental website design, clinic website design, doctor website puerto rico, therapist website design, medical practice website, online appointment request website",
+        "h1": "Websites for doctors and clinics in Puerto Rico, <em class=\"italic accent-text\">designed around the patient</em>",
+        "intro": [
+          {
+            "text": "Medical website design in Puerto Rico starts with a simple question: what does a patient need to know before they call? Nearly always the same things: whether you take their insurance plan, where the office is, when you are open, and how to request an appointment without sitting on hold for half an hour. If the site does not answer that on the first screen of a phone, the patient keeps looking."
+          },
+          {
+            "text": "We organize your practice into clear pages: services, doctors, accepted plans, locations and an appointment request form. Forms that collect health information need a HIPAA-compliant provider; the site is built to integrate with the one you choose, and the details are confirmed with your compliance lead. Until then, a basic form can ask for just a name, a phone number and a preferred time."
+          },
+          {
+            "text": "We work with solo practices, medical groups, dentists, psychologists and therapists in San Juan, Bayamón, Caguas, Ponce, Mayagüez and across the island. Many patients prefer Spanish and others arrive in English, so the site can be bilingual from the start. The price is fixed after a free call, payments are staged, and the site, the domain and the content are yours."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Appointment request visible on mobile"
+          },
+          {
+            "text": "Accepted insurance plans that are easy to update"
+          },
+          {
+            "text": "Doctor profiles with specialty and training"
+          },
+          {
+            "text": "Forms ready for a HIPAA-compliant provider"
+          },
+          {
+            "text": "Locations, hours and phone one tap away"
+          },
+          {
+            "text": "Accessible, readable design for older patients"
+          }
+        ],
+        "challenges_title": "The most common problems with clinic and practice websites",
+        "challenges": [
+          {
+            "title": "Insurance lists nobody updates",
+            "text": "Accepted plans change and the website falls behind. Patients call to ask or, worse, show up to an appointment and find out their plan no longer applies. It is some of the most searched information and some of the least maintained."
+          },
+          {
+            "title": "Forms that ask too much",
+            "text": "A standard contact form that asks about symptoms or diagnoses can end up emailing health information with no protection. Before collecting that kind of data you need a suitable provider and a review by whoever handles compliance at your practice."
+          },
+          {
+            "title": "Hard to use for older patients",
+            "text": "Small type, low contrast, tiny buttons and menus that hide. Plenty of patients have tired eyes or little patience for technology, and a site that is hard to use sends them straight to the front desk phone."
+          },
+          {
+            "title": "Doctors without faces",
+            "text": "Many sites list names and nothing else. A patient choosing a specialist wants to see a photo, training, the languages the doctor speaks and the kinds of cases they see. Without that, the choice comes down to who appears first in the plan directory."
+          }
+        ],
+        "features_title": "What we build into a clinic or medical practice website",
+        "features": [
+          {
+            "title": "Appointment requests without friction",
+            "text": "An appointment button pinned on mobile that leads to a short form or to the scheduling tool you already use. If the form will collect health information, we connect it to the HIPAA-compliant provider your practice chooses."
+          },
+          {
+            "title": "Plans and services you edit yourself",
+            "text": "Your accepted insurance plans, services and hours live in a simple dashboard. When a plan is added or dropped, you change it in a minute and it updates on every page where it appears."
+          },
+          {
+            "title": "Doctor profiles that build trust",
+            "text": "Each doctor gets a page with a photo, specialty, training, languages and the locations where they see patients. Those pages also help patients find the doctor by name on Google, not just the clinic."
+          },
+          {
+            "title": "Accessible and readable by default",
+            "text": "We design with strong contrast, large text, keyboard navigation and screen reader labels, following WCAG guidelines. Which ADA requirements apply to your practice is for your legal advisor to confirm; the site is built to support them."
+          }
+        ],
+        "services": [
+          "website-design",
+          "ui-ux",
+          "website-development"
+        ],
+        "faq": [
+          {
+            "question": "How much does a website for a medical practice or clinic cost in Puerto Rico?",
+            "answer": "It depends on the number of doctors, services and locations, whether the site is bilingual, and which integrations it needs, such as scheduling or secure forms. We do not publish generic rates: we have a free call to understand your practice, then send a fixed quote with the scope in writing. Payments are staged, never hourly."
+          },
+          {
+            "question": "Is the appointment form on my clinic's website HIPAA compliant?",
+            "answer": "A web form on its own does not make a practice HIPAA compliant. If it will collect health information, it has to send that data to a provider that offers the required safeguards and will usually sign an agreement with your practice. The site is built to integrate with that provider; the choice and the details are for you to confirm with your compliance lead."
+          },
+          {
+            "question": "Can I update the list of insurance plans my office accepts myself?",
+            "answer": "Yes. Accepted plans are managed as an editable list in the site's dashboard, so you or your staff can add or remove a plan without calling us. The change shows up on every page where the list appears. We show you how before launch, and we are on hand during the 30 days of monitoring."
+          },
+          {
+            "question": "Can you build my practice's website in both Spanish and English?",
+            "answer": "Yes. Our team works in both languages and we design the site as bilingual from the first sketch, with a complete version in each language rather than a machine translation. It helps if you see patients who moved from the mainland, visitors, or families where the patient and the person with them prefer different languages."
+          },
+          {
+            "question": "Can my practice's website show up on Google when people search for a doctor in my town?",
+            "answer": "Nobody can guarantee rankings on Google, but we can get the foundations right. We create pages for each service, doctor and location, mark up your details with structured data and line them up with your Google Business Profile. That way, when someone searches for a dentist in Guaynabo or a pediatrician in Carolina, your practice has what it needs to compete."
+          }
+        ]
+      },
+      {
+        "id": "law-firms",
+        "index": "03",
+        "title": "Law firms",
+        "menu_blurb": "Practice areas, attorney bios and consultations",
+        "summary": "Websites for attorneys and law firms in Puerto Rico: practice areas explained clearly, attorney profiles that earn trust, and a straightforward way to request a consultation.",
+        "seo_title": "Law Firm Website Design in Puerto Rico | Web Designer PR",
+        "seo_description": "Law firm website design in Puerto Rico: clear practice area pages, attorney profiles and consultation requests. Fixed price, you own it. Book a free call.",
+        "seo_keywords": "law firm website design, lawyer website design puerto rico, attorney website design, law firm web design san juan, bilingual law firm website, legal website design, attorney website puerto rico, law firm website redesign",
+        "h1": "Websites for lawyers and law firms in Puerto Rico, <em class=\"italic accent-text\">serious, clear and easy to contact</em>",
+        "intro": [
+          {
+            "text": "Law firm website design in Puerto Rico has to handle something delicate: a person with a serious, sometimes urgent problem needs to work out in a few minutes whether your firm handles their kind of case and how to reach you. They are not looking for adjectives or stock photos of gavels and scales; they want clarity, a track record they can check, and an obvious next step on their phone."
+          },
+          {
+            "text": "We organize the site by practice area, each with its own page explaining what you handle, who you represent and what to expect from a first consultation. Each attorney profile shows education, bar admissions and experience. All content is reviewed with you so it fits your professional obligations and whatever advertising rules apply to you, and nothing goes live without your approval."
+          },
+          {
+            "text": "We work with solo practitioners, small firms and multi-office firms in San Juan, Hato Rey, Guaynabo, Bayamón, Ponce and Mayagüez, as well as firms serving clients on the US mainland. The site can be in Spanish and English from the start. The price is fixed after a free call, payments are staged, and the finished site is entirely yours."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "A dedicated page for every practice area"
+          },
+          {
+            "text": "Attorney profiles with education and bar admissions"
+          },
+          {
+            "text": "A clear, easy-to-find consultation request"
+          },
+          {
+            "text": "Copy reviewed with you against your professional obligations"
+          },
+          {
+            "text": "Complete Spanish and English versions"
+          },
+          {
+            "text": "Office details matching your Google Business Profile"
+          }
+        ],
+        "challenges_title": "Why so many law firm websites fail to bring in consultations",
+        "challenges": [
+          {
+            "title": "Everything in one list",
+            "text": "Plenty of firms put fifteen practice areas in one list with two lines each. Clients cannot tell whether their case fits, and Google has no specific page to show when someone searches for a family or bankruptcy lawyer."
+          },
+          {
+            "title": "Language clients do not understand",
+            "text": "Copy written for other lawyers, full of technical terms and case citations. The person looking for help needs to know in plain words what you do, how the process works and which documents to have ready for the consultation."
+          },
+          {
+            "title": "Harder to reach than it should be",
+            "text": "A single generic email address at the bottom of the page, a form that never confirms it was sent, or a phone number you cannot tap on mobile. Every obstacle is a consultation that ends up at the firm next door."
+          },
+          {
+            "title": "Promises that should not be there",
+            "text": "Lines like “we guarantee results” or “the best lawyers on the island” can run into professional advertising rules. A serious site avoids that risk from the first draft, and every page is reviewed with you before it goes live."
+          }
+        ],
+        "features_title": "What goes into a law firm website we build",
+        "features": [
+          {
+            "title": "A page for each practice area",
+            "text": "Every area gets its own page with a clear explanation, common questions and an invitation to request a consultation. Clients recognize their situation in the copy, and Google gets a specific page for each kind of legal search."
+          },
+          {
+            "title": "Profiles that back up the firm",
+            "text": "Each attorney has a page with a photo, education, bar admissions, languages and practice areas. You supply the facts and we present them soberly, without adjectives you would have to justify later."
+          },
+          {
+            "title": "Consultation requests you can rely on",
+            "text": "A short form that confirms it was received, plus tap-to-call and WhatsApp if you use them. We agree with you on what to ask at first contact so the site does not collect more confidential information than it needs."
+          },
+          {
+            "title": "Content reviewed with you",
+            "text": "Nothing goes live without your approval. We write and edit every page with you so the site fits your professional obligations and whatever advertising rules apply to you, and you always have the final word."
+          }
+        ],
+        "services": [
+          "website-design",
+          "wordpress",
+          "redesign"
+        ],
+        "faq": [
+          {
+            "question": "How much does a website for a lawyer or law firm cost in Puerto Rico?",
+            "answer": "It depends on how many practice areas and attorneys it covers, whether the site is bilingual, and whether you need a blog or integrations. We do not publish generic rates: after a free call we send a fixed quote with the scope in writing. Payments are staged and tied to sign-offs, so you know the total cost before we start."
+          },
+          {
+            "question": "Will my law firm website comply with attorney advertising rules in Puerto Rico?",
+            "answer": "We do not give legal advice or certify compliance. What we do is keep out the kinds of phrases that tend to cause trouble, such as guaranteed outcomes or comparisons with other firms, and review every page with you before it goes live so it fits your professional obligations. The final say on what gets published is yours."
+          },
+          {
+            "question": "Can I have a blog on my law firm's website?",
+            "answer": "Yes, and it can help you show up for specific searches, like questions about divorce, inheritance or wrongful termination in Puerto Rico. We build it so you can publish articles yourself from a simple dashboard. Our advice: write carefully and cite your sources. One solid article a month usually does more than ten rushed ones."
+          },
+          {
+            "question": "Is it safe to receive consultation requests through my firm's website?",
+            "answer": "The form is sent over an encrypted connection and connected to the email or tool your firm already uses. Even so, a contact form is not the place to collect confidential case details. We agree with you on what to ask at that first step and leave the sensitive material for the consultation itself."
+          },
+          {
+            "question": "Can you redesign my law firm's website without losing what already ranks on Google?",
+            "answer": "Yes. Before changing anything, we check which pages on your current site get visits and from which searches. We keep or redirect those URLs so Google understands the move, and we hold on to the content that works. Nobody can guarantee rankings, but a well-planned redesign avoids throwing away what you have already earned."
+          }
+        ]
+      },
+      {
+        "id": "real-estate",
+        "index": "04",
+        "title": "Real Estate",
+        "menu_blurb": "Sites for brokers, developers and managers",
+        "summary": "Websites for Puerto Rico realtors, brokerages, developers and property managers: property search, listing pages that sell, and lead forms that reach the right agent, in English and Spanish.",
+        "seo_title": "Real Estate Website Design in Puerto Rico | Web Designer PR",
+        "seo_description": "Real estate website design in Puerto Rico: property search, bilingual listing pages and lead capture that reaches your agents. Fixed price. Book a free call.",
+        "seo_keywords": "real estate website design puerto rico, realtor website puerto rico, real estate web designer san juan, idx website puerto rico, property developer website design, property management website puerto rico, bilingual real estate website, broker website design puerto rico",
+        "h1": "Websites for Puerto Rico real estate, <em class=\"italic accent-text\">built to book showings</em>",
+        "intro": [
+          {
+            "text": "Real estate website design in Puerto Rico has one concrete job: help a buyer find the property, understand the area and contact you before they drift back to a portal. We build sites for realtors, brokerages, developers and property managers who want leads of their own, not just visibility on someone else's platform where every competitor sits one click away."
+          },
+          {
+            "text": "Your audience is not one audience. There are local families searching in Bayamón, Caguas or Carolina, investors comparing condos in Condado or Dorado, and buyers relocating from the US mainland, including those moving under Act 60 who read in English. We design the site bilingual from the start, with listings, filters and forms that work equally well in both languages."
+          },
+          {
+            "text": "If your MLS or data provider allows listings on member websites, we integrate the IDX search or feed you are authorized to use; if not, we build a catalog of your own that your team updates without calling us. Scope and price are fixed before we start, payments are staged, and the site, the code and the leads belong to you."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Property search filtered by town and price"
+          },
+          {
+            "text": "Listing pages with gallery, map and key details"
+          },
+          {
+            "text": "Lead forms routed to the right agent"
+          },
+          {
+            "text": "Full content in Spanish and English"
+          },
+          {
+            "text": "Neighborhood and town pages for local search"
+          },
+          {
+            "text": "Photos that load fast on mobile data"
+          }
+        ],
+        "challenges_title": "Why so many real estate websites fail to bring in leads",
+        "challenges": [
+          {
+            "title": "Listings nobody keeps current",
+            "text": "Sold homes still showing, old prices and photos that never load. A buyer loses trust within a couple of clicks and goes back to the big portal, where your listing competes with everyone else's."
+          },
+          {
+            "title": "All the traffic stays on the portals",
+            "text": "If your site is just a business card, leads either reach you filtered through third parties or not at all. Without your own search and local content, nobody has a reason to start on your page."
+          },
+          {
+            "title": "Second-class English",
+            "text": "Plenty of local sites translate the menu and leave the listings in Spanish, or the other way around. A buyer relocating from the mainland or an outside investor leaves if they cannot read the property details."
+          },
+          {
+            "title": "Heavy galleries that choke phones",
+            "text": "A listing with thirty unoptimized photos can crawl on a phone over mobile data. Most people house-hunt from their phone, so a slow listing page is a lost lead, no matter how good the property is."
+          }
+        ],
+        "features_title": "What we build into a real estate agency website",
+        "features": [
+          {
+            "title": "Property search that fits your business",
+            "text": "We integrate IDX or whatever feed your MLS authorizes, or a catalog of your own if you prefer to control inventory. Filters by town, price, type and bedrooms, with fast results that share cleanly over WhatsApp or email."
+          },
+          {
+            "title": "Listing pages that sell the property",
+            "text": "Each property gets an optimized gallery, map, key facts, a bilingual description and a contact button that stays in view. Listings are generated consistently, so they look right no matter who on your team uploads them."
+          },
+          {
+            "title": "Lead capture and routing",
+            "text": "Short forms per listing, per agent or for home valuations, delivered to the inbox or CRM you choose. Every inquiry notes the page it came from, so the agent knows exactly what the client is interested in."
+          },
+          {
+            "title": "Local content that shows up on Google",
+            "text": "Town and neighborhood pages for places like Guaynabo, Dorado or Rincón, covering what buyers actually want to know. Structured for local search and tied to your Google Business Profile, without stuffing the text with keywords."
+          }
+        ],
+        "services": [
+          "website-development",
+          "website-design",
+          "wordpress"
+        ],
+        "faq": [
+          {
+            "question": "How much does a realtor website cost in Puerto Rico?",
+            "answer": "It depends on whether you need IDX search or your own catalog, multiple offices or agents, and how many town and project pages you want. After a free call to understand the scope, we give you a fixed price in writing. You pay in stages, never by the hour, and the price holds as long as the scope does."
+          },
+          {
+            "question": "Can you connect my website to the MLS to show listings?",
+            "answer": "If your MLS or data provider allows listings on member websites, we integrate the authorized IDX or feed and follow its display rules. You confirm the terms and permissions with your own MLS, since they vary by association. If access is not available, we build a catalog your team manages directly."
+          },
+          {
+            "question": "Can my Puerto Rico real estate site target buyers relocating from the US?",
+            "answer": "Yes. Our team works in English and Spanish, and we design the site bilingual from the start: menus, listings, forms and town pages. We can write content for people relocating from the mainland, including buyers interested in Act 60, while tax questions stay with their own advisor rather than on your site."
+          },
+          {
+            "question": "Can I update listings myself without calling the developer?",
+            "answer": "Yes. If you run your own catalog, we build it on a custom WordPress theme or a simple admin where you upload photos, change prices and mark homes as sold. We train you and your team, and for 30 days after launch we monitor the site and fix anything that comes up."
+          },
+          {
+            "question": "How long does it take to build a website for a brokerage or developer?",
+            "answer": "A typical project takes about eight weeks from signed brief to launch. If the site is fully bilingual, includes an IDX integration or covers several development projects with their own pages, plan on ten to twelve weeks. The timeline is fixed along with the scope before any work starts."
+          }
+        ]
+      },
+      {
+        "id": "tourism",
+        "index": "05",
+        "title": "Tourism & Hospitality",
+        "menu_blurb": "Hotels, guest houses, rentals and tours",
+        "summary": "Websites for Puerto Rico hotels, guest houses, vacation rentals and tour operators, built for direct bookings, English-speaking visitors and phones on slow hotel wifi or roaming data.",
+        "seo_title": "Hotel & Tourism Website Design in PR | Web Designer PR",
+        "seo_description": "Hotel and tourism website design in Puerto Rico: direct bookings, booking engine integration and a bilingual site that is fast on phones. Book a free call.",
+        "seo_keywords": "hotel website design puerto rico, guest house website design, vacation rental website puerto rico, tour operator website puerto rico, tourism web design puerto rico, direct booking website hotel, booking engine integration website, bilingual hotel website",
+        "h1": "Tourism websites in Puerto Rico <em class=\"italic accent-text\">that win more direct bookings</em>",
+        "intro": [
+          {
+            "text": "Hotel and tourism website design in Puerto Rico has to persuade fast. A guest compares your guest house with ten others on a booking platform, opens your site to double-check and decides within a couple of minutes. If they find clear photos, visible rates and an easy way to book direct, you have a real chance to keep that booking without paying a commission."
+          },
+          {
+            "text": "We build sites for small hotels, guest houses, vacation rentals and tour operators from San Juan to Rincón, Culebra and Vieques. Most of your visitors come from the US mainland and read in English, often on a phone running on roaming data or shared hotel wifi. That is why we design bilingual from the start and hold every page to a strict weight budget."
+          },
+          {
+            "text": "We do not replace your booking engine or channel manager: we integrate them, so your calendar and rates stay in one place. Your site's job is to win the guest over and get them booking without friction. Scope and price are fixed before we start, payments are staged, and the site and its content belong to you."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "A book-now button visible on every page"
+          },
+          {
+            "text": "Integrated booking engine or availability calendar"
+          },
+          {
+            "text": "Full content in English and Spanish"
+          },
+          {
+            "text": "Fast galleries that load on mobile data"
+          },
+          {
+            "text": "Map, directions and parking details"
+          },
+          {
+            "text": "Clear cancellation and check-in policies"
+          }
+        ],
+        "challenges_title": "Why so many tourism websites lose bookings to the platforms",
+        "challenges": [
+          {
+            "title": "Guests cannot find how to book",
+            "text": "The book button is buried, the engine opens in another window with a different look, or checkout takes too many steps. The visitor hesitates, goes back to the platform they already know and books there, commission included."
+          },
+          {
+            "title": "Heavy photos on slow connections",
+            "text": "A traveler at the airport or on roaming data will not wait for twenty high-resolution photos to load. If the page stalls, they move to whichever option loads first, even when your property is the better one."
+          },
+          {
+            "title": "English written in a hurry",
+            "text": "Machine-translated text, rates without a clear currency or policies only in Spanish raise doubts right when the guest is about to pay. In hospitality, trust comes from small details explained clearly in the visitor's language."
+          },
+          {
+            "title": "Stale information after every season",
+            "text": "Last year's rates, tours you no longer run, or hurricane notices nobody took down. If the site is hard to update, it ends up telling guests things that are no longer true, and that costs bookings."
+          }
+        ],
+        "features_title": "What we build into a hotel and tour operator website",
+        "features": [
+          {
+            "title": "Direct booking without friction",
+            "text": "We integrate the booking engine, channel manager or tour booking platform you already use, styled to match your site. The book button stays in view, and every room or tour links straight to its own availability."
+          },
+          {
+            "title": "Fast on any phone",
+            "text": "We set a page weight budget during design: modern image formats at the right sizes, light fonts and no unnecessary scripts. The site holds up on mobile data, roaming or the crowded wifi of a hotel lobby."
+          },
+          {
+            "title": "Genuinely bilingual",
+            "text": "Content written for the visitor flying in from the mainland and for local travelers, not machine translation. Rooms, tours, policies and FAQs in both languages, with a language switcher guests can actually find."
+          },
+          {
+            "title": "Easy to update in season",
+            "text": "A simple admin, in hand-written code or a custom WordPress theme, where you change rates, photos, notices and offers without calling us. Handy for high season, special events or updates during hurricane season."
+          }
+        ],
+        "services": [
+          "website-design",
+          "website-development",
+          "performance"
+        ],
+        "faq": [
+          {
+            "question": "How much does a website for a small hotel or guest house in Puerto Rico cost?",
+            "answer": "It depends on the number of rooms or experiences, the booking engine integration and whether the site is fully bilingual. After a free call to understand the scope, we give you a fixed price in writing. You pay in stages, never by the hour, and the price holds as long as the scope does."
+          },
+          {
+            "question": "Can you integrate my current booking engine or channel manager?",
+            "answer": "In most cases, yes. We work with the booking engine, channel manager or tour booking platform you already use, as long as it offers a widget, link or integration for external websites. Your calendar and rates stay in one place, and the site focuses on getting the guest to book."
+          },
+          {
+            "question": "Will my own website help me rely less on booking platforms?",
+            "answer": "It can help, but we do not promise numbers. A fast, clear site with simple direct booking gives guests a reason to book with you after they find you on a platform. Many properties use both: the platforms to get discovered and their own site to close the booking."
+          },
+          {
+            "question": "Does my Puerto Rico tourism site need to be in English as well as Spanish?",
+            "answer": "If you host visitors from the US mainland or abroad, almost always yes. Our team works in English and Spanish, and we design the site bilingual from the start, with copy written for each audience instead of machine translation. If your business is registered with the Compañía de Turismo, confirm any listing requirements with them directly."
+          },
+          {
+            "question": "How long does it take to build a website for a hotel or tour operator?",
+            "answer": "A typical project takes about eight weeks from signed brief to launch. If the site is fully bilingual or sells tours and products online, plan on ten to twelve weeks. It is worth timing the launch ahead of high season, and we stay with you for the 30 days after it goes live."
+          }
+        ]
+      },
+      {
+        "id": "contractors",
+        "index": "06",
+        "title": "Contractors & Construction",
+        "menu_blurb": "Construction, roofing, solar and home services",
+        "summary": "Websites for Puerto Rico contractors, builders, roofers, solar installers and home service companies: project galleries, quote requests and clear service areas across the island.",
+        "seo_title": "Contractor Website Design in Puerto Rico | Web Designer PR",
+        "seo_description": "Contractor website design in Puerto Rico: project galleries, quote request forms and service area pages that bring in better leads. Book a free call.",
+        "seo_keywords": "contractor website design puerto rico, construction company website puerto rico, roofing website design, solar installer website puerto rico, home services website design, builder website design puerto rico, contractor web designer san juan, quote request form website",
+        "h1": "Websites for Puerto Rico contractors <em class=\"italic accent-text\">that bring in serious quote requests</em>",
+        "intro": [
+          {
+            "text": "Contractor website design in Puerto Rico has to answer three questions before the client calls: do you do the job they need, do you work in their town, and can they trust you. We build sites for builders, roofers, solar installers, electricians, plumbers and home service companies that want better-qualified quote requests, not more missed calls."
+          },
+          {
+            "text": "Most of your clients look you up on their phone, often after a storm or because a neighbor mentioned your name. So the site has to load fast, show your real work with before-and-after photos, and make it obvious which towns you serve, whether that is Bayamón, Caguas, Mayagüez or Ponce. The call and quote buttons are always within reach."
+          },
+          {
+            "text": "We present your licenses, insurance and certifications exactly as you provide them, without overstating anything. We design in Spanish and English if you serve commercial clients or residents who prefer English. Scope and price are fixed before we start, payments are staged, and the site, the code and your project photos belong to you, not to us."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Project gallery with before-and-after photos"
+          },
+          {
+            "text": "Quote request form that accepts photos and details"
+          },
+          {
+            "text": "Pages for each service and service area"
+          },
+          {
+            "text": "Tap-to-call button always visible on mobile"
+          },
+          {
+            "text": "Licenses, insurance and certifications you provide"
+          },
+          {
+            "text": "Google Business Profile linked and kept current"
+          }
+        ],
+        "challenges_title": "Why so many contractor websites fail to win work",
+        "challenges": [
+          {
+            "title": "Quote requests that arrive half-empty",
+            "text": "A generic form asking only for a name and phone number means calling back just to learn the basics. You waste time on leads that do not fit and respond more slowly to the ones that do."
+          },
+          {
+            "title": "The real work is invisible",
+            "text": "Stock photos instead of your projects, or a jumbled gallery with no context. Clients want to see roofs, kitchens or solar installs you actually did, with a clear sense of where they were and what problem got solved."
+          },
+          {
+            "title": "No clear service area",
+            "text": "If the site does not say where you work, a client in Mayagüez assumes you will not come or will charge extra for the drive. Google has no way to show you in local searches for those towns either."
+          },
+          {
+            "title": "Sites that buckle on a phone",
+            "text": "After a hurricane or a blackout, people search for contractors on low battery and patchy signal. A heavy site or a confusing menu loses exactly the clients who need help right now and are ready to hire."
+          }
+        ],
+        "features_title": "What we build into a construction company website",
+        "features": [
+          {
+            "title": "Better-qualified quote requests",
+            "text": "Forms by service type that ask what you need to know: town, property type, rough scope and photos of the area. They arrive in your inbox or CRM organized, so you can respond with information instead of guessing."
+          },
+          {
+            "title": "Project galleries that sell",
+            "text": "Projects organized by service, with before-and-after photos, the town and a short description of the job. Optimized images that load fast on phones, plus an admin where your team adds new projects without calling us."
+          },
+          {
+            "title": "Service area pages",
+            "text": "Useful pages for the towns and regions you serve, from the metro area to the west and south, with the relevant services and projects. Structured for local search and tied to your Google Business Profile, without duplicated filler."
+          },
+          {
+            "title": "Trust without exaggeration",
+            "text": "We display your licenses, registration numbers, insurance, warranties and manufacturer certifications exactly as you provide them. You confirm each one is current; we present them clearly and in a way clients can easily verify."
+          }
+        ],
+        "services": [
+          "website-design",
+          "wordpress",
+          "redesign"
+        ],
+        "faq": [
+          {
+            "question": "How much does a contractor website cost in Puerto Rico?",
+            "answer": "It depends on how many services you offer, how many service areas you want to cover, the size of the project gallery and whether the site is bilingual. After a free call to understand the scope, we give you a fixed price in writing. You pay in stages, never by the hour, and the price holds as long as the scope does."
+          },
+          {
+            "question": "Can I upload photos of new projects myself?",
+            "answer": "Yes. We build the gallery on a custom WordPress theme or a simple admin where you upload photos, pick the service and town, and add a short description. Images are optimized automatically so the site stays fast. We train you and your team before launch, and monitor the site for 30 days after."
+          },
+          {
+            "question": "How do I show up on Google in other towns across Puerto Rico?",
+            "answer": "It helps to have useful pages for each service and service area, a complete Google Business Profile and real projects tied to each region. We structure the site for local search from day one, but nobody can guarantee Google rankings; what we control is a fast, clear, well-built site."
+          },
+          {
+            "question": "Which licenses or permits should my construction company show on its website?",
+            "answer": "Confirm that with your attorney, advisor or the agency that regulates your trade, because it varies by type of work. We present the licenses, registrations, insurance and certifications you provide, somewhere visible and easy to verify, and remind you to check that each one is current before launch."
+          },
+          {
+            "question": "I already have an old website. Should I redesign it or start over?",
+            "answer": "It depends on how slow it is, whether you can update it and whether it brings in quote requests. On the scoping call we review your current site and tell you honestly what makes sense. If we redesign, we keep what works, like content and photos, and handle redirects so you do not lose what Google already knows."
+          }
+        ]
+      },
+      {
+        "id": "retail",
+        "index": "07",
+        "title": "Retail & Shops",
+        "menu_blurb": "Boutiques, local shops and online stores",
+        "summary": "Websites and online stores for Puerto Rico retailers: a clear catalog, in-store pickup, shipping on the island and to the mainland, and a checkout that works on a phone.",
+        "seo_title": "Retail Website Design in Puerto Rico | Web Designer PR",
+        "seo_description": "Retail website design in Puerto Rico: Shopify or WooCommerce stores with local pickup and mainland shipping. Fixed price. Book your free scoping call today.",
+        "seo_keywords": "retail website design puerto rico, online store puerto rico, boutique website design, shopify developer puerto rico, woocommerce puerto rico, ecommerce website san juan, small business online store puerto rico, ath movil online store",
+        "h1": "Websites for shops and boutiques, <em class=\"italic accent-text\">built to sell on the island and beyond</em>",
+        "intro": [
+          {
+            "text": "Retail website design in Puerto Rico has one concrete job: help a shopper find the product, see whether it's in stock and buy it without friction, whether they're in Bayamón or Orlando. For a boutique in Old San Juan or a shop selling local goods in Caguas, the site is the storefront that stays open after you lock the door."
+          },
+          {
+            "text": "We build on Shopify or WooCommerce depending on what your business needs. Shopify usually fits if you want to manage inventory without thinking about servers; WooCommerce fits if you already run WordPress or want more control over content. Either way the design is ours, not a purchased theme, and we set up in-store pickup, island shipping and shipping to the US mainland."
+          },
+          {
+            "text": "Before quoting, we talk through your catalog, your payment methods and how you handle orders today. Sales tax (IVU) is configured the way your accountant tells us to, and where the platform supports it we look at ATH Móvil with you as a payment option. You get a fixed price, staged payments and a store you own: code, content, domain and customer data."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "Catalog filters for size, color and price"
+          },
+          {
+            "text": "Fast checkout that works well on a phone"
+          },
+          {
+            "text": "In-store pickup option"
+          },
+          {
+            "text": "Shipping rates for the island and mainland"
+          },
+          {
+            "text": "IVU set up per your accountant's instructions"
+          },
+          {
+            "text": "Properly linked Google Business Profile listing"
+          }
+        ],
+        "challenges_title": "Why so many Puerto Rico online stores don't sell",
+        "challenges": [
+          {
+            "title": "Heavy themes that load slowly",
+            "text": "Many stores run a purchased theme with dozens of apps stacked on top. Each one adds scripts, and the result is a product page that crawls on mobile data, which is exactly where most of your shoppers are."
+          },
+          {
+            "title": "Shipping that ignores the island",
+            "text": "Carts set up for the US mainland sometimes miscalculate shipping to Puerto Rico or skip in-store pickup entirely. The customer reaches the last step, sees a surprise cost and abandons the order."
+          },
+          {
+            "title": "Payments that don't match local habits",
+            "text": "If your customers prefer ATH Móvil or paying in person at pickup, a card-only checkout leaves sales on the table. What your platform can support needs to be checked before anything gets designed."
+          },
+          {
+            "title": "A catalog nobody can keep current",
+            "text": "When adding a product means calling someone, the catalog goes stale. Outdated photos, sold-out sizes shown as available and prices that don't match the physical store all chip away at trust."
+          }
+        ],
+        "features_title": "What we build for your Puerto Rico online store",
+        "features": [
+          {
+            "title": "A platform chosen on purpose",
+            "text": "We compare Shopify and WooCommerce against your inventory, your maintenance budget and your team. You hear what you gain and what you give up with each before deciding, so you aren't migrating again in two years."
+          },
+          {
+            "title": "Product pages that sell",
+            "text": "Large but lightweight photos, clear sizes and variants, visible stock and a return policy that's easy to find. Each page answers the questions customers currently send you by direct message, before they leave."
+          },
+          {
+            "title": "Shipping, pickup and payments that fit",
+            "text": "We set up shipping zones for the island and the mainland, pickup at one or more locations and whichever payment methods your platform supports. IVU is configured the way your accountant specifies, not with a generic default."
+          },
+          {
+            "title": "A store you can run yourself",
+            "text": "You get a tidy admin and a short guide for adding products, changing prices and launching seasonal promotions. Thirty days of post-launch monitoring are included so we can fix whatever shows up once real orders arrive."
+          }
+        ],
+        "services": [
+          "ecommerce",
+          "wordpress",
+          "performance"
+        ],
+        "faq": [
+          {
+            "question": "How much does an online store cost for a business in Puerto Rico?",
+            "answer": "It depends on catalog size, platform, payment methods and whether you need one language or two. We don't give generic prices: after a free scoping call we send you a fixed price in writing. You pay in stages tied to approvals, and if the scope doesn't change, neither does the price."
+          },
+          {
+            "question": "Shopify or WooCommerce: which is better for a Puerto Rico store?",
+            "answer": "Shopify suits you if you want a managed platform with little technical upkeep, in exchange for a monthly fee and plan-based transaction costs. WooCommerce runs on WordPress and gives more control over content and hosting, but needs more care. We decide with you based on your catalog, your team and how you plan to grow."
+          },
+          {
+            "question": "Can an online store accept ATH Móvil?",
+            "answer": "It depends on the platform and the integrations available at the time of the project. We check during scoping and tell you plainly which options exist for your case, what they cost or require and how the checkout would look. If there's no reliable integration, we suggest alternatives such as paying at pickup."
+          },
+          {
+            "question": "How are IVU and shipping to the US mainland handled?",
+            "answer": "We configure IVU following your accountant's instructions, because the right setup depends on your business and what you sell. For shipping, we create separate zones for Puerto Rico and the US mainland with their own rates, plus in-store pickup if you offer it."
+          },
+          {
+            "question": "How long does it take to launch an online store?",
+            "answer": "An ecommerce project usually takes ten to twelve weeks from kickoff to launch. The biggest factor is how ready your catalog is: photos, descriptions, variants and prices. If you already sell on another platform, we plan the product and customer migration inside that timeline."
+          }
+        ]
+      },
+      {
+        "id": "beauty-wellness",
+        "index": "08",
+        "title": "Beauty & Wellness",
+        "menu_blurb": "Salons, barbershops, spas, gyms and studios",
+        "summary": "Websites for salons, barbershops, spas, med-spas, gyms and studios in Puerto Rico: online booking, a clear service menu, a gallery of your work and reviews that convince.",
+        "seo_title": "Salon & Spa Website Design in Puerto Rico | Web Designer PR",
+        "seo_description": "Salon and spa website design in Puerto Rico with online booking, service menus and a fast gallery. Fixed price, and you own it all. Book your free call today.",
+        "seo_keywords": "salon website design puerto rico, spa website design puerto rico, barbershop website, med spa website design, gym website design puerto rico, online booking website for salons, yoga studio website, beauty salon web designer san juan",
+        "h1": "Websites for salons, barbershops and spas, <em class=\"italic accent-text\">with the book open around the clock</em>",
+        "intro": [
+          {
+            "text": "Salon and spa website design in Puerto Rico has to turn someone who found you on Instagram into a confirmed appointment. That person is on a phone, wants to see your work, understand what you offer and what it costs, and book without sending a direct message and waiting for a reply. If that takes more than a minute, they book elsewhere."
+          },
+          {
+            "text": "We build sites for salons in Guaynabo, barbershops in Carolina, spas in Dorado, and gyms and yoga or pilates studios across the island. We integrate the booking tool you already use, or help you pick one, and build a service menu with the prices and durations you set. The gallery looks sharp and loads fast, even with a lot of photos."
+          },
+          {
+            "text": "If you run a med-spa or offer aesthetic treatments, we plan the site so health information doesn't pass through forms that aren't set up for it, and we recommend confirming the requirements with your own compliance advisor. As with every project we take on, the price is fixed, payments are staged and the site is yours."
+          }
+        ],
+        "must_haves": [
+          {
+            "text": "A visible Book Now button on every page"
+          },
+          {
+            "text": "Service menu with prices and durations"
+          },
+          {
+            "text": "A work gallery that loads fast"
+          },
+          {
+            "text": "Real reviews from Google and other platforms"
+          },
+          {
+            "text": "Team profiles with each person's specialties"
+          },
+          {
+            "text": "Direct links to Instagram and WhatsApp"
+          }
+        ],
+        "challenges_title": "The most common problems with salon and spa websites",
+        "challenges": [
+          {
+            "title": "Everything lives on Instagram",
+            "text": "Many beauty businesses exist only on social media. Instagram brings attention, but it doesn't organize services or prices, doesn't rank well for searches like barbershop in Caguas, and runs on an algorithm you don't control."
+          },
+          {
+            "title": "Booking through direct messages",
+            "text": "Answering every price and availability question by DM eats hours, and people who write late at night drift away. Without a connected booking system, the calendar depends on someone watching the phone."
+          },
+          {
+            "title": "Slow, heavy galleries",
+            "text": "Photos of cuts, nails and treatments are what sell, but uploaded unoptimized they make the page crawl on mobile data. Visitors give up before they ever see your best work."
+          },
+          {
+            "title": "Outdated or missing information",
+            "text": "Hours that changed, services you no longer offer, stylists who have left the team. When the site doesn't match reality, clients show up with the wrong expectations or simply book somewhere else."
+          }
+        ],
+        "features_title": "What we build for your Puerto Rico salon, spa or gym",
+        "features": [
+          {
+            "title": "Integrated booking, not a stray link",
+            "text": "We connect the booking platform you use so clients choose a service, a professional and a time without leaving your brand. If you don't have one yet, we compare options with you based on your type of business and how you charge."
+          },
+          {
+            "title": "A service menu that's easy to update",
+            "text": "We organize services by category with price, duration and a short description. You change prices or add treatments from a simple admin, without depending on anyone, so the menu always matches what you actually offer."
+          },
+          {
+            "title": "A gallery that shows off your work",
+            "text": "We design a gallery with optimized photos that look crisp and load fast on a phone. It can include before-and-afters, work by stylist and a section showing your latest Instagram posts."
+          },
+          {
+            "title": "Ready for local search",
+            "text": "We structure each page for searches like salon in Bayamón or spa in Dorado, connect your Google Business Profile and keep your reviews visible. Thirty days of post-launch monitoring are included."
+          }
+        ],
+        "services": [
+          "website-design",
+          "website-development",
+          "performance"
+        ],
+        "faq": [
+          {
+            "question": "How much does a website for a beauty salon in Puerto Rico cost?",
+            "answer": "It depends on how many services and locations you have, the booking integration and whether you need the site in Spanish and English. We don't give generic prices: after a free scoping call we send you a fixed price in writing. You pay in stages tied to approvals, never by the hour."
+          },
+          {
+            "question": "Can you connect my current booking system to the website?",
+            "answer": "In most cases, yes. Many booking platforms for salons, barbershops and gyms can be embedded or linked into a website, though each has its limits. We review yours during the scoping call and show you how the booking experience will look before design starts."
+          },
+          {
+            "question": "Do I need a website if I already have Instagram?",
+            "answer": "Instagram is great for showing your work, but it doesn't replace a site. A website shows up on Google when someone searches for a salon or spa in their town, organizes your services and prices, takes bookings and belongs to you, regardless of algorithm changes. Ideally the two work together."
+          },
+          {
+            "question": "What should a med-spa website in Puerto Rico include?",
+            "answer": "Beyond services, team and booking, a med-spa site should explain its treatments clearly and who performs them. We design it so health information isn't collected through forms that aren't set up for it, and we recommend reviewing the content and privacy requirements with your own legal or compliance advisor."
+          },
+          {
+            "question": "How long does it take to build a spa or gym website?",
+            "answer": "A typical project takes about eight weeks from kickoff to launch. If the site is bilingual or includes a product shop or memberships, it can take ten to twelve. The biggest factor is having your photos, service list and team details ready."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -37,6 +37,25 @@ def svc_icon(sid, cls="svc-icon"):
             f'{SVC_ICONS.get(sid, FALLBACK_ICON)}</svg>')
 
 
+# Industry icons, keyed by the id used in content/industries.json
+IND_ICONS = {
+ "restaurants": '<path d="M9 4v9a3 3 0 0 0 6 0V4M12 4v26M25 30V4c-3.5 2-5.5 6-5.5 11H25"/>',
+ "healthcare": '<path d="M17 29S6 22.5 6 15a6 6 0 0 1 11-3.3A6 6 0 0 1 28 15c0 7.5-11 14-11 14Z"/><path d="M10 17h4l2-3 3 6 2-3h3"/>',
+ "law-firms": '<path d="M17 4v26M10 30h14M6 9h22M10 9l-5 10a5 5 0 0 0 10 0L10 9ZM24 9l-5 10a5 5 0 0 0 10 0L24 9Z"/>',
+ "real-estate": '<path d="M4 16 17 5l13 11M8 13v16h18V13"/><path d="M14 29v-8h6v8"/>',
+ "tourism": '<path d="M17 30c0-8 1-14 3-18M20 12c-3-4-8-4-11-1M20 12c1-4 6-6 10-4M20 12c4 0 7 3 7 7M20 12c-4 1-6 5-5 9"/><path d="M7 30h20"/>',
+ "contractors": '<path d="M6 24a11 11 0 0 1 22 0M14 14V9h6v5M4 24h26v4H4z"/>',
+ "retail": '<path d="M7 11h20l-2 19H9L7 11Z"/><path d="M12 14V9a5 5 0 0 1 10 0v5"/>',
+ "beauty-wellness": '<circle cx="9" cy="25" r="4"/><circle cx="25" cy="25" r="4"/><path d="M12 22 26 5M22 22 8 5"/>',
+}
+
+
+def ind_icon(iid, cls="svc-icon"):
+    return (f'<svg class="{cls}" viewBox="0 0 34 34" fill="none" stroke="currentColor" '
+            f'stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+            f'{IND_ICONS.get(iid, FALLBACK_ICON)}</svg>')
+
+
 class Ctx:
     """Everything that varies by language: paths, URLs and the chrome strings.
 
@@ -129,7 +148,8 @@ class Ctx:
 
 # CMS field names cannot contain dots, so page metadata is keyed by a plain name
 META_KEY = {"index.html": "home", "about.html": "about", "services.html": "services",
-            "portfolio.html": "portfolio", "deals.html": "deals", "contact.html": "contact", "articles.html": "articles"}
+            "portfolio.html": "portfolio", "deals.html": "deals", "contact.html": "contact", "articles.html": "articles",
+            "industries.html": "industries"}
 
 
 def head(c, page, title=None, description=None, keywords=None, extra="", og_type="website"):
@@ -281,39 +301,56 @@ CHEVRON = ('<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-wi
            'aria-hidden="true"><path d="M3 4.5 6 7.5l3-3"/></svg>')
 
 MEGA_COPY = {
-    "es": {"label": "Servicios", "toggle": "Mostrar servicios",
-           "aside_label": "¿No sabes por dónde empezar?",
-           "aside_title": "Una llamada de 30 minutos y te decimos qué necesitas &mdash; <em>y qué no</em>.",
-           "all": "Ver todos los servicios", "call": "Agendar llamada"},
-    "en": {"label": "Services", "toggle": "Show services",
-           "aside_label": "Not sure where to start?",
-           "aside_title": "One 30-minute call and we will tell you what you need &mdash; <em>and what you don't</em>.",
-           "all": "All services", "call": "Book a call"},
+    "services": {
+        "es": {"toggle": "Mostrar servicios",
+               "aside_label": "¿No sabes por dónde empezar?",
+               "aside_title": "Una llamada de 30 minutos y te decimos qué necesitas &mdash; <em>y qué no</em>.",
+               "all": "Ver todos los servicios", "call": "Agendar llamada"},
+        "en": {"toggle": "Show services",
+               "aside_label": "Not sure where to start?",
+               "aside_title": "One 30-minute call and we will tell you what you need &mdash; <em>and what you don't</em>.",
+               "all": "All services", "call": "Book a call"},
+    },
+    "industries": {
+        "es": {"toggle": "Mostrar industrias",
+               "aside_label": "¿Tu industria no está aquí?",
+               "aside_title": "Los principios son los mismos. <em>Cuéntanos de tu negocio</em>.",
+               "all": "Ver todas las industrias", "call": "Agendar llamada"},
+        "en": {"toggle": "Show industries",
+               "aside_label": "Industry not listed?",
+               "aside_title": "The principles are the same. <em>Tell us about your business</em>.",
+               "all": "All industries", "call": "Book a call"},
+    },
 }
 
+# Nav entries that open a mega menu: index page -> content file (and folder)
+MEGA_SECTIONS = {"services.html": "services", "industries.html": "industries"}
 
-def _services_menu(c):
-    """Service id, title and one-line blurb, in menu order."""
-    items = load("services")[c.lang].get("items", [])
+
+def menu_items(c, section):
+    """(id, title, one-line blurb) for every landing page in a section."""
+    items = load(section)[c.lang].get("items", [])
     return [(x["id"], x["title"], x.get("menu_blurb") or x.get("summary", ""))
             for x in items if x.get("id")]
 
 
-def mega_menu(c, n):
-    """The Services nav item: a real link to services.html plus a disclosure
-    button that opens a panel of every service landing page. The link stays a
-    link so the index page is one click away and crawlable either way."""
-    m = MEGA_COPY[c.lang]
-    items = "\n".join(f"""              <li><a class="mega__item" href="{c.link(f'services/{sid}.html')}" data-nav-link>
-                {svc_icon(sid, 'mega__icon')}
+def mega_menu(c, n, section):
+    """A nav item with a mega menu: a real link to the index page plus a
+    disclosure button that opens a panel of every landing page in the
+    section. The link stays a link so the index is one click away and
+    crawlable either way."""
+    m = MEGA_COPY[section][c.lang]
+    icon = svc_icon if section == "services" else ind_icon
+    items = "\n".join(f"""              <li><a class="mega__item" href="{c.link(f'{section}/{sid}.html')}" data-nav-link>
+                {icon(sid, 'mega__icon')}
                 <span class="mega__text"><span class="mega__title">{title}</span><span class="mega__desc">{blurb}</span></span>
-              </a></li>""" for sid, title, blurb in _services_menu(c))
+              </a></li>""" for sid, title, blurb in menu_items(c, section))
     contact = c.s_default["contact"]
     return f"""          <div class="nav__item nav__item--mega" data-mega>
-            <a class="nav__link" data-nav-link data-nav-section="services" href="{c.link(n['href'])}">{n['label']}</a>
-            <button class="nav__caret" type="button" aria-expanded="false" aria-controls="mega-services"
+            <a class="nav__link" data-nav-link data-nav-section="{section}" href="{c.link(n['href'])}">{n['label']}</a>
+            <button class="nav__caret" type="button" aria-expanded="false" aria-controls="mega-{section}"
                     aria-label="{m['toggle']}" data-mega-toggle>{CHEVRON}</button>
-            <div class="mega" id="mega-services" data-mega-panel>
+            <div class="mega" id="mega-{section}" data-mega-panel>
               <div class="mega__inner">
                 <ul class="mega__grid" role="list">
 {items}
@@ -335,16 +372,17 @@ def mega_menu(c, n):
 def header(c, page, other_page=None):
     s = c.s
     links = "\n".join(
-        mega_menu(c, n) if n["href"] == "services.html" else
+        mega_menu(c, n, MEGA_SECTIONS[n["href"]]) if n["href"] in MEGA_SECTIONS else
         f'          <a class="nav__link" data-nav-link href="{c.link(n["href"])}">{n["label"]}</a>'
         for n in s["nav"])
 
     def drawer_sub(n):
-        if n["href"] != "services.html":
+        section = MEGA_SECTIONS.get(n["href"])
+        if not section:
             return ""
         return ('\n        <ul class="mobile-menu__sub" role="list">' + "".join(
-            f'\n          <li><a data-nav-link href="{c.link(f"services/{sid}.html")}">{title}</a></li>'
-            for sid, title, _ in _services_menu(c)) + "\n        </ul>")
+            f'\n          <li><a data-nav-link href="{c.link(f"{section}/{sid}.html")}">{title}</a></li>'
+            for sid, title, _ in menu_items(c, section)) + "\n        </ul>")
 
     drawer_items = "\n".join(f"""      <div class="mobile-menu__item">
         <a class="mobile-menu__link" data-nav-link href="{c.link(n['href'])}">

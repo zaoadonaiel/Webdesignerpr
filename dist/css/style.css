@@ -659,7 +659,8 @@ h1, h2, h3, h4, h5 {
 .brand:hover .brand__mark { transform: rotate(45deg); }
 .brand__mark { transition: transform var(--dur-slow) var(--ease-inout); }
 
-.nav { display: flex; align-items: center; gap: clamp(1.25rem, 2.4vw, 2.5rem); }
+.nav { display: flex; align-items: center; gap: clamp(1rem, 1.6vw, 2.25rem); }
+.nav__link { white-space: nowrap; }
 .nav__link {
   position: relative;
   font-family: var(--font-mono);
@@ -685,7 +686,8 @@ h1, h2, h3, h4, h5 {
 .nav__link[aria-current="page"] { color: var(--color-text); }
 .nav__link[aria-current="page"]::after { transform: scaleX(1); }
 
-.header__actions { display: flex; align-items: center; gap: var(--space-sm); }
+.header__actions { display: flex; align-items: center; gap: var(--space-sm); flex: none; }
+.header__actions .btn { white-space: nowrap; }
 
 /* --- Services mega menu --------------------------------------------------
    The panel hangs off the sticky header (its containing block), so it spans
@@ -782,12 +784,7 @@ h1, h2, h3, h4, h5 {
 .mega__phone { font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: var(--tracking-mono); color: var(--color-text-muted); }
 .mega__phone:hover { color: var(--color-text); }
 
-@media (max-width: 1100px) {
-  .mega__inner { grid-template-columns: minmax(0, 1fr); }
-  .mega__aside { flex-direction: row; flex-wrap: wrap; align-items: center; }
-  .mega__aside-title { flex: 1 1 260px; font-size: var(--fs-body); }
-  .mega__aside-actions { flex-direction: row; align-items: center; margin-top: 0; }
-}
+
 
 /* --------------------------------------------------------------------------
    THEME + LANGUAGE CONTROLS
@@ -2467,6 +2464,19 @@ body.is-locked .site-header {
   line-height: 1.35;
 }
 
+.service-ideal--links li { padding: 0; }
+.service-ideal--links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  padding: 0.6rem 1.2rem 0.6rem 0.9rem;
+  border-radius: inherit;
+  transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+.service-ideal--links a:hover { color: var(--color-primary-on-bg); background: var(--color-surface-2); }
+.service-ideal__icon { width: 20px; height: 20px; color: var(--color-primary-on-bg); flex: none; }
+
 @media (max-width: 900px) {
   .service-overview { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
   .service-overview__aside { position: static; }
@@ -2474,4 +2484,16 @@ body.is-locked .site-header {
 @media (max-width: 768px) {
   .card-grid--2 { grid-template-columns: minmax(0, 1fr); }
   .service-hero__actions .btn { flex: 1 1 100%; }
+}
+
+/* Seven nav items need room: drop the phone pill first (the number is in
+   every mega menu and the WhatsApp button stays), then hand the whole nav
+   to the drawer well before the 768px layout breakpoint. */
+@media (max-width: 1280px) {
+  .header__actions .btn { display: none; }
+}
+@media (max-width: 1100px) {
+  .nav { display: none; }
+  .header__actions .lang-switch { display: none; }
+  .menu-toggle { display: inline-flex; }
 }

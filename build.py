@@ -79,10 +79,10 @@ def write_sitemap():
 
     today = time.strftime("%Y-%m-%d")
     pages = list(PAGES)
-    # One landing page per service — the pages the mega menu links to
-    services = load("services")
-    pages += [f"services/{x['id']}.html"
-              for x in services.get("es", {}).get("items", []) if x.get("id")]
+    # One landing page per service and per industry — the mega menu targets
+    for section in ("services", "industries"):
+        pages += [f"{section}/{x['id']}.html"
+                  for x in load(section).get("es", {}).get("items", []) if x.get("id")]
 
     urls = []
     for page in pages:

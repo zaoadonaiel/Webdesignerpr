@@ -496,6 +496,135 @@ collections:
               - { name: body, label: Text, widget: text, i18n: true }
               - { name: secondary, label: Secondary button, widget: string, i18n: true }
 
+      # ---------------------------------------------------------- industries
+      - name: industries
+        label: Industries page
+        file: content/industries.json
+        icon: storefront
+        i18n: true
+        fields:
+          - { name: crumb, label: Breadcrumb, widget: string, i18n: true }
+          - { name: seo_title, label: "SEO — page title (≤ 60 characters)", widget: string, i18n: true }
+          - { name: seo_description, label: "SEO — meta description (140–160 characters)", widget: text, i18n: true }
+          - { name: seo_keywords, label: "SEO — keywords (comma-separated)", widget: string, i18n: true, required: false }
+          - { name: title, label: Page heading, widget: text, i18n: true }
+          - { name: lead, label: Intro paragraph, widget: text, i18n: true }
+          - { name: meta_a, label: Side note — line 1, widget: string, i18n: true }
+          - { name: meta_b, label: Side note — line 2, widget: text, i18n: true }
+          - name: approach
+            label: Approach section
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: eyebrow, label: Eyebrow, widget: string, i18n: true }
+              - { name: title, label: Heading, widget: string, i18n: true }
+              - name: items
+                label: Points
+                widget: list
+                i18n: true
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+          - name: cta
+            label: Call to action
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: title, label: Heading, widget: string, i18n: true }
+              - { name: body, label: Body, widget: text, i18n: true }
+              - { name: secondary, label: Secondary button, widget: string, i18n: true }
+          - name: detail_page
+            label: Industry landing page labels
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: crumb, label: "Breadcrumb — industries", widget: string, i18n: true }
+              - { name: kicker, label: "Kicker before the industry name", widget: string, i18n: true }
+              - { name: view, label: "Link — view industry", widget: string, i18n: true }
+              - { name: overview, label: "Section — overview", widget: string, i18n: true }
+              - { name: must_haves, label: "Box — what your site needs", widget: string, i18n: true }
+              - { name: challenges, label: "Section — the problem", widget: string, i18n: true }
+              - { name: features, label: "Section — what we build", widget: string, i18n: true }
+              - { name: services, label: "Section — recommended services", widget: string, i18n: true }
+              - { name: services_title, label: "Recommended services heading", widget: string, i18n: true }
+              - { name: faq, label: "Section — FAQ", widget: string, i18n: true }
+              - { name: faq_title, label: "FAQ heading", widget: string, i18n: true }
+              - { name: others, label: "Section — other industries", widget: string, i18n: true }
+              - { name: others_title, label: "Other industries heading", widget: string, i18n: true }
+              - { name: quote, label: "Button — request a quote", widget: string, i18n: true }
+              - { name: call, label: "Button — call", widget: string, i18n: true }
+              - { name: all, label: "Link — all industries", widget: string, i18n: true }
+              - { name: service_link, label: "Link — view service", widget: string, i18n: true }
+
+          - name: items
+            label: The industries
+            widget: list
+            i18n: true
+            summary: "{{fields.index}} — {{fields.title}}"
+            hint: >-
+              The ID becomes the landing page URL (industries/restaurants.html)
+              and picks the icon. Keep existing IDs — changing one breaks its URL.
+            fields:
+              - { name: id, label: ID / URL, widget: string, i18n: duplicate,
+                  pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'] }
+              - { name: index, label: Number, widget: string, i18n: true }
+              - { name: title, label: "Name (menus and cards)", widget: string, i18n: true }
+              - { name: menu_blurb, label: "Mega menu — one-line description", widget: string, i18n: true }
+              - { name: summary, label: "Summary (hero and cards)", widget: text, i18n: true }
+              - { name: seo_title, label: "SEO — page title (≤ 60 characters)", widget: string, i18n: true }
+              - { name: seo_description, label: "SEO — meta description (140–160 characters)", widget: text, i18n: true }
+              - { name: seo_keywords, label: "SEO — keywords (comma-separated)", widget: string, i18n: true, required: false }
+              - { name: h1, label: "Main heading (H1)", widget: string, i18n: true }
+              - name: intro
+                label: Intro paragraphs
+                widget: list
+                i18n: true
+                fields:
+                  - { name: text, label: Paragraph, widget: text, i18n: true }
+              - name: must_haves
+                label: What the site needs (checklist)
+                widget: list
+                i18n: true
+                fields:
+                  - { name: text, label: Item, widget: string, i18n: true }
+              - { name: challenges_title, label: "Problems — heading", widget: string, i18n: true }
+              - name: challenges
+                label: Problems
+                widget: list
+                i18n: true
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+              - { name: features_title, label: "What we build — heading", widget: string, i18n: true }
+              - name: features
+                label: What we build
+                widget: list
+                i18n: true
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+              - name: services
+                label: Recommended services
+                widget: select
+                multiple: true
+                i18n: duplicate
+                options: [website-design, website-development, wordpress, ecommerce, ui-ux, redesign, performance]
+              - name: faq
+                label: FAQ
+                widget: list
+                i18n: true
+                summary: "{{fields.question}}"
+                fields:
+                  - { name: question, label: Question, widget: string, i18n: true }
+                  - { name: answer, label: Answer, widget: text, i18n: true }
+
+
       # ----------------------------------------------------------- portfolio
       - name: portfolio
         label: Portfolio page
@@ -824,7 +953,10 @@ collections:
                   - { label: Home, value: index.html }
                   - { label: About, value: about.html }
                   - { label: Services, value: services.html }
+                  - { label: Industries, value: industries.html }
                   - { label: Portfolio, value: portfolio.html }
+                  - { label: Deals, value: deals.html }
+                  - { label: Articles, value: articles.html }
                   - { label: Contact, value: contact.html }
               - { name: label, label: Label, widget: string, i18n: true }
               - { name: index, label: Number, widget: string, i18n: true }
