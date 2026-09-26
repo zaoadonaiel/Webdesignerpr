@@ -231,11 +231,7 @@ def build_home(c):
             </div>
           </div>
 
-          <div class="split__media" data-reveal-media>
-            <div class="media-frame media-frame--tall">
-              <img src="/images/hero/agency-workspace.png" alt="Web Designer Puerto Rico agency workspace in San Juan" width="900" height="1125" loading="lazy" decoding="async" data-parallax="0.12" style="width:100%;height:auto;">
-            </div>
-          </div>
+
         </div>
 
         <!-- Standards, not a brag sheet: commitments we build against -->
