@@ -832,7 +832,7 @@ def build_deals(c):
     for i, template in enumerate(d["templates"], start=1):
         cards.append(f"""          <article class="deal-card" data-reveal="up">
             <a href="{template['preview_url']}" target="_blank" rel="noopener noreferrer" class="deal-card__media">
-              <img src="{template['image']}" alt="{template['title']}" width="600" height="400" loading="lazy"/>
+              <img src="{template['image']}" alt="{template['title']}" width="1200" height="654" loading="lazy"/>
             </a>
             <div class="deal-card__body">
               <span class="tag">{template['label']}</span>
