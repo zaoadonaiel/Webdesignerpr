@@ -152,6 +152,19 @@ META_KEY = {"index.html": "home", "about.html": "about", "services.html": "servi
             "industries.html": "industries"}
 
 
+# Google Analytics 4 (gtag.js), injected into every page's <head>.
+GA_TAG = """  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JX28D4PC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T0JX28D4PC');
+  </script>
+"""
+
+
 def head(c, page, title=None, description=None, keywords=None, extra="", og_type="website"):
     if title is None or description is None:
         # Use meta from settings.json
@@ -167,7 +180,7 @@ def head(c, page, title=None, description=None, keywords=None, extra="", og_type
 <html lang="{c.lang}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{GA_TAG}  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="google" content="notranslate">
   <title>{title}</title>
   <meta name="description" content="{description}">
