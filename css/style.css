@@ -639,6 +639,10 @@ h1, h2, h3, h4, h5 {
 }
 .brand__logo { width: 32px; height: 32px; flex: none; display: flex; align-items: center; justify-content: center; }
 .brand__logo img { width: 100%; height: 100%; display: block; object-fit: contain; }
+/* Black-outline mark on the light theme, white-outline mark on dark. */
+.brand__logo--on-dark { display: none !important; }
+:root[data-theme="dark"] .brand__logo--on-light { display: none !important; }
+:root[data-theme="dark"] .brand__logo--on-dark { display: block !important; }
 .brand__mark { width: 30px; height: 30px; flex: none; }
 .brand__mark path, .brand__mark circle { transition: fill var(--dur-base) var(--ease-out); }
 .brand__text {
