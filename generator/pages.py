@@ -1726,6 +1726,7 @@ def build_industry_pages(c):
 # ---------------------------------------------------------------------------
 
 LANDING_SLUGS = {"es": "vamos", "en": "start"}
+THANKS_SLUGS = {"es": "gracias", "en": "thank-you"}
 WHATSAPP = "https://wa.me/19392299233"
 
 # Every call / WhatsApp tap is sent to GA4 as `generate_lead`, which can be
@@ -1750,10 +1751,10 @@ STARS = "".join('<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
                 '5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8Z"/></svg>' for _ in range(5))
 
 
-def _landing_head(c, d):
+def _landing_head(c, d, slugs=LANDING_SLUGS):
     other = "en" if c.lang == "es" else "es"
-    url = f"{SITE_URL}/{LANDING_SLUGS[c.lang]}"
-    alt = f"{SITE_URL}/{LANDING_SLUGS[other]}"
+    url = f"{SITE_URL}/{slugs[c.lang]}"
+    alt = f"{SITE_URL}/{slugs[other]}"
     return f"""<!DOCTYPE html>
 <html lang="{c.lang}">
 <head>
@@ -1797,6 +1798,35 @@ document.documentElement.setAttribute("data-theme","dark")}}catch(e){{}}}})();</
 """
 
 
+def _landing_header(c, slugs, tel, phone, wa):
+    """Slim header for the ad pages: brand, language, call, WhatsApp — no nav."""
+    es_now = c.lang == "es"
+    home = "/" if es_now else "/en/"
+    return f"""
+  <header class="site-header lp-header">
+    <div class="site-header__inner">
+      <a class="brand" href="{home}" aria-label="Web Designer Puerto Rico">
+        <span class="brand__logo">
+          <img class="brand__logo--on-light" src="/images/logo/zao-chat-dark.png" alt="" width="32" height="32">
+          <img class="brand__logo--on-dark" src="/images/logo/zao-chat-light.png" alt="" width="32" height="32">
+        </span>
+        <span class="brand__text">Web Designer <em>Puerto Rico</em></span>
+      </a>
+      <div class="header__actions lp-header__actions">
+        <div class="lang-switch" role="group" aria-label="{c.ui['lang_label']}">
+          <a class="lang-switch__opt" href="/{slugs['es']}" hreflang="es" lang="es"{' aria-current="true"' if es_now else ''}>ES</a>
+          <a class="lang-switch__opt" href="/{slugs['en']}" hreflang="en" lang="en"{'' if es_now else ' aria-current="true"'}>EN</a>
+        </div>
+        <a class="btn btn--primary lp-header__call" href="{tel}" data-lead="phone"><span>{PHONE} {phone}</span></a>
+        <a class="lp-wa-icon" href="{wa}" target="_blank" rel="noopener" data-lead="whatsapp" aria-label="WhatsApp">
+          <img src="/images/whatsapp-icon.png" alt="" width="22" height="22">
+        </a>
+      </div>
+    </div>
+  </header>
+"""
+
+
 WEB3FORMS = "https://api.web3forms.com/submit"
 
 
@@ -1823,7 +1853,7 @@ def _landing_form(c, d):
     return f"""       <div class="lp-form-card" id="quote">
         <form class="form lp-form" data-lp-form novalidate action="{WEB3FORMS}" method="POST"
               data-err-required="{f['err_required']}" data-err-phone="{f['err_phone']}" data-err-email="{f['err_email']}"
-              data-sending="{f['sending']}" data-fail="{f['fail']}">
+              data-sending="{f['sending']}" data-fail="{f['fail']}" data-next="/{THANKS_SLUGS[c.lang]}">
           <h2 class="lp-form__title">{f['title']}</h2>
           <p class="lp-form__note">{f['note']}</p>
           <input type="hidden" name="access_key" value="{f['access_key']}">
@@ -1845,11 +1875,6 @@ def _landing_form(c, d):
           <button class="btn btn--primary btn--lg lp-form__submit" type="submit"><span>{f['submit']} {ARROW}</span></button>
           <p class="lp-form__status" role="status" aria-live="polite"></p>
         </form>
-        <div class="lp-form__done" hidden tabindex="-1">
-          <span class="lp-form__done-icon" aria-hidden="true">{CHECK}</span>
-          <h2 class="lp-form__title">{f['ok_title']}</h2>
-          <p class="lp-form__note">{f['ok_body']}</p>
-        </div>
        </div>
 """
 
@@ -1906,11 +1931,14 @@ LANDING_FORM_JS = """  <script>
         .then(function (r) { return r.json(); })
         .then(function (res) {
           if (!res.success) throw new Error(res.message);
-          if (typeof gtag === "function") gtag("event", "generate_lead", {method: "form", page_path: location.pathname});
-          form.hidden = true;
-          var done = form.parentNode.querySelector(".lp-form__done");
-          done.hidden = false;
-          done.focus();
+          // Hand off to the thank-you page once GA has the lead (or after
+          // 1s if gtag is blocked), so the conversion is never lost.
+          var went = false;
+          function go() { if (!went) { went = true; location.href = form.dataset.next; } }
+          if (typeof gtag === "function") {
+            gtag("event", "generate_lead", {method: "form", page_path: location.pathname, event_callback: go});
+          }
+          setTimeout(go, 1000);
         })
         .catch(function () {
           status.textContent = form.dataset.fail;
@@ -1932,32 +1960,7 @@ def build_landing(c):
     es_now = c.lang == "es"
     home = "/" if es_now else "/en/"
 
-    out = [_landing_head(c, d)]
-
-    # --- slim header: brand, language, call, WhatsApp — no nav ------------
-    out.append(f"""
-  <header class="site-header lp-header">
-    <div class="site-header__inner">
-      <a class="brand" href="{home}" aria-label="Web Designer Puerto Rico">
-        <span class="brand__logo">
-          <img class="brand__logo--on-light" src="/images/logo/zao-chat-dark.png" alt="" width="32" height="32">
-          <img class="brand__logo--on-dark" src="/images/logo/zao-chat-light.png" alt="" width="32" height="32">
-        </span>
-        <span class="brand__text">Web Designer <em>Puerto Rico</em></span>
-      </a>
-      <div class="header__actions lp-header__actions">
-        <div class="lang-switch" role="group" aria-label="{c.ui['lang_label']}">
-          <a class="lang-switch__opt" href="/vamos" hreflang="es" lang="es"{' aria-current="true"' if es_now else ''}>ES</a>
-          <a class="lang-switch__opt" href="/start" hreflang="en" lang="en"{'' if es_now else ' aria-current="true"'}>EN</a>
-        </div>
-        <a class="btn btn--primary lp-header__call" href="{tel}" data-lead="phone"><span>{PHONE} {phone}</span></a>
-        <a class="lp-wa-icon" href="{wa}" target="_blank" rel="noopener" data-lead="whatsapp" aria-label="WhatsApp">
-          <img src="/images/whatsapp-icon.png" alt="" width="22" height="22">
-        </a>
-      </div>
-    </div>
-  </header>
-""")
+    out = [_landing_head(c, d), _landing_header(c, LANDING_SLUGS, tel, phone, wa)]
 
     trust = "".join(f'<li>{CHECK}<span>{t}</span></li>' for t in texts(d["trust"]))
     projects = [p for p in load_projects() if shared(p, "featured")][:6]
@@ -2162,8 +2165,81 @@ def build_landing(c):
         f.write("".join(out))
 
 
+# ---------------------------------------------------------------------------
+# THANK YOU (/gracias, /thank-you)
+#
+# Where the ad landing form sends people after a successful submit. A real
+# URL (rather than an in-page message) can be used as a destination goal in
+# GA4 and Google Ads. Same slim chrome as the landing pages, noindex, and
+# kept out of the sitemap.
+# ---------------------------------------------------------------------------
+
+def build_thanks(c):
+    from urllib.parse import quote
+    d = load("thanks")[c.lang]
+    contact = c.s_default["contact"]
+    tel, phone = contact["phone_href"], contact["phone_display"]
+    wa = f"{WHATSAPP}?text={quote(d['whatsapp_text'])}"
+    home = "/" if c.lang == DEFAULT_LANG else "/en/"
+
+    steps = "".join(f"""          <li class="lp-step">
+            <span class="lp-step__num">{s['index']}</span>
+            <h3 class="lp-step__title">{s['title']}</h3>
+            <p class="lp-step__text">{s['text']}</p>
+          </li>""" for s in d["steps"])
+
+    html = f"""{_landing_head(c, d, THANKS_SLUGS)}{_landing_header(c, THANKS_SLUGS, tel, phone, wa)}
+  <main class="site-main thanks" id="main">
+    <section class="lp-hero thanks__hero">
+      <div class="lp-hero__bg" aria-hidden="true"></div>
+      <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
+      <div class="container thanks__inner">
+        <span class="lp-form__done-icon thanks__icon" aria-hidden="true">{CHECK}</span>
+        <p class="label">{d['kicker']}</p>
+        <h1 class="display-1 lp-hero__title">{d['title']}</h1>
+        <p class="lead lp-hero__lead">{d['lead']}</p>
+        <p class="thanks__urgent">{d['urgent']}</p>
+        <div class="lp-actions">
+          <a class="btn btn--primary btn--lg" href="{tel}" data-lead="phone"><span>{PHONE} {d['call']} {phone}</span></a>
+          <a class="btn btn--lg lp-btn-wa" href="{wa}" target="_blank" rel="noopener" data-lead="whatsapp">
+            <span><img src="/images/whatsapp-icon.png" alt="" width="20" height="20"> {d['whatsapp']}</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight lp-alt">
+      <div class="container">
+        <p class="label">{d['next_label']}</p>
+        <ol class="lp-steps u-mt-lg" role="list">
+{steps}
+        </ol>
+        <div class="thanks__links u-mt-xl">
+          <a class="btn btn--ghost btn--lg" href="{home}deals"><span>{d['work']} {ARROW}</span></a>
+          <a class="link-underline" href="{home}">{d['home']}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lp-footer">
+    <div class="container lp-footer__inner">
+      <span>&copy; <span data-year>2026</span> Web Designer Puerto Rico &middot; San Juan, Puerto Rico</span>
+      <a class="link-underline" href="{home}">webdesignerpr.com</a>
+    </div>
+  </footer>
+
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
+"""
+    root = c.out if c.lang == DEFAULT_LANG else os.path.dirname(c.out)
+    with open(os.path.join(root, THANKS_SLUGS[c.lang] + ".html"), "w", encoding="utf-8") as f:
+        f.write(html)
+
+
 BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact, build_articles, build_service_pages,
-            build_industries, build_industry_pages, build_landing]
+            build_industries, build_industry_pages, build_landing, build_thanks]
 
 
 # ---------------------------------------------------------------------------

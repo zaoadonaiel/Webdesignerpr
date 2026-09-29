@@ -1,0 +1,64 @@
+{
+  "es": {
+    "meta_title": "¡Gracias! | Web Designer Puerto Rico",
+    "meta_description": "Recibimos tu mensaje. Te contactamos en un día hábil.",
+    "kicker": "Mensaje recibido",
+    "title": "¡Gracias! Ya tenemos <em class=\"italic accent-text\">tu mensaje.</em>",
+    "lead": "Un miembro del equipo te llama en un día hábil para conocer tu negocio y darte un precio claro. Sin compromiso.",
+    "next_label": "Qué pasa ahora",
+    "steps": [
+      {
+        "index": "01",
+        "title": "Revisamos tu mensaje",
+        "text": "Leemos lo que nos enviaste y preparamos preguntas sobre tu negocio."
+      },
+      {
+        "index": "02",
+        "title": "Te llamamos",
+        "text": "Una llamada corta para entender lo que necesitas &mdash; y lo que no."
+      },
+      {
+        "index": "03",
+        "title": "Recibes tu cotización",
+        "text": "Un precio fijo y un calendario claro antes de empezar."
+      }
+    ],
+    "urgent": "¿Es urgente? No esperes la llamada:",
+    "call": "Llamar",
+    "whatsapp": "WhatsApp",
+    "whatsapp_text": "Hola, acabo de enviar el formulario en su página y quería darle seguimiento.",
+    "work": "Mientras tanto, mira nuestros diseños",
+    "home": "Volver al inicio"
+  },
+  "en": {
+    "meta_title": "Thank you! | Web Designer Puerto Rico",
+    "meta_description": "We got your message. We'll be in touch within one business day.",
+    "kicker": "Message received",
+    "title": "Thank you! We've got <em class=\"italic accent-text\">your message.</em>",
+    "lead": "Someone from the team will call you within one business day to learn about your business and give you a clear price. No obligation.",
+    "next_label": "What happens now",
+    "steps": [
+      {
+        "index": "01",
+        "title": "We review your message",
+        "text": "We read what you sent and prepare questions about your business."
+      },
+      {
+        "index": "02",
+        "title": "We call you",
+        "text": "A short call to understand what you need &mdash; and what you don't."
+      },
+      {
+        "index": "03",
+        "title": "You get your quote",
+        "text": "A fixed price and a clear timeline before we start."
+      }
+    ],
+    "urgent": "Urgent? Don't wait for the call:",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "whatsapp_text": "Hi, I just sent the form on your website and wanted to follow up.",
+    "work": "Meanwhile, browse our designs",
+    "home": "Back to the homepage"
+  }
+}

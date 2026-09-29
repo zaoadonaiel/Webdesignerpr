@@ -2701,3 +2701,10 @@ body.is-locked .site-header {
 @media (max-width: 640px) {
   .lp-form .form__row { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Thank-you page after the ad form (/gracias, /thank-you) */
+.thanks__inner { position: relative; z-index: 1; max-width: 52rem; }
+.thanks__icon { display: flex; margin-bottom: var(--space-md); }
+.thanks__urgent { margin-top: var(--space-lg); font-weight: 600; }
+.thanks__urgent + .lp-actions { margin-top: var(--space-sm); }
+.thanks__links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md) var(--space-lg); }
