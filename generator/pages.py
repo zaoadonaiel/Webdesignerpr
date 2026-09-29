@@ -3,7 +3,7 @@
 import os
 import re
 
-from .content import DEFAULT_LANG, load, load_projects, shared, texts
+from .content import DEFAULT_LANG, SITE_URL, load, load_projects, shared, texts
 from .partials import (GA_TAG, head, chrome, header, footer, scripts, cta, section_head,
                        page_header, themed_img, ARROW, ARROW_R, STAR, MARK_PATH,
                        SVC_ICONS, FALLBACK_ICON, svc_icon, ind_icon)
@@ -1715,8 +1715,325 @@ def build_industry_pages(c):
             c.write(page_path, "".join(out))
 
 
+# ---------------------------------------------------------------------------
+# GOOGLE ADS LANDING PAGES — /vamos (es) and /start (en)
+#
+# Both sit at the SITE root regardless of language, so every link is
+# root-absolute. They drop the nav and mega menus on purpose: an ad visitor
+# gets one job (call, WhatsApp or chat) and no exits. noindex keeps them out
+# of organic results so they never compete with the home page; AdsBot
+# ignores noindex, so ad quality checks still see the page.
+# ---------------------------------------------------------------------------
+
+LANDING_SLUGS = {"es": "vamos", "en": "start"}
+WHATSAPP = "https://wa.me/19392299233"
+
+# Every call / WhatsApp tap is sent to GA4 as `generate_lead`, which can be
+# marked as a key event and imported into Google Ads as a conversion.
+LANDING_TRACKING = """  <script>
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[data-lead]");
+    if (!a || typeof gtag !== "function") return;
+    gtag("event", "generate_lead", {method: a.getAttribute("data-lead"), page_path: location.pathname});
+  });
+  </script>
+"""
+
+CHECK = ('<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" '
+         'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9"/></svg>')
+PHONE = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" '
+         'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 '
+         '19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 '
+         '1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 '
+         '1.8 2Z"/></svg>')
+STARS = "".join('<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="m10 1.5 2.6 5.4 '
+                '5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8Z"/></svg>' for _ in range(5))
+
+
+def _landing_head(c, d):
+    other = "en" if c.lang == "es" else "es"
+    url = f"{SITE_URL}/{LANDING_SLUGS[c.lang]}"
+    alt = f"{SITE_URL}/{LANDING_SLUGS[other]}"
+    return f"""<!DOCTYPE html>
+<html lang="{c.lang}">
+<head>
+  <meta charset="utf-8">
+{GA_TAG}  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="google" content="notranslate">
+  <meta name="robots" content="noindex, follow">
+  <title>{d['meta_title']}</title>
+  <meta name="description" content="{d['meta_description']}">
+  <link rel="canonical" href="{url}">
+  <link rel="alternate" hreflang="{c.lang}" href="{url}">
+  <link rel="alternate" hreflang="{other}" href="{alt}">
+
+  <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#08090b" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Web Designer Puerto Rico">
+  <meta property="og:title" content="{d['meta_title']}">
+  <meta property="og:description" content="{d['meta_description']}">
+  <meta property="og:url" content="{url}">
+  <meta property="og:image" content="{SITE_URL}/images/logo/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/logo/favicon.png">
+  <link rel="preload" as="image" href="/images/hero/pr-background.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+
+  <script>(function(){{try{{if(localStorage.getItem("wdpr:theme")==="dark")
+document.documentElement.setAttribute("data-theme","dark")}}catch(e){{}}}})();</script>
+{LANDING_TRACKING}</head>
+<body class="lp">
+  <a class="skip-link" href="#main">{c.ui['skip']}</a>
+  <div class="grain" aria-hidden="true"></div>
+"""
+
+
+def build_landing(c):
+    from urllib.parse import quote
+    d = load("landing")[c.lang]
+    contact = c.s_default["contact"]
+    tel, phone = contact["phone_href"], contact["phone_display"]
+    wa = f"{WHATSAPP}?text={quote(d['whatsapp_text'])}"
+    es_now = c.lang == "es"
+    home = "/" if es_now else "/en/"
+
+    out = [_landing_head(c, d)]
+
+    # --- slim header: brand, language, call, WhatsApp — no nav ------------
+    out.append(f"""
+  <header class="site-header lp-header">
+    <div class="site-header__inner">
+      <a class="brand" href="{home}" aria-label="Web Designer Puerto Rico">
+        <span class="brand__logo">
+          <img class="brand__logo--on-light" src="/images/logo/zao-chat-dark.png" alt="" width="32" height="32">
+          <img class="brand__logo--on-dark" src="/images/logo/zao-chat-light.png" alt="" width="32" height="32">
+        </span>
+        <span class="brand__text">Web Designer <em>Puerto Rico</em></span>
+      </a>
+      <div class="header__actions lp-header__actions">
+        <div class="lang-switch" role="group" aria-label="{c.ui['lang_label']}">
+          <a class="lang-switch__opt" href="/vamos" hreflang="es" lang="es"{' aria-current="true"' if es_now else ''}>ES</a>
+          <a class="lang-switch__opt" href="/start" hreflang="en" lang="en"{'' if es_now else ' aria-current="true"'}>EN</a>
+        </div>
+        <a class="btn btn--primary lp-header__call" href="{tel}" data-lead="phone"><span>{PHONE} {phone}</span></a>
+        <a class="lp-wa-icon" href="{wa}" target="_blank" rel="noopener" data-lead="whatsapp" aria-label="WhatsApp">
+          <img src="/images/whatsapp-icon.png" alt="" width="22" height="22">
+        </a>
+      </div>
+    </div>
+  </header>
+""")
+
+    trust = "".join(f'<li>{CHECK}<span>{t}</span></li>' for t in texts(d["trust"]))
+    projects = [p for p in load_projects() if shared(p, "featured")][:6]
+    clients = "".join(f'<span>{shared(p, "name")}</span>' for p in projects)
+
+    out.append(f"""  <main class="site-main" id="main">
+    <!-- ============ HERO ============ -->
+    <section class="lp-hero">
+      <div class="lp-hero__bg" aria-hidden="true"></div>
+      <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
+      <div class="container lp-hero__inner">
+        <p class="label">{d['kicker']}</p>
+        <h1 class="display-1 lp-hero__title">{d['title']}</h1>
+        <p class="lead lp-hero__lead">{d['lead']}</p>
+        <div class="lp-price">
+          <span class="lp-price__label">{d['price_label']}</span>
+          <span class="lp-price__value">{d['price']}</span>
+          <span class="lp-price__note">{d['price_note']}</span>
+        </div>
+        <div class="lp-actions">
+          <a class="btn btn--primary btn--lg" href="{tel}" data-lead="phone"><span>{PHONE} {d['call']} {phone}</span></a>
+          <a class="btn btn--lg lp-btn-wa" href="{wa}" target="_blank" rel="noopener" data-lead="whatsapp">
+            <span><img src="/images/whatsapp-icon.png" alt="" width="20" height="20"> {d['whatsapp']}</span></a>
+        </div>
+        <ul class="lp-trust" role="list">{trust}</ul>
+      </div>
+    </section>
+
+    <!-- ============ CLIENTS ============ -->
+    <section class="lp-clients" aria-label="{d['clients_label']}">
+      <div class="container">
+        <p class="label label--plain">{d['clients_label']}</p>
+        <div class="lp-clients__names">{clients}</div>
+      </div>
+    </section>
+""")
+
+    # --- what's included --------------------------------------------------
+    inc = d["included"]
+    out.append(f"""
+    <section class="section section--tight">
+      <div class="container">
+{section_head("01", inc['eyebrow'], inc['title'])}
+        <ul class="value-list">
+{_value_list(inc['items'])}
+        </ul>
+      </div>
+    </section>
+""")
+
+    # --- recent work --------------------------------------------------------
+    w = d["work"]
+    work = "\n".join(f"""          <article class="deal-card">
+            <a href="{shared(p, 'url')}" target="_blank" rel="noopener" class="deal-card__media lp-work__media">
+              <img src="{shared(p, 'image_light')}" alt="{shared(p, 'name')} &mdash; {_plain(p[c.lang]['kind'])}" width="1200" height="900" loading="lazy" decoding="async">
+            </a>
+            <div class="deal-card__body">
+              <span class="tag">{p[c.lang]['kind']}</span>
+              <h3 class="deal-card__title">{shared(p, 'name')}</h3>
+              <a class="link-arrow" href="{shared(p, 'url')}" target="_blank" rel="noopener">{w['visit']} {ARROW_R}</a>
+            </div>
+          </article>""" for p in projects)
+    out.append(f"""
+    <section class="section section--tight">
+      <div class="container">
+{section_head("02", w['eyebrow'], w['title'])}
+        <div class="deal-grid lp-grid">
+{work}
+        </div>
+      </div>
+    </section>
+""")
+
+    # --- templates ----------------------------------------------------------
+    tp = d["templates"]
+    templates = "\n".join(f"""          <article class="deal-card">
+            <a href="{t['preview_url']}" target="_blank" rel="noopener" class="deal-card__media">
+              <img src="{t['image']}" alt="{t['title']}" width="1200" height="654" loading="lazy" decoding="async">
+            </a>
+            <div class="deal-card__body">
+              <span class="tag">{t['label']}</span>
+              <h3 class="deal-card__title">{t['title']}</h3>
+              <a class="link-arrow" href="{t['preview_url']}" target="_blank" rel="noopener">{tp['view']} {ARROW_R}</a>
+            </div>
+          </article>""" for t in load("deals")[c.lang]["templates"][:6])
+    out.append(f"""
+    <section class="section section--tight lp-alt">
+      <div class="container">
+{section_head("03", tp['eyebrow'], tp['title'], tp['aside'])}
+        <div class="deal-grid lp-grid">
+{templates}
+        </div>
+        <div class="u-mt-xl">
+          <a class="btn btn--ghost btn--lg" href="{home}deals"><span>{tp['all']} {ARROW}</span></a>
+        </div>
+      </div>
+    </section>
+""")
+
+    # --- reviews ------------------------------------------------------------
+    rv = d["reviews"]
+    quotes = "".join(f"""          <figure class="quote">
+            <span class="lp-stars" aria-label="5/5">{STARS}</span>
+            <blockquote class="quote__text">{q['quote']}</blockquote>
+            <figcaption class="quote__author">
+              <span class="quote__name">{q['name']}</span>
+              <span class="quote__role">{q.get('website', '')}</span>
+            </figcaption>
+          </figure>""" for q in load("testimonials")[c.lang]["items"][:3])
+    out.append(f"""
+    <section class="section section--tight">
+      <div class="container">
+{section_head("04", rv['eyebrow'], rv['title'])}
+        <div class="quote-grid">
+{quotes}
+        </div>
+      </div>
+    </section>
+""")
+
+    # --- how it works -------------------------------------------------------
+    st = d["steps"]
+    steps = "".join(f"""          <li class="lp-step">
+            <span class="lp-step__num">{s['index']}</span>
+            <h3 class="lp-step__title">{s['title']}</h3>
+            <p class="lp-step__text">{s['text']}</p>
+          </li>""" for s in st["items"])
+    out.append(f"""
+    <section class="section section--tight lp-alt">
+      <div class="container">
+{section_head("05", st['eyebrow'], st['title'])}
+        <ol class="lp-steps" role="list">
+{steps}
+        </ol>
+      </div>
+    </section>
+""")
+
+    # --- FAQ ----------------------------------------------------------------
+    fq = d["faq"]
+    out.append(f"""
+    <section class="section section--tight">
+      <div class="container container--narrow">
+{section_head("06", fq['eyebrow'], fq['title'])}
+        <div data-accordion>
+{_service_faq("lp", fq['items'])}
+        </div>
+      </div>
+    </section>
+""")
+
+    # --- final CTA with chat -------------------------------------------------
+    fn = d["final"]
+    out.append(f"""
+    <section class="section lp-final" id="contact">
+      <div class="glow glow--primary cta__glow" aria-hidden="true"></div>
+      <div class="container lp-final__grid">
+        <div>
+          <p class="label">{fn['eyebrow']}</p>
+          <h2 class="display-2">{fn['title']}</h2>
+          <p class="lead u-mt-md">{fn['body']}</p>
+          <div class="lp-actions">
+            <a class="btn btn--primary btn--lg" href="{tel}" data-lead="phone"><span>{PHONE} {phone}</span></a>
+            <a class="btn btn--lg lp-btn-wa" href="{wa}" target="_blank" rel="noopener" data-lead="whatsapp">
+              <span><img src="/images/whatsapp-icon.png" alt="" width="20" height="20"> {d['whatsapp_short']}</span></a>
+          </div>
+          <p class="label label--plain u-mt-lg"><span class="pulse-dot" aria-hidden="true"><i></i></span> {fn['hours']}</p>
+          <p class="u-mt-sm"><a class="link-underline" href="mailto:{contact['email']}">{contact['email']}</a></p>
+        </div>
+        <iframe class="lp-chat" src="https://app.zaochat.com/widget/iframe/130aa379-9729-46f6-879e-55871e187ca4"
+                title="Chat" loading="lazy" referrerpolicy="origin"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lp-footer">
+    <div class="container lp-footer__inner">
+      <span>&copy; <span data-year>2026</span> Web Designer Puerto Rico &middot; San Juan, Puerto Rico</span>
+      <a class="link-underline" href="{home}">webdesignerpr.com</a>
+    </div>
+  </footer>
+
+  <!-- Sticky call bar on phones: the two actions are always one thumb away -->
+  <nav class="lp-sticky" aria-label="{d['call']}">
+    <a href="{tel}" data-lead="phone">{PHONE} {d['call']}</a>
+    <a href="{wa}" target="_blank" rel="noopener" data-lead="whatsapp"><img src="/images/whatsapp-icon.png" alt="" width="20" height="20"> {d['whatsapp_short']}</a>
+  </nav>
+
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
+""")
+
+    # Written at the SITE root for both languages (/vamos, /start)
+    root = c.out if c.lang == DEFAULT_LANG else os.path.dirname(c.out)
+    with open(os.path.join(root, LANDING_SLUGS[c.lang] + ".html"), "w", encoding="utf-8") as f:
+        f.write("".join(out))
+
+
 BUILDERS = [build_home, build_about, build_services, build_portfolio, build_deals, build_contact, build_articles, build_service_pages,
-            build_industries, build_industry_pages]
+            build_industries, build_industry_pages, build_landing]
 
 
 # ---------------------------------------------------------------------------

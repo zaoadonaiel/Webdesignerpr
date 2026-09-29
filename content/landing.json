@@ -1,0 +1,148 @@
+{
+  "es": {
+    "meta_title": "Diseño Web en Puerto Rico desde $500 | Web Designer Puerto Rico",
+    "meta_description": "Sitios web bilingües, rápidos y listos para Google para negocios en Puerto Rico. Sitios de una página desde $500 con configuración, 30 días de hosting y SEO incluidos. Llama o escríbenos por WhatsApp.",
+    "kicker": "Diseño web &middot; San Juan, Puerto Rico",
+    "title": "Un sitio web que te trae <em class=\"italic accent-text\">clientes.</em>",
+    "lead": "Bilingüe, rápido y hecho para Google. Sitios de una página desde $500 con configuración, 30 días de hosting y SEO incluidos &mdash; o un sitio a la medida para tu negocio.",
+    "price_label": "Desde",
+    "price": "$500",
+    "price_note": "Configuración, hosting y SEO incluidos",
+    "call": "Llamar",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "whatsapp_short": "WhatsApp",
+    "whatsapp_text": "Hola, vi su anuncio y quiero información sobre un sitio web.",
+    "trust": [
+      {"text": "Bilingüe: español e inglés"},
+      {"text": "Rápido y hecho para móviles"},
+      {"text": "SEO desde el primer día"},
+      {"text": "Equipo local en San Juan"}
+    ],
+    "clients_label": "Negocios que confían en nosotros",
+    "included": {
+      "eyebrow": "Qué incluye",
+      "title": "Todo lo que necesitas para <em class=\"italic\">estar en línea.</em>",
+      "items": [
+        {"index": "01", "title": "Diseño y configuración", "text": "Diseñamos tu sitio con tu logo, tus fotos y tu información, y lo dejamos funcionando en tu dominio."},
+        {"index": "02", "title": "30 días de hosting", "text": "Tu sitio queda publicado y alojado por nosotros el primer mes, sin configurar servidores ni nada técnico."},
+        {"index": "03", "title": "Listo para Google", "text": "Títulos, descripciones, velocidad y estructura optimizados para que tus clientes te encuentren cuando buscan."},
+        {"index": "04", "title": "Botones que convierten", "text": "Llamada, WhatsApp y contacto a un toque, en celular y computadora, para que ninguna visita se pierda."}
+      ]
+    },
+    "work": {
+      "eyebrow": "Trabajo reciente",
+      "title": "Sitios reales, <em class=\"italic\">en línea hoy.</em>",
+      "visit": "Ver sitio"
+    },
+    "templates": {
+      "eyebrow": "Empieza con un diseño",
+      "title": "Elige un diseño y <em class=\"italic\">lánzalo rápido.</em>",
+      "aside": "Diseños listos para tu industria, adaptados a tu marca. Sitios de una página desde $500.",
+      "view": "Ver diseño",
+      "all": "Ver los 18 diseños"
+    },
+    "reviews": {
+      "eyebrow": "Clientes",
+      "title": "Lo que dicen <em class=\"italic\">nuestros clientes.</em>"
+    },
+    "steps": {
+      "eyebrow": "Cómo funciona",
+      "title": "Tres pasos y <em class=\"italic\">estás en línea.</em>",
+      "items": [
+        {"index": "01", "title": "Llámanos o escríbenos", "text": "Cuéntanos de tu negocio en una llamada corta o por WhatsApp. Te decimos qué necesitas &mdash; y qué no."},
+        {"index": "02", "title": "Elige tu diseño", "text": "Parte de uno de nuestros diseños o pide un sitio a la medida. Sabrás el precio antes de empezar."},
+        {"index": "03", "title": "Lanzamos tu sitio", "text": "Lo configuramos, lo publicamos y lo preparamos para Google. Tú te enfocas en atender a tus clientes."}
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Lo que nos <em class=\"italic\">preguntan.</em>",
+      "items": [
+        {"question": "¿Cuánto cuesta un sitio web?", "answer": "Los sitios de una página empiezan en $500 e incluyen configuración, 30 días de hosting y SEO. Los sitios de varias páginas y las tiendas en línea se cotizan después de una llamada corta, para que sepas el precio antes de empezar."},
+        {"question": "¿Cuánto tiempo toma?", "answer": "Los sitios de una página basados en nuestros diseños son los más rápidos de lanzar. Los proyectos a la medida siguen nuestro proceso completo y toman varias semanas; te damos un calendario en la primera llamada."},
+        {"question": "¿Pueden hacer mi sitio en español e inglés?", "answer": "Sí. Trabajamos en ambos idiomas y podemos hacer tu sitio en español, en inglés o en los dos."},
+        {"question": "¿Solo trabajan con negocios en Puerto Rico?", "answer": "Estamos en San Juan y trabajamos con negocios en toda la isla y en Estados Unidos."},
+        {"question": "¿Qué pasa después del primer mes?", "answer": "Ofrecemos hosting y soporte continuo después de los primeros 30 días, para que las actualizaciones, la seguridad y los respaldos no sean tu problema."}
+      ]
+    },
+    "final": {
+      "eyebrow": "Siguiente paso",
+      "title": "Cuéntanos de <em class=\"italic accent-text\">tu negocio.</em>",
+      "body": "Llámanos, escríbenos por WhatsApp o usa el chat. Respondemos en un día hábil.",
+      "hours": "Lun&ndash;Vie, 9:00&ndash;18:00 AST"
+    }
+  },
+  "en": {
+    "meta_title": "Web Design in Puerto Rico from $500 | Web Designer Puerto Rico",
+    "meta_description": "Bilingual, fast, Google-ready websites for Puerto Rico businesses. One-page sites from $500 with setup, 30 days of hosting and SEO included. Call or WhatsApp us today.",
+    "kicker": "Web design &middot; San Juan, Puerto Rico",
+    "title": "A website that brings you <em class=\"italic accent-text\">customers.</em>",
+    "lead": "Bilingual, fast and built for Google. One-page sites from $500 with setup, 30 days of hosting and SEO included &mdash; or a fully custom site for your business.",
+    "price_label": "Starting at",
+    "price": "$500",
+    "price_note": "Setup, hosting and SEO included",
+    "call": "Call",
+    "whatsapp": "Message us on WhatsApp",
+    "whatsapp_short": "WhatsApp",
+    "whatsapp_text": "Hi, I saw your ad and I'd like info about a website.",
+    "trust": [
+      {"text": "Bilingual: Spanish &amp; English"},
+      {"text": "Fast and mobile-first"},
+      {"text": "SEO from day one"},
+      {"text": "Local team in San Juan"}
+    ],
+    "clients_label": "Businesses that trust us",
+    "included": {
+      "eyebrow": "What's included",
+      "title": "Everything you need to <em class=\"italic\">get online.</em>",
+      "items": [
+        {"index": "01", "title": "Design and setup", "text": "We design your site with your logo, photos and details, and get it running on your domain."},
+        {"index": "02", "title": "30 days of hosting", "text": "Your site is published and hosted by us for the first month &mdash; no servers or technical setup on your end."},
+        {"index": "03", "title": "Ready for Google", "text": "Titles, descriptions, speed and structure tuned so customers find you when they search."},
+        {"index": "04", "title": "Buttons that convert", "text": "Call, WhatsApp and contact are one tap away on phone and desktop, so no visitor slips through."}
+      ]
+    },
+    "work": {
+      "eyebrow": "Recent work",
+      "title": "Real sites, <em class=\"italic\">live today.</em>",
+      "visit": "Visit site"
+    },
+    "templates": {
+      "eyebrow": "Start from a design",
+      "title": "Pick a design and <em class=\"italic\">launch fast.</em>",
+      "aside": "Ready-made designs for your industry, adapted to your brand. One-page sites from $500.",
+      "view": "View design",
+      "all": "See all 18 designs"
+    },
+    "reviews": {
+      "eyebrow": "Clients",
+      "title": "What our <em class=\"italic\">clients say.</em>"
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Three steps and <em class=\"italic\">you're live.</em>",
+      "items": [
+        {"index": "01", "title": "Call or message us", "text": "Tell us about your business in a short call or on WhatsApp. We'll tell you what you need &mdash; and what you don't."},
+        {"index": "02", "title": "Pick your design", "text": "Start from one of our designs or ask for a custom site. You'll know the price before we start."},
+        {"index": "03", "title": "We launch your site", "text": "We set it up, publish it and get it ready for Google. You focus on serving your customers."}
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "What people <em class=\"italic\">ask us.</em>",
+      "items": [
+        {"question": "How much does a website cost?", "answer": "One-page sites start at $500 and include setup, 30 days of hosting and SEO. Multi-page sites and online stores are quoted after a short call, so you know the price before we start."},
+        {"question": "How long does it take?", "answer": "One-page sites built from our designs are the fastest to launch. Custom projects follow our full process and take several weeks; we'll give you a timeline on the first call."},
+        {"question": "Can you build my site in Spanish and English?", "answer": "Yes. We work in both languages and can build your site in Spanish, English or both."},
+        {"question": "Do you only work with businesses in Puerto Rico?", "answer": "We're based in San Juan and work with businesses across the island and the mainland US."},
+        {"question": "What happens after the first month?", "answer": "We offer ongoing hosting and support after the first 30 days, so updates, security and backups aren't your problem."}
+      ]
+    },
+    "final": {
+      "eyebrow": "Next step",
+      "title": "Tell us about <em class=\"italic accent-text\">your business.</em>",
+      "body": "Call us, message us on WhatsApp or use the chat. We reply within one business day.",
+      "hours": "Mon&ndash;Fri, 9:00&ndash;18:00 AST"
+    }
+  }
+}
