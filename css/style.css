@@ -2663,3 +2663,41 @@ body.is-locked .site-header {
   .lp-sticky a:last-child { background: #25D366; color: #08090b; }
   .lp-sticky svg { width: 20px; height: 20px; }
 }
+
+/* Quote form in the ad landing hero */
+.lp-hero__inner {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem); align-items: start;
+}
+.lp-hero .lp-hero__title { font-size: clamp(2.6rem, 1.4rem + 3.4vw, 5.25rem); }
+.lp-form-card {
+  position: relative; z-index: 1;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--color-line); border-radius: 18px;
+  background: var(--color-surface);
+  box-shadow: 0 24px 60px -24px rgba(20, 18, 14, 0.25);
+}
+.lp-form { gap: var(--space-md); }
+.lp-form .form__row { gap: var(--space-md); }
+.lp-form__title { font-family: var(--font-display); font-size: var(--fs-h4); line-height: 1.15; }
+.lp-form__note { margin-top: -0.75rem; font-size: var(--fs-sm); color: var(--color-text-muted); }
+.lp-form .field__textarea { min-height: 88px; }
+.lp-form__submit { width: 100%; justify-content: center; }
+.lp-form__submit:disabled { opacity: 0.7; cursor: progress; }
+.lp-form__status:empty { display: none; }
+.lp-form__status { font-size: var(--fs-sm); color: var(--color-primary-on-bg); }
+.lp-form__done { display: flex; flex-direction: column; gap: var(--space-sm); outline: none; }
+.lp-form__done[hidden] { display: none; }
+.lp-form__done-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 50%; background: var(--color-secondary); color: #fff;
+}
+.lp-form__done-icon svg { width: 24px; height: 24px; }
+.lp-form__done .lp-form__note { margin-top: 0; }
+
+@media (max-width: 1000px) {
+  .lp-hero__inner { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .lp-form .form__row { grid-template-columns: minmax(0, 1fr); }
+}

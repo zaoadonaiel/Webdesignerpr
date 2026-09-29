@@ -1797,6 +1797,132 @@ document.documentElement.setAttribute("data-theme","dark")}}catch(e){{}}}})();</
 """
 
 
+WEB3FORMS = "https://api.web3forms.com/submit"
+
+
+def _landing_form(c, d):
+    """Quote form in the hero. Posts to Web3Forms, which emails each lead.
+
+    The access key is public by design (Web3Forms keys only allow sending to
+    the inbox they were created for), so it lives in content/landing.json.
+    """
+    f = d["form"]
+    slug = LANDING_SLUGS[c.lang]
+
+    def field(name, label, kind="text", req=False, ph="", auto=""):
+        star = ' <span class="req" aria-hidden="true">*</span>' if req else ""
+        attrs = (f' required' if req else "") + (f' placeholder="{ph}"' if ph else "") + \
+                (f' autocomplete="{auto}"' if auto else "")
+        if kind == "textarea":
+            control = f'<textarea class="field__textarea" id="lp-{name}" name="{name}" rows="3"{attrs}></textarea>'
+        else:
+            control = f'<input class="field__input" id="lp-{name}" name="{name}" type="{kind}"{attrs}>'
+        return (f'<div class="field"><label class="field__label" for="lp-{name}">{label}{star}</label>'
+                f'{control}<p class="field__error" aria-live="polite"></p></div>')
+
+    return f"""       <div class="lp-form-card" id="quote">
+        <form class="form lp-form" data-lp-form novalidate action="{WEB3FORMS}" method="POST"
+              data-err-required="{f['err_required']}" data-err-phone="{f['err_phone']}" data-err-email="{f['err_email']}"
+              data-sending="{f['sending']}" data-fail="{f['fail']}">
+          <h2 class="lp-form__title">{f['title']}</h2>
+          <p class="lp-form__note">{f['note']}</p>
+          <input type="hidden" name="access_key" value="{f['access_key']}">
+          <input type="hidden" name="subject" value="{f['subject']}">
+          <input type="hidden" name="from_name" value="Web Designer Puerto Rico">
+          <input type="hidden" name="page" value="/{slug}">
+          <input type="hidden" name="language" value="{c.lang}">
+          <input type="hidden" name="gclid" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="hidden" name="utm_term" value="">
+          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+          {field("name", f['name'], req=True, auto="name")}
+          <div class="form__row">
+            {field("phone", f['phone'], "tel", req=True, auto="tel")}
+            {field("email", f['email'], "email", auto="email")}
+          </div>
+          {field("business", f['business'], ph=f['business_ph'], auto="organization")}
+          {field("message", f['message'], "textarea", ph=f['message_ph'])}
+          <button class="btn btn--primary btn--lg lp-form__submit" type="submit"><span>{f['submit']} {ARROW}</span></button>
+          <p class="lp-form__status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="lp-form__done" hidden tabindex="-1">
+          <span class="lp-form__done-icon" aria-hidden="true">{CHECK}</span>
+          <h2 class="lp-form__title">{f['ok_title']}</h2>
+          <p class="lp-form__note">{f['ok_body']}</p>
+        </div>
+       </div>
+"""
+
+
+LANDING_FORM_JS = """  <script>
+  (function () {
+    var form = document.querySelector("[data-lp-form]");
+    if (!form) return;
+    var q = new URLSearchParams(location.search);
+    ["gclid", "utm_campaign", "utm_term"].forEach(function (k) {
+      if (q.get(k)) form.elements[k].value = q.get(k);
+    });
+    var status = form.querySelector(".lp-form__status");
+    var submit = form.querySelector("[type=submit]");
+    var label = submit.innerHTML;
+
+    function setError(input, msg) {
+      var box = input.closest(".field");
+      box.classList.toggle("has-error", !!msg);
+      box.querySelector(".field__error").textContent = msg || "";
+      input.setAttribute("aria-invalid", msg ? "true" : "false");
+    }
+    function check(input) {
+      var v = input.value.trim(), msg = "";
+      if (input.required && !v) msg = form.dataset.errRequired;
+      else if (v && input.name === "phone" && v.replace(/\\D/g, "").length < 7) msg = form.dataset.errPhone;
+      else if (v && input.type === "email" && !/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(v)) msg = form.dataset.errEmail;
+      setError(input, msg);
+      return !msg;
+    }
+    var inputs = form.querySelectorAll(".field__input, .field__textarea");
+    Array.prototype.forEach.call(inputs, function (el) {
+      el.addEventListener("blur", function () { if (el.value) check(el); });
+      el.addEventListener("input", function () { if (el.closest(".has-error")) check(el); });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ok = true, first = null;
+      Array.prototype.forEach.call(inputs, function (el) {
+        if (!check(el)) { ok = false; first = first || el; }
+      });
+      if (!ok) { first.focus(); return; }
+
+      submit.disabled = true;
+      submit.innerHTML = "<span>" + form.dataset.sending + "</span>";
+      status.textContent = "";
+      var data = Object.fromEntries(new FormData(form));
+      fetch(form.action, {
+        method: "POST",
+        headers: {"Content-Type": "application/json", Accept: "application/json"},
+        body: JSON.stringify(data)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (!res.success) throw new Error(res.message);
+          if (typeof gtag === "function") gtag("event", "generate_lead", {method: "form", page_path: location.pathname});
+          form.hidden = true;
+          var done = form.parentNode.querySelector(".lp-form__done");
+          done.hidden = false;
+          done.focus();
+        })
+        .catch(function () {
+          status.textContent = form.dataset.fail;
+          submit.disabled = false;
+          submit.innerHTML = label;
+        });
+    });
+  })();
+  </script>
+"""
+
+
 def build_landing(c):
     from urllib.parse import quote
     d = load("landing")[c.lang]
@@ -1843,6 +1969,7 @@ def build_landing(c):
       <div class="lp-hero__bg" aria-hidden="true"></div>
       <div class="glow glow--primary page-header__glow" aria-hidden="true"></div>
       <div class="container lp-hero__inner">
+       <div class="lp-hero__copy">
         <p class="label">{d['kicker']}</p>
         <h1 class="display-1 lp-hero__title">{d['title']}</h1>
         <p class="lead lp-hero__lead">{d['lead']}</p>
@@ -1857,6 +1984,8 @@ def build_landing(c):
             <span><img src="/images/whatsapp-icon.png" alt="" width="20" height="20"> {d['whatsapp']}</span></a>
         </div>
         <ul class="lp-trust" role="list">{trust}</ul>
+       </div>
+{_landing_form(c, d)}
       </div>
     </section>
 
@@ -1998,6 +2127,7 @@ def build_landing(c):
             <a class="btn btn--lg lp-btn-wa" href="{wa}" target="_blank" rel="noopener" data-lead="whatsapp">
               <span><img src="/images/whatsapp-icon.png" alt="" width="20" height="20"> {d['whatsapp_short']}</span></a>
           </div>
+          <p class="u-mt-md"><a class="link-arrow" href="#quote">{d['form']['title']} {ARROW_R}</a></p>
           <p class="label label--plain u-mt-lg"><span class="pulse-dot" aria-hidden="true"><i></i></span> {fn['hours']}</p>
           <p class="u-mt-sm"><a class="link-underline" href="mailto:{contact['email']}">{contact['email']}</a></p>
         </div>
@@ -2022,7 +2152,7 @@ def build_landing(c):
 
   <script src="/js/theme.js" defer></script>
   <script src="/js/main.js" defer></script>
-</body>
+{LANDING_FORM_JS}</body>
 </html>
 """)
 
