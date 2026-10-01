@@ -164,6 +164,18 @@ GA_TAG = """  <!-- Google tag (gtag.js) -->
   </script>
 """
 
+# Google Ads conversion tracking (gtag.js), injected into every page's <head>.
+GOOGLE_ADS_TAG = """  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18478711242"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18478711242');
+  </script>
+"""
+
 
 def head(c, page, title=None, description=None, keywords=None, extra="", og_type="website"):
     if title is None or description is None:
@@ -180,7 +192,7 @@ def head(c, page, title=None, description=None, keywords=None, extra="", og_type
 <html lang="{c.lang}">
 <head>
   <meta charset="utf-8">
-{GA_TAG}  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{GA_TAG}{GOOGLE_ADS_TAG}  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="google" content="notranslate">
   <title>{title}</title>
   <meta name="description" content="{description}">
