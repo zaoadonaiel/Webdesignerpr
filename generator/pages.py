@@ -2230,6 +2230,15 @@ def build_thanks(c):
 
   <script src="/js/theme.js" defer></script>
   <script src="/js/main.js" defer></script>
+
+  <!-- Event snippet for Submit lead form conversion page -->
+  <script>
+    gtag('event', 'conversion', {{
+        'send_to': 'AW-18478711242/x7ULCO2Si40dEMqDq-tE',
+        'value': 1.0,
+        'currency': 'USD'
+    }});
+  </script>
 </body>
 </html>
 """
