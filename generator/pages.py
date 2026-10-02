@@ -4,7 +4,7 @@ import os
 import re
 
 from .content import DEFAULT_LANG, SITE_URL, load, load_projects, shared, texts
-from .partials import (GA_TAG, head, chrome, header, footer, scripts, cta, section_head,
+from .partials import (GA_TAG, GOOGLE_ADS_TAG, head, chrome, header, footer, scripts, cta, section_head,
                        page_header, themed_img, ARROW, ARROW_R, STAR, MARK_PATH,
                        SVC_ICONS, FALLBACK_ICON, svc_icon, ind_icon)
 
@@ -1759,7 +1759,7 @@ def _landing_head(c, d, slugs=LANDING_SLUGS):
 <html lang="{c.lang}">
 <head>
   <meta charset="utf-8">
-{GA_TAG}  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{GA_TAG}{GOOGLE_ADS_TAG}  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="google" content="notranslate">
   <meta name="robots" content="noindex, follow">
   <title>{d['meta_title']}</title>
@@ -2279,7 +2279,7 @@ def render_404():
 <html lang="es">
 <head>
   <meta charset="utf-8">
-{GA_TAG}  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{GA_TAG}{GOOGLE_ADS_TAG}  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>404 &mdash; Web Designer Puerto Rico</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
