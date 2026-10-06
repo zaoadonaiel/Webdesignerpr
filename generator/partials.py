@@ -173,6 +173,18 @@ GOOGLE_ADS_TAG = """  <!-- Google tag (gtag.js) -->
     gtag('js', new Date());
 
     gtag('config', 'AW-18478711242');
+
+    // "Phone number click" conversion: fires on any tel: link on any page.
+    // No redirect callback needed - tapping a tel: link doesn't unload the page.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+      if (!a) return;
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18478711242/vvO7CLjQzJMdEMqDq-tE',
+        'value': 1.0,
+        'currency': 'USD'
+      });
+    });
   </script>
 """
 
