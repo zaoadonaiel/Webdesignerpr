@@ -15,6 +15,8 @@ import os
 import shutil
 import sys
 import time
+import json
+import re
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
@@ -51,6 +53,40 @@ def copy_static():
             shutil.copy2(src, os.path.join(DIST, name))
             copied += 1
     return copied
+
+
+def ensure_article_excerpts():
+    """Auto-generate excerpts for articles missing them (from Zao Flo sync)."""
+    articles_file = os.path.join(ROOT, "content", "articles.json")
+    if not os.path.isfile(articles_file):
+        return
+
+    def extract_first_paragraph(html):
+        if not html:
+            return ""
+        match = re.search(r'<p[^>]*>(.*?)</p>', html, re.DOTALL)
+        if match:
+            text = match.group(1)
+            text = re.sub(r'<[^>]+>', '', text)
+            if len(text) > 150:
+                text = text[:150] + "..."
+            return text.strip()
+        return ""
+
+    with open(articles_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    updated = False
+    for lang in list(data.keys()):
+        if 'articles' in data[lang]:
+            for article in data[lang]['articles']:
+                if not article.get('excerpt') and article.get('body'):
+                    article['excerpt'] = extract_first_paragraph(article['body'])
+                    updated = True
+
+    if updated:
+        with open(articles_file, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
 
 
 def render():
@@ -118,6 +154,7 @@ def write_robots():
 
 def main():
     start = time.time()
+    ensure_article_excerpts()  # Auto-generate missing excerpts for Zao Flo articles
     clean()
     assets = copy_static()
     pages = render()
